@@ -5,7 +5,7 @@
 'use strict';
 
 
-var atcmApp = angular.module('atcmApp', ['ngRoute', 'ngMessages'])
+var atcmApp = angular.module('atcmApp', ['ngRoute'])
 
 .config(function($routeProvider) {
   
@@ -44,6 +44,11 @@ var atcmApp = angular.module('atcmApp', ['ngRoute', 'ngMessages'])
   .when('/your-finances', {
     templateUrl : 'your-finances.html',
     controller  : 'yourFinancesController'
+  })
+  
+  .when('/confirm-plea', {
+    templateUrl : 'confirm-plea.html',
+    controller  : 'confirmPleaController'
   })
   
   .otherwise({

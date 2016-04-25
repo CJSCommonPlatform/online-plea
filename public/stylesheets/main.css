@@ -2326,6 +2326,36 @@ legend .form-label-bold {
   padding-bottom: 0;
 }
 
+.summary-heading {
+  position: relative;
+}
+
+@media (min-width: 641px) {
+  .summary-change {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 641px) {
+  .summary-title {
+    float: left;
+    min-width: 40%;
+  }
+}
+
+.summary-body {
+  padding-bottom: 1.0526315789em;
+}
+
+@media (min-width: 641px) {
+  .summary-body {
+    overflow: hidden;
+  }
+}
+
 .panel .block-label {
   margin-bottom: 0;
 }

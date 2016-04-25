@@ -15,7 +15,7 @@
       
       <div class="form-group">
         <label class="form-label-bold" for="first-name">First name</label>
-        <input class="form-control" id="first-name" type="text">
+        <input class="form-control" type="text" id="first-name">
       </div>
       
       
@@ -103,6 +103,38 @@
         </fieldset>
       
       </div>
+      
+      
+      <fieldset class="inline">
+
+        <legend>
+          <span class="form-label-bold">Do you have a National Insurance number?</span>
+        </legend>
+  
+        <div class="form-group">
+  
+          <label class="block-label" for="national-insurance-yes" data-target="national-insurance">
+            <input type="radio" id="national-insurance-yes" name="national-insurance" value="Yes"> Yes
+          </label>
+  
+          <label class="block-label" for="national-insurance-no">
+            <input type="radio" id="national-insurance-no" name="national-insurance" value="No"> No
+          </label>
+  
+          <div class="panel panel-border-narrow js-hidden" id="national-insurance">
+            
+            <label for="national-insurance">
+              <span class="form-label-bold">National Insurance number</span>
+              <span class="form-hint" id="national-insurance-hint">It&rsquo;ll be on your last payslip. For example, JH 21 90 0A.</span>
+            </label>
+            
+            <input class="form-control" type="text" id="national-insurance" name="national-insurance" describedby="national-insurance-hint">
+            
+          </div>
+  
+        </div>
+  
+      </fieldset>
       
       
       <div class="form-group">

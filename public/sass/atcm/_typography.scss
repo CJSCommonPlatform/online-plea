@@ -2,3 +2,46 @@
 // Typography
 // ==========================================================================
 
+
+$module: "summary";
+
+
+.#{$module} {
+  
+  
+  &-heading {
+    position: relative;
+  }
+  
+  
+  &-change {
+    
+    @include media (tablet) {
+      margin: 0;
+      position: absolute;
+      top: 0; right: 0;
+    }
+    
+  }
+  
+  
+  &-title {
+    
+    @include media (tablet) {
+      float: left;
+      min-width: 40%;
+    }
+    
+  }
+  
+  &-body {
+    padding-bottom: em(20);
+    
+    @include media (tablet) {
+      overflow: hidden;
+    }
+    
+  }
+  
+}
+

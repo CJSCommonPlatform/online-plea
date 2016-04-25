@@ -67,6 +67,16 @@ atcmApp.controller('yourFinancesController', function($scope, $location) {
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
+    $location.path('/confirm-plea');
+  };
+
+});
+
+
+atcmApp.controller('confirmPleaController', function($scope, $location) {
+
+  $scope.buttonContinue = function(event) {
+    event.preventDefault();
     $location.path('');
   };
 
