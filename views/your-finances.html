@@ -1,0 +1,144 @@
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+  
+
+    <h1 class="heading-xlarge">Your finances</h1>
+    
+    
+    <p>For this type of offence you&rsquo;ll usually have to pay a fine:</p>
+    
+    
+    <ul class="list list-bullet">
+      <li>you must provide your income details</li>
+      <li>the court will decide your fine based on your finances and the seriousness of the offence</li>
+      <li>your details will be stored securely by the court</li>
+    </ul>
+    
+    
+    <h2 class="heading-large">Your finance details</h2>
+    
+    
+    <form class="form" method="post" action="#" novalidate>
+      
+      
+      <div class="form-group">
+            
+        <label for="benefits-received">
+          <span class="form-label-bold">Which benefits do you receive?</span>
+          <span class="form-hint" id="benefits-received-hint">For example, Income Support or Disability Living Allowance.</span>
+        </label>
+        
+        <textarea class="form-control form-control-textarea" id="benefits-received" cols="30" rows="5" aria-describedby="benefits-received-hint"></textarea>
+          
+      </div>
+      
+      
+      <div class="form-group">
+      
+      
+        <fieldset class="inline">
+          
+          
+          <legend>
+            <span class="form-label-bold">Does this include payment for dependants?</span>
+          </legend>
+  
+  
+          <label class="block-label" for="payment-dependants-yes">
+            <input type="radio" id="payment-dependants-yes"  name="payment-dependants" value="Yes"> Yes
+          </label>
+          
+          <label class="block-label" for="payment-dependants-no">
+            <input type="radio" id="payment-dependants-no" name="payment-dependants" value="No"> No
+          </label>
+          
+        
+        </fieldset>
+      
+      
+      </div>
+      
+      
+      <div class="form-group">
+      
+      
+        <fieldset>
+  
+          <legend>
+            <span class="form-label-bold">How often are your benefits paid?</span>
+          </legend>
+          
+    
+          <label class="block-label" for="benefits-paid-weekly">
+            <input id="benefits-paid-weekly" name="benefits-paid" value="Weekly" type="radio"> Weekly
+          </label>
+          
+          
+          <label class="block-label" for="benefits-paid-fortnighly">
+            <input id="benefits-paid-fortnighly" name="benefits-paid" value="Fortnightly" type="radio"> Fortnightly
+          </label>
+          
+          
+          <label class="block-label" for="benefits-paid-monthly">
+            <input id="benefits-paid-monthly" name="benefits-paid" value="Monthly" type="radio"> Monthly
+          </label>
+          
+          
+          <label class="block-label" for="benefits-paid-other">
+            <input id="benefits-paid-other" name="benefits-paid" value="Other" type="radio"> Other
+          </label>
+    
+    
+        </fieldset>
+      
+      
+      </div>
+      
+      
+      <div class="form-group">
+        <label class="form-label-bold" for="take-home-pay">What is your average take home pay<span class="visuallyhidden">, in pounds</span>?</label>
+        <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="take-home-pay" name="take-home-pay"></span>
+      </div>
+      
+      
+      <div class="form-group">
+      
+      
+        <fieldset class="inline">
+          
+          
+          <legend>
+            <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
+            <span class="form-hint" id="financial-problem-hint">For example, you would become homeless.</span>
+          </legend>
+  
+  
+          <label class="block-label" for="financial-problems-yes">
+            <input type="radio" id="financial-problems-yes"  name="financial-problems" value="Yes" aria-describedby="financial-problem-hint"> Yes
+          </label>
+          
+          <label class="block-label" for="financial-problems-no">
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No"> No
+          </label>
+          
+        
+        </fieldset>
+      
+      
+      </div>
+      
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+      </div>
+      
+    
+    </form>
+  
+  
+  </div>
+
+
+</div>

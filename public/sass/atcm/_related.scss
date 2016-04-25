@@ -1,0 +1,30 @@
+// ==========================================================================
+// Related
+// ==========================================================================
+
+
+$module: 'related';
+
+
+.#{$module} {
+  border-top: 10px solid $govuk-blue;
+  margin-top: 1.6em;
+  padding-top: 5px;
+    
+  &-title {
+    @extend .heading-medium;
+    margin-top: .3em;
+    margin-bottom: .5em;
+  }
+  
+  &-links {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+  }
+
+}

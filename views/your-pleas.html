@@ -1,0 +1,319 @@
+<div class="grid-row">
+    
+    
+  <div class="column-two-thirds">
+    
+    
+    <h1 class="heading-xlarge">Your pleas</h1>
+    
+    
+    <div class="panel panel-border-wide">
+    
+      <h2 class="heading-medium">This is your opportunity to present your case to the court:</h2>
+        
+      <ul class="list list-bullet">
+        <li>the charge details and witness statements are in the requisition pack we sent to you</li>
+        <li>each offence may carry penalty points and a fine</li>
+        <li>if you plead guilty you may get a 33% discount on any fine</li>
+      </ul>
+    
+    </div>
+    
+    
+    <h2 class="heading-large">Charge 1 of 2 <span class="heading-secondary">Driving	 other than in accordance with driving licence</span></h2>
+    
+      
+    <details>
+  
+      <summary><span class="summary">View charge information</span></summary>
+  
+      <div class="panel panel-border-narrow">
+  
+        <p>On 01/08/2015 at Manchester drove a motor vehicle, namely a Vauxhall Insignia VRM N15 REP on a road, namely Lordship Lane, Lower Broughton otherwise than in accordance with a licence authorising you to drive a motor vehicle of that class.</p>
+  
+        <p>Contrary to section 87(1) of the Road Traffic Act 1988 and Schedule 2 to the Road Traffic Offenders Act 1988</p>
+  
+      </div>
+  
+    </details>
+    
+    
+    <h3 class="heading-medium">Your plea for charge 1</h3>
+    
+    
+    <form class="form" method="post" action="#" data-form-toggle novalidate>
+      
+      
+      <fieldset class="inline">
+        
+
+        <legend class="visuallyhidden">Your plea for charge 1</legend>
+  
+  
+        <div class="form-group">
+  
+  
+          <label class="block-label" for="radio-inline-1" data-target="guilty">
+            <input id="radio-inline-1" type="radio" name="radio-inline-group-1" value="Guilty"> Guilty
+          </label>
+          
+          
+          <label class="block-label" for="radio-inline-2" data-target="not-guilty">
+            <input id="radio-inline-2" type="radio" name="radio-inline-group-1" value="Not guilty"> Not guilty
+          </label>
+          
+          
+          <!-- Guilty -->
+          <div class="panel panel-border-narrow js-hidden" id="guilty">
+            
+
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+                
+                
+                <legend><span class="form-label-bold">Do you want to come to court to plead guilty?</span></legend>
+  
+  
+                <div class="form-group">
+                  
+                  
+                  <label class="block-label" for="radio-inline-3">
+                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes"> Yes
+                  </label>
+                  
+                  
+                  <label class="block-label" for="radio-inline-4">
+                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
+                  </label>
+                  
+                  
+                </div>
+                
+              
+              </fieldset>
+              
+            
+            </div>
+            
+            
+            <div class="form-group">
+              
+              <label for="update-address">
+                <span class="form-label-bold">Mitigation</span>
+                <span class="form-hint">Is there something you would like the court to consider?</span>
+              </label>
+              
+              <textarea class="form-control form-control-textarea" id="update-address" cols="30" rows="5"></textarea>
+                
+            </div>
+            
+            
+          </div>
+          
+          
+          <!-- Not Guilty -->
+          <div class="panel panel-border-narrow js-hidden" id="not-guilty">
+            
+            
+            <!-- Not guilty because -->
+            <div class="form-group">
+              
+              <label for="not-guilty-reason">
+                <span class="form-label-bold">Not guilty because?</span>
+                <span class="form-hint" id="not-guilty-hint">Why do you believe you are not guilty?</span>
+              </label>
+              
+              <textarea class="form-control form-control-textarea" id="not-guilty-reason" name="not-guilty-reason" cols="30" rows="5" aria-describedby="not-guilty-hint"></textarea>
+                
+            </div>
+            
+
+            <!-- Evidence and witness information -->
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+                
+                
+                <legend>
+                  <span class="form-label-bold">Evidence and witness information</span>
+                  <span class="form-hint" id="evidence-required-hint">Do you disagree with any evidence from a witness statement sent to you?</span>
+                </legend>
+  
+  
+                <!-- Yes / No -->
+                <div class="form-group">
+                  
+                  
+                  <label class="block-label" for="radio-inline-3">
+                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="evidence-required" aria-describedby="evidence-required-hint"> Yes
+                  </label>
+                  
+                  
+                  <label class="block-label" for="radio-inline-4">
+                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
+                  </label>
+                  
+                  
+                </div>
+                
+                
+                <!-- Evidence required -->
+                <div id="evidence-required">
+                
+                  
+                  <div class="form-group">
+            
+            
+                    <label for="witness-contact-details">
+                      <span class="form-label-bold">Name of the witness</span>
+                      <span class="form-hint">Tell us the name of the witness and what you disagree with.</span>
+                    </label>
+                    
+                    
+                    <textarea class="form-control form-control-textarea" id="witness-contact-details" name="witness-contact-details" cols="30" rows="5"></textarea>
+                      
+                      
+                  </div>
+                
+                
+                </div>
+                
+              
+              </fieldset>
+              
+            
+            </div>
+            
+            
+            <!-- Do you want to call a witness? -->
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+                
+                
+                <legend>
+                  <span class="form-label-bold">Do you want to call a witness?</span>
+                  <span class="form-hint" id="call-witness-hint">Someone who can give evidence in court supporting your case.</span>
+                </legend>
+  
+  
+                <!-- Yes / No -->
+                <div class="form-group">
+                  
+                  
+                  <label class="block-label" for="radio-inline-3">
+                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="call-witness" aria-describedby="call-witness-hint"> Yes
+                  </label>
+                  
+                  
+                  <label class="block-label" for="radio-inline-4">
+                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
+                  </label>
+                  
+                  
+                </div>
+                
+                
+                <!-- Call witness -->
+                <div id="call-witness">
+                
+                  
+                  <div class="form-group">
+            
+            
+                    <label for="witness-contact-details">
+                      <span class="form-label-bold">Witness contact details</span>
+                      <span class="form-hint">Tell us the name, address and date of birth of any witnesses you want to call to support your case.</span>
+                    </label>
+                    
+                    
+                    <textarea class="form-control form-control-textarea" id="witness-contact-details" cols="30" rows="5"></textarea>
+                      
+                      
+                  </div>
+                  
+                  
+                  <div class="form-group">
+
+
+                    <fieldset class="inline">
+                      
+                      
+                      <legend>
+                        <span class="form-label-bold">Does your witness need an interpreter?</span>
+                      </legend>
+        
+        
+                      <div class="form-group">
+                        
+                        
+                        <label class="block-label" for="radio-inline-3">
+                          <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="interpreter-language"> Yes
+                        </label>
+                        
+                        
+                        <label class="block-label" for="radio-inline-4">
+                          <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
+                        </label>
+                        
+                        
+                      </div>
+                      
+                      
+                      <!-- Interpreter language -->
+                      <div id="interpreter-language">
+                      
+                        
+                        <div class="form-group">
+                  
+                  
+                          <label for="language">
+                            <span class="form-label-bold">Interpreter language</span>
+                            <span class="form-hint" id="language-hint">Tell us which language, including sign language.</span>
+                          </label>
+                          
+                          
+                          <input class="form-control" type="text" id="language" name="language" aria-describedby="language-hint">
+                                                      
+                            
+                        </div>
+                      
+                      
+                      </div>
+                      
+                    
+                    </fieldset>
+                    
+                  
+                  </div>
+                
+                
+                </div>
+                
+              
+              </fieldset>
+              
+            
+            </div>
+            
+            
+          </div>
+          
+        
+        </div>
+        
+  
+      </fieldset>
+      
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+      </div>
+      
+      
+    </form>
+  

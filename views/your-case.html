@@ -1,0 +1,48 @@
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+    
+    
+    <h1 class="heading-xlarge">Your case</h1>
+
+
+    <form class="form" method="post" action="#" novalidate>
+      
+      
+      <div class="form-group">
+        
+        <label for="reference-number">
+          <span class="form-label-bold">Unique reference number</span>
+          <span class="form-hint" id="reference-hint">It&rsquo;ll be on page 1 of the notice, usually at the top. <br> For example, 1234567890.</span>
+        </label>
+        
+        <input class="form-control" name="reference" id="reference" type="text" aria-describedby="reference-hint" data-ng-model="data.reference">
+        
+      </div>
+      
+      
+      <div class="form-group">
+        
+        <label for="postcode">
+          <span class="form-label-bold">Postcode</span>
+          <span class="form-hint" id="postcode-hint">It&rsquo;ll be on the notice we sent you.</span>
+        </label>
+        
+        <input class="form-control form-control-1-4" name="postcode" id="postcode" type="text" aria-describedby="postcode-hint" data-ng-model="data.postcode">
+        
+      </div>
+      
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+      </div>
+      
+      
+    </form>
+    
+    
+  </div>
+  
+  
+</div>

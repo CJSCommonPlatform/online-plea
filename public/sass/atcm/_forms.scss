@@ -1,0 +1,47 @@
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+
+$module: "form";
+
+
+.#{$module} {
+
+  &-control-textarea {
+    resize: vertical;   
+    width: 100%;
+  }
+  
+  &-currency {
+    display: block;
+    position: relative;
+    
+    .#{$module}-control {
+      padding-left: em(34);
+    }
+    
+    &:before {
+      @include core-19;
+      color: $grey-1;
+      content: "\00a3";
+      display: inline-block;
+      font-weight: bold;
+      position: absolute; left: em(12); top: em(7);
+      text-align: center;
+      vertical-align: middle;
+    }
+    
+  }
+
+
+}
+
+
+// Not sure why GOV.uk added padding if a label is inside a legend?
+
+legend .form-label, 
+legend .form-label-bold {
+  padding-bottom: 0;
+}
+
