@@ -5,7 +5,7 @@
 
 // Form toggle
 
-atcmApp.directive('formToggle', function() {
+pleaApp.directive('formToggle', function() {
   
   
   return function(scope, element) {
@@ -142,19 +142,3 @@ atcmApp.directive('formToggle', function() {
   
   
 });
-
-
-// Form selection
-
-atcmApp.directive('formSelection', function() {
-  
-  
-  return function(scope, element) {
-    
-
-    
-  }
-    
-    
-});
-

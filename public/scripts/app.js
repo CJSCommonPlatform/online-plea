@@ -5,7 +5,7 @@
 'use strict';
 
 
-var atcmApp = angular.module('atcmApp', ['ngRoute'])
+var pleaApp = angular.module('pleaApp', ['ngRoute'])
 
 .config(function($routeProvider) {
   
