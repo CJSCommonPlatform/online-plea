@@ -22,7 +22,7 @@ pleaApp.directive('formToggle', function() {
     
     // Radio
     
-    element.find('.block-label input[type="radio"]').each(function() {
+    element.find(".block-label input[type='radio']").each(function() {
       
       
       var $radio          = $(this);
@@ -142,3 +142,4 @@ pleaApp.directive('formToggle', function() {
   
   
 });
+

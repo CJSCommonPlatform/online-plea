@@ -4,7 +4,6 @@
 
 'use strict';
 
-
 var pleaApp = angular.module('pleaApp', ['ngRoute'])
 
 .config(function($routeProvider) {

@@ -77,7 +77,7 @@ pleaApp.controller('confirmPleaController', function($scope, $location) {
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('');
+    $location.path('/');
   };
 
 });
