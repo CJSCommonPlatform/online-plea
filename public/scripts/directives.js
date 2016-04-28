@@ -142,6 +142,8 @@ pleaApp.directive('formToggle', function() {
   
   
 })
+
+
 .directive('formSelection', function() {
 
   var SelectionButtons = function (elmsOrSelector, opts) {
@@ -249,7 +251,8 @@ pleaApp.directive('formToggle', function() {
   return {
     restrict: 'A',
     link: function(scope, element) {
-      new SelectionButtons(element);
+      var $el = element.find('.block-label input[type="radio"], .block-label input[type="checkbox"]');
+      new SelectionButtons($el);
     },
   }
 });
