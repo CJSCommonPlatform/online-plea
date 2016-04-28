@@ -19,13 +19,13 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/case-details');
+    $location.path('/your-details');
   };
   
 });
 
 
-pleaApp.controller('caseDetailsController', function($scope, $location, PleaData) {
+/*pleaApp.controller('caseDetailsController', function($scope, $location, PleaData) {
   
   $scope.data = PleaData.data;
 
@@ -34,7 +34,7 @@ pleaApp.controller('caseDetailsController', function($scope, $location, PleaData
     $location.path('/your-details');
   };
 
-});
+});*/
 
 
 pleaApp.controller('yourDetailsController', function($scope, $location, PleaData) {

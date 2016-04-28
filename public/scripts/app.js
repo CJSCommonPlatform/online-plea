@@ -25,10 +25,10 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'yourCaseController'
   })
   
-  .when('/case-details', {
+  /*.when('/case-details', {
     templateUrl : 'case-details.html',
     controller  : 'caseDetailsController'
-  })
+  })*/
   
   .when('/your-details', {
     templateUrl : 'your-details.html',
