@@ -1,7 +1,7 @@
 <h1 class="heading-xlarge">Case details</h1>
 
 
-<form class="form" method="post" action="#" novalidate>
+<form class="form" method="post" action="#" data-form-toggle novalidate>
   
   
   <div class="form-group">
@@ -17,18 +17,19 @@
 
         <div class="form-group form-group-day">
           <label for="posting-day">Day</label>
-          <input class="form-control" type="number" max="31" min="0" pattern="[0-9]*" name="posting-day" id="posting-day" aria-describedby="posting-hint">
+          <input class="form-control" type="number" max="31" min="0" pattern="[0-9]*" id="posting-day" name="posting-day" data-ng-model="data.postingday" aria-describedby="posting-hint">
         </div>
 
         <div class="form-group form-group-month">
           <label for="posting-month">Month</label>
-          <input class="form-control" type="number" max="12" min="0" pattern="[0-9]*" name="posting-month" id="posting-month">
+          <input class="form-control" type="number" max="12" min="0" pattern="[0-9]*" id="posting-month" name="posting-month" data-ng-model="data.postingmonth">
         </div>
 
         <div class="form-group form-group-year">
           <label for="posting-year">Year</label>
-          <input class="form-control" type="number" max="2016" min="0" pattern="[0-9]*" name="posting-year" id="posting-year">
+          <input class="form-control" type="number" max="2016" min="0" pattern="[0-9]*" id="posting-year" name="posting-year" data-ng-model="data.postingyear">
         </div>
+        
       </div>
 
     </fieldset>
@@ -43,7 +44,7 @@
       <span class="form-hint" id="charges-hint">It&rsquo;ll be on the charge sheet, in numbered boxes.</span>
     </label>
     
-    <input class="form-control form-control-1-8" id="charges" name="charges" type="text" aria-describedby="charges-hint">
+    <input class="form-control form-control-1-8" type="text" id="charges" name="charges" data-ng-model="data.charges" aria-describedby="charges-hint">
     
   </div>
 
@@ -54,16 +55,16 @@
 
       <legend>
         <span class="form-label-bold">Who are you?</span>
-        <span class="form-hint" id="who-are-you-hint">Choose one of the following options.</span>
+        <span class="form-hint" id="whoareyou-hint">Choose one of the following options.</span>
       </legend>
 
-      <label class="block-label" for="radio-1">
-        <input id="radio-1" name="radio-group" value="The person named in the notice" type="radio" aria-describedby="who-are-you-hint">
+      <label class="block-label" for="whoareyou-person">
+        <input type="radio" id="whoareyou-person" name="whoareyou" value="The person named in the notice" data-ng-model="data.whoareyou" aria-describedby="whoareyou-hint">
         The person named in the notice
       </label>
       
-      <label class="block-label" for="radio-2">
-        <input id="radio-2" name="radio-group" value="Pleading on behalf of a company" type="radio">
+      <label class="block-label" for="whoareyou-company">
+        <input type="radio" id="whoareyou-company" name="whoareyou" value="Pleading on behalf of a company" data-ng-model="data.whoareyou">
         Pleading on behalf of a company
       </label>
 
@@ -74,6 +75,7 @@
   
   <div class="form-group">
     <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+    {{data}}
   </div>
   
   

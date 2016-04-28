@@ -2341,8 +2341,9 @@ legend .form-label-bold {
 
 @media (min-width: 641px) {
   .summary-title {
-    float: left;
-    min-width: 40%;
+    display: inline-block;
+    padding-bottom: 1.0526315789em;
+    width: 40%;
   }
 }
 
@@ -2352,10 +2353,7 @@ legend .form-label-bold {
 
 @media (min-width: 641px) {
   .summary-body {
-    overflow: hidden;
+    display: inline-block;
+    width: 60%;
   }
-}
-
-.panel .block-label {
-  margin-bottom: 0;
 }

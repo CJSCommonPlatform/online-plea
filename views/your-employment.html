@@ -19,20 +19,20 @@
     <h2 class="heading-medium">Are you?</h2>
     
     
-    <form class="form" method="post" action="#" novalidate>
+    <form class="form" method="post" action="#" data-form-toggle novalidate>
     
     
       <div class="form-group">
     
     
-        <fieldset class="stuff" data-form-toggle>
+        <fieldset class="stuff">
     
     
           <legend class="visuallyhidden">Are you?</legend>
     
     
           <label class="block-label" for="employed" data-target="receive-benefits">
-            <input type="radio" id="employed" name="employment-status" value="Employed"> Employed
+            <input type="radio" id="employed" name="employment" value="Employed" data-ng-model="data.employment"> Employed
           </label>
           
           
@@ -58,17 +58,17 @@
           
           
           <label class="block-label" for="self-employed">
-            <input type="radio" id="self-employed" name="employment-status" value="Self-employed"> Self&ndash;employed
+            <input type="radio" id="self-employed" name="employment" value="Self employed" data-ng-model="data.employment"> Self&ndash;employed
           </label>
           
           
           <label class="block-label" for="work-benefits">
-            <input type="radio" id="work-benefits" name="employment-status" value="Receiving out of work benefits"> Receiving out of work benefits
+            <input type="radio" id="work-benefits" name="employment" value="Receiving out of work benefits" data-ng-model="data.employment"> Receiving out of work benefits
           </label>
           
           
           <label class="block-label" for="other" data-target="provide-details">
-            <input type="radio" id="other" name="employment-status" value="Other"> Other
+            <input type="radio" id="other" name="employment" value="Other" data-ng-model="data.employment"> Other
           </label>
           
           
@@ -97,6 +97,9 @@
       
     
     </form>
+    
+    
+    <p>{{data}}</p>
   
   
   </div>

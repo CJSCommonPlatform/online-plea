@@ -13,7 +13,9 @@ pleaApp.controller('mainController', function($scope, $location) {
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $location) {
+pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -23,7 +25,9 @@ pleaApp.controller('yourCaseController', function($scope, $location) {
 });
 
 
-pleaApp.controller('caseDetailsController', function($scope, $location) {
+pleaApp.controller('caseDetailsController', function($scope, $location, PleaData) {
+  
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -33,7 +37,9 @@ pleaApp.controller('caseDetailsController', function($scope, $location) {
 });
 
 
-pleaApp.controller('yourDetailsController', function($scope, $location) {
+pleaApp.controller('yourDetailsController', function($scope, $location, PleaData) {
+  
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -43,7 +49,9 @@ pleaApp.controller('yourDetailsController', function($scope, $location) {
 });
 
 
-pleaApp.controller('yourPleasController', function($scope, $location) {
+pleaApp.controller('yourPleasController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -53,17 +61,60 @@ pleaApp.controller('yourPleasController', function($scope, $location) {
 });
 
 
-pleaApp.controller('yourEmploymentController', function($scope, $location) {
+pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData) {
 
-  $scope.buttonContinue = function(event) {
+  $scope.data = PleaData.data;
+
+  $scope.buttonContinue = function(event) { 
+       
     event.preventDefault();
-    $location.path('/your-finances');
+    
+    if($scope.data.employment === 'Receiving out of work benefits') {
+      
+      $location.path('/your-finances/work-benefits');
+      
+    } else if ($scope.data.employment === 'Other') {
+      
+      $location.path('/your-finances/other');
+      
+    } else {
+      
+      $location.path('/your-finances/employed');
+      
+    }
+    
   };
 
 });
 
 
-pleaApp.controller('yourFinancesController', function($scope, $location) {
+pleaApp.controller('yourFinancesController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
+
+  $scope.buttonContinue = function(event) {
+    event.preventDefault();
+    $location.path('/your-expenses');
+  };
+
+});
+
+
+pleaApp.controller('yourExpensesController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
+
+  $scope.buttonContinue = function(event) {
+    event.preventDefault();
+    $location.path('/your-expenses/other');
+  };
+
+});
+
+
+pleaApp.controller('otherExpensesController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -73,7 +124,9 @@ pleaApp.controller('yourFinancesController', function($scope, $location) {
 });
 
 
-pleaApp.controller('confirmPleaController', function($scope, $location) {
+pleaApp.controller('confirmPleaController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();

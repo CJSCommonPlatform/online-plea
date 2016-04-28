@@ -28,8 +28,9 @@ $module: "summary";
   &-title {
     
     @include media (tablet) {
-      float: left;
-      min-width: 40%;
+      display: inline-block;
+      padding-bottom: em(20);
+      width: 40%;
     }
     
   }
@@ -38,7 +39,8 @@ $module: "summary";
     padding-bottom: em(20);
     
     @include media (tablet) {
-      overflow: hidden;
+      display: inline-block;
+      width: 60%;
     }
     
   }

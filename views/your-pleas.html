@@ -53,13 +53,13 @@
         <div class="form-group">
   
   
-          <label class="block-label" for="radio-inline-1" data-target="guilty">
-            <input id="radio-inline-1" type="radio" name="radio-inline-group-1" value="Guilty"> Guilty
+          <label class="block-label" for="yourplea-guilty" data-target="guilty">
+            <input id="yourplea-guilty" type="radio" name="yourplea" value="Guilty" data-ng-model="data.yourplea"> Guilty
           </label>
           
           
-          <label class="block-label" for="radio-inline-2" data-target="not-guilty">
-            <input id="radio-inline-2" type="radio" name="radio-inline-group-1" value="Not guilty"> Not guilty
+          <label class="block-label" for="yourplea-notguilty" data-target="not-guilty">
+            <input id="yourplea-notguilty" type="radio" name="yourplea" value="Not guilty" data-ng-model="data.yourplea"> Not guilty
           </label>
           
           
@@ -79,13 +79,13 @@
                 <div class="form-group">
                   
                   
-                  <label class="block-label" for="radio-inline-3">
-                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes"> Yes
+                  <label class="block-label" for="pleadguilty-yes">
+                    <input type="radio" id="pleadguilty-yes"  name="pleadguilty" value="Yes" data-ng-model="data.pleadguilty"> Yes
                   </label>
                   
                   
-                  <label class="block-label" for="radio-inline-4">
-                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
+                  <label class="block-label" for="pleadguilty-no">
+                    <input type="radio" id="pleadguilty-no" name="pleadguilty" value="No" data-ng-model="data.pleadguilty"> No
                   </label>
                   
                   
@@ -100,12 +100,12 @@
             
             <div class="form-group">
               
-              <label for="update-address">
+              <label for="mitigation">
                 <span class="form-label-bold">Mitigation</span>
                 <span class="form-hint">Is there something you would like the court to consider?</span>
               </label>
               
-              <textarea class="form-control form-control-textarea" id="update-address" cols="30" rows="5"></textarea>
+              <textarea class="form-control form-control-textarea" id="mitigation" cols="30" rows="5"></textarea>
                 
             </div>
             
@@ -117,15 +117,15 @@
           <div class="panel panel-border-narrow js-hidden" id="not-guilty">
             
             
-            <!-- Not guilty because -->
+            <!-- Reason -->
             <div class="form-group">
               
-              <label for="not-guilty-reason">
+              <label for="reason">
                 <span class="form-label-bold">Not guilty because?</span>
-                <span class="form-hint" id="not-guilty-hint">Why do you believe you are not guilty?</span>
+                <span class="form-hint" id="reason-hint">Why do you believe you are not guilty?</span>
               </label>
               
-              <textarea class="form-control form-control-textarea" id="not-guilty-reason" name="not-guilty-reason" cols="30" rows="5" aria-describedby="not-guilty-hint"></textarea>
+              <textarea class="form-control form-control-textarea" id="reason" name="reason" cols="30" rows="5" aria-describedby="reason-hint"></textarea>
                 
             </div>
             
@@ -139,51 +139,41 @@
                 
                 <legend>
                   <span class="form-label-bold">Evidence and witness information</span>
-                  <span class="form-hint" id="evidence-required-hint">Do you disagree with any evidence from a witness statement sent to you?</span>
+                  <span class="form-hint" id="evidence-hint">Do you disagree with any evidence from a witness statement sent to you?</span>
                 </legend>
   
   
                 <!-- Yes / No -->
-                <div class="form-group">
+                <div class="form-group">                  
                   
+                  <label class="block-label" for="evidence-yes" data-target="evidence">
+                    <input type="radio" id="evidence-yes" name="evidence" value="Yes" aria-describedby="evidence-hint"> Yes
+                  </label>                  
                   
-                  <label class="block-label" for="radio-inline-3">
-                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="evidence-required" aria-describedby="evidence-required-hint"> Yes
-                  </label>
-                  
-                  
-                  <label class="block-label" for="radio-inline-4">
-                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
-                  </label>
-                  
-                  
-                </div>
+                  <label class="block-label" for="evidence-no">
+                    <input type="radio" id="evidence-no" name="evidence" value="No"> No
+                  </label>                
                 
-                
-                <!-- Evidence required -->
-                <div id="evidence-required">
-                
-                  
-                  <div class="form-group">
-            
-            
-                    <label for="witness-contact-details">
-                      <span class="form-label-bold">Name of the witness</span>
-                      <span class="form-hint">Tell us the name of the witness and what you disagree with.</span>
-                    </label>
+                  <div class="panel panel-border-narrow js-hidden" id="evidence">                  
                     
-                    
-                    <textarea class="form-control form-control-textarea" id="witness-contact-details" name="witness-contact-details" cols="30" rows="5"></textarea>
-                      
-                      
-                  </div>
-                
-                
-                </div>
-                
+                    <div class="form-group">              
               
-              </fieldset>
+                      <label for="witness-details">
+                        <span class="form-label-bold">Name of the witness</span>
+                        <span class="form-hint">Tell us the name of the witness and what you disagree with.</span>
+                      </label>                      
+                      
+                      <textarea class="form-control form-control-textarea" id="witness-details" name="witness-details" cols="30" rows="5"></textarea>                        
+                        
+                    </div>                  
+                  
+                  </div>                  
+                  
+                </div> 
+                               
               
+              </fieldset> 
+                           
             
             </div>
             
@@ -197,100 +187,74 @@
                 
                 <legend>
                   <span class="form-label-bold">Do you want to call a witness?</span>
-                  <span class="form-hint" id="call-witness-hint">Someone who can give evidence in court supporting your case.</span>
+                  <span class="form-hint" id="witness-hint">Someone who can give evidence in court supporting your case.</span>
                 </legend>
   
   
                 <!-- Yes / No -->
-                <div class="form-group">
+                <div class="form-group">                  
                   
+                  <label class="block-label" for="witness-yes" data-target="witness">
+                    <input type="radio" id="witness-yes"  name="witness" value="Yes" aria-describedby="witness-hint"> Yes
+                  </label>                  
                   
-                  <label class="block-label" for="radio-inline-3">
-                    <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="call-witness" aria-describedby="call-witness-hint"> Yes
-                  </label>
-                  
-                  
-                  <label class="block-label" for="radio-inline-4">
-                    <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
-                  </label>
-                  
-                  
-                </div>
+                  <label class="block-label" for="witness-no">
+                    <input type="radio" id="witness-no" name="witness" value="No"> No
+                  </label>                  
                 
-                
-                <!-- Call witness -->
-                <div id="call-witness">
-                
-                  
-                  <div class="form-group">
-            
-            
-                    <label for="witness-contact-details">
-                      <span class="form-label-bold">Witness contact details</span>
-                      <span class="form-hint">Tell us the name, address and date of birth of any witnesses you want to call to support your case.</span>
-                    </label>
+                  <div class="panel panel-border-narrow js-hidden" id="witness">                
                     
+                    <div class="form-group">            
+              
+                      <label for="witness-contact-details">
+                        <span class="form-label-bold">Witness contact details</span>
+                        <span class="form-hint">Tell us the name, address and date of birth of any witnesses you want to call to support your case.</span>
+                      </label>                    
+                      
+                      <textarea class="form-control form-control-textarea" id="witness-contact-details" cols="30" rows="5"></textarea>                      
+                        
+                    </div>                  
                     
-                    <textarea class="form-control form-control-textarea" id="witness-contact-details" cols="30" rows="5"></textarea>
-                      
-                      
-                  </div>
-                  
-                  
-                  <div class="form-group">
-
-
-                    <fieldset class="inline">
-                      
-                      
-                      <legend>
-                        <span class="form-label-bold">Does your witness need an interpreter?</span>
-                      </legend>
-        
-        
-                      <div class="form-group">
+                    <div class="form-group">
+  
+                      <fieldset class="inline">                      
                         
-                        
-                        <label class="block-label" for="radio-inline-3">
-                          <input type="radio" id="radio-inline-3"  name="radio-inline-group-2" value="Yes" data-target="interpreter-language"> Yes
-                        </label>
-                        
-                        
-                        <label class="block-label" for="radio-inline-4">
-                          <input type="radio" id="radio-inline-4" name="radio-inline-group-2" value="No"> No
-                        </label>
-                        
-                        
-                      </div>
-                      
-                      
-                      <!-- Interpreter language -->
-                      <div id="interpreter-language">
-                      
-                        
-                        <div class="form-group">
-                  
-                  
-                          <label for="language">
-                            <span class="form-label-bold">Interpreter language</span>
-                            <span class="form-hint" id="language-hint">Tell us which language, including sign language.</span>
-                          </label>
+                        <legend>
+                          <span class="form-label-bold">Does your witness need an interpreter?</span>
+                        </legend>        
+          
+                        <div class="form-group">                        
                           
+                          <label class="block-label" for="interpreter-yes" data-target="interpreter-language">
+                            <input type="radio" id="interpreter-yes"  name="interpreter" value="Yes"> Yes
+                          </label>                        
                           
-                          <input class="form-control" type="text" id="language" name="language" aria-describedby="language-hint">
-                                                      
+                          <label class="block-label" for="interpreter-no">
+                            <input type="radio" id="interpreter-no" name="interpreter" value="No"> No
+                          </label>  
+                          
+                          <div class="panel panel-border-narrow js-hidden" id="interpreter-language">                      
                             
-                        </div>
+                            <div class="form-group">                  
                       
+                              <label for="language">
+                                <span class="form-label-bold">Interpreter language</span>
+                                <span class="form-hint" id="language-hint">Tell us which language, including sign language.</span>
+                              </label>                          
+                              
+                              <input class="form-control" type="text" id="language" name="language" aria-describedby="language-hint">                                                      
+                                
+                            </div>                      
+                          
+                          </div>                      
+                          
+                        </div>                      
                       
-                      </div>
-                      
+                      </fieldset>                    
                     
-                    </fieldset>
-                    
+                    </div>                
                   
-                  </div>
-                
+                  </div>                
                 
                 </div>
                 

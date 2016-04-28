@@ -17,10 +17,10 @@
     </ul>
     
     
-    <h2 class="heading-large">Your finance details</h2>
+    <h2 class="heading-large">Your finances details</h2>
     
     
-    <form class="form" method="post" action="#" novalidate>
+    <form class="form" method="post" action="#" data-form-toggle novalidate>
       
       
       <div class="form-group">
@@ -47,11 +47,11 @@
   
   
           <label class="block-label" for="payment-dependants-yes">
-            <input type="radio" id="payment-dependants-yes"  name="payment-dependants" value="Yes"> Yes
+            <input type="radio" id="payment-dependants-yes"  name="payment-dependants" value="Yes" data-ng-model="data.payment-dependants"> Yes
           </label>
           
           <label class="block-label" for="payment-dependants-no">
-            <input type="radio" id="payment-dependants-no" name="payment-dependants" value="No"> No
+            <input type="radio" id="payment-dependants-no" name="payment-dependants" value="No" data-ng-model="data.payment-dependants"> No
           </label>
           
         
@@ -72,22 +72,22 @@
           
     
           <label class="block-label" for="benefits-paid-weekly">
-            <input id="benefits-paid-weekly" name="benefits-paid" value="Weekly" type="radio"> Weekly
+            <input type="radio" id="benefits-paid-weekly" name="benefits-paid" value="Weekly"> Weekly
           </label>
           
           
           <label class="block-label" for="benefits-paid-fortnighly">
-            <input id="benefits-paid-fortnighly" name="benefits-paid" value="Fortnightly" type="radio"> Fortnightly
+            <input type="radio" id="benefits-paid-fortnighly" name="benefits-paid" value="Fortnightly"> Fortnightly
           </label>
           
           
           <label class="block-label" for="benefits-paid-monthly">
-            <input id="benefits-paid-monthly" name="benefits-paid" value="Monthly" type="radio"> Monthly
+            <input type="radio" id="benefits-paid-monthly" name="benefits-paid" value="Monthly"> Monthly
           </label>
           
           
           <label class="block-label" for="benefits-paid-other">
-            <input id="benefits-paid-other" name="benefits-paid" value="Other" type="radio"> Other
+            <input type="radio" id="benefits-paid-other" name="benefits-paid" value="Other"> Other
           </label>
     
     
@@ -111,12 +111,12 @@
           
           <legend>
             <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
-            <span class="form-hint" id="financial-problem-hint">For example, you would become homeless.</span>
+            <span class="form-hint" id="financial-problems-hint">For example, you would become homeless.</span>
           </legend>
   
   
           <label class="block-label" for="financial-problems-yes">
-            <input type="radio" id="financial-problems-yes"  name="financial-problems" value="Yes" aria-describedby="financial-problem-hint"> Yes
+            <input type="radio" id="financial-problems-yes"  name="financial-problems" value="Yes" aria-describedby="financial-problems-hint"> Yes
           </label>
           
           <label class="block-label" for="financial-problems-no">

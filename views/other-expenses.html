@@ -1,0 +1,112 @@
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+  
+
+    <h1 class="heading-xlarge">Your expenses</h1>
+    
+    
+    <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
+    
+    
+    <form class="form" method="post" action="#" novalidate>
+      
+      
+      <h3 class="heading-medium">Other expenses</h3>
+      
+      <p>What are your monthly household bills for the following?</p>
+      
+    
+      <fieldset>
+      
+        <legend class="visuallyhidden">Other expenses</legend>
+        
+        <div class="form-group">
+          
+          <label for="television">
+            <span class="form-label-bold">Television subscription<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="television-hint">For example, tv licence, satellite</span>
+          </label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="television" name="television" describedby="television-hint">
+          </span>
+          
+        </div>
+        
+        <div class="form-group">
+          
+          <label for="travel">
+            <span class="form-label-bold">Travel expenses<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="travel-hint">For example, fuel, car, public transport</span>
+          </label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="travel" name="travel" describedby="travel-hint">
+          </span>
+          
+        </div>
+        
+        <div class="form-group">
+          
+          <label for="travel">
+            <span class="form-label-bold">Telephone<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="telephone-hint">For example, landline or mobile</span>
+          </label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="telephone" name="telephone" describedby="telephone-hint">
+          </span>
+          
+        </div>
+        
+        <div class="form-group">
+          
+          <label for="travel">
+            <span class="form-label-bold">Loan repayments<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="loan-hint">For example, landline or mobile</span>
+          </label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="loan" name="loan" describedby="loan-hint">
+          </span>
+          
+        </div> 
+        
+        <div class="form-group">
+          
+          <label class="form-label-bold" for="court">County court orders<span class="visuallyhidden">, in pounds</span></label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="court" name="court">
+          </span>
+          
+        </div> 
+        
+        <div class="form-group">
+          
+          <label class="form-label-bold" for="travel">Child maintenance<span class="visuallyhidden">, in pounds</span></label>
+          
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="maintenance" name="maintenance">
+          </span>
+          
+        </div>  
+      
+      </fieldset>
+      
+      
+      <div class="form-group">        
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+        {{data}}        
+      </div>
+      
+    
+    </form>
+  
+  
+  </div>
+
+
+</div>

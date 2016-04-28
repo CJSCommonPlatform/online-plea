@@ -29,11 +29,18 @@ module.exports = function (grunt) {
     
     copy: {
       
-      govuk_assets: {
+      govuk_images: {
         expand: true,
-        cwd: 'node_modules/govuk_template_mustache/assets',
+        cwd: 'node_modules/govuk_template_mustache/assets/images',
         src: '**',
-        dest: 'public/govuk/'
+        dest: 'public/govuk/images/'
+      },
+      
+      govuk_css: {
+        expand: true,
+        cwd: 'node_modules/govuk_template_mustache/assets/stylesheets',
+        src: '**',
+        dest: 'public/govuk/stylesheets/'
       },
         
       govuk_elements: {
@@ -114,7 +121,8 @@ module.exports = function (grunt) {
    
    grunt.registerTask('default', [
      'express',
-     'copy:govuk_assets',
+     'copy:govuk_images',
+     'copy:govuk_css',
      'copy:govuk_elements',
      'copy:govuk_frontend_toolkit_scss',
      'copy:govuk_frontend_toolkit_img',

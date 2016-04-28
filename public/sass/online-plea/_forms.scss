@@ -38,10 +38,17 @@ $module: "form";
 }
 
 
-// Not sure why GOV.uk added padding if a label is inside a legend?
+// Not sure why GOV.UK added padding if a label is inside a legend?
 
 legend .form-label, 
 legend .form-label-bold {
   padding-bottom: 0;
+}
+
+
+// Not sure why GOV.UK did not reset margin bottom on inline block labels?
+
+.inline .block-label {
+  //margin-bottom: 0;
 }
 

@@ -14,14 +14,14 @@
       
       
       <div class="form-group">
-        <label class="form-label-bold" for="first-name">First name</label>
-        <input class="form-control" type="text" id="first-name">
+        <label class="form-label-bold" for="firstname">First name</label>
+        <input class="form-control" type="text" id="firstname" data-ng-model="data.firstname">
       </div>
       
       
       <div class="form-group">
-        <label class="form-label-bold" for="last-name">Last name</label>
-        <input class="form-control" id="last-name" type="text">
+        <label class="form-label-bold" for="lastname">Last name</label>
+        <input class="form-control" type="text" id="lastname" data-ng-model="data.lastname">
       </div>
       
       
@@ -35,11 +35,11 @@
         <div class="form-group">
     
           <label class="block-label" for="correct-address-yes">
-            <input type="radio" id="correct-address-yes" name="correct-address" value="Yes" aria-describedby="your-address-hint"> Yes
+            <input type="radio" id="correct-address-yes" name="correct-address" value="As printed on the notice" aria-describedby="your-address-hint" data-ng-model="data.address"> Yes
           </label>
     
           <label class="block-label" for="correct-address-no" data-target="incorrect-address">
-            <input type="radio" id="correct-address-no" name="correct-address" value="No"> No
+            <input type="radio" id="correct-address-no" name="correct-address" value="No" data-ng-model="data.address"> No
           </label>
     
           <div class="panel panel-border-narrow js-hidden" id="incorrect-address">
@@ -51,7 +51,7 @@
                   <span class="form-hint" id="update-address-hint">If no, tell us your correct address here.</span>
                 </label>
                 
-                <textarea class="form-control form-control-textarea" id="update-address" name="update-address" cols="30" rows="5" aria-describedby="update-address-hint"></textarea>
+                <textarea class="form-control form-control-textarea" id="update-address" name="update-address" cols="30" rows="5" aria-describedby="update-address-hint" data-ng-model="data.updateaddress"></textarea>
                 
               </div>
             
@@ -68,7 +68,7 @@
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="telephone-hint">Landland or mobile number.</span>
         </labrel>
-        <input class="form-control form-control-1-3" type="tel" id="telephone" name="telephone" aria-describedby="telephone-hint">
+        <input class="form-control form-control-1-3" type="tel" id="telephone" name="telephone" aria-describedby="telephone-hint" data-ng-model="data.telephone">
         
       </div>
       
@@ -139,6 +139,7 @@
       
       <div class="form-group">
         <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+        {{data}}
       </div>
       
       
