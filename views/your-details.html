@@ -10,18 +10,18 @@
     <p class="lede text">We need your details in case we have to contact you about your plea.</p>
     
     
-    <form class="form" method="post" action="#" data-form-toggle novalidate>
+    <form class="form" method="post" action="#" data-form-selection data-form-toggle novalidate>
       
       
       <div class="form-group">
         <label class="form-label-bold" for="firstname">First name</label>
-        <input class="form-control" type="text" id="firstname" data-ng-model="data.firstname">
+        <input class="form-control" type="text" id="firstname" data-ng-model="data.firstName">
       </div>
       
       
       <div class="form-group">
         <label class="form-label-bold" for="lastname">Last name</label>
-        <input class="form-control" type="text" id="lastname" data-ng-model="data.lastname">
+        <input class="form-control" type="text" id="lastname" data-ng-model="data.lastName">
       </div>
       
       
@@ -51,7 +51,7 @@
                   <span class="form-hint" id="update-address-hint">If no, tell us your correct address here.</span>
                 </label>
                 
-                <textarea class="form-control form-control-textarea" id="update-address" name="update-address" cols="30" rows="5" aria-describedby="update-address-hint" data-ng-model="data.updateaddress"></textarea>
+                <textarea class="form-control form-control-textarea" id="update-address" name="update-address" cols="30" rows="5" aria-describedby="update-address-hint" data-ng-model="data.updateAddress"></textarea>
                 
               </div>
             
@@ -139,7 +139,6 @@
       
       <div class="form-group">
         <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
-        {{data}}
       </div>
       
       

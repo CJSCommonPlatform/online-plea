@@ -8,16 +8,17 @@ pleaApp.factory('PleaData', function() {
   return {
     
     data: {
-      reference:    '',
-      postcode:     '',
-      charges:      '',
-      whoareyou:    '',
-      firstname:  '',
-      lastname:  '',
-      address:   '',
-      updateaddress: '',
+      firstName: '',
+      lastName: '',
+      address: '',
+      updateAddress: '',
       telephone: '',
-      employment: ''
+      yourPlea: '',
+      pleadGuilty: '',
+      employment: '',
+      paymentDependants: '',
+      paid: '',
+      financialProblems: ''
     }
     
   }
