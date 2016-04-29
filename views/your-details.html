@@ -15,13 +15,13 @@
       
       <div class="form-group">
         <label class="form-label-bold" for="firstname">First name</label>
-        <input class="form-control" type="text" id="firstname" data-ng-model="data.firstName">
+        <input class="form-control" type="text" id="firstname" name="firstname" data-ng-model="data.firstName">
       </div>
       
       
       <div class="form-group">
         <label class="form-label-bold" for="lastname">Last name</label>
-        <input class="form-control" type="text" id="lastname" data-ng-model="data.lastName">
+        <input class="form-control" type="text" id="lastname" name="firstname" data-ng-model="data.lastName">
       </div>
       
       
@@ -86,17 +86,17 @@
     
             <div class="form-group form-group-day">
               <label for="dob-day">Day</label>
-              <input class="form-control" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" id="dob-day" aria-describedby="dob-hint">
+              <input class="form-control" type="number" max="31" min="0" pattern="[0-9]*" id="dob-day" name="dob-day" aria-describedby="dob-hint">
             </div>
     
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" id="dob-month">
+              <input class="form-control" type="number" max="12" min="0" pattern="[0-9]*" id="dob-month" name="dob-month">
             </div>
     
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" id="dob-year">
+              <input class="form-control" type="number" max="2016" min="0" pattern="[0-9]*" id="dob-year" name="dob-year">
             </div>
           </div>
     

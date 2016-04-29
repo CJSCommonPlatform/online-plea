@@ -30,7 +30,7 @@
           <span class="form-hint" id="benefits-received-hint">For example, Income Support or Disability Living Allowance.</span>
         </label>
         
-        <textarea class="form-control form-control-textarea" id="benefits-received" cols="30" rows="5" aria-describedby="benefits-received-hint"></textarea>
+        <textarea class="form-control form-control-textarea" id="benefits-received" name="benefits-received" cols="30" rows="5" aria-describedby="benefits-received-hint"></textarea>
           
       </div>
       
@@ -47,7 +47,7 @@
   
   
           <label class="block-label" for="payment-dependants-yes">
-            <input type="radio" id="payment-dependants-yes"  name="payment-dependants" value="Yes" data-ng-model="data.paymentDependants"> Yes
+            <input type="radio" id="payment-dependants-yes" name="payment-dependants" value="Yes" data-ng-model="data.paymentDependants"> Yes
           </label>
           
           <label class="block-label" for="payment-dependants-no">
@@ -116,7 +116,7 @@
   
   
           <label class="block-label" for="financial-problems-yes">
-            <input type="radio" id="financial-problems-yes"  name="financial-problems" value="Yes" aria-describedby="financial-problems-hint"> Yes
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint"> Yes
           </label>
           
           <label class="block-label" for="financial-problems-no">
