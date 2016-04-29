@@ -19,7 +19,24 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/your-details');
+
+    $scope.enterReferenceClicked = function() {
+      $scope.referenceFocused = true;
+    };
+
+    $scope.enterPostcodeClicked = function() {
+      $scope.postcodeFocused = true;
+    };
+
+    $scope.myform.$submitted = true;
+
+    if ($scope.myform.$invalid) {
+       $scope.errorSummaryFocused = true;
+    }
+
+    if ($scope.myform.$valid) {
+      $location.path('/your-details');
+    }    
   };
   
 });
