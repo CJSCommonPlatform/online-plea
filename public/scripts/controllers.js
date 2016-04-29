@@ -28,6 +28,14 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
       $scope.postcodeFocused = true;
     };
 
+    $scope.referenceAriaDescribedBy = function() {
+      return $scope.myform.reference.$myinvalid ? 'error-message-reference' : 'reference-hint';
+    };
+
+    $scope.postcodeAriaDescribedBy = function() {
+      return $scope.myform.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
+    };
+
     $scope.myform.$submitted = true;
 
     if ($scope.myform.$invalid) {

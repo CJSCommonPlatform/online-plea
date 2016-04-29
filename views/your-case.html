@@ -32,7 +32,7 @@
           <span class="error-message" ng-show="myform.$submitted && myform.reference.$myinvalid" id="error-message-reference">Enter your Unique reference number</span>
         </label>
         
-        <input class="form-control" name="reference" type="text" id="reference" name="reference" data-ng-model="data.reference" aria-describedby="reference-hint" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="referenceFocused">
+        <input class="form-control" name="reference" type="text" id="reference" name="reference" data-ng-model="data.reference" aria-describedby="{{referenceAriaDescribedBy()}}" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="referenceFocused">
         
       </div>
       
@@ -45,7 +45,7 @@
           <span class="error-message" ng-show="myform.$submitted && myform.postcode.$myinvalid" id="error-message-postcode">Enter your Postcode</span>
         </label>
         
-        <input class="form-control form-control-1-4" name="postcode" type="text" id="postcode" name="postcode" data-ng-model="data.postcode" aria-describedby="postcode-hint" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="postcodeFocused">
+        <input class="form-control form-control-1-4" name="postcode" type="text" id="postcode" name="postcode" data-ng-model="data.postcode" aria-describedby="{{postcodeAriaDescribedBy()}}" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="postcodeFocused">
         
       </div>
       
