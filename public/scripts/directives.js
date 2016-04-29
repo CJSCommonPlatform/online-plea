@@ -141,10 +141,12 @@ pleaApp.directive('formToggle', function() {
   }
   
   
-})
+});
 
 
-.directive('formSelection', function() {
+// Form selection
+
+pleaApp.directive('formSelection', function() {
 
   var SelectionButtons = function (elmsOrSelector, opts) {
     var $elms;
@@ -166,6 +168,7 @@ pleaApp.directive('formToggle', function() {
     }
     this.addEvents();
   };
+  
   SelectionButtons.prototype.addEvents = function () {
     if (typeof this.$elms !== 'undefined') {
       this.addElementLevelEvents();
@@ -173,6 +176,7 @@ pleaApp.directive('formToggle', function() {
       this.addDocumentLevelEvents();
     }
   };
+  
   SelectionButtons.prototype.setInitialState = function ($elms) {
     $elms.each(function (idx, elm) {
       var $elm = $(elm);
@@ -182,6 +186,7 @@ pleaApp.directive('formToggle', function() {
       }
     }.bind(this));
   };
+  
   SelectionButtons.prototype.markFocused = function ($elm, state) {
     if (state === 'focused') {
       $elm.parent('label').addClass(this.focusedClass);
@@ -189,6 +194,7 @@ pleaApp.directive('formToggle', function() {
       $elm.parent('label').removeClass(this.focusedClass);
     }
   };
+  
   SelectionButtons.prototype.markSelected = function ($elm) {
     var radioName;
 
@@ -206,6 +212,7 @@ pleaApp.directive('formToggle', function() {
       }
     }
   };
+  
   SelectionButtons.prototype.addElementLevelEvents = function () {
     this.clickHandler = this.getClickHandler();
     this.focusHandler = this.getFocusHandler({ 'level' : 'element' });
@@ -214,6 +221,7 @@ pleaApp.directive('formToggle', function() {
       .on('click', this.clickHandler)
       .on('focus blur', this.focusHandler);
   };
+  
   SelectionButtons.prototype.addDocumentLevelEvents = function () {
     this.clickHandler = this.getClickHandler();
     this.focusHandler = this.getFocusHandler({ 'level' : 'document' });
@@ -222,11 +230,13 @@ pleaApp.directive('formToggle', function() {
       .on('click', this.selector, this.clickHandler)
       .on('focus blur', this.selector, this.focusHandler);
   };
+  
   SelectionButtons.prototype.getClickHandler = function () {
     return function (e) {
       this.markSelected($(e.target));
     }.bind(this);
   };
+  
   SelectionButtons.prototype.getFocusHandler = function (opts) {
     var focusEvent = (opts.level === 'document') ? 'focusin' : 'focus';
 
@@ -236,6 +246,7 @@ pleaApp.directive('formToggle', function() {
       this.markFocused($(e.target), state);
     }.bind(this);
   };
+  
   SelectionButtons.prototype.destroy = function () {
     if (typeof this.selector !== 'undefined') {
       $(document)
@@ -255,6 +266,7 @@ pleaApp.directive('formToggle', function() {
       new SelectionButtons($el);
     },
   }
+  
 });
 
 
