@@ -149,7 +149,6 @@ pleaApp.directive('focusMe', function($timeout, $parse) {
     link: function(scope, element, attrs) {
       var model = $parse(attrs.focusMe);
       scope.$watch(model, function(value) {
-        console.log('value=',value);
         if(value === true) { 
           $timeout(function() {
             element[0].focus(); 
@@ -159,7 +158,6 @@ pleaApp.directive('focusMe', function($timeout, $parse) {
       // to address @blesh's comment, set attribute value to 'false'
       // on blur event:
       element.bind('blur', function() {
-         console.log('blur');
          scope.$apply(model.assign(scope, false));
       });
     }
@@ -167,18 +165,18 @@ pleaApp.directive('focusMe', function($timeout, $parse) {
 });
 
 pleaApp.directive('scrollToItem', function() {                                                      
-    return {                                                                                 
-        restrict: 'A',                                                                       
-        scope: {                                                                             
-            scrollTo: "@"                                                                    
-        },                                                                                   
-        link: function(scope, $elm,attr) {                                                   
+  return {                                                                                 
+    restrict: 'A',                                                                       
+    scope: {                                                                             
+        scrollTo: "@"                                                                    
+    },                                                                                   
+    link: function(scope, $elm,attr) {                                                   
 
-            $elm.on('click', function() {                                                    
-                $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, 500);
-            });                                                                              
-        }                                                                                    
-    }}); 
+        $elm.on('click', function() {                                                    
+            $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, 0);
+        });                                                                              
+    }                                                                                    
+}}); 
 
 // Form selection
 
