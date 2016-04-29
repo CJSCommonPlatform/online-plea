@@ -32,6 +32,9 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 
     if ($scope.myform.$invalid) {
        $scope.errorSummaryFocused = true;
+       $scope.myform.$myinvalid = $scope.myform.$invalid;
+       $scope.myform.reference.$myinvalid = $scope.myform.reference.$invalid;
+       $scope.myform.postcode.$myinvalid = $scope.myform.postcode.$invalid;
     }
 
     if ($scope.myform.$valid) {

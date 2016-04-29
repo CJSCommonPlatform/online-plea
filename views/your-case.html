@@ -4,15 +4,15 @@
   <div class="column-two-thirds">
     
     
-    <div class="error-summary" ng-show="myform.$submitted && myform.$invalid" role="group" aria-labelledby="error-summary-heading" tabindex="-1" focus-me="errorSummaryFocused">
+    <div class="error-summary" ng-show="myform.$submitted && myform.$myinvalid" role="group" aria-labelledby="error-summary-heading" tabindex="-1" focus-me="errorSummaryFocused">
   
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading">Message to alert the user to a problem goes here</h1>
   
       <p>Optional description of the error(s) and how to correct them.</p>
   
       <ul class="error-summary-list">
-        <li ng-show="myform.reference.$invalid"><a href ng-click="enterReferenceClicked()">Enter your Unique reference number</a></li>
-        <li ng-show="myform.postcode.$invalid"><a href ng-click="enterPostcodeClicked()">Enter your Postcode</a></li>
+        <li ng-show="myform.reference.$myinvalid"><a href ng-click="enterReferenceClicked()">Enter your Unique reference number</a></li>
+        <li ng-show="myform.postcode.$myinvalid"><a href ng-click="enterPostcodeClicked()">Enter your Postcode</a></li>
       </ul>
   
     </div>
@@ -24,12 +24,12 @@
     <form class="form" name="myform" method="post" action="#" data-form-selection data-form-toggle novalidate>
       
       
-      <div class="form-group" ng-class="{'error': myform.$submitted && myform.reference.$invalid}">
+      <div class="form-group" ng-class="{'error': myform.$submitted && myform.reference.$myinvalid}">
         
         <label for="reference-number">
           <span class="form-label-bold">Unique reference number</span>
           <span class="form-hint" id="reference-hint">It&rsquo;ll be on page 1 of the notice, usually at the top. <br> For example, 1234567890.</span>
-          <span class="error-message" ng-show="myform.$submitted && myform.reference.$invalid" id="error-message-reference">Enter your Unique reference number</span>
+          <span class="error-message" ng-show="myform.$submitted && myform.reference.$myinvalid" id="error-message-reference">Enter your Unique reference number</span>
         </label>
         
         <input class="form-control" name="reference" type="text" id="reference" name="reference" data-ng-model="data.reference" aria-describedby="reference-hint" aria-invalid="true" required focus-me="referenceFocused">
@@ -37,12 +37,12 @@
       </div>
       
       
-      <div class="form-group" ng-class="{'error': myform.$submitted && myform.postcode.$invalid}">
+      <div class="form-group" ng-class="{'error': myform.$submitted && myform.postcode.$myinvalid}">
         
         <label for="postcode">
           <span class="form-label-bold">Postcode</span>
           <span class="form-hint" id="postcode-hint">It&rsquo;ll be on the notice we sent you.</span>
-          <span class="error-message" ng-show="myform.$submitted && myform.postcode.$invalid" id="error-message-postcode">Enter your Postcode</span>
+          <span class="error-message" ng-show="myform.$submitted && myform.postcode.$myinvalid" id="error-message-postcode">Enter your Postcode</span>
         </label>
         
         <input class="form-control form-control-1-4" name="postcode" type="text" id="postcode" name="postcode" data-ng-model="data.postcode" aria-describedby="postcode-hint" aria-invalid="true" required focus-me="postcodeFocused">
