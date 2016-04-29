@@ -11,8 +11,8 @@
       <p>Optional description of the error(s) and how to correct them.</p>
   
       <ul class="error-summary-list">
-        <li ng-show="myform.reference.$myinvalid"><a href ng-click="enterReferenceClicked()">Enter your Unique reference number</a></li>
-        <li ng-show="myform.postcode.$myinvalid"><a href ng-click="enterPostcodeClicked()">Enter your Postcode</a></li>
+        <li ng-show="myform.reference.$myinvalid"><a href ng-click="enterReferenceClicked()" scroll-to-item scroll-to="#reference-box">Enter your Unique reference number</a></li>
+        <li ng-show="myform.postcode.$myinvalid"><a href ng-click="enterPostcodeClicked()" scroll-to-item scroll-to="#postcode-box">Enter your Postcode</a></li>
       </ul>
   
     </div>
@@ -24,7 +24,7 @@
     <form class="form" name="myform" method="post" action="#" data-form-selection data-form-toggle novalidate>
       
       
-      <div class="form-group" ng-class="{'error': myform.$submitted && myform.reference.$myinvalid}">
+      <div id="reference-box" class="form-group" ng-class="{'error': myform.$submitted && myform.reference.$myinvalid}">
         
         <label for="reference-number">
           <span class="form-label-bold">Unique reference number</span>
@@ -37,7 +37,7 @@
       </div>
       
       
-      <div class="form-group" ng-class="{'error': myform.$submitted && myform.postcode.$myinvalid}">
+      <div id="postcode-box" class="form-group" ng-class="{'error': myform.$submitted && myform.postcode.$myinvalid}">
         
         <label for="postcode">
           <span class="form-label-bold">Postcode</span>

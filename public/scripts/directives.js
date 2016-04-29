@@ -166,6 +166,20 @@ pleaApp.directive('focusMe', function($timeout, $parse) {
   };
 });
 
+pleaApp.directive('scrollToItem', function() {                                                      
+    return {                                                                                 
+        restrict: 'A',                                                                       
+        scope: {                                                                             
+            scrollTo: "@"                                                                    
+        },                                                                                   
+        link: function(scope, $elm,attr) {                                                   
+
+            $elm.on('click', function() {                                                    
+                $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, 500);
+            });                                                                              
+        }                                                                                    
+    }}); 
+
 // Form selection
 
 pleaApp.directive('formSelection', function() {
