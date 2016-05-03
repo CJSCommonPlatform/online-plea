@@ -36,15 +36,15 @@
       </div>
       
       
-      <div id="postcode-box" class="form-group" ng-class="{'error': myform.$submitted && myform.postcode.$myinvalid}">
+      <div class="form-group" id="postcode-box" ng-class="{'error': myform.$submitted && myform.postcode.$myinvalid}">
         
         <label for="postcode">
           <span class="form-label-bold">Postcode</span>
           <span class="form-hint" id="postcode-hint">It&rsquo;ll be on the notice we sent you.</span>
-          <span class="error-message" ng-show="myform.$submitted && myform.postcode.$myinvalid" id="error-message-postcode">Enter your Postcode</span>
+          <span class="error-message" id="error-message-postcode" ng-show="myform.$submitted && myform.postcode.$myinvalid">Enter your Postcode</span>
         </label>
         
-        <input class="form-control form-control-1-4" name="postcode" type="text" id="postcode" name="postcode" data-ng-model="data.postcode" aria-describedby="{{postcodeAriaDescribedBy()}}" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="postcodeFocused" value="{{data.postcode}}">
+        <input class="form-control form-control-1-4" type="text" id="postcode" name="postcode" data-ng-model="data.postcode" aria-describedby="{{postcodeAriaDescribedBy()}}" aria-invalid="{{myform.$submitted && myform.postcode.$myinvalid}}" required focus-me="postcodeFocused" value="{{data.postcode}}">
       </div>
       
       
