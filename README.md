@@ -14,17 +14,17 @@ If you wish to run this app locally you will need [Node.js](http://nodejs.org/)
 
 Clone this repository
 
-  git clone https://github.com/trevorsaint/online-plea.git
+    git clone https://github.com/trevorsaint/online-plea.git
 
 
 Install the required node modules
 
-  npm install
+    npm install
 
 
 Run the app
 
-  node server
+    node server
 
 
 Go to [localhost:3000](http://localhost:3000) in your browser.
