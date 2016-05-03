@@ -7,9 +7,9 @@ $module: 'related';
 
 
 .#{$module} {
-  border-top: 10px solid $govuk-blue;
-  margin-top: 1.6em;
-  padding-top: 5px;
+  border-top: em(10) solid $govuk-blue;
+  margin-top: em(30);
+  padding-top: em(5);
     
   &-title {
     @extend .heading-medium;
@@ -18,13 +18,14 @@ $module: 'related';
   }
   
   &-links {
-    margin-top: 5px;
-    margin-bottom: 20px;
+    margin-top: em(5);
+    margin-bottom: em(20);
     
     li {
-      margin-bottom: 5px;
+      margin-bottom: em(5);
     }
     
   }
 
 }
+

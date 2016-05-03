@@ -2264,9 +2264,9 @@ html {
 }
 
 .related {
-  border-top: 10px solid #005ea5;
-  margin-top: 1.6em;
-  padding-top: 5px;
+  border-top: 0.5263157895em solid #005ea5;
+  margin-top: 1.5789473684em;
+  padding-top: 0.2631578947em;
 }
 
 .related-title {
@@ -2275,12 +2275,12 @@ html {
 }
 
 .related-links {
-  margin-top: 5px;
-  margin-bottom: 20px;
+  margin-top: 0.2631578947em;
+  margin-bottom: 1.0526315789em;
 }
 
 .related-links li {
-  margin-bottom: 5px;
+  margin-bottom: 0.2631578947em;
 }
 
 .form-control-textarea {
