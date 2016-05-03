@@ -26,7 +26,7 @@ Install the required node modules
 
 Run the app
 
-    node server
+    grunt
 
 
 Go to [localhost:3000](http://localhost:3000) in your browser.
