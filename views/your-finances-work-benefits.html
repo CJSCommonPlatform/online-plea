@@ -118,13 +118,27 @@
           </legend>
   
   
-          <label class="block-label" for="financial-problems-yes">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint"> Yes
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems-explanation">
+            <input type="radio" id="financial-problems-yes"  name="financial-problems" value="Yes" data-ng-model="data.financialProblems" aria-describedby="financial-problems-hint"> Yes
           </label>
           
+          
           <label class="block-label" for="financial-problems-no">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No"> No
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="data.financialProblems"> No
           </label>
+          
+          
+          <div class="panel panel-border-narrow js-hidden" id="financial-problems-explanation">
+            
+            <div class="form-group">
+              
+              <label class="form-label-bold" for="financial-problems-reason">Why would paying a fine cause you financial hardship?</label>
+              
+              <textarea class="form-control form-control-textarea" id="financial-problems-reason" name="financial-problems-reason" cols="30" rows="5"></textarea>
+              
+            </div>
+            
+          </div>
           
         
         </fieldset>
