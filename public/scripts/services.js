@@ -8,11 +8,10 @@ pleaApp.factory('PleaData', function() {
   return {
     
     data: {
-      firstName: '',
-      lastName: '',
       address: '',
       updateAddress: '',
       telephone: '',
+      nationalInsurance: '',
       yourPlea: '',
       pleadGuilty: '',
       employment: '',

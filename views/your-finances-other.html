@@ -58,9 +58,12 @@
             
             <div class="form-group">
               
-              <label class="form-label-bold" for="financial-problems-reason">Why would paying a fine cause you financial hardship?</label>
+              <label for="financial-problems-reason">
+                <span class="form-label-bold">How would paying a fine cause you financial problems?</span>
+                <span class="form-hint" id="financial-problems-reason-hint">Why do you think the court should allow you to pay your fine in instalments.</span>
+              </label>
               
-              <textarea class="form-control form-control-textarea" id="financial-problems-reason" name="financial-problems-reason" cols="30" rows="5"></textarea>
+              <textarea class="form-control form-control-textarea" id="financial-problems-reason" name="financial-problems-reason" cols="30" rows="5" aria-describedby="financial-problems-reason-hint"></textarea>
               
             </div>
             

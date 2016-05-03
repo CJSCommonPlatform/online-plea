@@ -81,6 +81,11 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'confirmPleaController'
   })
   
+  .when('/help-making-a-plea-online', {
+    templateUrl : 'help-making-a-plea-online.html',
+    controller  : 'pleaHelpController'
+  })
+  
   .otherwise({
     redirectTo: '/'
   });
