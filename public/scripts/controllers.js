@@ -164,6 +164,18 @@ pleaApp.controller('confirmPleaController', function($scope, $location, PleaData
 });
 
 
+pleaApp.controller('confirmationController', function($scope, $location, PleaData) {
+
+  $scope.data = PleaData.data;
+
+  $scope.buttonContinue = function(event) {
+    event.preventDefault();
+    $location.path('/');
+  };
+
+});
+
+
 pleaApp.controller('pleaHelpController', function($scope, $location, PleaData) {
 
   $scope.data = PleaData.data;

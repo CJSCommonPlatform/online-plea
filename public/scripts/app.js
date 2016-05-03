@@ -81,6 +81,11 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'confirmPleaController'
   })
   
+  .when('/confirmation', {
+    templateUrl : 'confirmation.html',
+    controller  : 'confirmationController'
+  })
+  
   .when('/help-making-a-plea-online', {
     templateUrl : 'help-making-a-plea-online.html',
     controller  : 'pleaHelpController'
