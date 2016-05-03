@@ -11,7 +11,7 @@ The app can be seen here: [http://onlineplea.herokuapp.com](http://onlineplea.he
 
 ## Running this app locally
 
-If you wish to run this app locally you will need [Node.js](http://nodejs.org/)
+If you wish to run this app locally you will need [Node.js](https://nodejs.org/)
 
 
 Clone this repository
@@ -30,3 +30,13 @@ Run the app
 
 
 Go to [localhost:3000](http://localhost:3000) in your browser.
+
+
+## Technologies used
+
+The technologies used in this project are
+
+- [Node](https://nodejs.org/)
+- [Express](http://expressjs.com/)
+- [SASS](http://sass-lang.com/)
+- [Angular](https://angularjs.org/)
