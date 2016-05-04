@@ -8,12 +8,12 @@
     backLink.$inject = ['$rootScope', '$location'];
 
     function backLink($rootScope, $location) {
-    	var history = [];
+    	var history = ["/"];
         
         $rootScope.$on('$routeChangeSuccess', updateHistory);
         
         return {
-          back: back;	
+          back: back	
         };
 
         function back() {
@@ -25,6 +25,7 @@
           if (history[history.length - 1] !== $location.$$path) {
             history.push($location.$$path);
           }
+          console.log(history);
         };
     }
 })();
