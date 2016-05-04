@@ -59,13 +59,13 @@ pleaApp.controller('yourDetailsController', function($scope, $location, PleaData
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/your-pleas');
+    $location.path('/your-plea');
   };
 
 });
 
 
-pleaApp.controller('yourPleasController', function($scope, $location, PleaData) {
+pleaApp.controller('yourPleaController', function($scope, $location, PleaData) {
 
   $scope.data = PleaData.data;
 

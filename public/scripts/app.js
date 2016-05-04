@@ -30,9 +30,9 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'yourDetailsController'
   })
   
-  .when('/your-pleas', {
-    templateUrl : 'your-pleas.html',
-    controller  : 'yourPleasController'
+  .when('/your-plea', {
+    templateUrl : 'your-plea.html',
+    controller  : 'yourPleaController'
   })
   
   .when('/your-employment', {
