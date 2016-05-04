@@ -53,18 +53,6 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 });
 
 
-/*pleaApp.controller('caseDetailsController', function($scope, $location, PleaData) {
-  
-  $scope.data = PleaData.data;
-
-  $scope.buttonContinue = function(event) {
-    event.preventDefault();
-    $location.path('/your-details');
-  };
-
-});*/
-
-
 pleaApp.controller('yourDetailsController', function($scope, $location, PleaData) {
   
   $scope.data = PleaData.data;

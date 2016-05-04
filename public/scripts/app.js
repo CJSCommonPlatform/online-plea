@@ -25,11 +25,6 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'yourCaseController'
   })
   
-  /*.when('/case-details', {
-    templateUrl : 'case-details.html',
-    controller  : 'caseDetailsController'
-  })*/
-  
   .when('/your-details', {
     templateUrl : 'your-details.html',
     controller  : 'yourDetailsController'
@@ -65,7 +60,6 @@ var pleaApp = angular.module('pleaApp', [
       controller  : 'yourFinancesController'
     })
 
-  
   .when('/your-expenses', {
     templateUrl : 'your-expenses.html',
     controller  : 'yourExpensesController'

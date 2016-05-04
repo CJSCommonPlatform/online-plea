@@ -143,6 +143,9 @@ pleaApp.directive('formToggle', function() {
   
 });
 
+
+// Form focus
+
 pleaApp.directive('focusMe', function($timeout, $parse) {
   return {
     //scope: true,   // optionally create a child scope
@@ -164,6 +167,9 @@ pleaApp.directive('focusMe', function($timeout, $parse) {
   };
 });
 
+
+// Scroll to item
+
 pleaApp.directive('scrollToItem', function() {                                                      
   return {                                                                                 
     restrict: 'A',                                                                       
@@ -177,6 +183,7 @@ pleaApp.directive('scrollToItem', function() {
         });                                                                              
     }                                                                                    
 }}); 
+
 
 // Form selection
 
@@ -302,6 +309,4 @@ pleaApp.directive('formSelection', function() {
   }
   
 });
-
-
 

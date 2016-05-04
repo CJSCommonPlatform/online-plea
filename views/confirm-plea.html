@@ -1,3 +1,6 @@
+<a class="link-back" href="#">Back</a>
+
+
 <h1 class="heading-xlarge">Confirm your plea</h1>
 
 
@@ -83,5 +86,45 @@
 <hr>
 
 
-<p><a class="button" href="#" role="button" data-ng-click="buttonContinue($event)">Make your plea</a></p>
+<form class="form" method="post" action="#" data-form-selection data-form-toggle novalidate>
+  
+  
+  <fieldset class="inline">
+    
+    <legend>
+      <span class="form-label-bold">Do you want to receive an email confirming your plea has been sent to the court?</span>
+    </legend>
 
+    <div class="form-group">
+
+      <label class="block-label" for="receive-email-yes" data-target="email-address">
+        <input type="radio" id="receive-email-yes" name="receive-email" value="yes"> Yes
+      </label>
+
+      <label class="block-label" for="receive-email-no">
+        <input type="radio" id="receive-email-no" name="receive-email" value="No"> No
+      </label>
+
+      <div class="panel panel-border-narrow js-hidden" id="email-address">
+        
+        <div class="form-group">
+          <label class="form-label-bold" for="email">Your email</label>
+          <input class="form-control" type="email" id="email" name="email">
+        </div>
+        
+      </div>
+
+    </div>
+
+  </fieldset>
+  
+
+  <div class="form-group">
+    <button class="button" type="submit" data-ng-click="buttonContinue($event)">Make your plea</button>
+  </div>
+  
+  
+  <p><a href="#">Back</a></p>
+
+
+</form>
