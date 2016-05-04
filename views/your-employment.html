@@ -37,34 +37,23 @@
           <legend class="visuallyhidden">Are you?</legend>
     
     
-          <label class="block-label" for="employed" data-target="receive-benefits">
+          <label class="block-label" for="employed">
             <input type="radio" id="employed" name="employment" value="Employed" data-ng-model="data.employment"> Employed
           </label>
           
           
-          <div class="panel panel-border-narrow js-hidden" id="receive-benefits">
-              
-            <fieldset class="inline">
-
-              <legend>
-                <span class="form-label-bold">Do you also receive benefits?</span>
-              </legend>
-        
-              <label class="block-label" for="receive-benefits-yes">
-                <input id="receive-benefits-yes" name="receive-benefits" value="Yes" type="radio"> Yes
-              </label>
-              
-              <label class="block-label" for="receive-benefits-no">
-                <input id="receive-benefits-no" name="receive-benefits" value="No" type="radio"> No
-              </label>
-        
-            </fieldset>
-
-          </div>
+          <label class="block-label" for="employed-with-benefits">
+            <input type="radio" id="employed-with-benefits" name="employment" value="Employed and also receiving benefits" data-ng-model="data.employment"> Employed and also receiving benefits
+          </label>
           
           
           <label class="block-label" for="self-employed">
             <input type="radio" id="self-employed" name="employment" value="Self employed" data-ng-model="data.employment"> Self&ndash;employed
+          </label>
+          
+          
+          <label class="block-label" for="self-employed-with-benefits">
+            <input type="radio" id="self-employed-with-benefits" name="employment" value="Self employed and also receiving benefits" data-ng-model="data.employment"> Self&ndash;employed and also receiving benefits
           </label>
           
           

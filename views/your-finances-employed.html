@@ -38,32 +38,49 @@
             <span class="form-label-bold">How often do you get paid?</span>
           </legend>
     
-          <label class="block-label" for="paid-weekly">
+          <label class="block-label" for="paid-weekly" data-target="weekly">
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="data.paid"> Weekly
           </label>
           
-          <label class="block-label" for="paid-fortnighly">
+            <div class="panel panel-border-narrow js-hidden" id="weekly">
+              
+              <div class="form-group">
+                <label class="form-label-bold" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="data.paid"> Fortnightly
           </label>
           
-          <label class="block-label" for="paid-monthly">
+            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-monthly" data-target="monthly">
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="data.paid"> Monthly
           </label>
           
-          <label class="block-label" for="paid-other">
-            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="data.paid"> Other
-          </label>
+            <div class="panel panel-border-narrow js-hidden" id="monthly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"></span>
+              </div>
+              
+            </div>
     
     
         </fieldset>
       
       
-      </div>
-      
-      
-      <div class="form-group">
-        <label class="form-label-bold" for="take-home-pay">What is your take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-        <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="take-home-pay" name="take-home-pay"></span>
       </div>
       
       

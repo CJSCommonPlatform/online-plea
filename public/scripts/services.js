@@ -9,7 +9,7 @@ pleaApp.factory('PleaData', function() {
     
     data: {
       address: '',
-      updateAddress: '',
+      updateDetails: '',
       telephone: '',
       nationalInsurance: '',
       yourPlea: '',
