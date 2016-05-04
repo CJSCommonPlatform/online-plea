@@ -13,9 +13,13 @@ pleaApp.controller('mainController', function($scope, $location) {
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
+pleaApp.controller('yourCaseController', function($rootScope, $scope, $location, PleaData) {
 
   $scope.data = PleaData.data;
+
+  $scope.backButton = function() {
+    $rootScope.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -34,7 +38,7 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 
     $scope.postcodeAriaDescribedBy = function() {
       return $scope.myform.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
-    };
+    };  
 
     $scope.myform.$submitted = true;
 
@@ -175,3 +179,17 @@ pleaApp.controller('pleaHelpController', function($scope, $location, PleaData) {
 
 });
 
+pleaApp.run(function ($rootScope, $location) {
+
+    var history = [];
+
+    $rootScope.$on('$routeChangeSuccess', function() {
+        history.push($location.$$path);
+    });
+
+    $rootScope.back = function () {
+        var prevUrl = history.length > 1 ? history.splice(-2)[0] : "/";
+        return $location.path(prevUrl);
+    };
+
+});
