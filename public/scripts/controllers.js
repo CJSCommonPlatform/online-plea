@@ -3,19 +3,24 @@
 // ==========================================================================
 
 
-pleaApp.controller('mainController', function($scope, $location) {
+pleaApp.controller('mainController', function($scope, $location, backLink) {
   
   $scope.buttonContinue = function(event) {
     event.preventDefault();
+    backLink.back();
     $location.path('/your-case');
   };
 
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
+pleaApp.controller('yourCaseController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -34,7 +39,7 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 
     $scope.postcodeAriaDescribedBy = function() {
       return $scope.myform.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
-    };
+    };  
 
     $scope.myform.$submitted = true;
 
@@ -53,9 +58,13 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData) {
 });
 
 
-pleaApp.controller('yourDetailsController', function($scope, $location, PleaData) {
+pleaApp.controller('yourDetailsController', function($scope, $location, PleaData, backLink) {
   
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -65,9 +74,13 @@ pleaApp.controller('yourDetailsController', function($scope, $location, PleaData
 });
 
 
-pleaApp.controller('yourPleaController', function($scope, $location, PleaData) {
+pleaApp.controller('yourPleaController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -77,9 +90,13 @@ pleaApp.controller('yourPleaController', function($scope, $location, PleaData) {
 });
 
 
-pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData) {
+pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) { 
        
@@ -104,9 +121,13 @@ pleaApp.controller('yourEmploymentController', function($scope, $location, PleaD
 });
 
 
-pleaApp.controller('yourFinancesController', function($scope, $location, PleaData) {
+pleaApp.controller('yourFinancesController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -116,9 +137,13 @@ pleaApp.controller('yourFinancesController', function($scope, $location, PleaDat
 });
 
 
-pleaApp.controller('yourExpensesController', function($scope, $location, PleaData) {
+pleaApp.controller('yourExpensesController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -128,9 +153,13 @@ pleaApp.controller('yourExpensesController', function($scope, $location, PleaDat
 });
 
 
-pleaApp.controller('otherExpensesController', function($scope, $location, PleaData) {
+pleaApp.controller('otherExpensesController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -140,9 +169,13 @@ pleaApp.controller('otherExpensesController', function($scope, $location, PleaDa
 });
 
 
-pleaApp.controller('confirmPleaController', function($scope, $location, PleaData) {
+pleaApp.controller('confirmPleaController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -152,9 +185,13 @@ pleaApp.controller('confirmPleaController', function($scope, $location, PleaData
 });
 
 
-pleaApp.controller('confirmationController', function($scope, $location, PleaData) {
+pleaApp.controller('confirmationController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
@@ -164,9 +201,13 @@ pleaApp.controller('confirmationController', function($scope, $location, PleaDat
 });
 
 
-pleaApp.controller('pleaHelpController', function($scope, $location, PleaData) {
+pleaApp.controller('pleaHelpController', function($scope, $location, PleaData, backLink) {
 
   $scope.data = PleaData.data;
+
+  $scope.backLink = function() {
+    backLink.back();
+  };
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
