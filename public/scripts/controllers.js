@@ -130,8 +130,21 @@ pleaApp.controller('yourFinancesController', function($scope, $location, PleaDat
   };
 
   $scope.buttonContinue = function(event) {
+    
     event.preventDefault();
-    $location.path('/your-expenses');
+    
+    // If financial problems, goto expenses route
+    
+    if($scope.data.financialProblems === 'Yes') {
+      
+      $location.path('/your-expenses');
+      
+    } else {
+      
+      $location.path('/confirm-plea');
+      
+    }
+    
   };
 
 });
