@@ -10,19 +10,22 @@ $module: 'related';
   border-top: em(10) solid $govuk-blue;
   margin-top: em(30);
   padding-top: em(5);
+  
+  &-section {
+    margin-bottom: em(20);
+  }
     
   &-title {
     @extend .heading-medium;
-    margin-top: .3em;
-    margin-bottom: .5em;
+    margin-top: em(7);
+    margin-bottom: em(12);
   }
   
   &-links {
-    margin-top: em(5);
-    margin-bottom: em(20);
+    overflow: hidden;
     
     li {
-      margin-bottom: em(5);
+      margin-bottom: em(12, 16);
     }
     
   }

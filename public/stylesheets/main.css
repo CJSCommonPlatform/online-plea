@@ -2269,18 +2269,21 @@ html {
   padding-top: 0.2631578947em;
 }
 
-.related-title {
-  margin-top: .3em;
-  margin-bottom: .5em;
-}
-
-.related-links {
-  margin-top: 0.2631578947em;
+.related-section {
   margin-bottom: 1.0526315789em;
 }
 
+.related-title {
+  margin-top: 0.3684210526em;
+  margin-bottom: 0.6315789474em;
+}
+
+.related-links {
+  overflow: hidden;
+}
+
 .related-links li {
-  margin-bottom: 0.2631578947em;
+  margin-bottom: 0.75em;
 }
 
 .form-control-textarea {
