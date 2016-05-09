@@ -20,6 +20,9 @@ var pleaApp = angular.module('pleaApp', [
   
   $stateProvider
   
+  
+    // FORWARDING
+  
     .state('index', {
       url: '/',
       templateUrl : 'home.html',
@@ -56,9 +59,7 @@ var pleaApp = angular.module('pleaApp', [
         forwardTo: 'employment'
       }
     })
-
-
-
+    
 
     // EMPLOYMENT
 
@@ -105,20 +106,26 @@ var pleaApp = angular.module('pleaApp', [
     })
 
 
-
+    // EXPENSES
+  
+    .state('employment-employed-finances-expenses-household', {
+      url: '/employment/employed/finances/expenses/household',
+      templateUrl : 'household-expenses.html',
+      controller  : 'HouseholdExpensesController'
+    })
+    
+    
+    .state('employment-employed-finances-expenses-other', {
+      url: '/employment/employed/finances/expenses/other',
+      templateUrl : 'other-expenses.html',
+      controller  : 'OtherExpensesController'
+    })
   
   
   
   
-
-
   
-
-  .state('your-expenses', {
-    url: '/your-expenses',
-    templateUrl : 'your-expenses.html',
-    controller  : 'yourExpensesController'
-  })
+  
   
   .state('your-expenses/other', {
     url: '/your-expenses/other',

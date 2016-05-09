@@ -13,6 +13,19 @@
        
       event.preventDefault();
       
+      
+      switch ($scope.data.financialProblems) {
+          
+          case 'Yes':
+            $state.go('employment-employed-finances-expenses-household');
+            break;
+            
+          case 'No':
+            $state.go('confirm-plea');
+            break;
+        
+        }
+      
     };
 
   }  
