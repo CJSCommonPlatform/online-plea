@@ -67,7 +67,7 @@ var pleaApp = angular.module('pleaApp', [
     .state('employment', {
       url: '/employment',
       templateUrl : 'your-employment.html',
-      controller: 'Forward2Controller',
+      controller: 'EmploymentController',
       params: {
         goToStates: [
           {

@@ -5,16 +5,12 @@
   angular.module('pleaApp')
     .controller('Forward2Controller', Forward2Controller);
     
-  function Forward2Controller($scope, $state, $stateParams, employmentStatus) {
+  function Forward2Controller($scope, $state, $stateParams) {
     //var vm = this;
     
-    $scope.buttonContinue = buttonContinue;
-
-    $scope.employmentStatus = employmentStatus;
+    $scope.stateGo = stateGo;
     
-    function buttonContinue(event) {
-      event.preventDefault();
-
+    function stateGo() {
       var goToStates = $stateParams.goToStates;
 
       for (var i = 0; i < goToStates.length; i++) {
