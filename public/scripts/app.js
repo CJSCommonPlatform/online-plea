@@ -87,11 +87,23 @@ var pleaApp = angular.module('pleaApp', [
         }
       }
     })
+
+    .state('employment.employed-receiving-benefits', {
+        abstract: true,
+        url: '/employed-receiving-benefits',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
     
-    .state('employment-employed-receiving-benefits-finances', {
-      url: '/employment/employed-receiving-benefits/finances',
-      templateUrl : 'employed-receiving-benefits-finances.html',
-      controller  : 'EmployedBenefitsFinancesController'
+    .state('employment.employed-receiving-benefits.finances', {
+      url: '/finances',
+      views: {
+        "@": {
+          templateUrl : 'employed-receiving-benefits-finances.html',
+          controller  : 'EmployedBenefitsFinancesController'
+        }
+      }      
     })
     
     .state('employment-self-employed-finances', {

@@ -22,7 +22,7 @@
             break;
             
           case employmentStatus.EMPLOYED_BENEFITS:
-            $state.go('employment-employed-receiving-benefits-finances');
+            $state.go('employment.employed-receiving-benefits.finances');
             break;
             
           case employmentStatus.SELF_EMPLOYED:
