@@ -13,7 +13,9 @@
        
       event.preventDefault();
       
-      $state.go('employment-employed-finances-expenses-other');
+      var forwardTo = $state.current.name.replace("household", "other");
+      
+      $state.go(forwardTo);
     };
 
   }  

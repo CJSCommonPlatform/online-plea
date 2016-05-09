@@ -7,6 +7,7 @@
 
 
 var pleaApp = angular.module('pleaApp', [
+  'ngStorage',
   'ngRoute', 
   'ngSanitize',
   'ui.router'
@@ -120,8 +121,30 @@ var pleaApp = angular.module('pleaApp', [
       templateUrl : 'other-expenses.html',
       controller  : 'OtherExpensesController'
     })
+    
+    .state('employment-employed-receiving-benefits-finances-expenses-household', {
+      url: '/employment/employed-receiving-benefits/finances/expenses/household',
+      templateUrl : 'household-expenses.html',
+      controller  : 'HouseholdExpensesController'
+    })
+    
+    .state('employment-employed-receiving-benefits-finances-expenses-other', {
+      url: '/employment/employed-receiving-benefits/finances/expenses/other',
+      templateUrl : 'other-expenses.html',
+      controller  : 'OtherExpensesController'
+    })
   
-  
+    // BENEFITS
+    
+    .state('employment-employed-receiving-benefits-finances-benefits', {
+      url: '/employment/employed-receiving-benefits/finances/benefits',
+      templateUrl : 'benefits.html',
+      controller  : 'BenefitsController'
+    })
+    
+    
+    
+    
   
   
   
