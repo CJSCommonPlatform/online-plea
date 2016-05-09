@@ -8,119 +8,141 @@
 
 var pleaApp = angular.module('pleaApp', [
   'ngRoute', 
-  'ngSanitize'
+  'ngSanitize',
+  'ui.router'
 ])
 
-.config(function($routeProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
   
-  $routeProvider
   
-  .when('/', {
-    templateUrl : 'home.html',
-    controller  : 'mainController'
-  })
+  $urlRouterProvider.otherwise('/');
   
-  .when('/your-case', {
-    templateUrl : 'your-case.html',
-    controller  : 'yourCaseController'
-  })
   
-  .when('/your-details', {
-    templateUrl : 'your-details.html',
-    controller  : 'yourDetailsController'
-  })
+  $stateProvider
   
-  .when('/your-plea', {
-    templateUrl : 'your-plea.html',
-    controller  : 'yourPleaController'
-  })
-  
-  .when('/your-employment', {
-    templateUrl : 'your-employment.html',
-    controller  : 'yourEmploymentController'
-  })
-  
-  .when('/your-finances/', {
-    templateUrl : 'your-finances.html',
-    controller  : 'yourFinancesController'
-  })
+    .state('index', {
+      url: '/',
+      templateUrl : 'home.html',
+      controller  : 'ForwardController',
+      controllerAs : 'forward',
+      params: {
+        forwardTo: 'your-case'
+      }
+    })
+    
+    .state('your-case', {
+      url: '/your-case',
+      templateUrl : 'your-case.html',
+      controller: 'ForwardController',
+      params: {
+        forwardTo: 'your-details'
+      }
+    })
+    
+    .state('your-details', {
+      url: '/your-details',
+      templateUrl : 'your-details.html',
+      controller: 'ForwardController',
+      params: {
+        forwardTo: 'your-plea'
+      }
+    })
+    
+    .state('your-plea', {
+      url: '/your-plea',
+      templateUrl : 'your-plea.html',
+      controller: 'ForwardController',
+      params: {
+        forwardTo: 'employment'
+      }
+    })
 
 
-  // YOUR EMPLOYMENT
 
 
-  // Employed
-  .when('/your-finances/employed/', {
-    templateUrl : 'employed.html',
-    controller  : 'yourFinancesController'
-  })
+    // EMPLOYMENT
 
-  // Employed and also receiving benefits
-  .when('/your-finances/employed-receiving-benefits/', {
-    templateUrl : 'employed-receiving-benefits.html',
-    controller  : 'yourFinancesController'
-  })
-  
-    // Your benefits (employed)
-    .when('/your-finances/employed-receiving-benefits/your-benefits/', {
-      templateUrl : 'your-benefits-employed.html',
-      controller  : 'yourFinancesController'
+    .state('employment', {
+      url: '/employment',
+      templateUrl : 'your-employment.html',
+      controller: 'EmploymentController'
     })
   
+    .state('employment-employed-finances', {
+      url: '/employment/employed/finances',
+      templateUrl : 'employed-finances.html',
+      controller  : 'EmployedFinancesController'
+    })
+    
+    .state('employment-employed-receiving-benefits-finances', {
+      url: '/employment/employed-receiving-benefits/finances',
+      templateUrl : 'employed-receiving-benefits-finances.html',
+      controller  : 'EmployedBenefitsFinancesController'
+    })
+    
+    .state('employment-self-employed-finances', {
+      url: '/employment/self-employed/finances',
+      templateUrl : 'self-employed-finances.html',
+      controller  : 'SelfEmployedFinancesController'
+    })
+    
+    .state('employment-self-employed-receiving-benefits-finances', {
+      url: '/employment/self-employed-receiving-benefits/finances',
+      templateUrl : 'self-employed-receiving-benefits-finances.html',
+      controller  : 'SelfEmployedBenefitsFinancesController'
+    })
   
-  // Self employed
-  .when('/your-finances/self-employed/', {
-    templateUrl : 'self-employed.html',
-    controller  : 'yourFinancesController'
-  })
-  
-  // Self employed receiving benefits
-  .when('/your-finances/self-employed-receiving-benefits/', {
-    templateUrl : 'self-employed-receiving-benefits.html',
-    controller  : 'yourFinancesController'
-  })
+    .state('employment-work-benefits-finances', {
+      url: '/employment/work-benefits/finances',
+      templateUrl : 'work-benefits-finances.html',
+      controller  : 'WorkBenefitsFinancesController'
+    })
 
-  // Work benefits
-  .when('/your-finances/work-benefits/', {
-    templateUrl : 'work-benefits.html',
-    controller  : 'yourFinancesController'
-  })
+    .state('employment-other-finances', {
+      url: '/employment/other/finances',
+      templateUrl : 'other-finances.html',
+      controller  : 'OtherFinancesController'
+    })
+
+
+
   
-  // Other
-  .when('/your-finances/other/', {
-    templateUrl : 'other.html',
-    controller  : 'yourFinancesController'
-  })
+  
+  
   
 
-  .when('/your-expenses', {
+
+  
+
+  .state('your-expenses', {
+    url: '/your-expenses',
     templateUrl : 'your-expenses.html',
     controller  : 'yourExpensesController'
   })
   
-  .when('/your-expenses/other', {
+  .state('your-expenses/other', {
+    url: '/your-expenses/other',
     templateUrl : 'other-expenses.html',
     controller  : 'otherExpensesController'
   })
   
-  .when('/confirm-plea', {
+  .state('confirm-plea', {
+    url: '/confirm-plea',
     templateUrl : 'confirm-plea.html',
     controller  : 'confirmPleaController'
   })
   
-  .when('/confirmation', {
+  .state('/confirmation', {
+    url: '/confirmation',
     templateUrl : 'confirmation.html',
     controller  : 'confirmationController'
   })
   
-  .when('/help-making-a-plea-online', {
+  .state('help-making-a-plea-online', {
+    url: '/help-making-a-plea-online',
     templateUrl : 'help-making-a-plea-online.html',
     controller  : 'pleaHelpController'
   })
-  
-  .otherwise({
-    redirectTo: '/'
-  });
   
 });
 

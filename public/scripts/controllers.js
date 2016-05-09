@@ -3,18 +3,18 @@
 // ==========================================================================
 
 
-pleaApp.controller('mainController', function($scope, $location, backLink) {
+pleaApp.controller('mainController', function($scope, $state, backLink) {
   
   $scope.buttonContinue = function(event) {
     event.preventDefault();
     backLink.back();
-    $location.path('/your-case');
+    $state.go('your-case');
   };
 
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourCaseController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -51,14 +51,14 @@ pleaApp.controller('yourCaseController', function($scope, $location, PleaData, b
     }
 
     if ($scope.myform.$valid) {
-      $location.path('/your-details');
+      $state.go('your-details');
     }    
   };
   
 });
 
 
-pleaApp.controller('yourDetailsController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourDetailsController', function($scope, $state, PleaData, backLink) {
   
   $scope.data = PleaData.data;
 
@@ -68,13 +68,13 @@ pleaApp.controller('yourDetailsController', function($scope, $location, PleaData
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/your-plea');
+    $state.go('your-plea');
   };
 
 });
 
 
-pleaApp.controller('yourPleaController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourPleaController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -84,13 +84,13 @@ pleaApp.controller('yourPleaController', function($scope, $location, PleaData, b
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/your-employment');
+    $state.go('your-employment');
   };
 
 });
 
 
-pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData, backLink, employmentStatus) {
+pleaApp.controller('yourEmploymentController', function($scope, $state, PleaData, backLink, employmentStatus) {
 
   $scope.data = PleaData.data;
 
@@ -107,27 +107,27 @@ pleaApp.controller('yourEmploymentController', function($scope, $location, PleaD
       switch ($scope.data.employment) {
         
         case employmentStatus.EMPLOYED:
-          $location.path('/your-finances/employed');
+          $state.go('your-finances/employed');
           break;
           
         case employmentStatus.EMPLOYED_BENEFITS:
-          $location.path('/your-finances/employed-receiving-benefits');
+          $state.go('your-finances/employed-receiving-benefits');
           break;
           
         case employmentStatus.SELF_EMPLOYED:
-          $location.path('/your-finances/self-employed');
+          $state.go('your-finances/self-employed');
           break;
           
         case employmentStatus.SELF_EMPLOYED_BENEFITS:
-          $location.path('/your-finances/self-employed-receiving-benefits');
+          $state.go('your-finances/self-employed-receiving-benefits');
           break;
         
         case employmentStatus.WORK_BENEFITS:
-          $location.path('/your-finances/work-benefits');
+          $state.go('your-finances/work-benefits');
           break;
           
         case employmentStatus.OTHER:
-          $location.path('/your-finances/other');
+          $state.go('your-finances/other');
           break;
       
       }
@@ -137,7 +137,7 @@ pleaApp.controller('yourEmploymentController', function($scope, $location, PleaD
 });
 
 
-pleaApp.controller('yourFinancesController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourFinancesController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -154,11 +154,11 @@ pleaApp.controller('yourFinancesController', function($scope, $location, PleaDat
     
     if($scope.data.financialProblems === 'Yes') {
       
-      $location.path('/your-expenses');
+      $state.go('your-expenses');
       
     } else {
       
-      $location.path('/confirm-plea');
+      $state.go('confirm-plea');
       
     }
     
@@ -167,7 +167,7 @@ pleaApp.controller('yourFinancesController', function($scope, $location, PleaDat
 });
 
 
-pleaApp.controller('yourExpensesController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourExpensesController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -177,13 +177,13 @@ pleaApp.controller('yourExpensesController', function($scope, $location, PleaDat
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/your-expenses/other');
+    $state.go('/your-expenses/other');
   };
 
 });
 
 
-pleaApp.controller('otherExpensesController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('otherExpensesController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -193,13 +193,13 @@ pleaApp.controller('otherExpensesController', function($scope, $location, PleaDa
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/confirm-plea');
+    $state.go('confirm-plea');
   };
 
 });
 
 
-pleaApp.controller('confirmPleaController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('confirmPleaController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -209,13 +209,13 @@ pleaApp.controller('confirmPleaController', function($scope, $location, PleaData
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/confirmation');
+    $state.go('confirmation');
   };
 
 });
 
 
-pleaApp.controller('confirmationController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('confirmationController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -225,13 +225,13 @@ pleaApp.controller('confirmationController', function($scope, $location, PleaDat
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/');
+    $state.go('/');
   };
 
 });
 
 
-pleaApp.controller('pleaHelpController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('pleaHelpController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;
 
@@ -241,7 +241,7 @@ pleaApp.controller('pleaHelpController', function($scope, $location, PleaData, b
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
-    $location.path('/');
+    $state.go('/');
   };
 
 });
