@@ -67,7 +67,27 @@ var pleaApp = angular.module('pleaApp', [
     .state('employment', {
       url: '/employment',
       templateUrl : 'your-employment.html',
-      controller: 'EmploymentController'
+      controller: 'Forward2Controller',
+      params: {
+        goToStates: [
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'EMPLOYED'
+            },
+            stateName: 'employment.employed.finances'
+          },
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'EMPLOYED_BENEFITS'
+            },
+            stateName: 'employment.employed-receiving-benefits.finances'
+          }
+        ]
+      }
     })
 
     .state('employment.employed', {
