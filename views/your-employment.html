@@ -7,7 +7,7 @@
   <div class="column-two-thirds">
   
 
-    <h1 class="heading-xlarge">Your employment status</h1>
+    <h1 class="heading-xlarge">Your employment</h1>
     
     
     <div class="panel panel-border-wide">
@@ -22,10 +22,10 @@
     </div>
     
     
-    <h2 class="heading-large">Are you?</h2>
+    <h2 class="heading-medium">Are you?</h2>
     
     
-    <form class="form" method="post" action="#" data-form-selection data-form-toggle novalidate>
+    <form class="form" method="post" action="" data-form-selection data-form-toggle novalidate>
     
     
       <div class="form-group">
@@ -38,32 +38,32 @@
     
     
           <label class="block-label" for="employed">
-            <input type="radio" id="employed" name="employment" value="Employed" data-ng-model="data.employment"> Employed
+            <input type="radio" id="employed" name="employment" value="{{employmentStatus.EMPLOYED}}" data-ng-model="data.employment"> Employed
           </label>
           
           
           <label class="block-label" for="employed-with-benefits">
-            <input type="radio" id="employed-with-benefits" name="employment" value="Employed and also receiving benefits" data-ng-model="data.employment"> Employed and also receiving benefits
+            <input type="radio" id="employed-with-benefits" name="employment" value="{{employmentStatus.EMPLOYED_BENEFITS}}" data-ng-model="data.employment"> Employed and also receiving benefits
           </label>
           
           
           <label class="block-label" for="self-employed">
-            <input type="radio" id="self-employed" name="employment" value="Self employed" data-ng-model="data.employment"> Self&ndash;employed
+            <input type="radio" id="self-employed" name="employment" value="{{employmentStatus.SELF_EMPLOYED}}" data-ng-model="data.employment"> Self&ndash;employed
           </label>
           
           
           <label class="block-label" for="self-employed-with-benefits">
-            <input type="radio" id="self-employed-with-benefits" name="employment" value="Self employed and also receiving benefits" data-ng-model="data.employment"> Self&ndash;employed and also receiving benefits
+            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{employmentStatus.SELF_EMPLOYED_BENEFITS}}" data-ng-model="data.employment"> Self&ndash;employed and also receiving benefits
           </label>
           
           
           <label class="block-label" for="work-benefits">
-            <input type="radio" id="work-benefits" name="employment" value="Receiving out of work benefits" data-ng-model="data.employment"> Receiving out of work benefits
+            <input type="radio" id="work-benefits" name="employment" value="{{employmentStatus.WORK_BENEFITS}}" data-ng-model="data.employment"> Receiving out of work benefits
           </label>
           
           
           <label class="block-label" for="other" data-target="provide-details">
-            <input type="radio" id="other" name="employment" value="Other" data-ng-model="data.employment"> Other
+            <input type="radio" id="other" name="employment" value="{{employmentStatus.OTHER}}" data-ng-model="data.employment"> Other
           </label>
           
           

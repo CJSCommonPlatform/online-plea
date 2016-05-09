@@ -45,20 +45,53 @@ var pleaApp = angular.module('pleaApp', [
     controller  : 'yourFinancesController'
   })
 
-    .when('/your-finances/employed/', {
-      templateUrl : 'your-finances-employed.html',
+
+  // YOUR EMPLOYMENT
+
+
+  // Employed
+  .when('/your-finances/employed/', {
+    templateUrl : 'employed.html',
+    controller  : 'yourFinancesController'
+  })
+
+  // Employed and also receiving benefits
+  .when('/your-finances/employed-receiving-benefits/', {
+    templateUrl : 'employed-receiving-benefits.html',
+    controller  : 'yourFinancesController'
+  })
+  
+    // Your benefits (employed)
+    .when('/your-finances/employed-receiving-benefits/your-benefits/', {
+      templateUrl : 'your-benefits-employed.html',
       controller  : 'yourFinancesController'
     })
-    
-    .when('/your-finances/work-benefits/', {
-      templateUrl : 'your-finances-work-benefits.html',
-      controller  : 'yourFinancesController'
-    })
-    
-    .when('/your-finances/other/', {
-      templateUrl : 'your-finances-other.html',
-      controller  : 'yourFinancesController'
-    })
+  
+  
+  // Self employed
+  .when('/your-finances/self-employed/', {
+    templateUrl : 'self-employed.html',
+    controller  : 'yourFinancesController'
+  })
+  
+  // Self employed receiving benefits
+  .when('/your-finances/self-employed-receiving-benefits/', {
+    templateUrl : 'self-employed-receiving-benefits.html',
+    controller  : 'yourFinancesController'
+  })
+
+  // Work benefits
+  .when('/your-finances/work-benefits/', {
+    templateUrl : 'work-benefits.html',
+    controller  : 'yourFinancesController'
+  })
+  
+  // Other
+  .when('/your-finances/other/', {
+    templateUrl : 'other.html',
+    controller  : 'yourFinancesController'
+  })
+  
 
   .when('/your-expenses', {
     templateUrl : 'your-expenses.html',

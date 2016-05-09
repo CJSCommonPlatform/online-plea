@@ -90,31 +90,47 @@ pleaApp.controller('yourPleaController', function($scope, $location, PleaData, b
 });
 
 
-pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData, backLink) {
+pleaApp.controller('yourEmploymentController', function($scope, $location, PleaData, backLink, employmentStatus) {
 
   $scope.data = PleaData.data;
 
   $scope.backLink = function() {
     backLink.back();
   };
+  
+  $scope.employmentStatus = employmentStatus;
 
   $scope.buttonContinue = function(event) { 
        
     event.preventDefault();
-    
-    if($scope.data.employment === 'Receiving out of work benefits') {
       
-      $location.path('/your-finances/work-benefits');
+      switch ($scope.data.employment) {
+        
+        case employmentStatus.EMPLOYED:
+          $location.path('/your-finances/employed');
+          break;
+          
+        case employmentStatus.EMPLOYED_BENEFITS:
+          $location.path('/your-finances/employed-receiving-benefits');
+          break;
+          
+        case employmentStatus.SELF_EMPLOYED:
+          $location.path('/your-finances/self-employed');
+          break;
+          
+        case employmentStatus.SELF_EMPLOYED_BENEFITS:
+          $location.path('/your-finances/self-employed-receiving-benefits');
+          break;
+        
+        case employmentStatus.WORK_BENEFITS:
+          $location.path('/your-finances/work-benefits');
+          break;
+          
+        case employmentStatus.OTHER:
+          $location.path('/your-finances/other');
+          break;
       
-    } else if ($scope.data.employment === 'Other') {
-      
-      $location.path('/your-finances/other');
-      
-    } else {
-      
-      $location.path('/your-finances/employed');
-      
-    }
+      }
     
   };
 
@@ -132,6 +148,7 @@ pleaApp.controller('yourFinancesController', function($scope, $location, PleaDat
   $scope.buttonContinue = function(event) {
     
     event.preventDefault();
+    
     
     // If financial problems, goto expenses route
     

@@ -1,0 +1,126 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+  
+
+    <h1 class="heading-xlarge">Your benefits</h1>
+    
+    
+    <form class="form" method="post" action="#" data-form-selection data-form-toggle novalidate>
+      
+      
+      <h3 class="heading-medium">Which benefits do you receive?</h3>
+      
+      
+      <div class="form-group">
+    
+    
+        <fieldset class="stuff">
+    
+    
+          <legend class="visuallyhidden">What benefit do you receive?</legend>
+    
+    
+          <label class="block-label" for="contributory-support-allowance">
+            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Suport Allowance" data-ng-model="data.benefit"> Contributory Employment and Suport Allowance
+          </label>
+          
+          
+          <label class="block-label" for="income-support-allowance">
+            <input type="radio" id="income-support-allowance" name="benefit" value="Income&ndash;related Employment and Support Allowance" data-ng-model="data.benefit"> Income&ndash;related Employment and Support Allowance
+          </label>
+          
+          
+          <label class="block-label" for="income-support">
+            <input type="radio" id="income-support" name="benefit" value="Income Support" data-ng-model="data.benefit"> Income Support
+          </label>
+          
+          
+          <label class="block-label" for="universal-credit">
+            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" data-ng-model="data.benefit"> Universal Credit
+          </label>
+          
+          
+          <label class="block-label" for="other">
+            <input type="radio" id="other" name="benefit" value="Other" data-ng-model="data.benefit"> Other
+          </label>
+          
+    
+        </fieldset>
+      
+      
+      </div>
+      
+      
+      <h3 class="heading-medium">How often is your benefit paid?</h3>
+      
+      
+      <div class="form-group">
+      
+      
+        <fieldset>
+  
+          <legend class="visuallyhidden">How often is your benefit paid?</legend>
+    
+          <label class="block-label" for="paid-weekly" data-target="weekly">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="data.paid"> Weekly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="weekly">
+              
+              <div class="form-group">
+                <label class="form-label-bold" for="weekly-benefit-pay">How much is your weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-benefit-pay" name="weekly-benefit-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="data.paid"> Fortnightly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="fortnightly-benefit-pay">How much is your fortnightly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-benefit-pay" name="fortnightly-beneift-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-monthly" data-target="monthly">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="data.paid"> Monthly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="monthly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="monthly-benefit-pay">How much is your monthly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-benefit-pay" name="monthly-benefit-pay"></span>
+              </div>
+              
+            </div>
+    
+    
+        </fieldset>
+      
+      
+      </div>
+      
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+      </div>
+      
+    
+    </form>
+  
+  
+  </div>
+
+
+</div>
