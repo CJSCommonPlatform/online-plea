@@ -18,7 +18,7 @@
         switch ($scope.data.employment) {
           
           case employmentStatus.EMPLOYED:
-            $state.go('employment-employed-finances');
+            $state.go('employment.employed.finances');
             break;
             
           case employmentStatus.EMPLOYED_BENEFITS:

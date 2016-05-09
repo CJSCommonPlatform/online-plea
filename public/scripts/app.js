@@ -69,11 +69,23 @@ var pleaApp = angular.module('pleaApp', [
       templateUrl : 'your-employment.html',
       controller: 'EmploymentController'
     })
-  
-    .state('employment-employed-finances', {
-      url: '/employment/employed/finances',
-      templateUrl : 'employed-finances.html',
-      controller  : 'EmployedFinancesController'
+
+    .state('employment.employed', {
+        abstract: true,
+        url: '/employed',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
+
+    .state('employment.employed.finances', {
+      url: '/finances',
+      views : {
+        "@" : { // here we are using absolute name targeting
+          templateUrl: "employed-finances.html",
+          controller: "EmployedFinancesController" 
+        }
+      }
     })
     
     .state('employment-employed-receiving-benefits-finances', {
