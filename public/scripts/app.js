@@ -173,6 +173,26 @@ var pleaApp = angular.module('pleaApp', [
           templateUrl : 'self-employed-finances.html',
           controller  : 'SelfEmployedFinancesController'  
         }
+      },
+      params: {
+        goToStates2: [
+          {
+            vmPropertyName: 'data.financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'YES'
+            },
+            stateName: 'employment.self-employed.finances.expenses.household'
+          },
+          {
+            vmPropertyName: 'data.financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'NO'
+            },
+            stateName: 'confirm-plea'
+          }
+        ]
       }
     })
     
@@ -212,7 +232,7 @@ var pleaApp = angular.module('pleaApp', [
       }
     })
     
-     .state('employment.other', {
+    .state('employment.other', {
         abstract: true,
         url: '/other',
         // Note: abstract still needs a ui-view for its children to populate.
@@ -250,6 +270,34 @@ var pleaApp = angular.module('pleaApp', [
       url: '/employment/employed-receiving-benefits/finances/expenses/household',
       templateUrl : 'household-expenses.html',
       controller  : 'HouseholdExpensesController'
+    })
+
+    .state('employment.self-employed.finances.expenses', {
+        abstract: true,
+        url: '/expenses',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
+
+    .state('employment.self-employed.finances.expenses.household', {
+      url: '/household',
+      views: {
+        '@' : {
+          templateUrl : 'household-expenses.html',
+          controller  : 'HouseholdExpensesController'
+        }
+      }      
+    })
+
+    .state('employment.self-employed.finances.expenses.other', {
+      url: '/other',
+      views: {
+        '@' : {
+          templateUrl : 'other-expenses.html',
+          controller  : 'OtherExpensesController'
+        }
+      }      
     })
     
     .state('employment-employed-receiving-benefits-finances-expenses-other', {

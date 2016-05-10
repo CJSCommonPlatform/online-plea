@@ -15,7 +15,7 @@
     
     $scope.buttonContinue = function(event) {
       event.preventDefault();
-      $scope.stateGo();
+      $scope.stateGo($stateParams.goToStates);
     };
 
   }

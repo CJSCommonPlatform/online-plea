@@ -13,7 +13,11 @@
        
       event.preventDefault();
       
-      var forwardTo = $state.current.name.replace("household", "other");
+      var forwardTo = $state.$current.parent.toString() + '.other';
+      
+      if (forwardTo === '.other') {
+        forwardTo = $state.current.name.replace("household", "other");
+      }
       
       $state.go(forwardTo);
     };

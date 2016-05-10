@@ -13,6 +13,9 @@
        
       event.preventDefault();
       
+      if ($scope.data === undefined) {
+        return;
+      }
       
       switch ($scope.data.financialProblems) {
           

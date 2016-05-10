@@ -5,14 +5,12 @@
   angular.module('pleaApp')
     .controller('Forward2Controller', Forward2Controller);
     
-  function Forward2Controller($scope, $state, $stateParams) {
+  function Forward2Controller($scope, $state) {
     //var vm = this;
     
     $scope.stateGo = stateGo;
     
-    function stateGo() {
-      var goToStates = $stateParams.goToStates;
-
+    function stateGo(goToStates) {
       for (var i = 0; i < goToStates.length; i++) {
         var goToState = goToStates[i];
         var propertyValue = _.get($scope, goToState.vmPropertyName);
