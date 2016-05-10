@@ -5,7 +5,7 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
     
-  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData'];  
+  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData'];
     
   function YourCaseController($scope, $state, $sessionStorage, PleaData) {
     $scope.data = PleaData.data;
