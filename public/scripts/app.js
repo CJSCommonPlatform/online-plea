@@ -213,6 +213,64 @@ var pleaApp = angular.module('pleaApp', [
         }
       }
     })
+
+    .state('employment.self-employed-receiving-benefits.finances.expenses', {
+        abstract: true,
+        url: '/expenses',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
+
+    .state('employment.self-employed-receiving-benefits.finances.expenses.household', {
+      url: '/household',
+      views: {
+        '@': {
+          templateUrl : 'household-expenses.html',
+          controller  : 'HouseholdExpensesController'
+        }
+      }
+    })
+
+    .state('employment.self-employed-receiving-benefits.finances.expenses.other', {
+      url: '/other',
+      views: {
+        '@': {
+          templateUrl : 'other-expenses.html',
+          controller  : 'OtherExpensesController'
+        }
+      }
+    })
+
+    .state('employment.self-employed-receiving-benefits.finances.benefits', {
+      url: '/benefits',
+      views: {
+        '@': {
+          templateUrl : 'benefits.html',
+          controller  : 'BenefitsController'
+        }
+      },
+      params: {
+        goToStates3: [
+          {
+            vmPropertyName: 'financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'YES'
+            },
+            stateName: 'employment.self-employed-receiving-benefits.finances.expenses.household'
+          },
+          {
+            vmPropertyName: 'financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'NO'
+            },
+            stateName: 'confirm-plea'
+          }
+        ]
+      }
+    })
     
     .state('employment.out-of-work-benefits', {
         abstract: true,
@@ -265,10 +323,32 @@ var pleaApp = angular.module('pleaApp', [
       controller  : 'OtherExpensesController'
     })
     
-    .state('employment-employed-receiving-benefits-finances-expenses-household', {
-      url: '/employment/employed-receiving-benefits/finances/expenses/household',
-      templateUrl : 'household-expenses.html',
-      controller  : 'HouseholdExpensesController'
+    .state('employment.employed-receiving-benefits.finances.expenses', {
+        abstract: true,
+        url: '/expenses',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
+
+    .state('employment.employed-receiving-benefits.finances.expenses.household', {
+      url: '/household',
+      views : {
+        '@' : {
+          templateUrl : 'household-expenses.html',
+          controller  : 'HouseholdExpensesController'
+        }
+      }      
+    })
+
+    .state('employment.employed-receiving-benefits.finances.expenses.other', {
+      url: '/other',
+      views : {
+        '@' : {
+          templateUrl : 'other-expenses.html',
+          controller  : 'OtherExpensesController'
+        }
+      }      
     })
 
     .state('employment.self-employed.finances.expenses', {
@@ -307,10 +387,34 @@ var pleaApp = angular.module('pleaApp', [
   
     // BENEFITS
     
-    .state('employment-employed-receiving-benefits-finances-benefits', {
-      url: '/employment/employed-receiving-benefits/finances/benefits',
-      templateUrl : 'benefits.html',
-      controller  : 'BenefitsController'
+    .state('employment.employed-receiving-benefits.finances.benefits', {
+      url: '/benefits',
+      views : {
+        '@' : {
+          templateUrl : 'benefits.html',
+          controller  : 'BenefitsController'
+        }
+      },
+      params: {
+        goToStates3: [
+          {
+            vmPropertyName: 'financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'YES'
+            },
+            stateName: 'employment.employed-receiving-benefits.finances.expenses.household'
+          },
+          {
+            vmPropertyName: 'financialProblems',
+            vmPropertyValue: {
+              constantName: 'yesNoAnswer',
+              constantValue: 'NO'
+            },
+            stateName: 'confirm-plea'
+          }
+        ]
+      }      
     })
     
   

@@ -15,7 +15,7 @@
       
       $sessionStorage.financialProblems = $scope.data.financialProblems;
       
-      $state.go('employment-employed-receiving-benefits-finances-benefits');
+      $state.go('employment.employed-receiving-benefits.finances.benefits');
     };
 
   }  
