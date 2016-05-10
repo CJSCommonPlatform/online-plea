@@ -7,13 +7,12 @@
     
   function ForwardController($scope, $state, $stateParams) {
     //var vm = this;
-    
-    $scope.buttonContinue = buttonContinue;
-    
-    function buttonContinue(event) {
-      event.preventDefault();
-      $state.go($stateParams.forwardTo);
-    };
+
+    $scope.getGoToState = getGoToState;
+
+    function getGoToState() {
+      return $stateParams.forwardTo;
+    }
   }  
   
 })();

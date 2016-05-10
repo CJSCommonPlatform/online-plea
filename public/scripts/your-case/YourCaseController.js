@@ -5,9 +5,11 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
     
-  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData'];
+  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData', '$controller'];
     
-  function YourCaseController($scope, $state, $sessionStorage, PleaData) {
+  function YourCaseController($scope, $state, $sessionStorage, PleaData, $controller) {
+    angular.extend(this, $controller('ForwardController', {$scope: $scope}));
+
     $scope.data = PleaData.data;
 
     $scope.enterReferenceClicked = function() {
@@ -41,7 +43,7 @@
       }
 
       if ($scope.myform.$valid) {
-        $state.go('your-details');
+        $state.go($scope.getGoToState());
       }    
     };
   }  

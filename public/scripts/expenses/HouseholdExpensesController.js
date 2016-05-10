@@ -5,23 +5,14 @@
   angular.module('pleaApp')
     .controller('HouseholdExpensesController', HouseholdExpensesController);
     
-  HouseholdExpensesController.$inject = ['$scope', '$state', '$stateParams'];  
+  HouseholdExpensesController.$inject = ['$scope', '$state', '$stateParams', '$controller'];  
     
-  function HouseholdExpensesController($scope, $state, $stateParams) {
+  function HouseholdExpensesController($scope, $state, $stateParams, $controller) {
+    angular.extend(this, $controller('ForwardController', {$scope: $scope}));
     
-    $scope.buttonContinue = function(event) { 
-       
+    $scope.buttonContinue = function(event) {        
       event.preventDefault();
-      
-      var forwardTo = $state.$current.parent.toString() + '.other';
-      
-      if (forwardTo === '.other') {
-        forwardTo = $state.current.name.replace("household", "other");
-      }
-      
-      $state.go(forwardTo);
+      $state.go($scope.getGoToState());
     };
-
   }  
-  
 })();
