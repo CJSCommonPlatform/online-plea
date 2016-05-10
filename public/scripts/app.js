@@ -37,7 +37,7 @@ var pleaApp = angular.module('pleaApp', [
     .state('your-case', {
       url: '/your-case',
       templateUrl : 'your-case.html',
-      controller: 'ForwardController',
+      controller: 'yourCaseController',
       params: {
         forwardTo: 'your-details'
       }

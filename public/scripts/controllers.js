@@ -14,7 +14,7 @@ pleaApp.controller('mainController', function($scope, $state, backLink) {
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $state, PleaData, backLink) {
+pleaApp.controller('yourCaseController', function($scope, $state, PleaData, backLink, $sessionStorage) {
 
   $scope.data = PleaData.data;
 
@@ -24,6 +24,8 @@ pleaApp.controller('yourCaseController', function($scope, $state, PleaData, back
 
   $scope.buttonContinue = function(event) {
     event.preventDefault();
+    
+    $sessionStorage.data = $scope.data;
 
     $scope.enterReferenceClicked = function() {
       $scope.referenceFocused = true;
