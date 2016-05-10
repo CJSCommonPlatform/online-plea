@@ -199,22 +199,6 @@ pleaApp.controller('otherExpensesController', function($scope, $state, PleaData,
 });
 
 
-pleaApp.controller('confirmPleaController', function($scope, $state, PleaData, backLink) {
-
-  $scope.data = PleaData.data;
-
-  $scope.backLink = function() {
-    backLink.back();
-  };
-
-  $scope.buttonContinue = function(event) {
-    event.preventDefault();
-    $state.go('confirmation');
-  };
-
-});
-
-
 pleaApp.controller('confirmationController', function($scope, $state, PleaData, backLink) {
 
   $scope.data = PleaData.data;

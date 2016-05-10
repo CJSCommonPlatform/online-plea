@@ -331,10 +331,10 @@ var pleaApp = angular.module('pleaApp', [
   .state('confirm-plea', {
     url: '/confirm-plea',
     templateUrl : 'confirm-plea.html',
-    controller  : 'confirmPleaController'
+    controller  : 'ConfirmPleaController'
   })
   
-  .state('/confirmation', {
+  .state('confirmation', {
     url: '/confirmation',
     templateUrl : 'confirmation.html',
     controller  : 'confirmationController'
