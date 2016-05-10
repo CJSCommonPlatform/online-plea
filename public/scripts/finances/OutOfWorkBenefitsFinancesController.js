@@ -3,11 +3,11 @@
   'use strict';  
     
   angular.module('pleaApp')
-    .controller('WorkBenefitsFinancesController', WorkBenefitsFinancesController);
+    .controller('OutOfWorkBenefitsFinancesController', OutOfWorkBenefitsFinancesController);
     
-  WorkBenefitsFinancesController.$inject = ['$scope', '$state', '$stateParams'];  
+  OutOfWorkBenefitsFinancesController.$inject = ['$scope', '$state', '$stateParams'];  
     
-  function WorkBenefitsFinancesController($scope, $state, $stateParams) {
+  function OutOfWorkBenefitsFinancesController($scope, $state, $stateParams) {
     
     $scope.buttonContinue = function(event) { 
        
