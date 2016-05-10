@@ -14,52 +14,6 @@ pleaApp.controller('mainController', function($scope, $state, backLink) {
 });
 
 
-pleaApp.controller('yourCaseController', function($scope, $state, PleaData, backLink, $sessionStorage) {
-
-  $scope.data = PleaData.data;
-
-  $scope.backLink = function() {
-    backLink.back();
-  };
-
-  $scope.buttonContinue = function(event) {
-    event.preventDefault();
-    
-    $sessionStorage.data = $scope.data;
-
-    $scope.enterReferenceClicked = function() {
-      $scope.referenceFocused = true;
-    };
-
-    $scope.enterPostcodeClicked = function() {
-      $scope.postcodeFocused = true;
-    };
-
-    $scope.referenceAriaDescribedBy = function() {
-      return $scope.myform.reference.$myinvalid ? 'error-message-reference' : 'reference-hint';
-    };
-
-    $scope.postcodeAriaDescribedBy = function() {
-      return $scope.myform.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
-    };  
-
-    $scope.myform.$submitted = true;
-
-    if ($scope.myform.$invalid) {
-       $scope.errorSummaryFocused = true;
-       $scope.myform.$myinvalid = $scope.myform.$invalid;
-       $scope.myform.reference.$myinvalid = $scope.myform.reference.$invalid;
-       $scope.myform.postcode.$myinvalid = $scope.myform.postcode.$invalid;
-    }
-
-    if ($scope.myform.$valid) {
-      $state.go('your-details');
-    }    
-  };
-  
-});
-
-
 pleaApp.controller('yourDetailsController', function($scope, $state, PleaData, backLink) {
   
   $scope.data = PleaData.data;
