@@ -85,6 +85,30 @@ var pleaApp = angular.module('pleaApp', [
               constantValue: 'EMPLOYED_BENEFITS'
             },
             stateName: 'employment.employed-receiving-benefits.finances'
+          },
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'SELF_EMPLOYED'
+            },
+            stateName: 'employment.self-employed.finances'
+          },
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'SELF_EMPLOYED_BENEFITS'
+            },
+            stateName: 'employment.self-employed-receiving-benefits.finances'
+          },
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'OUT_OF_WORK_BENEFITS'
+            },
+            stateName: 'employment.out-of-work-benefits.finances'
           }
         ]
       }
@@ -126,22 +150,58 @@ var pleaApp = angular.module('pleaApp', [
       }      
     })
     
-    .state('employment-self-employed-finances', {
-      url: '/employment/self-employed/finances',
-      templateUrl : 'self-employed-finances.html',
-      controller  : 'SelfEmployedFinancesController'
+    .state('employment.self-employed', {
+        abstract: true,
+        url: '/self-employed',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
     })
     
-    .state('employment-self-employed-receiving-benefits-finances', {
-      url: '/employment/self-employed-receiving-benefits/finances',
-      templateUrl : 'self-employed-receiving-benefits-finances.html',
-      controller  : 'SelfEmployedBenefitsFinancesController'
+    .state('employment.self-employed.finances', {
+      url: '/finances',
+      views: {
+        '@': {
+          templateUrl : 'self-employed-finances.html',
+          controller  : 'SelfEmployedFinancesController'  
+        }
+      }
+    })
+    
+    .state('employment.self-employed-receiving-benefits', {
+        abstract: true,
+        url: '/self-employed-receiving-benefits',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
+    
+    .state('employment.self-employed-receiving-benefits.finances', {
+      url: '/finances',
+      views: {
+        '@': {
+          templateUrl : 'self-employed-receiving-benefits-finances.html',
+          controller  : 'SelfEmployedBenefitsFinancesController'
+        }
+      }
+    })
+    
+    .state('employment.out-of-work-benefits', {
+        abstract: true,
+        url: '/out-of-work-benefits',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
     })
   
-    .state('employment-work-benefits-finances', {
-      url: '/employment/work-benefits/finances',
-      templateUrl : 'work-benefits-finances.html',
-      controller  : 'WorkBenefitsFinancesController'
+    .state('employment.out-of-work-benefits.finances', {
+      url: '/finances',
+      views: {
+        '@' : {
+          templateUrl : 'out-of-work-benefits-finances.html',
+          controller  : 'OutOfWorkBenefitsFinancesController'
+        }
+      }
     })
 
     .state('employment-other-finances', {

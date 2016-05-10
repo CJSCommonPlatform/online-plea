@@ -18,7 +18,7 @@
       
       SELF_EMPLOYED_BENEFITS: 'Self employed and also receiving benefit',
       
-      WORK_BENEFITS: 'Receiving out of work benefits',
+      OUT_OF_WORK_BENEFITS: 'Receiving out of work benefits',
        
       OTHER: 'Other'
       
