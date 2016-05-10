@@ -133,9 +133,9 @@ var pleaApp = angular.module('pleaApp', [
     .state('employment.employed.finances', {
       url: '/finances',
       views : {
-        "@" : { // here we are using absolute name targeting
-          templateUrl: "employed-finances.html",
-          controller: "EmployedFinancesController" 
+        '@' : { // here we are using absolute name targeting
+          templateUrl: 'employed-finances.html',
+          controller: 'EmployedFinancesController' 
         }
       }
     })
@@ -151,7 +151,7 @@ var pleaApp = angular.module('pleaApp', [
     .state('employment.employed-receiving-benefits.finances', {
       url: '/finances',
       views: {
-        "@": {
+        '@': {
           templateUrl : 'employed-receiving-benefits-finances.html',
           controller  : 'EmployedBenefitsFinancesController'
         }
@@ -259,7 +259,6 @@ var pleaApp = angular.module('pleaApp', [
       controller  : 'HouseholdExpensesController'
     })
     
-    
     .state('employment-employed-finances-expenses-other', {
       url: '/employment/employed/finances/expenses/other',
       templateUrl : 'other-expenses.html',
@@ -314,13 +313,6 @@ var pleaApp = angular.module('pleaApp', [
       controller  : 'BenefitsController'
     })
     
-    
-    
-    
-  
-  
-  
-  
   
   .state('your-expenses/other', {
     url: '/your-expenses/other',
