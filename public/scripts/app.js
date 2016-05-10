@@ -109,6 +109,14 @@ var pleaApp = angular.module('pleaApp', [
               constantValue: 'OUT_OF_WORK_BENEFITS'
             },
             stateName: 'employment.out-of-work-benefits.finances'
+          },
+          {
+            vmPropertyName: 'data.employment',
+            vmPropertyValue: {
+              constantName: 'employmentStatus',
+              constantValue: 'OTHER'
+            },
+            stateName: 'employment.other.finances'
           }
         ]
       }
@@ -203,11 +211,23 @@ var pleaApp = angular.module('pleaApp', [
         }
       }
     })
+    
+     .state('employment.other', {
+        abstract: true,
+        url: '/other',
+        // Note: abstract still needs a ui-view for its children to populate.
+        // You can simply add it inline here.
+        template: '<ui-view/>'
+    })
 
-    .state('employment-other-finances', {
-      url: '/employment/other/finances',
-      templateUrl : 'other-finances.html',
-      controller  : 'OtherFinancesController'
+    .state('employment.other.finances', {
+      url: '/finances',
+      views: {
+        '@' : {
+          templateUrl : 'other-finances.html',
+          controller  : 'OtherFinancesController'
+        }
+      }
     })
 
 
