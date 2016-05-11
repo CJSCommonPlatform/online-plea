@@ -15,10 +15,6 @@
        
       event.preventDefault();
       
-      if ($scope.data === undefined) {
-        return;
-      }
-      
       var nextState = $state.current.data.nextState;
       $state.go(nextState);
       

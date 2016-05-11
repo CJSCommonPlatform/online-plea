@@ -38,7 +38,6 @@
           }
         })
         
-
         .state('employment.other.finances.pension-credit', {
           url: '/pension-credit',
           views: {
@@ -53,7 +52,6 @@
         })
         
         .state('employment.other.finances.expenses', {
-          url: '/expenses',
           views: {
             '@' : {
               controller  : 'ForwardController',
@@ -76,6 +74,19 @@
         })
 
         .state('employment.other.finances.expenses.household', {
+          url: '/household',
+          views: {
+            '@' : {
+              templateUrl : 'household-expenses.html',
+              controller  : 'HouseholdExpensesController'
+            }
+          },
+          data: {
+            nextState: '^.other'
+          }       
+        })
+
+        .state('employment.other.finances.expenses.other', {
           url: '/other',
           views: {
             '@' : {

@@ -5,23 +5,20 @@
   angular.module('pleaApp')
     .controller('OtherFinancesController', OtherFinancesController);
     
-  OtherFinancesController.$inject = ['$scope', '$state', '$stateParams', 'yesNoAnswer', '$controller', 'backLink'];  
+  OtherFinancesController.$inject = ['$scope', '$state', '$stateParams', 'yesNoAnswer', '$controller', 'PleaData'];  
     
-  function OtherFinancesController($scope, $state, $stateParams, yesNoAnswer, $controller, backLink) {
+  function OtherFinancesController($scope, $state, $stateParams, yesNoAnswer, $controller, PleaData) {
     
     angular.extend(this, $controller('FlowController', {$scope: $scope}));
     
     $scope.yesNoAnswer = yesNoAnswer;
-
-    $scope.backLink = backLink.back;
     
     $scope.buttonContinue = function(event) { 
        
       event.preventDefault();
-      
-      if ($scope.data === undefined) {
-        return;
-      }
+
+      PleaData.data.pensionCredit = $scope.data.pensionCredit;
+      PleaData.data.financialProblems = $scope.data.financialProblems;
       
       var nextState = $scope.getNextState($state);
       $state.go(nextState);
