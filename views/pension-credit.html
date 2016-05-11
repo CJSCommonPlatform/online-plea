@@ -1,0 +1,82 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+  
+
+    <h1 class="heading-xlarge">Your Pension Credit</h1>
+    
+    
+    <form class="form" method="post" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
+      
+      
+      <div class="form-group">
+      
+      
+        <fieldset>
+  
+          <legend>
+            <span class="form-label-bold">How often is your Pension Credit paid?</span>
+          </legend>
+    
+          <label class="block-label" for="paid-weekly" data-target="weekly">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="data.paid"> Weekly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="weekly">
+              
+              <div class="form-group">
+                <label class="form-label-bold" for="weekly-credit-pay">Weekly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-credit-pay" name="weekly-credit-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="data.paid"> Fortnightly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="fortnightly-credit-pay">Fortnightly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay"></span>
+              </div>
+              
+            </div>
+          
+          <label class="block-label" for="paid-monthly" data-target="monthly">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="data.paid"> Monthly
+          </label>
+          
+            <div class="panel panel-border-narrow js-hidden" id="monthly">
+                
+              <div class="form-group">
+                <label class="form-label-bold" for="monthly-credit-pay">Monthly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay"></span>
+              </div>
+              
+            </div>
+    
+    
+        </fieldset>
+      
+      
+      </div>
+            
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="buttonContinue($event)">Continue</button>
+      </div>
+      
+    
+    </form>
+  
+  
+  </div>
+
+
+</div>
