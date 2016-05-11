@@ -20,9 +20,15 @@
       }
 
       function updateHistory() {
+        if (history.length > 1 && history[history.length - 2] === $state.current.name) {
+          history.splice(-2)[0];
+        }
+
         if (history[history.length - 1] !== $state.current.name) {
           history.push($state.current.name);
         }
+
+        console.log(history);
       };
 
       function back() {
