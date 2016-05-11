@@ -2324,6 +2324,15 @@ html {
   }
 }
 
+.form-hint {
+  margin-bottom: 0;
+  padding-bottom: 0.3684210526em;
+}
+
+legend span ~ span {
+  margin-top: -0.3684210526em;
+}
+
 .summary-heading {
   position: relative;
 }
