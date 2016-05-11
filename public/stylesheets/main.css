@@ -2324,11 +2324,6 @@ html {
   }
 }
 
-legend .form-label,
-legend .form-label-bold {
-  padding-bottom: 0;
-}
-
 .summary-heading {
   position: relative;
 }
