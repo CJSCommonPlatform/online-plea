@@ -5,11 +5,9 @@
   angular.module('pleaApp')
     .controller('YourPleaController', YourPleaController);
     
-  YourPleaController.$inject = ['$scope', '$state', 'PleaData', '$controller'];
+  YourPleaController.$inject = ['$scope', '$state', 'PleaData'];
 
-  function YourPleaController($scope, $state, PleaData, $controller) {
-    angular.extend(this, $controller('ForwardController', {$scope: $scope}));
-
+  function YourPleaController($scope, $state, PleaData) {
   	$scope.data = PleaData.data;
 
     $scope.backLink = function() {
@@ -18,7 +16,9 @@
 
     $scope.buttonContinue = function(event) {
       event.preventDefault();
-      $state.go($scope.getGoToState());
+
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
 
   }

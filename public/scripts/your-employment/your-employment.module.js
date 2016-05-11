@@ -10,56 +10,35 @@
           url: '/employment',
           templateUrl : 'your-employment.html',
           controller: 'EmploymentController',
-          params: {
-            goToStates: [
+          data: {
+            propertyName: 'data.employment',
+            constantName: 'employmentStatus',
+            nextState: [
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'EMPLOYED'
-                },
+                constantValue: 'EMPLOYED',
                 stateName: 'employment.employed.finances'
               },
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'EMPLOYED_BENEFITS'
-                },
+                constantValue: "EMPLOYED_BENEFITS",
                 stateName: 'employment.employed-receiving-benefits.finances'
               },
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'SELF_EMPLOYED'
-                },
+                constantValue: "SELF_EMPLOYED",
                 stateName: 'employment.self-employed.finances'
               },
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'SELF_EMPLOYED_BENEFITS'
-                },
+                constantValue: "SELF_EMPLOYED_BENEFITS",
                 stateName: 'employment.self-employed-receiving-benefits.finances'
               },
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'OUT_OF_WORK_BENEFITS'
-                },
+                constantValue: "OUT_OF_WORK_BENEFITS",
                 stateName: 'employment.out-of-work-benefits.finances'
               },
               {
-                vmPropertyName: 'data.employment',
-                vmPropertyValue: {
-                  constantName: 'employmentStatus',
-                  constantValue: 'OTHER'
-                },
+                constantValue: "OTHER",
                 stateName: 'employment.other.finances'
               }
+
             ]
           }
         })

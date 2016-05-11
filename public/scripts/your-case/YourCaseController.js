@@ -5,10 +5,9 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
     
-  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData', '$controller'];
+  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData'];
     
   function YourCaseController($scope, $state, $sessionStorage, PleaData, $controller) {
-    angular.extend(this, $controller('ForwardController', {$scope: $scope}));
 
     $scope.data = PleaData.data;
 
@@ -43,7 +42,8 @@
       }
 
       if ($scope.myform.$valid) {
-        $state.go($scope.getGoToState());
+        var nextState = $state.current.data.nextState;
+        $state.go(nextState);
       }    
     };
   }  
