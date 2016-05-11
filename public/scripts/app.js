@@ -89,24 +89,5 @@ var pleaApp = angular.module('pleaApp', [
     templateUrl : 'other-expenses.html',
     controller  : 'otherExpensesController'
   })
-  
-  .state('confirm-plea', {
-    url: '/confirm-plea',
-    templateUrl : 'confirm-plea.html',
-    controller  : 'ConfirmPleaController'
-  })
-  
-  .state('confirmation', {
-    url: '/confirmation',
-    templateUrl : 'confirmation.html',
-    controller  : 'PleaConfirmationController'
-  })
-  
-  .state('plea-help', {
-    url: '/helping-you-plea-online',
-    templateUrl : 'help-making-a-plea-online.html',
-    controller  : 'PleaHelpController'
-  })
-  
 });
 

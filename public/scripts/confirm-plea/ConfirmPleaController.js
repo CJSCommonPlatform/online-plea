@@ -12,13 +12,10 @@
     $scope.data = $sessionStorage.data;
     
     $scope.buttonContinue = function(event) { 
-       
       event.preventDefault();
       
-      $state.go('confirmation');
-      
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
-
   }  
-  
 })();
