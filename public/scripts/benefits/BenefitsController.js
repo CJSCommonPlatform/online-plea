@@ -5,11 +5,13 @@
   angular.module('pleaApp')
     .controller('BenefitsController', BenefitsController);
     
-  BenefitsController.$inject = ['$scope', '$state', '$sessionStorage', 'yesNoAnswer', '$controller'];  
+  BenefitsController.$inject = ['$scope', '$state', '$sessionStorage', 'yesNoAnswer', '$controller', 'backLink'];  
     
-  function BenefitsController($scope, $state, $sessionStorage, yesNoAnswer, $controller) {
+  function BenefitsController($scope, $state, $sessionStorage, yesNoAnswer, $controller, backLink) {
     
     angular.extend(this, $controller('FlowController', {$scope: $scope}));
+
+    $scope.backLink = backLink.back;
 
     $scope.yesNoAnswer = yesNoAnswer;
 

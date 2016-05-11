@@ -5,11 +5,13 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
     
-  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData'];
+  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData', 'backLink'];
     
-  function YourCaseController($scope, $state, $sessionStorage, PleaData, $controller) {
+  function YourCaseController($scope, $state, $sessionStorage, PleaData, backLink) {
 
     $scope.data = PleaData.data;
+
+    $scope.backLink = backLink.back;
 
     $scope.enterReferenceClicked = function() {
       $scope.referenceFocused = true;

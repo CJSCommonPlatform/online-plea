@@ -5,10 +5,12 @@
   angular.module('pleaApp')
     .controller('YourPleaController', YourPleaController);
     
-  YourPleaController.$inject = ['$scope', '$state', 'PleaData'];
+  YourPleaController.$inject = ['$scope', '$state', 'PleaData', 'backLink'];
 
-  function YourPleaController($scope, $state, PleaData) {
+  function YourPleaController($scope, $state, PleaData, backLink) {
   	$scope.data = PleaData.data;
+
+    $scope.backLink = backLink.back;
 
     $scope.backLink = function() {
       backLink.back();
