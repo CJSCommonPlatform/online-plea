@@ -5,10 +5,12 @@
   angular.module('pleaApp')
     .controller('HouseholdExpensesController', HouseholdExpensesController);
     
-  HouseholdExpensesController.$inject = ['$scope', '$state', '$stateParams', '$controller'];  
+  HouseholdExpensesController.$inject = ['$scope', '$state', '$stateParams', '$controller', 'backLink'];  
     
-  function HouseholdExpensesController($scope, $state, $stateParams, $controller) {
+  function HouseholdExpensesController($scope, $state, $stateParams, $controller, backLink) {
     
+    $scope.backLink = backLink.back;
+
     $scope.buttonContinue = function(event) {        
       event.preventDefault();
       var nextState = $state.current.data.nextState;

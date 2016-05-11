@@ -5,10 +5,12 @@
   angular.module('pleaApp')
     .controller('EmployedBenefitsFinancesController', EmployedBenefitsFinancesController);
     
-  EmployedBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage'];  
+  EmployedBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage', 'backLink'];  
     
-  function EmployedBenefitsFinancesController($scope, $state, $sessionStorage) {
+  function EmployedBenefitsFinancesController($scope, $state, $sessionStorage, backLink) {
     
+    $scope.backLink = backLink.back;
+
     $scope.buttonContinue = function(event) { 
       event.preventDefault();      
       $sessionStorage.financialProblems = $scope.data.financialProblems;

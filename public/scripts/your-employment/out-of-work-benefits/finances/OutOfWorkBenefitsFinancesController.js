@@ -5,9 +5,11 @@
   angular.module('pleaApp')
     .controller('OutOfWorkBenefitsFinancesController', OutOfWorkBenefitsFinancesController);
     
-  OutOfWorkBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage'];  
+  OutOfWorkBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage', 'backLink'];  
     
-  function OutOfWorkBenefitsFinancesController($scope, $state, $sessionStorage) {
+  function OutOfWorkBenefitsFinancesController($scope, $state, $sessionStorage, backLink) {
+
+    $scope.backLink = backLink.back;
 
     $scope.buttonContinue = function(event) { 
        
