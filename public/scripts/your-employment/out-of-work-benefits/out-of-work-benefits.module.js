@@ -6,39 +6,52 @@
     .config(function($stateProvider, $urlRouterProvider) {
 
       $stateProvider
-        .state('employment.self-employed', {
+        .state('employment.out-of-work-benefits', {
           abstract: true,
-          url: '/self-employed',
+          url: '/out-of-work-benefits',
           // Note: abstract still needs a ui-view for its children to populate.
           // You can simply add it inline here.
           template: '<ui-view/>'
         })
 
-        .state('employment.self-employed.finances', {
+        .state('employment.out-of-work-benefits.finances', {
           url: '/finances',
-          views: {
-            '@': {
-              templateUrl : 'self-employed-finances.html',
-              controller  : 'SelfEmployedFinancesController'  
+          views : {
+            '@' : { // here we are using absolute name targeting
+              templateUrl: 'out-of-work-benefits-finances.html',
+              controller: 'OutOfWorkBenefitsFinancesController' 
             }
           },
           data: {
-            propertyName: 'data.financialProblems',
+            nextState: 'employment.out-of-work-benefits.finances.benefits'
+          }
+        })
+
+        .state('employment.out-of-work-benefits.finances.benefits', {
+          url: '/benefits',
+          views : {
+            '@' : {
+              templateUrl : 'benefits.html',
+              controller  : 'BenefitsController'
+            }
+          },
+          data: {
+            propertyName: 'financialProblems',
             constantName: 'yesNoAnswer',
             nextState: [
               {
                 constantValue: 'YES',
-                stateName: 'employment.self-employed.finances.expenses.household'
+                stateName: 'employment.out-of-work-benefits.finances.expenses.household'
               },
               {
                 constantValue: "NO",
                 stateName: 'confirm-plea'
               }
             ]
-          }
+          }    
         })
 
-        .state('employment.self-employed.finances.expenses', {
+        .state('employment.out-of-work-benefits.finances.expenses', {
           abstract: true,
           url: '/expenses',
           // Note: abstract still needs a ui-view for its children to populate.
@@ -46,9 +59,9 @@
           template: '<ui-view/>'
         })
 
-        .state('employment.self-employed.finances.expenses.household', {
+        .state('employment.out-of-work-benefits.finances.expenses.household', {
           url: '/household',
-          views: {
+          views : {
             '@' : {
               templateUrl : 'household-expenses.html',
               controller  : 'HouseholdExpensesController'
@@ -59,10 +72,10 @@
           }
         })
 
-        .state('employment.self-employed.finances.expenses.other', {
+        .state('employment.out-of-work-benefits.finances.expenses.other', {
           url: '/other',
           views: {
-            '@' : {
+            '@': {
               templateUrl : 'other-expenses.html',
               controller  : 'OtherExpensesController'
             }
@@ -71,6 +84,5 @@
             nextState: 'confirm-plea'
           }
         })
-
-    });  
+    });
 })();

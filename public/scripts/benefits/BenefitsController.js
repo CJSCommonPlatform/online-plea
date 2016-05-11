@@ -5,23 +5,20 @@
   angular.module('pleaApp')
     .controller('BenefitsController', BenefitsController);
     
-  BenefitsController.$inject = ['$scope', '$state', '$stateParams', '$sessionStorage', 'yesNoAnswer', '$controller'];  
+  BenefitsController.$inject = ['$scope', '$state', '$sessionStorage', 'yesNoAnswer', '$controller'];  
     
-  function BenefitsController($scope, $state, $stateParams, $sessionStorage, yesNoAnswer, $controller) {
+  function BenefitsController($scope, $state, $sessionStorage, yesNoAnswer, $controller) {
+    
+    angular.extend(this, $controller('FlowController', {$scope: $scope}));
 
-    angular.extend(this, $controller('Forward2Controller', {$scope: $scope}));
-    
     $scope.yesNoAnswer = yesNoAnswer;
 
     $scope.buttonContinue = function(event) { 
-       
       event.preventDefault();
-      
       $scope.financialProblems = $sessionStorage.financialProblems;
-      
-      $scope.stateGo($stateParams.goToStates3);
-    };
 
-  }  
-  
+      var nextState = $scope.getNextState($state);
+      $state.go(nextState);
+    };
+  }
 })();

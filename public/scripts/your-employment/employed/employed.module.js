@@ -22,22 +22,16 @@
               controller: 'EmployedFinancesController' 
             }
           },
-          params: {
-            goToStates3: [
+          data: {
+            propertyName: 'data.financialProblems',
+            constantName: 'yesNoAnswer',
+            nextState: [
               {
-                vmPropertyName: 'data.financialProblems',
-                vmPropertyValue: {
-                  constantName: 'yesNoAnswer',
-                  constantValue: 'YES'
-                },
+                constantValue: 'YES',
                 stateName: 'employment.employed.finances.expenses.household'
               },
               {
-                vmPropertyName: 'data.financialProblems',
-                vmPropertyValue: {
-                  constantName: 'yesNoAnswer',
-                  constantValue: 'NO'
-                },
+                constantValue: "NO",
                 stateName: 'confirm-plea'
               }
             ]
@@ -60,8 +54,8 @@
               controller  : 'HouseholdExpensesController'
             }
           },
-          params: {
-            forwardTo: '^.other'
+          data: {
+            nextState: '^.other'
           }
         })
 
@@ -73,9 +67,9 @@
               controller  : 'OtherExpensesController'
             }
           },
-          params: {
-            forwardTo: 'confirm-plea'
-          }          
+          data: {
+            nextState: 'confirm-plea'
+          }       
         })
     });  
 })();

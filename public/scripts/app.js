@@ -63,24 +63,6 @@ var pleaApp = angular.module('pleaApp', [
 
     // EMPLOYMENT
     
-    .state('employment.out-of-work-benefits', {
-        abstract: true,
-        url: '/out-of-work-benefits',
-        // Note: abstract still needs a ui-view for its children to populate.
-        // You can simply add it inline here.
-        template: '<ui-view/>'
-    })
-  
-    .state('employment.out-of-work-benefits.finances', {
-      url: '/finances',
-      views: {
-        '@' : {
-          templateUrl : 'out-of-work-benefits-finances.html',
-          controller  : 'OutOfWorkBenefitsFinancesController'
-        }
-      }
-    })
-    
     .state('employment.other', {
         abstract: true,
         url: '/other',

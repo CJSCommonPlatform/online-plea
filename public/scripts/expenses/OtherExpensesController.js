@@ -5,15 +5,15 @@
   angular.module('pleaApp')
     .controller('OtherExpensesController', OtherExpensesController);
     
-  OtherExpensesController.$inject = ['$scope', '$state', '$stateParams'];  
+  OtherExpensesController.$inject = ['$scope', '$state'];  
     
-  function OtherExpensesController($scope, $state, $stateParams) {
+  function OtherExpensesController($scope, $state) {
     
-    $scope.buttonContinue = function(event) { 
-       
+    $scope.buttonContinue = function(event) {        
       event.preventDefault();
       
-      $state.go('confirm-plea');
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
 
   }  

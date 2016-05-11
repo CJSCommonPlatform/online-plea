@@ -8,7 +8,7 @@
   EmployedFinancesController.$inject = ['$scope', '$state', '$stateParams', 'yesNoAnswer', '$controller'];  
     
   function EmployedFinancesController($scope, $state, $stateParams, yesNoAnswer, $controller) {    
-    angular.extend(this, $controller('Forward2Controller', {$scope: $scope}));
+    angular.extend(this, $controller('FlowController', {$scope: $scope}));
     
     $scope.yesNoAnswer = yesNoAnswer;
 
@@ -20,7 +20,8 @@
         return;
       }
       
-      $scope.stateGo($stateParams.goToStates3);
+      var nextState = $scope.getNextState($state);
+      $state.go(nextState);
     };
   }
 })();

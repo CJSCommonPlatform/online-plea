@@ -5,14 +5,16 @@
   angular.module('pleaApp')
     .controller('SelfEmployedBenefitsFinancesController', SelfEmployedBenefitsFinancesController);
     
-  SelfEmployedBenefitsFinancesController.$inject = ['$scope', '$state', 'transitionTo', '$sessionStorage'];  
+  SelfEmployedBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage'];  
     
-  function SelfEmployedBenefitsFinancesController($scope, $state, transitionTo, $sessionStorage) {
+  function SelfEmployedBenefitsFinancesController($scope, $state, $sessionStorage) {
     
     $scope.buttonContinue = function(event) { 
       event.preventDefault();
       $sessionStorage.financialProblems = $scope.data.financialProblems;
-      $state.go(transitionTo);
+
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
   }  
 })();

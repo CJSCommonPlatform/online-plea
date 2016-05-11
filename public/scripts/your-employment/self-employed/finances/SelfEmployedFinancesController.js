@@ -9,13 +9,15 @@
     
   function SelfEmployedFinancesController($scope, $state, $stateParams, yesNoAnswer, $controller) {
     
-    angular.extend(this, $controller('Forward2Controller', {$scope: $scope}));
+    angular.extend(this, $controller('FlowController', {$scope: $scope}));
 
     $scope.yesNoAnswer = yesNoAnswer;
 
     $scope.buttonContinue = function(event) {  
       event.preventDefault();
-      $scope.stateGo($stateParams.goToStates2);
+
+      var nextState = $scope.getNextState($state);
+      $state.go(nextState);
     };
 
   }  

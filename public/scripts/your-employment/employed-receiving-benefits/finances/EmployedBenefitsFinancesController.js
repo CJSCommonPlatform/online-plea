@@ -5,17 +5,16 @@
   angular.module('pleaApp')
     .controller('EmployedBenefitsFinancesController', EmployedBenefitsFinancesController);
     
-  EmployedBenefitsFinancesController.$inject = ['$scope', '$state', '$stateParams', '$sessionStorage'];  
+  EmployedBenefitsFinancesController.$inject = ['$scope', '$state', '$sessionStorage'];  
     
-  function EmployedBenefitsFinancesController($scope, $state, $stateParams, $sessionStorage) {
+  function EmployedBenefitsFinancesController($scope, $state, $sessionStorage) {
     
     $scope.buttonContinue = function(event) { 
-       
-      event.preventDefault();
-      
+      event.preventDefault();      
       $sessionStorage.financialProblems = $scope.data.financialProblems;
       
-      $state.go($stateParams.forwardTo2);
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
 
   }  

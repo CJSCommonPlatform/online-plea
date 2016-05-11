@@ -5,14 +5,16 @@
   angular.module('pleaApp')
     .controller('OutOfWorkBenefitsFinancesController', OutOfWorkBenefitsFinancesController);
     
-  OutOfWorkBenefitsFinancesController.$inject = ['$scope', '$state', '$stateParams'];  
+  OutOfWorkBenefitsFinancesController.$inject = ['$scope', '$state'];  
     
-  function OutOfWorkBenefitsFinancesController($scope, $state, $stateParams) {
-    
+  function OutOfWorkBenefitsFinancesController($scope, $state) {
+
     $scope.buttonContinue = function(event) { 
        
       event.preventDefault();
       
+      var nextState = $state.current.data.nextState;
+      $state.go(nextState);
     };
 
   }  

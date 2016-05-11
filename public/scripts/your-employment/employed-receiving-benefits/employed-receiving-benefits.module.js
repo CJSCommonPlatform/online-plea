@@ -22,9 +22,9 @@
               controller  : 'EmployedBenefitsFinancesController'
             }
           },
-          params: {
-            forwardTo2: 'employment.employed-receiving-benefits.finances.benefits'
-          }   
+          data: {
+            nextState: 'employment.employed-receiving-benefits.finances.benefits'
+          }  
         })
 
         .state('employment.employed-receiving-benefits.finances.benefits', {
@@ -35,26 +35,20 @@
               controller  : 'BenefitsController'
             }
           },
-          params: {
-            goToStates3: [
+          data: {
+            propertyName: 'financialProblems',
+            constantName: 'yesNoAnswer',
+            nextState: [
               {
-                vmPropertyName: 'financialProblems',
-                vmPropertyValue: {
-                  constantName: 'yesNoAnswer',
-                  constantValue: 'YES'
-                },
+                constantValue: 'YES',
                 stateName: 'employment.employed-receiving-benefits.finances.expenses.household'
               },
               {
-                vmPropertyName: 'financialProblems',
-                vmPropertyValue: {
-                  constantName: 'yesNoAnswer',
-                  constantValue: 'NO'
-                },
+                constantValue: "NO",
                 stateName: 'confirm-plea'
               }
             ]
-          }      
+          }    
         })
 
         .state('employment.employed-receiving-benefits.finances.expenses', {
@@ -73,8 +67,8 @@
               controller  : 'HouseholdExpensesController'
             }
           },
-          params: {
-            forwardTo: '^.other'
+          data: {
+            nextState: '^.other'
           }
         })
 
@@ -86,8 +80,8 @@
               controller  : 'OtherExpensesController'
             }
           },
-          params: {
-            forwardTo: 'confirm-plea'
+          data: {
+            nextState: 'confirm-plea'
           }
         })
     });
