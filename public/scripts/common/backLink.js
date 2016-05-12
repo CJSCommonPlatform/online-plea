@@ -28,7 +28,7 @@
           history.push($state.current.name);
         }
 
-        console.log(history);
+        //console.log(history);
       };
 
       function back() {
