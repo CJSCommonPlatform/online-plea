@@ -2333,8 +2333,20 @@ legend span ~ span {
   margin-top: -0.3684210526em;
 }
 
+.summary {
+  padding-top: 1.0526315789em;
+}
+
 .summary-heading {
+  background-color: rgba(0, 0, 0, 0.1);
   position: relative;
+  margin-bottom: 1.0526315789em;
+}
+
+.summary-sub-heading {
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin-bottom: 1.0526315789em;
 }
 
 @media (min-width: 641px) {
@@ -2343,23 +2355,30 @@ legend span ~ span {
     position: absolute;
     top: 0;
     right: 0;
+    background: red;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
 @media (min-width: 641px) {
-  .summary-title {
+  .summary dt {
     display: inline-block;
     padding-bottom: 1.0526315789em;
     width: 40%;
   }
 }
 
-.summary-body {
+.summary dt:after {
+  content: ':';
+}
+
+.summary dd {
   padding-bottom: 1.0526315789em;
 }
 
 @media (min-width: 641px) {
-  .summary-body {
+  .summary dd {
     display: inline-block;
     width: 60%;
   }
