@@ -22,4 +22,3 @@ var pleaApp = angular.module('pleaApp', [
   $urlRouterProvider.otherwise('/');
 
 });
-
