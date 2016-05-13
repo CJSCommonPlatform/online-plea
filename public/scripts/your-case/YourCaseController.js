@@ -1,53 +1,65 @@
-(function() {
-  
-  'use strict';  
-    
+(function () {
+
+  'use strict';
+
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
-    
-  YourCaseController.$inject = ['$scope', '$state', '$sessionStorage', 'PleaData', 'backLink'];
-    
-  function YourCaseController($scope, $state, $sessionStorage, PleaData, backLink) {
 
-    $scope.data = PleaData.data;
+  YourCaseController.$inject = ['$state'];
 
-    $scope.backLink = backLink.back;
+  function YourCaseController($state) {
+    var vm = this;
 
-    $scope.enterReferenceClicked = function() {
-      $scope.referenceFocused = true;
-    };
+    vm.enterReferenceLinkClicked = enterReferenceLinkClicked;
+    vm.enterPostcodeLinkClicked = enterPostcodeLinkClicked;
+    vm.continueButtonClicked = continueButtonClicked;
+    vm.referenceAriaDescribedBy = 'reference-hint';
+    vm.postcodeAriaDescribedBy = 'postcode-hint';
 
-    $scope.enterPostcodeClicked = function() {
-      $scope.postcodeFocused = true;
-    };
+    ///
 
-    $scope.buttonContinue = function(event) {
+    function enterReferenceLinkClicked() {
+      vm.referenceFocused = true;
+    }
+
+    function enterPostcodeLinkClicked() {
+      vm.postcodeFocused = true;
+    }
+
+    function continueButtonClicked(event) {
       event.preventDefault();
+      updateFormProperties();
+      updateReferenceAriaDescribedBy();
+      updatePostcodeAriaDescribedBy();
+      updateErrorSummaryFocus();
+      updateState();
+    }
 
-      $sessionStorage.data = $scope.data;
+    function updateFormProperties() {
+      vm.form.$submitted = true;
+      vm.form.$myinvalid = vm.form.$invalid;
+      vm.form.reference.$myinvalid = vm.form.reference.$invalid;
+      vm.form.postcode.$myinvalid = vm.form.postcode.$invalid;
+    }
 
-      $scope.referenceAriaDescribedBy = function() {
-        return $scope.myform.reference.$myinvalid ? 'error-message-reference' : 'reference-hint';
-      };
+    function updateErrorSummaryFocus() {
+      vm.errorSummaryFocused = vm.form.$invalid;
+    }
 
-      $scope.postcodeAriaDescribedBy = function() {
-        return $scope.myform.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
-      };  
+    function updateReferenceAriaDescribedBy() {
+      vm.referenceAriaDescribedBy = vm.form.reference.$myinvalid ? 'error-message-reference' : 'reference-hint';
+    };
 
-      $scope.myform.$submitted = true;
+    function updatePostcodeAriaDescribedBy() {
+      vm.postcodeAriaDescribedBy = vm.form.postcode.$myinvalid ? 'error-message-postcode' : 'postcode-hint';
+    }
 
-      if ($scope.myform.$invalid) {
-        $scope.errorSummaryFocused = true;
-        $scope.myform.$myinvalid = $scope.myform.$invalid;
-        $scope.myform.reference.$myinvalid = $scope.myform.reference.$invalid;
-        $scope.myform.postcode.$myinvalid = $scope.myform.postcode.$invalid;
-      }
-
-      if ($scope.myform.$valid) {
+    function updateState() {
+      if (vm.form.$valid) {
         var nextState = $state.current.data.nextState;
         $state.go(nextState);
-      }    
-    };
-  }  
-  
+      }
+    }
+  }
+
 })();
