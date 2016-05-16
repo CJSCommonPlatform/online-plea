@@ -13,16 +13,15 @@
     <form class="form" method="post" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
       
       
-      <h3 class="heading-medium">Which benefits do you receive?</h3>
-      
-      
       <div class="form-group">
     
     
         <fieldset class="stuff">
+
     
-    
-          <legend class="visuallyhidden">What benefit do you receive?</legend>
+          <legend>
+            <span class="form-label-bold">What benefit do you receive?</span>
+          </legend>
     
     
           <label class="block-label" for="contributory-support-allowance">
@@ -56,21 +55,22 @@
       </div>
       
       
-      <h3 class="heading-medium">How often is your benefit paid?</h3>
-      
-      
       <div class="form-group">
       
       
         <fieldset>
   
-          <legend class="visuallyhidden">How often is your benefit paid?</legend>
+  
+          <legend>
+            <span class="form-label-bold">How often is your benefit paid?</span>
+          </legend>
+    
     
           <label class="block-label" for="paid-weekly" data-target="weekly">
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="data.paid"> Weekly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="weekly">
+          <div class="panel panel-border-narrow js-hidden" id="weekly">
               
               <div class="form-group">
                 <label class="form-label-bold" for="weekly-benefit-pay">How much is your weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
@@ -79,11 +79,12 @@
               
             </div>
           
+          
           <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="data.paid"> Fortnightly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+          <div class="panel panel-border-narrow js-hidden" id="fortnightly">
                 
               <div class="form-group">
                 <label class="form-label-bold" for="fortnightly-benefit-pay">How much is your fortnightly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
@@ -92,11 +93,12 @@
               
             </div>
           
+          
           <label class="block-label" for="paid-monthly" data-target="monthly">
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="data.paid"> Monthly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="monthly">
+          <div class="panel panel-border-narrow js-hidden" id="monthly">
                 
               <div class="form-group">
                 <label class="form-label-bold" for="monthly-benefit-pay">How much is your monthly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>

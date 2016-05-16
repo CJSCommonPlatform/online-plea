@@ -11,14 +11,12 @@ $module: "summary";
   
   
   &-heading {
-    background-color: rgba(0,0,0,.1);
     position: relative;
-    margin-bottom: em(20);
+    margin-bottom: em(40);
   }
   
   
   &-sub-heading {
-    background-color: rgba(0,0,0,.1);
     position: relative;
     margin-bottom: em(20);
   }
@@ -28,14 +26,8 @@ $module: "summary";
     
     @include media (tablet) {
       margin: 0;
-      position: absolute;
-      top: 0; right: 0;
-      
-          background: red;
-    
-    top: 50%;
-    transform: translateY(-50%);
-      
+      position: absolute; right: 0; top: 50%;
+      transform: translateY(-50%);
     }
     
   }
