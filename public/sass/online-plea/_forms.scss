@@ -49,3 +49,14 @@ legend span ~ span {
   margin-top: em(-7); // Far from ideal!
 }
 
+.inline .block-label {
+  margin-bottom: 0;
+}
+
+.inline .panel {
+  box-sizing: border-box;
+  float: left;
+  margin-top: em(15);
+  width: 100%;
+}
+
