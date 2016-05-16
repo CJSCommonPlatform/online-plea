@@ -26,7 +26,7 @@
     <h2 class="heading-large">Your finances details</h2>
     
     
-    <form class="form" method="post" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
+    <form class="form" method="post" name="form" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
       
       
       <div class="form-group">
@@ -42,40 +42,40 @@
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="data.paid"> Weekly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="weekly">
-              
-              <div class="form-group">
-                <label class="form-label-bold" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay"></span>
-              </div>
-              
+          <div class="panel panel-border-narrow js-hidden" id="weekly">
+            
+            <div class="form-group">
+              <label class="form-label-bold" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay"></span>
             </div>
+            
+          </div>
           
           <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="data.paid"> Fortnightly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
-                
-              <div class="form-group">
-                <label class="form-label-bold" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"></span>
-              </div>
+          <div class="panel panel-border-narrow js-hidden" id="fortnightly">
               
+            <div class="form-group">
+              <label class="form-label-bold" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"></span>
             </div>
+            
+          </div>
           
           <label class="block-label" for="paid-monthly" data-target="monthly">
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="data.paid"> Monthly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="monthly">
-                
-              <div class="form-group">
-                <label class="form-label-bold" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"></span>
-              </div>
+          <div class="panel panel-border-narrow js-hidden" id="monthly">
               
+            <div class="form-group">
+              <label class="form-label-bold" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"></span>
             </div>
+            
+          </div>
     
     
         </fieldset>
