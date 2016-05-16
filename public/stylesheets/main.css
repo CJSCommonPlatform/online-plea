@@ -2333,33 +2333,61 @@ legend span ~ span {
   margin-top: -0.3684210526em;
 }
 
+.table-summary {
+  margin-bottom: 1.5789473684em;
+}
+
+.table-summary tr td:first-child {
+  width: 40%;
+}
+
+.table-summary .table-action {
+  padding-right: 0;
+  text-align: right;
+}
+
+.summary {
+  padding-top: 1.0526315789em;
+}
+
 .summary-heading {
   position: relative;
+  margin-bottom: 2.1052631579em;
+}
+
+.summary-sub-heading {
+  position: relative;
+  margin-bottom: 1.0526315789em;
 }
 
 @media (min-width: 641px) {
   .summary-change {
     margin: 0;
     position: absolute;
-    top: 0;
     right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
 @media (min-width: 641px) {
-  .summary-title {
+  .summary dt {
     display: inline-block;
     padding-bottom: 1.0526315789em;
     width: 40%;
   }
 }
 
-.summary-body {
+.summary dt:after {
+  content: ':';
+}
+
+.summary dd {
   padding-bottom: 1.0526315789em;
 }
 
 @media (min-width: 641px) {
-  .summary-body {
+  .summary dd {
     display: inline-block;
     width: 60%;
   }

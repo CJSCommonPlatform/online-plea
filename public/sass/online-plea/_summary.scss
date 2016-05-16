@@ -7,10 +7,18 @@ $module: "summary";
 
 
 .#{$module} {
+  padding-top: em(20);
   
   
   &-heading {
     position: relative;
+    margin-bottom: em(40);
+  }
+  
+  
+  &-sub-heading {
+    position: relative;
+    margin-bottom: em(20);
   }
   
   
@@ -18,24 +26,28 @@ $module: "summary";
     
     @include media (tablet) {
       margin: 0;
-      position: absolute;
-      top: 0; right: 0;
+      position: absolute; right: 0; top: 50%;
+      transform: translateY(-50%);
     }
     
   }
   
   
-  &-title {
-    
+  dt {
+
     @include media (tablet) {
       display: inline-block;
       padding-bottom: em(20);
       width: 40%;
     }
     
+    &:after {
+      content: ':';
+    }
+    
   }
   
-  &-body {
+  dd {
     padding-bottom: em(20);
     
     @include media (tablet) {
