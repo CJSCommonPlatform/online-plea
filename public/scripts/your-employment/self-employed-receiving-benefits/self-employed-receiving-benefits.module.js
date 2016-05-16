@@ -36,7 +36,7 @@
             }
           },
           data: {
-            propertyName: 'financialProblems',
+            propertyName: 'data.financialProblems',
             constantName: 'yesNoAnswer',
             nextState: [
               {
