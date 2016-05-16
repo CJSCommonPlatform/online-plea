@@ -10,6 +10,7 @@
           url: '/your-case',
           templateUrl: 'your-case.html',
           controller: 'YourCaseController',
+          controllerAs: 'yourCase',
           data: {
             nextState: 'your-details'
           }
