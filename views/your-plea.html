@@ -131,6 +131,46 @@
             
 
             <div class="form-group">
+  
+              <fieldset class="inline">                      
+                
+                <legend>
+                  <span class="form-label-bold">Do you need an interpreter in court?</span>
+                </legend>        
+  
+                <div class="form-group">                        
+                  
+                  <label class="block-label" for="interpreter-yes" data-target="interpreter">
+                    <input type="radio" id="interpreter-yes" name="interpreter" value="Yes"> Yes
+                  </label>                        
+                  
+                  <label class="block-label" for="interpreter-no">
+                    <input type="radio" id="interpreter-no" name="interpreter" value="No"> No
+                  </label>  
+                  
+                  <div class="panel panel-border-narrow js-hidden" id="interpreter">                      
+                    
+                    <div class="form-group">                  
+              
+                      <label for="language">
+                        <span class="form-label-bold">Interpreter language</span>
+                        <span class="form-hint" id="interpreter-language-hint">Tell us which language, including sign language.</span>
+                      </label>                          
+                      
+                      <input class="form-control" type="text" id="interpreter-language" name="nterpreter-language" aria-describedby="interpreter-language-hint">                                                      
+                        
+                    </div>                      
+                  
+                  </div>                      
+                  
+                </div>                      
+              
+              </fieldset>                    
+            
+            </div> 
+            
+            
+            <div class="form-group">
 
 
               <fieldset class="inline">
@@ -221,24 +261,24 @@
           
                         <div class="form-group">                        
                           
-                          <label class="block-label" for="interpreter-yes" data-target="interpreter-language">
-                            <input type="radio" id="interpreter-yes" name="interpreter" value="Yes"> Yes
+                          <label class="block-label" for="witness-interpreter-yes" data-target="witness-interpreter">
+                            <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes"> Yes
                           </label>                        
                           
-                          <label class="block-label" for="interpreter-no">
-                            <input type="radio" id="interpreter-no" name="interpreter" value="No"> No
+                          <label class="block-label" for="witness-interpreter-no">
+                            <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No"> No
                           </label>  
                           
-                          <div class="panel panel-border-narrow js-hidden" id="interpreter-language">                      
+                          <div class="panel panel-border-narrow js-hidden" id="witness-interpreter">                      
                             
                             <div class="form-group">                  
                       
                               <label for="language">
                                 <span class="form-label-bold">Interpreter language</span>
-                                <span class="form-hint" id="language-hint">Tell us which language, including sign language.</span>
+                                <span class="form-hint" id="witness-interpreter-hint">Tell us which language, including sign language.</span>
                               </label>                          
                               
-                              <input class="form-control" type="text" id="language" name="language" aria-describedby="language-hint">                                                      
+                              <input class="form-control" type="text" id="witness-interpreter-language" name="witness-interpreter-language" aria-describedby="witness-interpreter-hint">                                                      
                                 
                             </div>                      
                           
