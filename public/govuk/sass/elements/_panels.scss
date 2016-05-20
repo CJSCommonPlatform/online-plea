@@ -2,6 +2,7 @@
 // ==========================================================================
 
 .panel {
+  @include box-sizing(border-box);
   @extend %contain-floats;
   clear: both;
   border-left-style: solid;
@@ -30,7 +31,13 @@
 }
 
 // Panels within form groups
-// Remove the bottom padding as .form-group sets a bottom margin
 .form-group .panel-border-narrow {
+  float: left;
+  width: 100%;
+  // Remove the bottom padding as .form-group sets a bottom margin
   padding-bottom: 0;
+  // Remove the bottom margin, set by default on .panel
+  margin-bottom: 0;
+  // Add a top margin, to set the space between form control above
+  margin-top: 10px;
 }
