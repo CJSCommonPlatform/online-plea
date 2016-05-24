@@ -11,6 +11,15 @@
           templateUrl : 'confirm-plea.html',
           controller  : 'ConfirmPleaController',
           data: {
+            nextState: 'declaration'
+          }
+        })
+        
+        .state('declaration', {
+          url: '/declaration',
+          templateUrl : 'declaration.html',
+          controller  : 'DeclarationController',
+          data: {
             nextState: 'plea-sent'
           }
         })
@@ -23,5 +32,7 @@
             nextState: 'index'
           }
         })
+        
     });  
+    
 })();
