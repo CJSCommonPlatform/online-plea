@@ -2275,8 +2275,16 @@ legend span ~ span {
   margin-bottom: 1.5789473684em;
 }
 
-.table-summary tr td:first-child {
+.table-summary td {
+  vertical-align: top;
+}
+
+.table-summary td:first-child {
   width: 40%;
+}
+
+.table-summary td:first-child:after {
+  content: ':';
 }
 
 .table-summary .table-action {

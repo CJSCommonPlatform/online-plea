@@ -11,13 +11,18 @@ $module: "table";
 
   &-summary {
     margin-bottom: em(30);
-    
-    tr {
-    
-      td:first-child {
+
+    td {
+      vertical-align: top;
+      
+      &:first-child {
         width: 40%;
+        
+        &:after {
+          content: ':';
+        }
       }
-    
+      
     }
     
     .#{$module}-action {
