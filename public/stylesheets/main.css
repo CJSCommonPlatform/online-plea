@@ -1561,6 +1561,9 @@ details .arrow {
 }
 
 .panel {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   clear: both;
   border-left-style: solid;
   border-color: #bfc1c3;
@@ -1586,7 +1589,23 @@ details .arrow {
 }
 
 .form-group .panel-border-narrow {
+  float: left;
+  width: 100%;
   padding-bottom: 0;
+}
+
+.form-group .panel-border-narrow:first-child {
+  margin-top: 10px;
+}
+
+.form-group .panel-border-narrow:last-child {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.inline .form-group .panel-border-narrow {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
 fieldset {
@@ -1849,13 +1868,19 @@ legend .form-label-bold {
   border-color: #0b0c0c;
 }
 
-.block-label:last-child {
+.block-label:last-child, .block-label:last-of-type {
   margin-bottom: 0;
 }
 
 .inline .block-label {
   clear: none;
-  margin-right: 10px;
+}
+
+@media (min-width: 641px) {
+  .inline .block-label {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
 }
 
 .js-enabled label.selected {
@@ -2244,17 +2269,6 @@ html {
 
 legend span ~ span {
   margin-top: -0.3684210526em;
-}
-
-.inline .block-label {
-  margin-bottom: 0;
-}
-
-.inline .panel {
-  box-sizing: border-box;
-  float: left;
-  margin-top: 0.7894736842em;
-  width: 100%;
 }
 
 .table-summary {
