@@ -1,6 +1,6 @@
 {
   "name": "pleaApp",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "angular-cookies": "~1.5.3",
     "angular-sanitize": "~1.5.3",
