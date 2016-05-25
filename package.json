@@ -6,7 +6,6 @@
   },
   
   "dependencies": {
-    "node": "6.2.0",
     "gulp": "~3.9.0"
   },
   
