@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "scripts": {
-    "serve": "gulp serve"
+    "start": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
