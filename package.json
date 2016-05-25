@@ -6,7 +6,8 @@
   },
   
   "dependencies": {
-    "gulp": "~3.9.0"
+    "gulp": "~3.9.0",
+    "bower": "1.7.9"
   },
   
   "devDependencies": {
