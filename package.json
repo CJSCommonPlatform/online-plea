@@ -1,7 +1,10 @@
 {
   "name": "pleaApp",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.13.4",
+    "bower": "1.7.9"
+  },
   "scripts": {
     "test": "gulp test"
   },
