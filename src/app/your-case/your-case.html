@@ -1,0 +1,67 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+
+
+  <div class="column-two-thirds">
+
+
+    <h1 class="heading-xlarge">Your case</h1>
+
+
+    <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1" data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Message to alert the user to a problem goes here</h2>
+
+      <p>Optional description of the error(s) and how to correct them.</p>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="yourCase.form.caseReference.$myinvalid"><a href="" data-ng-click="enterCaseReferenceLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-reference">Enter your Unique reference number</a></li>
+        <li data-ng-show="yourCase.form.casePostcode.$myinvalid"><a href="" data-ng-click="enterCasePostcodeLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-postcode">Enter your Postcode</a></li>
+      </ul>
+
+    </div>
+
+
+    <form class="form" method="post" name="yourCase.form" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
+
+
+      <div class="form-group" data-ng-class="{'error': yourCase.caseReferenceAriaInvalid}">
+
+        <label for="case-reference" id="error-case-reference">
+          <span class="form-label-bold">Unique reference number</span>
+          <span class="form-hint" id="case-reference-hint">It&rsquo;ll be on page 1 of the notice, usually at the top. <br> For example, 1234567890.</span>
+          <span class="error-message" id="error-message-case-reference" data-ng-show="yourCase.caseReferenceAriaInvalid">Enter your Unique reference number</span>
+        </label>
+
+        <input class="form-control" type="text" id="case-reference" name="caseReference" aria-describedby="{{yourCase.caseReferenceAriaDescribedBy}}" aria-invalid="{{yourCase.caseReferenceAriaInvalid}}" value="{{yourCase.caseReference}}" required data-ng-model="yourCase.caseReference" data-focus-me="referenceFocused">
+
+      </div>
+
+
+      <div class="form-group" data-ng-class="{'error': yourCase.casePostcodeAriaInvalid}">
+
+        <label for="case-postcode" id="error-case-postcode">
+          <span class="form-label-bold">Postcode</span>
+          <span class="form-hint" id="case-postcode-hint">It&rsquo;ll be on the notice we sent you.</span>
+          <span class="error-message" id="error-message-case-postcode" data-ng-show="yourCase.casePostcodeAriaInvalid">Enter your Postcode</span>
+        </label>
+
+        <input class="form-control form-control-1-4" type="text" id="case-postcode" name="casePostcode" aria-describedby="{{yourCase.casePostcodeAriaDescribedBy}}" aria-invalid="{{yourCase.casePostcodeAriaInvalid}}" value="{{yourCase.casePostcode}}" required data-ng-model="yourCase.casePostcode" data-focus-me="yourCase.postcodeFocused">
+
+      </div>
+
+
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)">Continue</button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>

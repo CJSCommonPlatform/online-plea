@@ -1,0 +1,137 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+  
+  
+  <div class="column-two-thirds">
+  
+
+    <h1 class="heading-xlarge">Your finances</h1>
+    
+    
+    <div class="panel panel-border-wide">
+    
+      <p>For this type of offence you&rsquo;ll usually have to pay a fine:</p>
+      
+      <ul class="list list-bullet">
+        <li>you must provide your income details</li>
+        <li>the court will decide your fine based on your finances and the seriousness of the offence</li>
+        <li>your details will be stored securely by the court</li>
+      </ul>
+    
+    </div>
+    
+    
+    <h2 class="heading-large">Your finances details</h2>
+    
+    
+    <form class="form" method="post" name="form" action="" autocomplete="off"  novalidate data-form-selection data-form-toggle>
+      
+      
+      <div class="form-group">
+      
+        <fieldset>
+  
+          <legend>
+            <span class="form-label-bold">Which out of work benefit do you receive?</span>
+          </legend>
+    
+          <label class="block-label" for="benefit-contributory">
+            <input type="radio" id="benefit-contributory" name="benefit-received" value="Contributory Jobseekers Allowance" data-ng-model="outOfWorkBenefitsFinances.benefitReceived"> Contributory Jobseeker's Allowance
+          </label>
+          
+          <label class="block-label" for="benefit-incomebased">
+            <input type="radio" id="benefit-incomebased" name="benefit-received" value="Income-based Jobseekers Allowance" data-ng-model="outOfWorkBenefitsFinances.benefitReceived"> Income&ndash;based Jobseekers Allowance
+          </label>
+          
+          <label class="block-label" for="benefit-universalcredit">
+            <input type="radio" id="benefit-universalcredit" name="benefit-received" value="Universal Credit" data-ng-model="outOfWorkBenefitsFinances.benefitReceived"> Universal Credit
+          </label>
+            
+          <label class="block-label" for="benefit-other">
+            <input type="radio" id="benefit-other" name="benefit-received" value="Other" data-ng-model="outOfWorkBenefitsFinances.benefitReceived"> Other
+          </label>
+    
+        </fieldset>
+      
+      </div>
+      
+      
+      <div class="form-group">
+      
+        <fieldset>
+  
+          <legend>
+            <span class="form-label-bold">How often is your benefit paid?</span>
+          </legend>
+    
+          <label class="block-label" for="paid-weekly" data-target="weekly">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="outOfWorkBenefitsFinances.paymentFrequency"> Weekly
+          </label>
+          
+          <div class="panel panel-border-narrow js-hidden" id="weekly">
+              
+            <div class="form-group">
+              <label class="form-label" for="weekly-pay">Weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="outOfWorkBenefitsFinances.weeklyPay"></span>
+            </div>
+            
+          </div>
+          
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="outOfWorkBenefitsFinances.paymentFrequency"> Fortnightly
+          </label>
+          
+          <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+                
+            <div class="form-group">
+              <label class="form-label" for="fortnightly-pay">Fortnightly benfit payment<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="outOfWorkBenefitsFinances.fortnightlyPay"></span>
+            </div>
+            
+          </div>
+          
+          <label class="block-label" for="paid-monthly" data-target="monthly">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="outOfWorkBenefitsFinances.paymentFrequency"> Monthly
+          </label>
+          
+          <div class="panel panel-border-narrow js-hidden" id="monthly">
+                
+            <div class="form-group">
+              <label class="form-label" for="monthly-pay">Monthly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="outOfWorkBenefitsFinances.monthlyPay"></span>
+            </div>
+            
+          </div>
+            
+          <label class="block-label" for="paid-other" data-target="other">
+            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="outOfWorkBenefitsFinances.paymentFrequency"> Other
+          </label>
+          
+          <div class="panel panel-border-narrow js-hidden" id="other">
+                
+            <div class="form-group">
+              <label class="form-label" for="other-pay">Average weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay" data-ng-model="outOfWorkBenefitsFinances.otherPay"></span>
+            </div>
+            
+          </div>
+    
+        </fieldset>
+      
+      </div>
+            
+      
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="outOfWorkBenefitsFinances.buttonContinue($event)">Continue</button>
+      </div>
+      
+    
+    </form>
+  
+  
+  </div>
+
+
+</div>

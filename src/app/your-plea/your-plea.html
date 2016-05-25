@@ -1,0 +1,324 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+
+
+  <div class="column-two-thirds">
+
+
+    <h1 class="heading-xlarge">Your plea</h1>
+
+
+    <div class="panel panel-border-wide">
+
+      <h2 class="heading-medium">This is your opportunity to present your case to the court:</h2>
+
+      <ul class="list list-bullet">
+        <li>the charge details and witness statements in the documents sent to you</li>
+        <li>each offence may carry a fine</li>
+        <li>if you plead guilty you may get a 33&percnt; discount on any fine</li>
+      </ul>
+
+    </div>
+
+
+    <h2 class="heading-large">Charge <span class="heading-secondary">Public service vehicle &ndash; passenger failing to produce a ticket</span></h2>
+
+
+    <details data-progressive-disclosure>
+
+      <summary><span class="summary">View charge information</span></summary>
+
+      <div class="panel panel-border-narrow">
+
+        <p>On 08/10/2013 at Barnet Hill EN5 being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares did fail to produce a ticket when requested to do so by the Driver Inspector or Conductor.</p>
+
+        <p>Contrary to regulation 7(2)(E) of the Public Service Vehicles (Conduct of Drivers, Inspectors, Conductors and Passengers) Regulations 1990 and section 25 of the Public Passenger Vehicles Act 1981.</p>
+
+      </div>
+
+    </details>
+
+
+    <h3 class="heading-medium">Your plea for charge</h3>
+
+
+    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+
+
+      <fieldset class="inline">
+
+
+        <legend class="visuallyhidden">Your plea for charge</legend>
+
+
+        <div class="form-group">
+
+
+          <label class="block-label" for="plea-guilty" data-target="guilty">
+            <input type="radio" id="plea-guilty" name="plea" value="Guilty" data-ng-model="yourPlea.plea"> Guilty
+          </label>
+
+
+          <label class="block-label" for="plea-notguilty" data-target="not-guilty">
+            <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" data-ng-model="yourPlea.plea"> Not guilty
+          </label>
+
+
+          <div class="panel panel-border-narrow js-hidden" id="guilty">
+
+
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+
+
+                <legend><span class="form-label-bold">Do you want to come to court to plead guilty?</span></legend>
+
+
+                <div class="form-group">
+
+
+                  <label class="block-label" for="court-yes">
+                    <input type="radio" id="court-yes" name="court" value="Yes" data-ng-model="yourPlea.court"> Yes
+                  </label>
+
+
+                  <label class="block-label" for="court-no">
+                    <input type="radio" id="court-no" name="court" value="No" data-ng-model="yourPlea.court"> No
+                  </label>
+
+
+                </div>
+
+
+              </fieldset>
+
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="mitigation">
+                <span class="form-label-bold">Mitigation</span>
+                <span class="form-hint">Is there something you would like the court to consider?</span>
+              </label>
+
+              <textarea class="form-control form-control-textarea" id="mitigation" name="mitigation" cols="30" rows="5" data-ng-model="yourPlea.mitigation"></textarea>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="panel panel-border-narrow js-hidden" id="not-guilty">
+
+
+            <div class="form-group">
+
+              <label for="not-guilty-because">
+                <span class="form-label-bold">Not guilty because?</span>
+                <span class="form-hint" id="not-guilty-because-hint">Why do you believe you are not guilty?</span>
+              </label>
+
+              <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="5" aria-describedby="not-guilty-because-hint" data-ng-model="yourPlea.notGuiltyBecause"></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+              <fieldset class="inline">
+
+                <legend>
+                  <span class="form-label-bold">Do you need an interpreter in court?</span>
+                </legend>
+
+                <div class="form-group">
+
+                  <label class="block-label" for="interpreter-yes" data-target="interpreter">
+                    <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" data-ng-model="yourPlea.interpreter"> Yes
+                  </label>
+
+                  <label class="block-label" for="interpreter-no">
+                    <input type="radio" id="interpreter-no" name="interpreter" value="No" data-ng-model="yourPlea.interpreter"> No
+                  </label>
+
+                  <div class="panel panel-border-narrow js-hidden" id="interpreter">
+
+                    <div class="form-group">
+
+                      <label for="interpreter-language">
+                        <span class="form-label">Interpreter language</span>
+                        <span class="form-hint" id="interpreter-language-hint">Tell us which language, including sign language.</span>
+                      </label>
+
+                      <input class="form-control" type="text" id="interpreter-language" name="interpreter-language" aria-describedby="interpreter-language-hint" data-ng-model="yourPlea.interpreterLanguage">
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </fieldset>
+
+            </div>
+
+
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+
+
+                <legend>
+                  <span class="form-label-bold">Evidence and witness information</span>
+                  <span class="form-hint" id="evidence-hint">Do you disagree with any evidence from a witness statement sent to you?</span>
+                </legend>
+
+
+                <div class="form-group">
+
+                  <label class="block-label" for="evidence-yes" data-target="evidence">
+                    <input type="radio" id="evidence-yes" name="evidence" value="Yes" aria-describedby="evidence-hint" data-ng-model="yourPlea.prosecutorWitnessDisagree"> Yes
+                  </label>
+
+                  <label class="block-label" for="evidence-no">
+                    <input type="radio" id="evidence-no" name="evidence" value="No" data-ng-model="yourPlea.prosecutorWitnessDisagree"> No
+                  </label>
+
+                  <div class="panel panel-border-narrow js-hidden" id="evidence">
+
+                    <div class="form-group">
+
+                      <label for="witness-name">
+                        <span class="form-label">Name of the witness</span>
+                        <span class="form-hint">Tell us the name of the witness and what you disagree with.</span>
+                      </label>
+
+                      <textarea class="form-control form-control-textarea" id="witness-name" name="witness-name" cols="30" rows="5" data-ng-model="yourPlea.prosecutorWitnessDetails"></textarea>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </fieldset>
+
+
+            </div>
+
+
+            <div class="form-group">
+
+
+              <fieldset class="inline">
+
+
+                <legend>
+                  <span class="form-label-bold">Do you want to call a witness?</span>
+                  <span class="form-hint" id="witness-hint">Someone who can give evidence in court supporting your case.</span>
+                </legend>
+
+
+                <div class="form-group">
+
+                  <label class="block-label" for="witness-yes" data-target="witness">
+                    <input type="radio" id="witness-yes" name="witness" value="Yes" aria-describedby="witness-hint" data-ng-model="yourPlea.defenceWitnessCall"> Yes
+                  </label>
+
+                  <label class="block-label" for="witness-no">
+                    <input type="radio" id="witness-no" name="witness" value="No" data-ng-model="yourPlea.defenceWitnessCall"> No
+                  </label>
+
+                  <div class="panel panel-border-narrow js-hidden" id="witness">
+
+                    <div class="form-group">
+
+                      <label for="witness-contact-details">
+                        <span class="form-label">Witness contact details</span>
+                        <span class="form-hint">Tell us the name, address and date of birth of any witnesses you want to call to support your case.</span>
+                      </label>
+
+                      <textarea class="form-control form-control-textarea" id="witness-contact-details" cols="30" rows="5" data-ng-model="yourPlea.defenceWitnessContactDetails"></textarea>
+
+                    </div>
+
+                    <div class="form-group">
+
+                      <fieldset class="inline">
+
+                        <legend>
+                          <span class="form-label-bold">Does your witness need an interpreter?</span>
+                        </legend>
+
+                        <div class="form-group">
+
+                          <label class="block-label" for="witness-interpreter-yes" data-target="witness-interpreter">
+                            <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes" data-ng-model="yourPlea.defenceWitnessInterpreter"> Yes
+                          </label>
+
+                          <label class="block-label" for="witness-interpreter-no">
+                            <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No" data-ng-model="yourPlea.defenceWitnessInterpreter"> No
+                          </label>
+
+                          <div class="panel panel-border-narrow js-hidden" id="witness-interpreter">
+
+                            <div class="form-group">
+
+                              <label for="witness-interpreter-language">
+                                <span class="form-label">Witness interpreter language</span>
+                                <span class="form-hint" id="witness-interpreter-hint">Tell us which language, including sign language.</span>
+                              </label>
+
+                              <input class="form-control" type="text" id="witness-interpreter-language" name="witness-interpreter-language" aria-describedby="witness-interpreter-hint" data-ng-model="yourPlea.defenceWitnessInterpreterLanguage">
+
+                            </div>
+
+                          </div>
+
+                        </div>
+
+                      </fieldset>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+              </fieldset>
+
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+
+      </fieldset>
+
+
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="yourPlea.buttonContinue($event)">Continue</button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>

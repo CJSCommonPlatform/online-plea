@@ -1,0 +1,141 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+
+
+  <div class="column-two-thirds">
+
+
+    <h1 class="heading-xlarge">Your finances</h1>
+
+
+    <div class="panel panel-border-wide">
+
+      <p>For this type of offence you&rsquo;ll usually have to pay a fine:</p>
+
+      <ul class="list list-bullet">
+        <li>you must provide your income details</li>
+        <li>the court will decide your fine based on your finances and the seriousness of the offence</li>
+        <li>your details will be stored securely by the court</li>
+      </ul>
+
+    </div>
+
+
+    <h2 class="heading-large">Your finances details</h2>
+
+
+    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+
+
+      <div class="form-group">
+
+
+        <fieldset>
+
+          <legend>
+            <span class="form-label-bold">How often do you get paid?</span>
+          </legend>
+
+          <label class="block-label" for="paid-weekly" data-target="weekly">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="employedFinances.paymentFrequency"> Weekly
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="weekly">
+
+            <div class="form-group">
+              <label class="form-label" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="employedFinances.weeklyPay"></span>
+            </div>
+
+          </div>
+
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="employedFinances.paymentFrequency"> Fortnightly
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+
+            <div class="form-group">
+              <label class="form-label" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="employedFinances.fortnightlyPay"></span>
+            </div>
+
+          </div>
+
+          <label class="block-label" for="paid-monthly" data-target="monthly">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="employedFinances.paymentFrequency"> Monthly
+          </label>
+
+          <div class="panel panel-border-narrow js-hidden" id="monthly">
+
+            <div class="form-group">
+              <label class="form-label" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="employedFinances.monthlyPay"></span>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+
+      </div>
+
+
+      <div class="form-group">
+
+
+        <fieldset class="inline">
+
+
+          <legend>
+            <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
+            <span class="form-hint" id="financial-problems-hint">For example, you would become homeless.</span>
+          </legend>
+
+
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems-explanation">
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="employedFinances.financialProblems"> Yes
+          </label>
+
+
+          <label class="block-label" for="financial-problems-no">
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="employedFinances.financialProblems"> No
+          </label>
+
+
+          <div class="panel panel-border-narrow js-hidden" id="financial-problems-explanation">
+
+            <div class="form-group">
+
+              <label for="financial-problems-justification">
+                <span class="form-label">How would paying a fine cause you financial problems?</span>
+                <span class="form-hint" id="financial-problems-justification-hint">Why do you think the court should allow you to pay your fine in instalments?</span>
+              </label>
+
+              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="5" aria-describedby="financial-problems-justification-hint" data-ng-model="employedFinances.financialProblemsJustification"></textarea>
+
+            </div>
+
+          </div>
+
+
+        </fieldset>
+
+
+      </div>
+
+
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="employedFinances.buttonContinue($event)">Continue</button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>

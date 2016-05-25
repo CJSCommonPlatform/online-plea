@@ -1,0 +1,111 @@
+<a class="link-back" href="" data-ng-click="backLink()">Back</a>
+
+
+<div class="grid-row">
+
+
+  <div class="column-two-thirds">
+
+
+    <h1 class="heading-xlarge">Your expenses</h1>
+
+
+    <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
+
+
+    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+
+
+      <h2 class="heading-large">Household expenses</h2>
+
+      <p>What are your monthly household bills for the following?</p>
+
+
+      <fieldset>
+
+        <legend class="visuallyhidden">Household expenses</legend>
+
+        <div class="form-group">
+
+          <label for="accomodation">
+            <span class="form-label-bold">Accomodation<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="accomodation-hint">For example, rent, mortgage or lodgings</span>
+          </label>
+
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="accomodation" name="accomodation" aria-describedby="accomodation-hint" data-ng-model="householdExpenses.accomodation">
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="utility">
+            <span class="form-label-bold">Utility bills<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="utility-hint">For example, gas, water, electricity</span>
+          </label>
+
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="utility" name="utility" aria-describedby="utility-hint" data-ng-model="householdExpenses.utilityBills">
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <label for="insurance">
+            <span class="form-label-bold">Insurance<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="insurance-hint">For example, home, life insurance</span>
+          </label>
+
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="insurance" name="insurance" aria-describedby="insurance-hint" data-ng-model="householdExpenses.insurance">
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <label class="form-label-bold" for="council-tax">Council tax<span class="visuallyhidden">, in pounds</span></label>
+
+          <span class="form-currency">
+            <input class="form-control form-control-1-4" type="text" id="council-tax" name="council-tax" data-ng-model="householdExpenses.councilTax">
+          </span>
+
+        </div>
+
+        <div class="form-group">
+
+          <fieldset class="inline">
+
+            <legend>
+              <span class="form-label-bold">Does anyone else contribute to these bills?</span>
+            </legend>
+
+            <label class="block-label" for="contribute-yes">
+              <input type="radio" id="contribute-yes" name="contribute" value="Yes" data-ng-model="householdExpenses.contribute"> Yes
+            </label>
+
+            <label class="block-label" for="contribute-no">
+              <input type="radio" id="contribute-no" name="contribute" value="No" data-ng-model="householdExpenses.contribute"> No
+            </label>
+
+          </fieldset>
+
+        </div>
+
+      </fieldset>
+
+
+      <div class="form-group">
+        <button class="button" type="submit" data-ng-click="householdExpenses.buttonContinue($event)">Continue</button>
+      </div>
+
+
+    </form>
+
+
+  </div>
+
+
+</div>
