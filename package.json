@@ -1,13 +1,14 @@
 {
   "name": "pleaApp",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "gulp": "~3.9.0",
+  },
   "scripts": {
     "start": "gulp serve"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
-    "gulp": "~3.9.0",
     "gulp-autoprefixer": "~3.0.2",
     "gulp-angular-templatecache": "~1.8.0",
     "del": "~2.0.2",
