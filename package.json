@@ -2,6 +2,7 @@
   "name": "pleaApp",
   "version": "0.0.0",
   "dependencies": {
+    "node": "6.2.0",
     "gulp": "~3.9.0"
   },
   "scripts": {
@@ -54,6 +55,6 @@
     "wrench": "~1.5.8"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": "6.2.0"
   }
 }
