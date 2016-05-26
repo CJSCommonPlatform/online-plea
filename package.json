@@ -2,7 +2,7 @@
   "name": "pleaApp",
   "version": "0.0.1",
   "engines": {
-    "node": "5.7.0"
+    "node": "4.2.2"
   },
   
   "dependencies": {
@@ -57,7 +57,7 @@
   },
   
   "scripts": {
-    "build": "gulp",
+    "postinstall": "bower install",
     "start": "gulp serve"
   }
   
