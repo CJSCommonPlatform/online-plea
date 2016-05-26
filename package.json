@@ -2,7 +2,7 @@
   "name": "pleaApp",
   "version": "0.0.1",
   "engines": {
-    "node": "4.2.2"
+    "node": "4.4.2"
   },
   
   "dependencies": {
