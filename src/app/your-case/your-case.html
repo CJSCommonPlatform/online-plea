@@ -17,7 +17,7 @@
       <p>Optional description of the error(s) and how to correct them.</p>
 
       <ul class="error-summary-list">
-        <li data-ng-show="yourCase.form.caseReference.$myinvalid"><a href="" data-ng-click="enterCaseReferenceLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-reference">Enter your Unique reference number</a></li>
+        <li data-ng-show="yourCase.form.caseReference.$myinvalid"><a href="" data-ng-click="enterCaseReferenceLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-reference">Enter your Case reference number</a></li>
         <li data-ng-show="yourCase.form.casePostcode.$myinvalid"><a href="" data-ng-click="enterCasePostcodeLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-postcode">Enter your Postcode</a></li>
       </ul>
 
@@ -30,9 +30,9 @@
       <div class="form-group" data-ng-class="{'error': yourCase.caseReferenceAriaInvalid}">
 
         <label for="case-reference" id="error-case-reference">
-          <span class="form-label-bold">Unique reference number</span>
+          <span class="form-label-bold">Case reference number</span>
           <span class="form-hint" id="case-reference-hint">It&rsquo;ll be on page 1 of the notice, usually at the top. <br> For example, 1234567890.</span>
-          <span class="error-message" id="error-message-case-reference" data-ng-show="yourCase.caseReferenceAriaInvalid">Enter your Unique reference number</span>
+          <span class="error-message" id="error-message-case-reference" data-ng-show="yourCase.caseReferenceAriaInvalid">Enter your Case reference number</span>
         </label>
 
         <input class="form-control" type="text" id="case-reference" name="caseReference" aria-describedby="{{yourCase.caseReferenceAriaDescribedBy}}" aria-invalid="{{yourCase.caseReferenceAriaInvalid}}" value="{{yourCase.caseReference}}" required data-ng-model="yourCase.caseReference" data-focus-me="referenceFocused">
