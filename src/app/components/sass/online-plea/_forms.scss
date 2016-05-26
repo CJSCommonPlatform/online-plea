@@ -36,15 +36,3 @@ $module: "form";
 
 
 }
-
-
-// Form override until GDS improve form usage!
-
-.form-hint {
-  margin-bottom: 0;
-  padding-bottom: em(7);  
-}
-
-legend span ~ span {
-  margin-top: em(-7); // Far from ideal!
-}
