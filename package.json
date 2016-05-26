@@ -6,11 +6,11 @@
   },
   
   "dependencies": {
-    "gulp": "~3.9.0",
     "bower": "1.7.9" 
   },
   
   "devDependencies": {
+    "gulp": "~3.9.0",
     "estraverse": "~4.1.0",
     "gulp-autoprefixer": "~3.0.2",
     "gulp-angular-templatecache": "~1.8.0",
@@ -57,8 +57,8 @@
   },
   
   "scripts": {
-    "postinstall": "bower install",
-    "start": "gulp serve"
+    "start": "node app",
+    "postinstall": "gulp default"
   }
   
 }
