@@ -1,362 +1,113 @@
 <a class="link-back" href="" data-ng-click="backLink()">Back</a>
 
 
-<h1 class="heading-xlarge">Confirm your plea</h1>
+<h1 class="heading-xlarge">Confirm your answers</h1>
 
-<p class="lede">Review the information you&rsquo;ve provided before making your plea.</p>
+<p class="lede">Review your information before making your plea.</p>
 
 
-<section aria-labelledby="your-case-and-personal-details">
+<section class="summary">
 
-  <h2 class="heading-medium" id="your-case-and-personal-details">Your case and personal details</h2>
+  <h3 class="heading-small">Your case <a class="summary-action" href="" data-ui-sref="your-case">Change <span class="visuallyhidden">Your case</span></a></h3>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Case details</th>
-        <td class="table-action"><a href="" data-ui-sref="your-case">Change<span class="visuallyhidden"> Case details</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Reference number</td>
-        <td>{{confirmPlea.pleaApp.yourCase.caseReference}}</td>
-      </tr>
-      <tr>
-        <td>Postcode</td>
-        <td>{{confirmPlea.pleaApp.yourCase.casePostcode}}</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Personal details</th>
-        <td class="table-action"><a href="" data-ui-sref="your-details">Change<span class="visuallyhidden"> Personal details</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>First name</td>
-        <td>{{confirmPlea.pleaApp.yourDetails.firstName}}</td>
-      </tr>
-      <tr>
-        <td>Last name</td>
-        <td>{{confirmPlea.pleaApp.yourDetails.lastName}}</td>
-      </tr>
-      <tr>
-        <td>Address</td>
-        <td>
-          {{confirmPlea.pleaApp.yourDetails.address.street}}<br>
-          {{confirmPlea.pleaApp.yourDetails.address.city}}<br>
-          {{confirmPlea.pleaApp.yourDetails.address.postcode}}
-        </td>
-      </tr>
-      <tr>
-        <td>Contact number</td>
-        <td>{{confirmPlea.pleaApp.yourDetails.contactNumber | chkEmpty}}</td>
-      </tr>
-      <tr>
-        <td>Date of birth</td>
-        <td>{{confirmPlea.dateOfBirth | date: 'd MMMM yyyy' | chkEmpty}}</td>
-      </tr>
-      <tr>
-        <td>National Insurance number</td>
-        <td>{{confirmPlea.pleaApp.yourDetails.nationalInsuranceNumber | chkEmpty}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <dl class="summary-content">
+    <dt>Case number</dt>
+    <dd>123456789</dd>
+    <dt>Your postcode</dt>
+    <dd>GU51 5BU</dd>
+  </dl>
 
 </section>
 
 
-<section aria-labelledby="your-plea" data-ng-show="confirmPlea.pleaApp.yourPlea.plea">
+<section class="summary">
 
-  <h2 class="heading-medium" id="your-plea">Your plea</h2>
+  <h3 class="heading-small">Your personal details <a class="summary-action" href="" data-ui-sref="your-details">Change <span class="visuallyhidden">Your personal details</span></a></h3>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Charge</th>
-        <td class="table-action"><a href="" data-ui-sref="your-plea">Change<span class="visuallyhidden"> Charge</span></a></td>
-      </tr>
-    </thead>
-
-    <tbody data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Guilty'">
-      <tr>
-        <td>Plea</td>
-        <td>{{confirmPlea.pleaApp.yourPlea.plea}}</td>
-      </tr>
-      <tr >
-        <td>Plead guilty in court</td>
-        <td>{{confirmPlea.pleaApp.yourPlea.court}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.mitigation">
-       <td>Mitigation</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.mitigation}}</td>
-      </tr>
-    </tbody>
-
-    <tbody data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not guilty'">
-      <tr>
-        <td>Plea</td>
-        <td>{{confirmPlea.pleaApp.yourPlea.plea}}</td>
-      </tr>
-      <tr>
-        <td>Not guilty because?</td>
-        <td>{{confirmPlea.pleaApp.yourPlea.notGuiltyBecause}}</td>
-      </tr>
-      <tr>
-       <td>Do you need an interpreter in court?</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.interpreter}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">
-       <td>Interpreter language</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.interpreterLanguage}}</td>
-      </tr>
-      <tr>
-       <td>Evidence and witness information</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDisagree}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">
-       <td>Name of the witness</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails}}</td>
-      </tr>
-      <tr>
-       <td>Do you want to call a witness?</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.defenceWitnessCall}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">
-       <td>Witness contact details</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">
-       <td>Does your witness need an interpreter?</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">
-       <td>Witness interpreter language</td>
-       <td>{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</td>
-      </tr>
-    </tbody>
-
-  </table>
+  <dl class="summary-content">
+    <dt>First name</dt>
+    <dd>Trevor</dd>
+    <dt>Last name</dt>
+    <dd>Saint</dd>
+    <dt>Address</dt>
+    <dd>5 Moorhens<br>Fleet, Hampshire<br>GU51 5BU</dd>
+    <dt>Contact number</dt>
+    <dd>07783809087</dd>
+    <dt>Date of birth</dt>
+    <dd>5 April 1978</dd>
+    <dt>National Insurance number</dt>
+    <dd>JH 21 90 0A</dd>
+  </dl>
 
 </section>
 
 
-<section aria-labelledby="your-employment-and-finances" data-ng-show="confirmPlea.pleaApp.yourEmployment">
+<section class="summary">
 
-  <h2 class="heading-medium" id="your-employment-and-finances">Your employment and finances</h2>
+  <h3 class="heading-small">Your plea <a class="summary-action" href="" data-ui-sref="your-plea">Change <span class="visuallyhidden">Your plea</span></a></h3>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Employment</th>
-        <td class="table-action"><a href="" data-ui-sref="your-employment">Change<span class="visuallyhidden"> Employment</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>You are</td>
-        <td>{{confirmPlea.employmentStatus}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourEmployment.paymentFrequency">
-        <td>You get paid</td>
-        <td>{{confirmPlea.pleaApp.yourEmployment.paymentFrequency}}</td>
-      </tr>
-      <tr data-ng-show="confirmPlea.pleaApp.yourEmployment.paymentAmount">
-        <td>Amount (after tax)</td>
-        <td>&pound;{{confirmPlea.pleaApp.yourEmployment.paymentAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table table-summary" data-ng-show="confirmPlea.pleaApp.pensionCredit">
-    <thead>
-      <tr>
-        <th>Pension credit</th>
-        <td class="table-action"><a href="" data-ui-sref="pension-credit">Change<span class="visuallyhidden"> Pension credit</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Your pension credit is paid</td>
-        <td>{{confirmPlea.pleaApp.pensionCredit.pensionCreditFrequency}}</td>
-      </tr>
-      <tr>
-        <td>Amount</td>
-        <td>&pound;{{confirmPlea.pleaApp.pensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table table-summary" data-ng-show="confirmPlea.pleaApp.yourBenefits">
-    <thead>
-      <tr>
-        <th>Benefits</th>
-        <td class="table-action"><a href="" data-ui-sref="your-benefits">Change<span class="visuallyhidden"> Benefits</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>You receive</td>
-        <td>{{confirmPlea.pleaApp.yourBenefits.benefit}}</td>
-      </tr>
-      <tr>
-        <td>Your benefits are paid</td>
-        <td>{{confirmPlea.pleaApp.yourBenefits.benefitFrequency}}</td>
-      </tr>
-      <tr>
-        <td>Amount</td>
-        <td>&pound;{{confirmPlea.pleaApp.yourBenefits.benefitAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th colspan="2">Total weekly income</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Amount (after tax)</td>
-        <td><span class="bold-medium">&pound;{{confirmPlea.totalWeeklyIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <dl class="summary-content">
+    <dt>Plea</dt>
+    <dd>Guilty</dd>
+    <dt>Plead guilty in court</dt>
+    <dd>Yes</dd>
+    <dt>Mitigation</dt>
+    <dd>I did not do what they say I did.</dd>
+  </dl>
 
 </section>
 
 
-<section aria-labelledby="special-financial-circumstances" data-ng-show="confirmPlea.pleaApp.yourExpenses">
+<section class="summary">
 
-  <h2 class="heading-medium" id="special-financial-circumstances">Special financial circumstances</h2>
+  <h3 class="summary-heading">Employment <a class="summary-action" href="" data-ui-sref="your-details">Change <span class="visuallyhidden">Employment</span></a></h3>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Household expenses</th>
-        <td class="table-action"><a href="" data-ui-sref="your-expenses.household">Change<span class="visuallyhidden"> Household expenses</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Other contributors to household bills</td>
-        <td>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</td>
-      </tr>
-      <tr>
-        <td>Total household expenses</td>
-        <td>&pound;{{confirmPlea.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <dl class="summary-content">
+    <dt>You are</dt>
+    <dd>Employed and also receiving benefits</dd>
+    <dt>You get paid</dt>
+    <dd>Fortnightly</dd>
+    <dt>Amount (after tax)</dt>
+    <dd>&pound;21,312.00<span class="visuallyhidden">, in pounds</span></dd>
+  </dl>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th>Other expenses</th>
-        <td class="table-action"><a href="" data-ui-sref="your-expenses.other">Change<span class="visuallyhidden"> Other expenses</span></a></td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Other expenses (not listed)</td>
-        <td>{{confirmPlea.otherExpenses}}</td>
-      </tr>
-      <tr>
-        <td>Total other expenses</td>
-        <td>&pound;{{confirmPlea.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <h3 class="heading-small">Benefits <a class="summary-action" href="" data-ui-sref="your-benefits">Change <span class="visuallyhidden">Benefits</span></a></h3>
 
-  <table class="table table-summary">
-    <thead>
-      <tr>
-        <th colspan="2">Total expenses</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Amount</td>
-        <td><span class="bold-medium">&pound;{{confirmPlea.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></td>
-      </tr>
-    </tbody>
-  </table>
+  <dl class="summary-content">
+    <dt>You receive</dt>
+    <dd>Income&ndash;related Employment and Support Allowance</dd>
+    <dt>Your benefits are paid</dt>
+    <dd>Fortnighly</dd>
+    <dt>Amount</dt>
+    <dd>&pound;32.00<span class="visuallyhidden">, in pounds</span></dd>
+  </dl>
+
+  <h3 class="heading-small">Household expenses <a class="summary-action" href="" data-ui-sref="your-benefits">Change <span class="visuallyhidden">Household expenses</span></a></h3>
+
+  <dl class="summary-content">
+    <dt>Other contributors to household bills</dt>
+    <dd>Yes</dd>
+    <dt>Amount</dt>
+    <dd>&pound;114.00<span class="visuallyhidden">, in pounds</span></dd>
+  </dl>
+
+  <h3 class="heading-small">Other expenses <a class="summary-action" href="" data-ui-sref="your-benefits">Change <span class="visuallyhidden">Other expenses</span></a></h3>
+
+  <dl class="summary-content">
+    <dt>Other expenses (not listed)</dt>
+    <dd>Beer and food</dd>
+    <dt>Amount</dt>
+    <dd>&pound;103.00<span class="visuallyhidden">, in pounds</span></dd>
+  </dl>
+
+  <h3 class="heading-small">Total income</h3>
+
+  <dl class="summary-content">
+    <dt>Amount (after tax)</dt>
+    <dd><span class="bold-medium">&pound;21,344.00</span></dd>
+  </dl>
 
 </section>
 
 
-<div class="button-container"><a class="button" href="" data-ng-click="confirmPlea.buttonContinue($event)" role="button">Continue</a></div>
-
-
-<!--h2 class="heading-medium">Important information</h2>
-
-<div class="grid-row">
-
-  <div class="column-two-thirds">
-
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
-
-      <div class="form-group">
-
-        <fieldset class="inline">
-
-          <legend>
-            <span class="form-label-bold">Do you want to receive an email confirming your plea has been sent to the court?</span>
-          </legend>
-
-          <label class="block-label" for="receive-email-yes" data-target="provide-email">
-            <input type="radio" id="receive-email-yes" name="receive-email" value="Yes"> Yes
-          </label>
-
-          <label class="block-label" for="receive-email-no">
-            <input type="radio" id="receive-email-no" name="receive-email" value="No"> No
-          </label>
-
-          <div class="panel panel-border-narrow js-hidden" id="provide-email">
-
-            <div class="form-group">
-              <label class="form-label" for="email-address">Email address</span></label>
-              <input class="form-control" type="email" id="email-address" name="email-address">
-            </div>
-
-          </div>
-
-        </fieldset>
-
-      </div>
-
-      <div class="form-group">
-
-        <div class="notice">
-          <i class="icon icon-important">
-            <span class="visuallyhidden">Warning</span>
-          </i>
-          <strong class="bold-small">
-            It is an offence to make a false statement or to deliberately fail to disclose any relevant facts.
-          </strong>
-        </div>
-
-      </div>
-
-      <div class="form-group">
-        <label class="block-label" for="confirm-plea">
-          <input type="checkbox" id="confirm-plea" name="confirm-plea" value="Confirm plea">
-          I confirm that I have read and understand the charges against me and that I am the person named in the Postal Requisition. The facts stated here are correct to the best of my knowledge.
-        </label>
-      </div>
-
-      <div class="form-group">
-        <button class="button" type="submit" data-ng-click="confirmPlea.buttonContinue($event)">Make your plea</button>
-      </div>
-
-    </form>
-
-  </div>
-
-</div-->
+<div class="button-container"><a class="button" href="" role="button" data-ng-click="confirmPlea.buttonContinue($event)">Confirm and continue</a></div>

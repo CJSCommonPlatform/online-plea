@@ -33,7 +33,7 @@
     //private
     
     function _updateContinueButtonLabel() {
-      vm.buttonContinueLabel = state.getPrevious() === 'confirm-plea' ? 'Change' : 'Continue';
+      vm.buttonContinueLabel = state.getPrevious() === 'confirm-plea' ? 'Change' : 'Save and continue';
     }
     
     function _updateState() {

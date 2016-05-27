@@ -13,19 +13,18 @@
     <p class="lede">We may need to contact you about your plea.</p>
 
 
-    <h2 class="heading-medium">Check your name and address</h2>
+    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
+      <h2 class="heading-medium">Check your name and address</h2>
 
 
       <div class="form-group">
 
         <div class="panel panel-border-wide">
 
-          <h3 class="heading-small">Mr Mike Mouse</h3>
-
           <p>
+            <span class="bold-small">Mr Mike Mouse</span><br>
             38A Baker Street<br>
             London<br>
             007 700
@@ -48,20 +47,15 @@
             <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" data-ng-model="yourDetails.detailsCorrect"> Yes
           </label>
 
-          <label class="block-label" for="correct-details-no" data-target="incorrect-details">
+          <label class="block-label" for="correct-details-no" data-target="correct-details">
             <input type="radio" id="correct-details-no" name="correct-details" value="No" data-ng-model="yourDetails.detailsCorrect"> No
           </label>
 
-          <div class="panel panel-border-narrow js-hidden" id="incorrect-details">
+          <div class="panel panel-border-narrow js-hidden" id="correct-details">
 
               <div class="form-group">
-
-                <label for="update-details">
-                  <span class="form-label">Enter correct details</span>
-                </label>
-
+                <label class="form-label" for="update-details">Enter correct details</label>
                 <textarea class="form-control form-control-textarea" id="update-details" name="update-details" cols="30" rows="5" data-ng-model="yourDetails.update"></textarea>
-
               </div>
 
           </div>

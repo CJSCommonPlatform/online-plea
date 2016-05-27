@@ -23,7 +23,7 @@
     </div>
     
     
-    <h2 class="heading-large">Your finances details</h2>
+    <h2 class="heading-medium">Your income</h2>
     
     
     <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
@@ -109,7 +109,7 @@
           </legend>
   
   
-          <label class="block-label" for="financial-problems-yes" data-target="financial-problems-explanation">
+          <label class="block-label" for="financial-problems-yes">
             <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="selfEmployedFinances.financialProblems"> Yes
           </label>
           
@@ -117,22 +117,6 @@
           <label class="block-label" for="financial-problems-no">
             <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="selfEmployedFinances.financialProblems"> No
           </label>
-          
-          
-          <div class="panel panel-border-narrow js-hidden" id="financial-problems-explanation">
-            
-            <div class="form-group">
-              
-              <label for="financial-problems-justification">
-                <span class="form-label">How would paying a fine cause you financial problems?</span>
-                <span class="form-hint" id="financial-problems-justification-hint">Why do you think the court should allow you to pay your fine in instalments.</span>
-              </label>
-              
-              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="5" aria-describedby="financial-problems-justification-hint" data-ng-model="selfEmployedFinances.financialProblemsJustification"></textarea>
-              
-            </div>
-            
-          </div>
           
         
         </fieldset>
@@ -142,7 +126,7 @@
       
       
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="selfEmployedFinances.buttonContinue($event)">Continue</button>
+        <button class="button" type="submit" data-ng-click="selfEmployedFinances.buttonContinue($event)">Save and continue</button>
       </div>
       
     

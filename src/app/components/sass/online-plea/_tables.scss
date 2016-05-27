@@ -11,16 +11,13 @@ $module: "table";
 
   &-summary {
     margin-bottom: em(30);
+    overflow: hidden;
 
     td {
       vertical-align: top;
       
       &:first-child {
         width: 40%;
-        
-        &:after {
-          content: ':';
-        }
       }
       
     }
@@ -31,6 +28,42 @@ $module: "table";
     }
     
   }
+
+
+}
+
+
+
+$module: "summary";
+
+
+.#{$module} {
+    border-bottom: 1px solid $border-colour;
+    padding-top: 10px;
+    padding-bottom: em(30);
+    position: relative;
+
+
+    &-heading {
+        @extend .heading-small;
+    }
+
+
+    dt {
+        float: left;
+        padding-top: em(10);
+        width: 40%;
+    }
+
+    dd {
+        padding-top: em(10);
+        overflow: hidden;
+    }
+
+    &-action {
+      font-weight: normal;
+      float: right;
+    }
 
 
 }
