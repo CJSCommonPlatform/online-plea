@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  fdescribe('HouseholdExpensesController', function() {
+  describe('HouseholdExpensesController', function() {
     var scope;
     var vm;
     var $state;
