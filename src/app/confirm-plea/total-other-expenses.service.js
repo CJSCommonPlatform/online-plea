@@ -5,7 +5,7 @@
     .module('pleaApp')
     .factory('totalOtherExpenses', totalOtherExpenses);
 
-  function totalOtherExpenses() {
+  function totalOtherExpenses(lodash) {
     var service = {
       calculate: calculate
     };
@@ -13,14 +13,14 @@
     return service;
 
     function calculate(vm) {
-      var televisionSubscription = _.get(vm, 'pleaApp.yourExpenses.other.televisionSubscription');
-      var travelExpenses = _.get(vm, 'pleaApp.yourExpenses.other.travelExpenses');
-      var telephone = _.get(vm, 'pleaApp.yourExpenses.other.telephone');
-      var loanRepayments = _.get(vm, 'pleaApp.yourExpenses.other.loanRepayments');
-      var countyCourtOrders = _.get(vm, 'pleaApp.yourExpenses.other.countyCourtOrders');
-      var fines = _.get(vm, 'pleaApp.yourExpenses.other.fines');
-      var childMaintenance = _.get(vm, 'pleaApp.yourExpenses.other.childMaintenance');
-      var otherExpensesMonthly = _.get(vm, 'pleaApp.yourExpenses.other.otherExpensesMonthly');
+      var televisionSubscription = lodash.get(vm, 'pleaApp.yourExpenses.other.televisionSubscription');
+      var travelExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.travelExpenses');
+      var telephone = lodash.get(vm, 'pleaApp.yourExpenses.other.telephone');
+      var loanRepayments = lodash.get(vm, 'pleaApp.yourExpenses.other.loanRepayments');
+      var countyCourtOrders = lodash.get(vm, 'pleaApp.yourExpenses.other.countyCourtOrders');
+      var fines = lodash.get(vm, 'pleaApp.yourExpenses.other.fines');
+      var childMaintenance = lodash.get(vm, 'pleaApp.yourExpenses.other.childMaintenance');
+      var otherExpensesMonthly = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpensesMonthly');
 
       var totalOtherExpenses = 0;
 

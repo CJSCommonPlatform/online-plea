@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('pleaApp', ['ngStorage', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngAria', 'restangular', 'ui.router', 'toastr']);
+    .module('pleaApp', ['ngStorage', 'ngCookies', 'ngSanitize', 'ngMessages', 'ngAria', 'restangular', 'ui.router', 'toastr', 'ngLodash']);
 
 })();

@@ -5,7 +5,7 @@
     .module('pleaApp')
     .factory('totalWeeklyIncome', totalWeeklyIncome);
 
-  function totalWeeklyIncome() {
+  function totalWeeklyIncome(lodash) {
     var service = {
       calculate: calculate
     };
@@ -13,8 +13,8 @@
     return service;
 
     function calculate(vm) {
-      var paymentAmount = _.get(vm, 'pleaApp.yourEmployment.paymentAmount');
-      var benefitAmount = _.get(vm, 'pleaApp.yourBenefits.benefitAmount');
+      var paymentAmount = lodash.get(vm, 'pleaApp.yourEmployment.paymentAmount');
+      var benefitAmount = lodash.get(vm, 'pleaApp.yourBenefits.benefitAmount');
 
       var totalWeeklyIncome = 0;
 

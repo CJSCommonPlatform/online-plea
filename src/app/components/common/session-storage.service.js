@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('sessionStorage', sessionStorage);
 
-  sessionStorage.$inject = ['$sessionStorage'];
+  sessionStorage.$inject = ['$sessionStorage', 'lodash'];
 
-  function sessionStorage($sessionStorage) {
+  function sessionStorage($sessionStorage, lodash) {
     var service = {
       reset: reset,
       getGetter: getGetter,
@@ -23,13 +23,13 @@
 
     function getGetter(baseName) {
       return function(propertyName) {
-        return _.get($sessionStorage, baseName + propertyName);
+        return lodash.get($sessionStorage, baseName + propertyName);
       }
     }
 
     function getSetter(baseName) {
       return function(propertyName, propertyValue) {
-        _.set($sessionStorage, baseName + propertyName, propertyValue);
+        lodash.set($sessionStorage, baseName + propertyName, propertyValue);
       }
     }
   }

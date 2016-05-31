@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('state', state);
 
-  state.$inject = ['$state'];
+  state.$inject = ['$state', 'lodash'];
 
-  function state($state) {
+  function state($state, lodash) {
     var service = {
       getNext: getNext,
       goNext: goNext,
@@ -41,12 +41,12 @@
     }
 
     function _getNextGivenViewModel(viewModel) {
-      var propertyValue = _.get(viewModel, $state.current.data.propertyName);
-      var constant = _.get(viewModel, $state.current.data.constantName);
+      var propertyValue = lodash.get(viewModel, $state.current.data.propertyName);
+      var constant = lodash.get(viewModel, $state.current.data.constantName);
 
       for (var i = 0; i < $state.current.data.nextState.length; i++) {
         var candidate = $state.current.data.nextState[i];
-        var constantValue = _.get(constant, candidate.constantValue);
+        var constantValue = lodash.get(constant, candidate.constantValue);
 
         if (propertyValue === constantValue) {
           return candidate.stateName;

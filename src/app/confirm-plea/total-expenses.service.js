@@ -5,7 +5,7 @@
     .module('pleaApp')
     .factory('totalExpenses', totalExpenses);
 
-  function totalExpenses() {
+  function totalExpenses(lodash) {
     var service = {
       calculate: calculate
     };
@@ -13,8 +13,8 @@
     return service;
 
     function calculate(vm) {
-      var totalHouseholdExpenses = _.get(vm, 'totalHouseholdExpenses');
-      var totalOtherExpenses = _.get(vm, 'totalOtherExpenses');
+      var totalHouseholdExpenses = lodash.get(vm, 'totalHouseholdExpenses');
+      var totalOtherExpenses = lodash.get(vm, 'totalOtherExpenses');
 
       var totalExpenses = 0;
 

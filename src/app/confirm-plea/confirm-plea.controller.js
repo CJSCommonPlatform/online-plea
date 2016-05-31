@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('ConfirmPleaController', ConfirmPleaController);
     
-  ConfirmPleaController.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'state'];  
+  ConfirmPleaController.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'state', 'lodash'];
     
-  function ConfirmPleaController(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, state) {
+  function ConfirmPleaController(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, state, lodash) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;
@@ -31,20 +31,20 @@
       
       vm.dateOfBirth = new Date(year, month - 1, day);
       
-      vm.employmentStatus = _.get(vm, 'pleaApp.yourEmployment.employmentStatus');
+      vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
     
       vm.totalWeeklyIncome = totalWeeklyIncome.calculate(vm);
       vm.totalHouseholdExpenses = totalHouseholdExpenses.calculate(vm);
       vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
 
-      vm.otherExpenses = _.get(vm, 'pleaApp.yourExpenses.other.otherExpenses');
+      vm.otherExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpenses');
       
       if (vm.otherExpenses === 'Yes') {
-        vm.otherExpenses = _.get(vm, 'pleaApp.yourExpenses.other.otherExpensesDetails');
+        vm.otherExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpensesDetails');
       }
       
       if (vm.employmentStatus === 'Other') {
-        vm.employmentStatus = _.get(vm, 'pleaApp.yourEmployment.provideDetails');
+        vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.provideDetails');
       }
       
       vm.totalExpenses = totalExpenses.calculate(vm);

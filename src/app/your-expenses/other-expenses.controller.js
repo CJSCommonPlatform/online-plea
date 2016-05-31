@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('OtherExpensesController', OtherExpensesController);
     
-  OtherExpensesController.$inject = ['$state', '$sessionStorage'];  
+  OtherExpensesController.$inject = ['$state', '$sessionStorage', 'lodash'];
     
-  function OtherExpensesController($state, $sessionStorage) {
+  function OtherExpensesController($state, $sessionStorage, lodash) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;
@@ -62,13 +62,13 @@
     
     function _storeSet($sessionStorage, baseName) {
       return function(propertyName, propertyValue) {
-        _.set($sessionStorage, baseName + propertyName, propertyValue);
+        lodash.set($sessionStorage, baseName + propertyName, propertyValue);
       }
     }
     
     function _storeGet($sessionStorage, baseName) {
       return function(propertyName) {
-        return _.get($sessionStorage, baseName + propertyName);
+        return lodash.get($sessionStorage, baseName + propertyName);
       }
     }
 

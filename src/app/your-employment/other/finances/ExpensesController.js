@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('ExpensesController', ExpensesController);
   
-  ExpensesController.$inject = ['$controller', '$state', '$sessionStorage', 'yesNoAnswer'];
+  ExpensesController.$inject = ['$controller', '$state', '$sessionStorage', 'yesNoAnswer', 'lodash'];
 
-  function ExpensesController($controller, $state, $sessionStorage, yesNoAnswer) {
+  function ExpensesController($controller, $state, $sessionStorage, yesNoAnswer, lodash) {
     var vm = this;
 
     angular.extend(vm, $controller('FlowController'));
@@ -27,7 +27,7 @@
 
   function _storeGet($sessionStorage, baseName) {
     return function(propertyName) {
-      return _.get($sessionStorage, baseName + propertyName);
+      return lodash.get($sessionStorage, baseName + propertyName);
     }
   }
 
