@@ -21,39 +21,61 @@
         expect(pensionCredit.updateSessionStorage).not.toEqual(null);
       });
 
-      it('should work for Weekly', function() {
-        //given
-        var vm = {
-          pensionCreditFrequency: 'Weekly',
-          weeklyPensionCreditPay: '100'
-        }
-        //when
-        pensionCredit.updateSessionStorage(vm);
-        //then
-        var get = sessionStorage.getGetter('pleaApp.pensionCredit.');
-        expect(get('pensionCreditFrequency')).toEqual('Weekly');
-        expect(get('pensionCreditAmount')).toEqual('100');
+      it('should work for weekly', function() {
+        test('Weekly', '100', 'weeklyPensionCreditPay');
       })
 
-      it('should work for Monthly', function() {
+      it('should work for fortnightly', function() {
+        test('Fortnightly', '200', 'fortnightlyPensionCreditPay');
+      })
+
+      it('should work for monthly', function() {
+        test('Monthly', '300', 'monthlyPensionCreditPay');
+      });
+
+      function test(pensionCreditFrequency, pensionCreditAmount, pensionCreditAmountPropertyName) {
         //given
-        var vm = {
-          pensionCreditFrequency: 'Monthly',
-          monthlyPensionCreditPay: '200'
-        }
+        var vm = {}
+        vm['pensionCreditFrequency'] = pensionCreditFrequency;
+        vm[pensionCreditAmountPropertyName] = pensionCreditAmount;
         //when
         pensionCredit.updateSessionStorage(vm);
         //then
         var get = sessionStorage.getGetter('pleaApp.pensionCredit.');
-        expect(get('pensionCreditFrequency')).toEqual('Monthly');
-        expect(get('pensionCreditAmount')).toEqual('200');
-      })
+        expect(get('pensionCreditFrequency')).toEqual(pensionCreditFrequency);
+        expect(get('pensionCreditAmount')).toEqual(pensionCreditAmount);
+      }
     });
 
     describe('updateVm function', function() {
       it('should exist', function() {
         expect(sessionStorage.updateVm).not.toEqual(null);
       });
+
+      it('should work for weekly', function() {
+        test('Weekly', '100', 'weeklyPensionCreditPay');
+      })
+
+      it('should work for fortnightly', function() {
+        test('Fortnightly', '200', 'fortnightlyPensionCreditPay');
+      })
+
+      it('should work for monthly', function() {
+        test('Monthly', '300', 'monthlyPensionCreditPay');
+      })
+
+      function test(pensionCreditFrequency, pensionCreditAmount, pensionCreditAmountPropertyName) {
+        //given
+        var set = sessionStorage.getSetter('pleaApp.pensionCredit.');
+        set('pensionCreditFrequency', pensionCreditFrequency);
+        set('pensionCreditAmount', pensionCreditAmount)
+        //when
+        var vm = {};
+        pensionCredit.updateVm(vm);
+        //then
+        expect(vm.pensionCreditFrequency).toEqual(pensionCreditFrequency);
+        expect(vm[pensionCreditAmountPropertyName]).toEqual(pensionCreditAmount);
+      }
     });
   });
 })();
