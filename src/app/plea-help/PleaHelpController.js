@@ -12,7 +12,7 @@
 
     vm.buttonContinue = continueButtonClicked;
 
-    function continueButtonClicked() {
+    function continueButtonClicked(event) {
       event.preventDefault();
       $state.go('index');
     }

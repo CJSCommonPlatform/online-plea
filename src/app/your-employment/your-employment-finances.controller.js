@@ -22,7 +22,7 @@
 
     // public
 
-    function continueButtonClicked() {
+    function continueButtonClicked(event) {
       event.preventDefault();
       _updateSessionStorage();
       state.goNext(vm);

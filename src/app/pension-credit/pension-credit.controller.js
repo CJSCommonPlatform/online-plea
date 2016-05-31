@@ -15,7 +15,7 @@
 
     pensionCredit.updateVm(vm);
 
-    function continueButtonClicked() {
+    function continueButtonClicked(event) {
       event.preventDefault();
       pensionCredit.updateSessionStorage(vm);
       state.goNext(vm);
