@@ -1,0 +1,33 @@
+// ==========================================================================
+// Synopsis
+// ==========================================================================
+
+
+$module: "synopsis";
+
+
+.#{$module} {
+  border-bottom: 1px solid $border-colour;
+  padding-bottom: em(30);
+  padding-top: em(30);
+  overflow: hidden;
+  position: relative;
+  
+  dt {
+    float: left;
+    padding-top: em(10);
+    width: 40%;
+  }
+  
+  dd {
+    overflow: hidden;
+    padding-top: em(10);
+  }
+  
+  &-action {
+    position: absolute;
+    top: em(30); right: 0;
+  }
+
+}
+
