@@ -22,9 +22,9 @@
       $state.go('your-case');
       scope.$apply();
       event = jasmine.createSpyObj('event', ['preventDefault']);
-      vm.form = jasmine.createSpyObj('form', ['$submitted', '$valid', '$myinvalid', 'caseReference', 'casePostcode']);
+      vm.form = jasmine.createSpyObj('form', ['$submitted', '$valid', '$myinvalid', 'caseNumber', 'casePostcode']);
       vm.form.$submitted = false;
-      vm.form.reference = jasmine.createSpyObj('caseReference', ['$myinvalid']);
+      vm.form.number = jasmine.createSpyObj('caseNumber', ['$myinvalid']);
       vm.form.postcode = jasmine.createSpyObj('casePostcode', ['$myinvalid']);
     }));
 
@@ -71,34 +71,34 @@
     });
 
 
-    it('should update reference aria attributes when continue button was clicked and the reference field was invalid', function() {
+    it('should update case number aria attributes when continue button was clicked and the case number field was invalid', function() {
       //given
-      expect(vm.caseReferenceAriaDescribedBy).toBe('case-reference-hint');
-      expect(vm.caseReferenceAriaInvalid).toBe(false);
+      expect(vm.caseNumberAriaDescribedBy).toBe('case-number-hint');
+      expect(vm.caseNumberAriaInvalid).toBe(false);
       //when
       vm.form.$valid = false;
-      vm.form.caseReference.$invalid = true;
+      vm.form.caseNumber.$invalid = true;
       vm.continueButtonClicked(event);
       //then
-      expect(vm.caseReferenceAriaDescribedBy).toBe('error-message-case-reference');
-      expect(vm.caseReferenceAriaInvalid).toBe(true);
+      expect(vm.caseNumberAriaDescribedBy).toBe('error-message-case-number');
+      expect(vm.caseNumberAriaInvalid).toBe(true);
     });
 
 
-    it('should update reference aria attributes when continue button was clicked and the reference field was valid', function() {
+    it('should update case number aria attributes when continue button was clicked and the case number field was valid', function() {
       //given
       vm.form.$valid = false;
-      vm.form.caseReference.$invalid = true;
+      vm.form.caseNumber.$invalid = true;
       vm.continueButtonClicked(event);
-      expect(vm.caseReferenceAriaDescribedBy).toBe('error-message-case-reference');
-      expect(vm.caseReferenceAriaInvalid).toBe(true);
+      expect(vm.caseNumberAriaDescribedBy).toBe('error-message-case-number');
+      expect(vm.caseNumberAriaInvalid).toBe(true);
       //when
       vm.form.$valid = true;
-      vm.form.caseReference.$invalid = false;
+      vm.form.caseNumber.$invalid = false;
       vm.continueButtonClicked(event);
       //then
-      expect(vm.caseReferenceAriaDescribedBy).toBe('case-reference-hint');
-      expect(vm.caseReferenceAriaInvalid).toBe(false);
+      expect(vm.caseNumberAriaDescribedBy).toBe('case-number-hint');
+      expect(vm.caseNumberAriaInvalid).toBe(false);
     });
 
 
@@ -141,13 +141,13 @@
     });
 
 
-    it('should focus reference input when enter reference link was clicked', function() {
+    it('should focus case number input when enter case number link was clicked', function() {
       //given
-      expect(vm.caseReferenceFocused).not.toBe(true);
+      expect(vm.caseNumberFocused).not.toBe(true);
       //when
-      vm.enterCaseReferenceLinkClicked();
+      vm.enterCaseNumberLinkClicked();
       //then
-      expect(vm.caseReferenceFocused).toBe(true);
+      expect(vm.caseNumberFocused).toBe(true);
     });
 
 
@@ -173,16 +173,16 @@
 
 
     it('should store user input values in session storage when continue button was clicked and the form was valid ', function() {
-      var exampleCaseReference = '13LD0338416';
+      var exampleCaseNumber = '13LD0338416';
       var exampleCasePostcode = 'LS9 6DP';
       //given
-      vm.caseReference = exampleCaseReference;
+      vm.caseNumber = exampleCaseNumber;
       vm.casePostcode = exampleCasePostcode;
       vm.form.$valid = true;
       //when
       vm.continueButtonClicked(event);
       //then
-      expect(sessionStorage.pleaApp.yourCase.caseReference).toBe(exampleCaseReference);
+      expect(sessionStorage.pleaApp.yourCase.caseNumber).toBe(exampleCaseNumber);
       expect(sessionStorage.pleaApp.yourCase.casePostcode).toBe(exampleCasePostcode);
     });
 

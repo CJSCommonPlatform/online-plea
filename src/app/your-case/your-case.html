@@ -15,7 +15,7 @@
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
       <ul class="error-summary-list">
-        <li data-ng-show="yourCase.form.caseReference.$myinvalid"><a href="" data-ng-click="enterCaseReferenceLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-reference">Case number</a></li>
+        <li data-ng-show="yourCase.form.caseNumber.$myinvalid"><a href="" data-ng-click="enterCaseNumberLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-number">Case number</a></li>
         <li data-ng-show="yourCase.form.casePostcode.$myinvalid"><a href="" data-ng-click="enterCasePostcodeLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-postcode">Your postcode</a></li>
       </ul>
 
@@ -25,15 +25,15 @@
     <form class="form" method="post" name="yourCase.form" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
 
 
-      <div class="form-group" data-ng-class="{'error': yourCase.caseReferenceAriaInvalid}">
+      <div class="form-group" data-ng-class="{'error': yourCase.caseNumberAriaInvalid}">
 
-        <label for="case-reference" id="error-case-reference">
+        <label for="case-number" id="error-case-number">
           <span class="form-label-bold">Case number</span>
-          <span class="form-hint" id="case-reference-hint">Find this on your notice, eg 123456789</span>
-          <span class="error-message" id="error-message-case-reference" data-ng-show="yourCase.caseReferenceAriaInvalid">Provide this information</span>
+          <span class="form-hint" id="case-number-hint">Find this on your notice, eg 123456789</span>
+          <span class="error-message" id="error-message-case-number" data-ng-show="yourCase.caseNumberAriaInvalid">Provide this information</span>
         </label>
 
-        <input class="form-control" type="text" id="case-reference" name="caseReference" aria-describedby="{{yourCase.caseReferenceAriaDescribedBy}}" aria-invalid="{{yourCase.caseReferenceAriaInvalid}}" value="{{yourCase.caseReference}}" required data-ng-model="yourCase.caseReference" data-focus-me="referenceFocused">
+        <input class="form-control" type="text" id="case-number" name="caseNumber" aria-describedby="{{yourCase.caseNumberAriaDescribedBy}}" aria-invalid="{{yourCase.caseNumberAriaInvalid}}" value="{{yourCase.caseNumber}}" required data-ng-model="yourCase.caseNumber" data-focus-me="numberFocused">
 
       </div>
 

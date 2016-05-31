@@ -15,11 +15,11 @@
     var set = sessionStorage.getSetter(BASE_NAME);
 
     vm.showErrorSummary = false;
-    vm.enterCaseReferenceLinkClicked = enterCaseReferenceLinkClicked;
+    vm.enterCaseNumberLinkClicked = enterCaseNumberLinkClicked;
     vm.enterCasePostcodeLinkClicked = enterCasePostcodeLinkClicked;
     vm.continueButtonClicked = continueButtonClicked;
-    vm.caseReferenceAriaInvalid = false;
-    vm.caseReferenceAriaDescribedBy = 'case-reference-hint';
+    vm.caseNumberAriaInvalid = false;
+    vm.caseNumberAriaDescribedBy = 'case-number-hint';
     vm.casePostcodeAriaInvalid = false;
     vm.casePostcodeAriaDescribedBy = 'case-postcode-hint';
 
@@ -27,8 +27,8 @@
 
     //public
 
-    function enterCaseReferenceLinkClicked() {
-      vm.caseReferenceFocused = true;
+    function enterCaseNumberLinkClicked() {
+      vm.caseNumberFocused = true;
     }
 
     function enterCasePostcodeLinkClicked() {
@@ -40,8 +40,8 @@
       
       updateFormProperties();
       
-      updateReferenceAriaDescribedBy();
-      updateReferenceAriaInvalid();
+      updateNumberAriaDescribedBy();
+      updateNumberAriaInvalid();
 
       updatePostcodeAriaDescribedBy();
       updatePostcodeAriaInvalid();
@@ -58,7 +58,7 @@
     function updateFormProperties() {
       vm.form.$submitted = true;
       vm.form.$myinvalid = vm.form.$invalid;
-      vm.form.caseReference.$myinvalid = vm.form.caseReference.$invalid;
+      vm.form.caseNumber.$myinvalid = vm.form.caseNumber.$invalid;
       vm.form.casePostcode.$myinvalid = vm.form.casePostcode.$invalid;
     }
 
@@ -66,12 +66,12 @@
       vm.errorSummaryFocused = vm.form.$invalid;
     }
 
-    function updateReferenceAriaDescribedBy() {
-      vm.caseReferenceAriaDescribedBy = vm.form.caseReference.$myinvalid ? 'error-message-case-reference' : 'case-reference-hint';
+    function updateNumberAriaDescribedBy() {
+      vm.caseNumberAriaDescribedBy = vm.form.caseNumber.$myinvalid ? 'error-message-case-Number' : 'case-Number-hint';
     }
 
-    function updateReferenceAriaInvalid() {
-      vm.caseReferenceAriaInvalid = vm.form.$submitted && vm.form.caseReference.$myinvalid
+    function updateNumberAriaInvalid() {
+      vm.caseNumberAriaInvalid = vm.form.$submitted && vm.form.caseNumber.$myinvalid
     }
 
     function updatePostcodeAriaDescribedBy() {
@@ -83,13 +83,13 @@
     }
     
     function _updateViewModel() {
-      vm.caseReference = get('caseReference');
+      vm.caseNumber = get('caseNumber');
       vm.casePostcode = get('casePostcode');
     }
 
     function updateSessionStorage() {
       if (vm.form.$valid) {
-        set('caseReference', vm.caseReference);
+        set('caseNumber', vm.caseNumber);
         set('casePostcode', vm.casePostcode);
       }
     }
