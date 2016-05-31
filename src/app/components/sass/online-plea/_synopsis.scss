@@ -22,6 +22,12 @@ $module: "synopsis";
   }
   
   
+  &-heading {
+    @extend .bold-medium;
+    margin-bottom: em(20);
+  }
+  
+  
   &-item {
     border-top: 1px solid $border-colour;
     padding: em(30) 0;
