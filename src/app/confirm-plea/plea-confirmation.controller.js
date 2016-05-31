@@ -13,7 +13,7 @@
     vm.pleaApp = $sessionStorage.pleaApp;
     vm.buttonContinue = continueButtonClicked;
 
-    function continueButtonClicked() {
+    function continueButtonClicked(event) {
       event.preventDefault();
       var nextState = $state.current.data.nextState;
       $state.go(nextState);
