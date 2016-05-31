@@ -67,7 +67,7 @@
     }
 
     function updateNumberAriaDescribedBy() {
-      vm.caseNumberAriaDescribedBy = vm.form.caseNumber.$myinvalid ? 'error-message-case-Number' : 'case-Number-hint';
+      vm.caseNumberAriaDescribedBy = vm.form.caseNumber.$myinvalid ? 'error-message-case-number' : 'case-number-hint';
     }
 
     function updateNumberAriaInvalid() {
