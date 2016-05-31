@@ -1,31 +1,38 @@
 (function() {
-
   'use strict';
 
-  describe('MainController', function(){
-    var vm;
+  describe('MainController', function() {
     var scope;
+    var vm;
     var $state;
 
     beforeEach(module('pleaApp'));
 
     beforeEach(inject(function($rootScope, _$controller_, _$state_) {
       scope = $rootScope.$new();
-      vm = _$controller_('MainController', { $scope: scope });
+      vm = _$controller_('MainController');
       $state = _$state_;
-      scope.$apply();
     }));
 
-    it('should move to your-case after continue button was clicked', function() {
-      //given
-      expect($state.current.name).toEqual('index');
-      //when
-      vm.buttonContinue(event);
-      scope.$apply();
-      //then
-      expect($state.current.name).toEqual('your-case');
+    it('should be registered', function() {
+      expect(vm).not.toEqual(null);
     });
 
-  });
+    describe('buttonContinue function', function() {
+      beforeEach(function() {
+        //given
+        $state.go('index');
+        scope.$apply();
+        expect($state.current.name).toEqual('index');
+      });
 
+      it('should go to the next state', function() {
+        //when
+        vm.buttonContinue();
+        scope.$apply();
+        //then
+        expect($state.current.name).toEqual('your-case');
+      });
+    });
+  });
 })();

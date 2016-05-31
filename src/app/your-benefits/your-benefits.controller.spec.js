@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('YourPleaController', function() {
+  describe('YourBenefitsController', function() {
     var scope;
     var vm;
     var $state;
@@ -9,10 +9,9 @@
 
     beforeEach(module('pleaApp'));
 
-    beforeEach(inject(function($rootScope, _$controller_, _$state_, _pleas_, _yesNoAnswer_) {
+    beforeEach(inject(function($rootScope, _$controller_, _$state_, _yesNoAnswer_) {
       scope = $rootScope.$new();
-      vm = _$controller_('YourPleaController');
-      vm.pleas = _pleas_;
+      vm = _$controller_('YourBenefitsController');
       vm.yesNoAnswer = _yesNoAnswer_;
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
@@ -25,36 +24,36 @@
     describe('buttonContinue function', function() {
       beforeEach(function() {
         //given
-        $state.go('your-plea');
+        $state.go('your-benefits');
         scope.$apply();
-        expect($state.current.name).toEqual('your-plea');
+        expect($state.current.name).toEqual('your-benefits');
       });
 
       it('should preventDefault on the event', function() {
         //when
-        vm.plea = vm.pleas.NOT_GUILTY;
+        vm.financialProblems = vm.yesNoAnswer.YES;
         vm.buttonContinue(event);
         scope.$apply();
         //then
         expect(event.preventDefault).toHaveBeenCalled();
       });
 
-      it('should go to the next state; pleas=NOT_GUILTY', function() {
+      it('should go to the next state; financialProblems=Yes', function() {
         //when
-        vm.plea = vm.pleas.NOT_GUILTY;
+        vm.financialProblems = vm.yesNoAnswer.YES;
+        vm.buttonContinue(event);
+        scope.$apply();
+        //then
+        expect($state.current.name).toEqual('your-expenses.household');
+      });
+
+      it('should go to the next state; financialProblems=No', function() {
+        //when
+        vm.financialProblems = vm.yesNoAnswer.NO;
         vm.buttonContinue(event);
         scope.$apply();
         //then
         expect($state.current.name).toEqual('confirm-plea');
-      });
-
-      it('should go to the next state; pleas=GUILTY', function() {
-        //when
-        vm.plea = vm.pleas.GUILTY;
-        vm.buttonContinue(event);
-        scope.$apply();
-        //then
-        expect($state.current.name).toEqual('your-employment');
       });
     });
   });
