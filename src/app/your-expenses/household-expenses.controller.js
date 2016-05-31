@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('HouseholdExpensesController', HouseholdExpensesController);
     
-  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses', 'lodash'];
+  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses'];
     
-  function HouseholdExpensesController(state, $sessionStorage, householdExpenses, lodash) {
+  function HouseholdExpensesController(state, $sessionStorage, householdExpenses) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;

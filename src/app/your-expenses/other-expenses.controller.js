@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('OtherExpensesController', OtherExpensesController);
     
-  OtherExpensesController.$inject = ['state', 'sessionStorage', 'otherExpenses', 'lodash'];
+  OtherExpensesController.$inject = ['state', 'sessionStorage', 'otherExpenses'];
     
-  function OtherExpensesController(state, sessionStorage, otherExpenses, lodash) {
+  function OtherExpensesController(state, sessionStorage, otherExpenses) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;
