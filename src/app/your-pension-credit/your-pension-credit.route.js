@@ -6,12 +6,12 @@
     .config(function($stateProvider) {
 
       $stateProvider
-        .state('pension-credit', {
-          url: '/pension-credit',
+        .state('your-pension-credit', {
+          url: '/your-pension-credit',
           views: {
             '@' : {
-              templateUrl : 'app/pension-credit/pension-credit.html',
-              controller  : 'PensionCreditController',
+              templateUrl : 'app/your-pension-credit/your-pension-credit.html',
+              controller  : 'YourPensionCreditController',
               controllerAs: 'pensionCredit'
             }
           },

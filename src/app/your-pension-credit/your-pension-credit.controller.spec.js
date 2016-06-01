@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('controller PensionCreditController', function() {
+  describe('controller YourPensionCreditController', function() {
     var scope;
     var vm;
     var $state;
@@ -11,7 +11,7 @@
 
     beforeEach(inject(function($rootScope, _$controller_, _$state_) {
       scope = $rootScope.$new();
-      vm = _$controller_('PensionCreditController');
+      vm = _$controller_('YourPensionCreditController');
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
     }));
@@ -23,9 +23,9 @@
     describe('buttonContinue function', function() {
       beforeEach(function() {
         //given
-        $state.go('pension-credit');
+        $state.go('your-pension-credit');
         scope.$apply();
-        expect($state.current.name).toEqual('pension-credit');
+        expect($state.current.name).toEqual('your-pension-credit');
         //when
         vm.buttonContinue(event);
         scope.$apply();

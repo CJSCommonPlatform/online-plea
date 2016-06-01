@@ -29,7 +29,7 @@
             nextState: [
               {
                 constantValue: 'YES',
-                stateName: 'pension-credit'
+                stateName: 'your-pension-credit'
               },
               {
                 constantValue: "NO",

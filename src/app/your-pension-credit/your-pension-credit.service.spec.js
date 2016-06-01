@@ -1,24 +1,24 @@
 (function() {
   'use strict';
 
-  describe('service pensionCredit', function() {
-    var pensionCredit;
+  describe('service yourPensionCredit', function() {
+    var yourPensionCredit;
     var sessionStorage;
 
     beforeEach(module('pleaApp'));
 
-    beforeEach(inject(function(_pensionCredit_, _sessionStorage_) {
-      pensionCredit = _pensionCredit_;
+    beforeEach(inject(function(_yourPensionCredit_, _sessionStorage_) {
+      yourPensionCredit = _yourPensionCredit_;
       sessionStorage = _sessionStorage_;
     }));
 
     it('should be registered', function() {
-      expect(pensionCredit).not.toEqual(null);
+      expect(yourPensionCredit).not.toEqual(null);
     });
 
     describe('updateSessionStorage function', function() {
       it('should exist', function() {
-        expect(pensionCredit.updateSessionStorage).not.toEqual(null);
+        expect(yourPensionCredit.updateSessionStorage).not.toEqual(null);
       });
 
       it('should work for weekly', function() {
@@ -39,9 +39,9 @@
         vm['pensionCreditFrequency'] = pensionCreditFrequency;
         vm[pensionCreditAmountPropertyName] = pensionCreditAmount;
         //when
-        pensionCredit.updateSessionStorage(vm);
+        yourPensionCredit.updateSessionStorage(vm);
         //then
-        var get = sessionStorage.getGetter('pleaApp.pensionCredit.');
+        var get = sessionStorage.getGetter('pleaApp.yourPensionCredit.');
         expect(get('pensionCreditFrequency')).toEqual(pensionCreditFrequency);
         expect(get('pensionCreditAmount')).toEqual(pensionCreditAmount);
       }
@@ -66,12 +66,12 @@
 
       function test(pensionCreditFrequency, pensionCreditAmount, pensionCreditAmountPropertyName) {
         //given
-        var set = sessionStorage.getSetter('pleaApp.pensionCredit.');
+        var set = sessionStorage.getSetter('pleaApp.yourPensionCredit.');
         set('pensionCreditFrequency', pensionCreditFrequency);
         set('pensionCreditAmount', pensionCreditAmount)
         //when
         var vm = {};
-        pensionCredit.updateVm(vm);
+        yourPensionCredit.updateVm(vm);
         //then
         expect(vm.pensionCreditFrequency).toEqual(pensionCreditFrequency);
         expect(vm[pensionCreditAmountPropertyName]).toEqual(pensionCreditAmount);

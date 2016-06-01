@@ -3,12 +3,12 @@
 
   angular
     .module('pleaApp')
-    .factory('pensionCredit', pensionCredit);
+    .factory('yourPensionCredit', yourPensionCredit);
 
-  pensionCredit.$inject = ['sessionStorage'];
+  yourPensionCredit.$inject = ['sessionStorage'];
 
-  function pensionCredit(sessionStorage) {
-    var BASE_NAME = 'pleaApp.pensionCredit.';
+  function yourPensionCredit(sessionStorage) {
+    var BASE_NAME = 'pleaApp.yourPensionCredit.';
 
     var service = {
       updateVm: updateVm,
