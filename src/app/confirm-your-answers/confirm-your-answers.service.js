@@ -32,7 +32,7 @@
       vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
 
       vm.totalWeeklyIncome = totalWeeklyIncome.calculate(vm);
-      lodash.set(vm, 'confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
+      lodash.set(vm, 'pleaApp.yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
 
       vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
 

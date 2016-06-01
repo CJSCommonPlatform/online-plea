@@ -13,7 +13,7 @@
     return service;
 
     function calculate(vm) {
-      var totalHouseholdExpenses = lodash.get(vm, 'totalHouseholdExpenses');
+      var totalHouseholdExpenses = lodash.get(vm, 'pleaApp.yourExpenses.household.totalHouseholdExpenses');
       var totalOtherExpenses = lodash.get(vm, 'totalOtherExpenses');
 
       var totalExpenses = 0;

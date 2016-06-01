@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('service confirmYourAnswers', function() {
+  fdescribe('service confirmYourAnswers', function() {
     var confirmYourAnswers;
     var sessionStorage;
 
@@ -54,10 +54,10 @@
         //then
         expect(vm.dateOfBirth).toEqual(new Date(1982, 3 - 1, 20));
         expect(vm.totalWeeklyIncome).toEqual(200);
-        expect(vm.totalHouseholdExpenses).toEqual(101);
+        expect(vm.pleaApp.yourExpenses.household.totalHouseholdExpenses).toEqual(101);
         expect(vm.totalOtherExpenses).toEqual(681);
         expect(vm.employmentStatus).toEqual('Retired');
-        expect(vm.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
+        expect(vm.pleaApp.yourExpenses.other.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
         expect(vm.totalExpenses).toEqual(782);
       });
     });
