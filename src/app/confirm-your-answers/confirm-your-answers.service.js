@@ -35,10 +35,13 @@
       vm.totalHouseholdExpenses = totalHouseholdExpenses.calculate(vm);
       vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
 
-      vm.otherExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpenses');
+      vm.otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
 
-      if (vm.otherExpenses === 'Yes') {
-        vm.otherExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpensesDetails');
+      if (vm.otherSignificantExpenses === 'Yes') {
+        vm.otherSignificantExpensesDetails = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails');
+        vm.otherSignificantExpensesTotal = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesTotal');
+      } else {
+        vm.otherSignificantExpensesDetails = 'No';
       }
 
       if (vm.employmentStatus === 'Other') {

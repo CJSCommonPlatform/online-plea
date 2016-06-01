@@ -31,9 +31,9 @@
           countyCourtOrders: 'countyCourtOrders',
           fines: 'fines',
           childMaintenance: 'childMaintenance',
-          otherExpenses: 'Yes',
-          otherExpensesDetails: 'otherExpensesDetails',
-          otherExpensesMonthly: 'otherExpensesMonthly'
+          otherSignificantExpenses: 'Yes',
+          otherSignificantExpensesDetails: 'otherSignificantExpensesDetails',
+          otherSignificantExpensesTotal: 'otherSignificantExpensesTotal'
         }
         //when
         otherExpenses.updateSessionStorage(vm);
@@ -45,9 +45,9 @@
         expect(get('countyCourtOrders')).toEqual('countyCourtOrders');
         expect(get('fines')).toEqual('fines');
         expect(get('childMaintenance')).toEqual('childMaintenance');
-        expect(get('otherExpenses')).toEqual('Yes');
-        expect(get('otherExpensesDetails')).toEqual('otherExpensesDetails');
-        expect(get('otherExpensesMonthly')).toEqual('otherExpensesMonthly');
+        expect(get('otherSignificantExpenses')).toEqual('Yes');
+        expect(get('otherSignificantExpensesDetails')).toEqual('otherSignificantExpensesDetails');
+        expect(get('otherSignificantExpensesTotal')).toEqual('otherSignificantExpensesTotal');
       })
 
       it('should update sessionStorage with data from vm; otherExpenses=No', function() {
@@ -60,9 +60,9 @@
           countyCourtOrders: 'countyCourtOrders',
           fines: 'fines',
           childMaintenance: 'childMaintenance',
-          otherExpenses: 'No',
-          otherExpensesDetails: 'otherExpensesDetails',
-          otherExpensesMonthly: 'otherExpensesMonthly'
+          otherSignificantExpenses: 'No',
+          otherSignificantExpensesDetails: 'otherSignificantExpensesDetails',
+          otherSignificantExpensesMonthly: 'otherSignificantExpensesTotal'
         }
         //when
         otherExpenses.updateSessionStorage(vm);
@@ -95,9 +95,9 @@
         set('countyCourtOrders', 'countyCourtOrders')
         set('fines', 'fines')
         set('childMaintenance', 'childMaintenance')
-        set('otherExpenses', 'Yes')
-        set('otherExpensesDetails', 'otherExpensesDetails')
-        set('otherExpensesMonthly', 'otherExpensesMonthly')
+        set('otherSignificantExpenses', 'Yes')
+        set('otherSignificantExpensesDetails', 'otherSignificantExpensesDetails')
+        set('otherSignificantExpensesTotal', 'otherSignificantExpensesTotal')
         //when
         var vm = {};
         otherExpenses.updateVm(vm);
@@ -109,8 +109,8 @@
         expect(vm.fines).toEqual('fines');
         expect(vm.childMaintenance).toEqual('childMaintenance');
         expect(vm.otherExpenses).toEqual('Yes');
-        expect(vm.otherExpensesDetails).toEqual('otherExpensesDetails');
-        expect(vm.otherExpensesMonthly).toEqual('otherExpensesMonthly');
+        expect(vm.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
+        expect(vm.otherSignificantExpensesTotal).toEqual('otherSignificantExpensesTotal');
       })
     });
   });

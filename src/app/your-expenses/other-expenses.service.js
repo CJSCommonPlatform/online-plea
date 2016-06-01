@@ -27,9 +27,9 @@
       vm.countyCourtOrders = get('countyCourtOrders');
       vm.fines = get('fines');
       vm.childMaintenance = get('childMaintenance');
-      vm.otherExpenses = get('otherExpenses');
-      vm.otherExpensesDetails = get('otherExpensesDetails');
-      vm.otherExpensesMonthly = get('otherExpensesMonthly');
+      vm.otherSignificantExpenses = get('otherSignificantExpenses');
+      vm.otherSignificantExpensesDetails = get('otherSignificantExpensesDetails');
+      vm.otherSignificantExpensesTotal = get('otherSignificantExpensesTotal');
     }
 
     function updateSessionStorage(vm) {
@@ -44,10 +44,10 @@
       set('countyCourtOrders', vm.countyCourtOrders);
       set('fines', vm.fines);
       set('childMaintenance', vm.childMaintenance);
-      set('otherExpenses', vm.otherExpenses);
-      if (vm.otherExpenses === 'Yes') {
-        set('otherExpensesDetails', vm.otherExpensesDetails);
-        set('otherExpensesMonthly', vm.otherExpensesMonthly);
+      set('otherSignificantExpenses', vm.otherSignificantExpenses);
+      if (vm.otherSignificantExpenses === 'Yes') {
+        set('otherSignificantExpensesDetails', vm.otherSignificantExpensesDetails);
+        set('otherSignificantExpensesTotal', vm.otherSignificantExpensesTotal);
       }
     }
   }

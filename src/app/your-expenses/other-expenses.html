@@ -115,29 +115,29 @@
               <span class="form-label-bold">Any other significant expenses not listed?</span>
             </legend>
 
-            <label class="block-label" for="other-expenses-yes" data-target="other-expenses">
-              <input type="radio" id="other-expenses-yes" name="other-expenses" value="Yes" data-ng-model="otherExpenses.otherExpenses"> Yes
+            <label class="block-label" for="other-significant-expenses-yes" data-target="other-significant-expenses">
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" data-ng-model="otherExpenses.otherSignificantExpenses"> Yes
             </label>
 
-            <label class="block-label" for="other-expenses-no">
-              <input type="radio" id="other-expenses-no" name="other-expenses" value="No" data-ng-model="otherExpenses.otherExpenses"> No
+            <label class="block-label" for="other-significant-expenses-no">
+              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" data-ng-model="otherExpenses.otherSignificantExpenses"> No
             </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="other-expenses">
+            <div class="panel panel-border-narrow js-hidden" id="other-significant-expenses">
 
               <div class="form-group">
 
-                <label for="other-expenses-details">
+                <label for="other-significant-expenses-details">
                   <span class="form-label">Tell us about other significant expenses</span>
                 </label>
 
-                <textarea class="form-control form-control-textarea" id="other-expenses-details" name="other-expenses" cols="30" rows="5" data-ng-model="otherExpenses.otherExpensesDetails"></textarea>
+                <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="5" data-ng-model="otherExpenses.otherSignificantExpensesDetails"></textarea>
 
               </div>
 
               <div class="form-group">
-                <label class="form-label" for="other-expenses-monthly">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-expenses-monthly" name="other-expenses-monthly" data-ng-model="otherExpenses.otherExpensesMonthly"></span>
+                <label class="form-label" for="other-significant-expenses-total">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></label>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-significant-expenses-total" name="other-significant-expenses-total" data-ng-model="otherExpenses.otherSignificantExpensesTotal"></span>
               </div>
 
             </div>

@@ -20,7 +20,7 @@
       var countyCourtOrders = lodash.get(vm, 'pleaApp.yourExpenses.other.countyCourtOrders');
       var fines = lodash.get(vm, 'pleaApp.yourExpenses.other.fines');
       var childMaintenance = lodash.get(vm, 'pleaApp.yourExpenses.other.childMaintenance');
-      var otherExpensesMonthly = lodash.get(vm, 'pleaApp.yourExpenses.other.otherExpensesMonthly');
+      var otherSignificantExpensesTotal = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesTotal');
 
       var totalOtherExpenses = 0;
 
@@ -45,8 +45,8 @@
       if (childMaintenance) {
         totalOtherExpenses = totalOtherExpenses + parseFloat(childMaintenance);
       }
-      if (otherExpensesMonthly) {
-        totalOtherExpenses = totalOtherExpenses + parseFloat(otherExpensesMonthly);
+      if (otherSignificantExpensesTotal) {
+        totalOtherExpenses = totalOtherExpenses + parseFloat(otherSignificantExpensesTotal);
       }
 
       return totalOtherExpenses;
