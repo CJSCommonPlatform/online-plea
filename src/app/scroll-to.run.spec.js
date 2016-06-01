@@ -11,7 +11,7 @@ describe('Scrolling to Top', function (){
     $window			= $injector.get('$window');
   }));
 
-  it('Should scroll to the top on $routeChangeSuccess', function (){
+  it('Should scroll to the top on $stateChangeSuccess', function (){
     $location.path('/your-details');
     $rootScope.$apply();
     expect($window.scrollX).toEqual(0);
