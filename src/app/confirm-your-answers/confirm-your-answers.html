@@ -11,32 +11,36 @@
 
 
   <section class="synopsis-item" aria-labelledby="your-case">
-
-    <h2 class="bold-small" id="your-case">Your case</h2>
-  
-    <dl class="synopsis-content">
+    
+    <header class="synopsis-heading">
+      <h2 class="bold-small" id="your-case">Your case</h2>
+      <a class="synopsis-action" href="" data-ui-sref="your-case">Change<span class="visuallyhidden"> Your case</span></a>
+    </header>
+    
+    <dl>
       <dt>Case number</dt>
       <dd>{{confirmPlea.pleaApp.yourCase.caseNumber | chkEmpty}}</dd>
       <dt>Your postcode</dt>
       <dd>{{confirmPlea.pleaApp.yourCase.casePostcode | chkEmpty}}</dd>
     </dl>
     
-    <a class="synopsis-action" href="" data-ui-sref="your-case">Change <span class="visuallyhidden">Your case</span></a>
-  
   </section>
-
-
-  <section class="synopsis-item" aria-labelledby="your-personal-details">
-
-    <h2 class="bold-small" id="your-personal-details">Your personal details</h2>
   
-    <dl class="synopsis-content">
+  
+  <section class="synopsis-item" aria-labelledby="your-personal-details">
+    
+    <header class="synopsis-heading">
+      <h2 class="bold-small" id="your-personal-details">Your personal details</h2>
+      <a class="synopsis-action" href="" data-ui-sref="your-details">Change<span class="visuallyhidden"> Your personal details</span></a>
+    </header>
+    
+    <dl>
       <dt>First name</dt>
       <dd>{{confirmPlea.pleaApp.yourDetails.firstName | chkEmpty}}</dd>
       <dt>Last name</dt>
       <dd>{{confirmPlea.pleaApp.yourDetails.lastName | chkEmpty}}</dd>
       <dt>Address</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.address.street | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.city | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.postcode | chkEmpty}}</dd>
+      <dd>{{confirmPlea.pleaApp.yourDetails.address.street | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.city}}<br>{{confirmPlea.pleaApp.yourDetails.address.postcode}}</dd>
       <dt>Contact number</dt>
       <dd>{{confirmPlea.pleaApp.yourDetails.contactNumber | chkEmpty}}</dd>
       <dt>Date of birth</dt>
@@ -45,16 +49,17 @@
       <dd>{{confirmPlea.pleaApp.yourDetails.nationalInsuranceNumber | chkEmpty}}</dd>
     </dl>
     
-    <a class="synopsis-action" href="" data-ui-sref="your-details">Change <span class="visuallyhidden">Your personal details</span></a>
-  
   </section>
-
-
-  <section class="synopsis-item" aria-labelledby="your-plea">
-
-    <h2 class="bold-small" id="your-plea">Your plea</h2>
   
-    <dl class="synopsis-content" data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Guilty'">
+  
+  <section class="synopsis-item" aria-labelledby="your-plea">
+    
+    <header class="synopsis-heading">
+      <h2 class="bold-small" id="your-plea">Your plea</h2>
+      <a class="synopsis-action" href="" data-ui-sref="your-plea">Change<span class="visuallyhidden"> Your plea</span></a>
+    </header>
+    
+    <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Guilty'">
       <dt>Plea</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
       <dt>Plead guilty in court</dt>
@@ -63,7 +68,7 @@
       <dd>{{confirmPlea.pleaApp.yourPlea.mitigation}}</dd>
     </dl>
     
-    <dl class="synopsis-content" data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not Guilty'">
+    <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not Guilty'">
       <dt>Plea</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
       <dt>Not guilty because?</dt>
@@ -86,20 +91,23 @@
       <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</dd>
     </dl>
     
-    <a class="synopsis-action" href="" data-ui-sref="your-plea">Change <span class="visuallyhidden">Your plea</span></a>
-  
   </section>
-
-
-  <section class="synopsis-item" aria-labelledby="your-employment-and-income">
   
-    <h2 class="synopsis-heading" id="your-employment-and-income">Your employment and income</h2>
+  
+  <section class="synopsis-item" aria-labelledby="your-employment-and-income">
+    
+    
+    <h2 class="bold-medium" id="your-employment-and-income">Your employment and income</h2>
+  
   
     <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourEmployment.paymentFrequency">
-  
-      <h3 class="bold-small">Your employment</h3>
+        
+      <header class="synopsis-heading">
+        <h3 class="bold-small">Your employment</h3>
+        <a class="synopsis-action" href="" data-ui-sref="your-employment">Change<span class="visuallyhidden"> Your employment</span></a>
+      </header>
     
-      <dl class="synopsis-content">
+      <dl>
         <dt>You are</dt>
         <dd>{{confirmPlea.employmentStatus}}</dd>
         <dt>You get paid</dt>
@@ -108,30 +116,34 @@
         <dd>&pound;{{confirmPlea.pleaApp.yourEmployment.paymentAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
-      <a class="synopsis-action" href="" data-ui-sref="your-employment">Change <span class="visuallyhidden">Employment</span></a>
-    
     </section>
     
+    
     <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.pensionCredit">
+        
+      <header class="synopsis-heading">
+        <h3 class="bold-small">Your pension credit</h3>
+        <a class="synopsis-action" href="" data-ui-sref="pension-credit">Change<span class="visuallyhidden"> Your pension credit</span></a>
+      </header>
     
-      <h3 class="bold-small">Pension credit</h3>
-    
-      <dl class="synopsis-content">
+      <dl>
         <dt>Your pension credit is paid</dt>
         <dd>{{confirmPlea.pleaApp.pensionCredit.pensionCreditFrequency}}</dd>
         <dt>Amount</dt>
         <dd>&pound;{{confirmPlea.pleaApp.pensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
-      <a class="synopsis-action" href="" data-ui-sref="pension-credit">Change <span class="visuallyhidden">Pension credit</span></a>
-    
     </section>
     
+    
     <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourBenefits">
+        
+      <header class="synopsis-heading">
+        <h3 class="bold-small">Benefits</h3>
+        <a class="synopsis-action" href="" data-ui-sref="your-benefits">Change<span class="visuallyhidden"> Benefits</span></a>
+      </header>
     
-      <h3 class="bold-small">Benefits</h3>
-    
-      <dl class="synopsis-content">
+      <dl>
         <dt>You receive</dt>
         <dd>{{confirmPlea.pleaApp.yourBenefits.benefit}}</dd>
         <dt>Your benefits are paid</dt>
@@ -140,69 +152,80 @@
         <dd>&pound;{{confirmPlea.pleaApp.yourBenefits.benefitAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
-      <a class="synopsis-action" href="" data-ui-sref="your-benefits">Change <span class="visuallyhidden">Benefits</span></a>
-    
     </section>
     
-    <section class="synopsis-subitem">
-      
-      <h3 class="bold-small">Total income</h3>
     
-      <dl class="synopsis-content">
+    <section class="synopsis-subitem">
+        
+      <header class="synopsis-heading">
+        <h3 class="bold-small">Total income</h3>
+      </header>
+    
+      <dl>
         <dt>Amount</dt>
         <dd><span class="bold-medium">&pound;{{confirmPlea.totalWeeklyIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
-    
+      
     </section>
-    
-  </section>
-
-
-  <section class="synopsis-item" aria-labelledby="special-financial-circumstances">
   
-    <h2 class="synopsis-heading" id="special-financial-circumstances">Special financial circumstances</h2>
+  
+  </section>
+  
+  
+  <section class="synopsis-item" aria-labelledby="special-financial-circumstances">
+    
+    
+    <h2 class="bold-medium" id="special-financial-circumstances">Special financial circumstances</h2>
+  
   
     <section class="synopsis-subitem">
-  
-      <h3 class="bold-small">Household expenses</h3>
+        
+      <header class="synopsis-heading">
+        <h2 class="bold-small">Household expenses</h2>
+        <a class="synopsis-action" href="" data-ui-sref="your-expenses.household">Change<span class="visuallyhidden"> Household expenses</span></a>
+      </header>
     
-      <dl class="synopsis-content">
+      <dl>
         <dt>Other contributors to household bills</dt>
         <dd>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</dd>
         <dt>Amount</dt>
         <dd>&pound;{{confirmPlea.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
-      <a class="synopsis-action" href="" data-ui-sref="your-expenses.household">Change <span class="visuallyhidden">Household expenses</span></a>
-    
     </section>
     
-    <section class="synopsis-subitem"> 
-  
-      <h3 class="bold-small">Other expenses</h3>
     
-      <dl class="synopsis-content">
+    <section class="synopsis-subitem">
+        
+      <header class="synopsis-heading">
+        <h2 class="bold-small">Other expenses</h2>
+        <a class="synopsis-action" href="" data-ui-sref="your-expenses.other">Change<span class="visuallyhidden"> Other expenses</span></a>
+      </header>
+    
+      <dl>
         <dt>Other expenses (not listed)</dt>
         <dd>{{confirmPlea.otherExpenses}}</dd>
         <dt>Amount</dt>
         <dd>&pound;{{confirmPlea.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
-      <a class="synopsis-action" href="" data-ui-sref="your-expenses.other">Change <span class="visuallyhidden">Other expenses</span></a>
-    
     </section>
-  
+    
+    
     <section class="synopsis-subitem">
-  
-      <h3 class="bold-small">Total expenses</h3>
+        
+      <header class="synopsis-heading">
+        <h2 class="bold-small">Total expenses</h2>
+      </header>
     
       <dl class="synopsis-content">
         <dt>Amount</dt>
         <dd><span class="bold-medium">&pound;{{confirmPlea.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
-    
+      
     </section>
-
+  
+  
   </section>
 
 
