@@ -14,7 +14,7 @@
           controller: 'DeclarationController',
           controllerAs: 'declaration',
           data: {
-            nextState: 'plea-confirmation'
+            nextState: 'your-plea-has-been-submitted'
           }
         })
         
