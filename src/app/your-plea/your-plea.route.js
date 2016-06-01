@@ -21,7 +21,7 @@
               },
               {
                 constantValue: "NOT_GUILTY",
-                stateName: 'confirm-plea'
+                stateName: 'confirm-your-answers'
               }
             ]
           }

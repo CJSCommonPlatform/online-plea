@@ -27,17 +27,17 @@
     }
     
     function showCancelLink() {
-      return state.getPrevious() === 'confirm-plea';
+      return state.getPrevious() === 'confirm-your-answers';
     }
     
     //private
     
     function _updateContinueButtonLabel() {
-      vm.buttonContinueLabel = state.getPrevious() === 'confirm-plea' ? 'Change' : 'Save and continue';
+      vm.buttonContinueLabel = state.getPrevious() === 'confirm-your-answers' ? 'Change' : 'Save and continue';
     }
     
     function _updateState() {
-      if (state.getPrevious() === 'confirm-plea') {
+      if (state.getPrevious() === 'confirm-your-answers') {
         state.goPrevious();
       } else {
         state.goNext();

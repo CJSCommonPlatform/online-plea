@@ -33,7 +33,7 @@
               },
               {
                 constantValue: "NO",
-                stateName: 'confirm-plea'
+                stateName: 'confirm-your-answers'
               }
             ]
           }

@@ -35,7 +35,7 @@
             }
           },
           data: {
-            nextState: 'confirm-plea'
+            nextState: 'confirm-your-answers'
           }       
         })
     });

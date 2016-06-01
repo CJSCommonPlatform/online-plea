@@ -45,7 +45,7 @@
         vm.buttonContinue(event);
         scope.$apply();
         //then
-        expect($state.current.name).toEqual('confirm-plea');
+        expect($state.current.name).toEqual('confirm-your-answers');
       });
 
       it('should go to the next state; pleas=GUILTY', function() {
