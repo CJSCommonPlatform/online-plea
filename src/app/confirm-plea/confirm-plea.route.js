@@ -18,17 +18,6 @@
         }
         
       })
-      
-      .state('plea-confirmation', {
-        url: '/plea-confirmation',
-        templateUrl: 'app/confirm-plea/plea-confirmation.html',
-        controller: 'PleaConfirmationController',
-        controllerAs: 'pleaConfirmation',
-        data: {
-          nextState: 'index'
-        }
-      
-      })
         
     });  
     
