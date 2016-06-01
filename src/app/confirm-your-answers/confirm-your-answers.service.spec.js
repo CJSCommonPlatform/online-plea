@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  fdescribe('service confirmYourAnswers', function() {
+  describe('service confirmYourAnswers', function() {
     var confirmYourAnswers;
     var sessionStorage;
 
