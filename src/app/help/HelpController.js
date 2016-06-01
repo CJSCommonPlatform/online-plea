@@ -3,11 +3,11 @@
   'use strict';  
     
   angular.module('pleaApp')
-    .controller('PleaHelpController', PleaHelpController);
+    .controller('HelpController', HelpController);
     
-  PleaHelpController.$inject = ['$state'];  
+  HelpController.$inject = ['$state'];
     
-  function PleaHelpController($state) {
+  function HelpController($state) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;
