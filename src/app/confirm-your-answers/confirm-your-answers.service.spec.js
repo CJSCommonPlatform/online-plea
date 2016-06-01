@@ -60,6 +60,18 @@
         expect(vm.pleaApp.yourExpenses.other.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
         expect(vm.totalExpenses).toEqual(782);
       });
+
+      it('should update vm with data from sessionStorage; otherSignificantExpenses=NO', function() {
+        //given
+        var set = sessionStorage.getSetter('pleaApp.');
+        set('yourExpenses.other.otherSignificantExpenses', 'No');
+        //when
+        var vm = {};
+        confirmYourAnswers.updateVm(vm);
+        //then
+        expect(vm.otherSignificantExpenses).toEqual('No');
+        expect(vm.pleaApp.yourExpenses.other.otherSignificantExpensesDetails).toEqual('None');
+      });
     });
   });
 })();
