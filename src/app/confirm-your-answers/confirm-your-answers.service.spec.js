@@ -63,8 +63,8 @@
 
       it('should update vm with data from sessionStorage; otherSignificantExpenses=NO', function() {
         //given
-        var set = sessionStorage.getSetter('pleaApp.');
-        set('yourExpenses.other.otherSignificantExpenses', 'No');
+        var set = sessionStorage.getSetter('pleaApp.yourExpenses.other.');
+        set('otherSignificantExpenses', 'No');
         //when
         var vm = {};
         confirmYourAnswers.updateVm(vm);
