@@ -62,7 +62,7 @@
           childMaintenance: 'childMaintenance',
           otherSignificantExpenses: 'No',
           otherSignificantExpensesDetails: 'otherSignificantExpensesDetails',
-          otherSignificantExpensesMonthly: 'otherSignificantExpensesTotal'
+          otherSignificantExpensesTotal: 'otherSignificantExpensesTotal'
         }
         //when
         otherExpenses.updateSessionStorage(vm);
@@ -74,9 +74,9 @@
         expect(get('countyCourtOrders')).toEqual('countyCourtOrders');
         expect(get('fines')).toEqual('fines');
         expect(get('childMaintenance')).toEqual('childMaintenance');
-        expect(get('otherExpenses')).toEqual('No');
-        expect(get('otherExpensesDetails')).not.toBeDefined();
-        expect(get('otherExpensesMonthly')).not.toBeDefined();
+        expect(get('otherSignificantExpenses')).toEqual('No');
+        expect(get('otherSignificantExpensesDetails')).not.toBeDefined();
+        expect(get('otherSignificantExpensesTotal')).not.toBeDefined();
       })
 
     });
@@ -108,7 +108,7 @@
         expect(vm.countyCourtOrders).toEqual('countyCourtOrders');
         expect(vm.fines).toEqual('fines');
         expect(vm.childMaintenance).toEqual('childMaintenance');
-        expect(vm.otherExpenses).toEqual('Yes');
+        expect(vm.otherSignificantExpenses).toEqual('Yes');
         expect(vm.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
         expect(vm.otherSignificantExpensesTotal).toEqual('otherSignificantExpensesTotal');
       })

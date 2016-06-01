@@ -45,9 +45,9 @@
         set('yourExpenses.other.fines', '100');
         set('yourExpenses.other.childMaintenance', '110');
 
-        set('yourExpenses.other.otherExpenses', 'Yes');
-        set('yourExpenses.other.otherExpensesMonthly', '120');
-        set('yourExpenses.other.otherExpensesDetails', 'otherExpensesDetails');
+        set('yourExpenses.other.otherSignificantExpenses', 'Yes');
+        set('yourExpenses.other.otherSignificantExpensesTotal', '120');
+        set('yourExpenses.other.otherSignificantExpensesDetails', 'otherSignificantExpensesDetails');
         //when
         var vm = {};
         confirmYourAnswers.updateVm(vm);
@@ -57,7 +57,7 @@
         expect(vm.totalHouseholdExpenses).toEqual(101);
         expect(vm.totalOtherExpenses).toEqual(681);
         expect(vm.employmentStatus).toEqual('Retired');
-        expect(vm.otherExpenses).toEqual('otherExpensesDetails');
+        expect(vm.otherSignificantExpensesDetails).toEqual('otherSignificantExpensesDetails');
         expect(vm.totalExpenses).toEqual(782);
       });
     });
