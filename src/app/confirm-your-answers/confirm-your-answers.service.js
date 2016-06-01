@@ -32,16 +32,14 @@
       vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
 
       vm.totalWeeklyIncome = totalWeeklyIncome.calculate(vm);
-      vm.totalHouseholdExpenses = totalHouseholdExpenses.calculate(vm);
+      lodash.set(vm, 'confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
+
       vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
 
       vm.otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
 
-      if (vm.otherSignificantExpenses === 'Yes') {
-        vm.otherSignificantExpensesDetails = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails');
-        vm.otherSignificantExpensesTotal = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesTotal');
-      } else {
-        vm.otherSignificantExpensesDetails = 'No';
+      if (vm.otherSignificantExpenses === 'No') {
+        lodash.set(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails', 'None');
       }
 
       if (vm.employmentStatus === 'Other') {

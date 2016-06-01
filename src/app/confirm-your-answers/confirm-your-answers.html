@@ -10,7 +10,7 @@
 <div class="synopsis">
 
 
-  <section class="synopsis-item" aria-labelledby="your-case">
+  <section class="synopsis-item" aria-labelledby="your-case" data-ng-show="confirmPlea.pleaApp.yourCase">
     
     <header class="synopsis-heading">
       <h2 class="bold-small" id="your-case">Your case</h2>
@@ -27,7 +27,7 @@
   </section>
   
   
-  <section class="synopsis-item" aria-labelledby="your-details">
+  <section class="synopsis-item" aria-labelledby="your-details" data-ng-show="confirmPlea.pleaApp.yourDetails">
     
     <header class="synopsis-heading">
       <h2 class="bold-small" id="your-details">Your details</h2>
@@ -52,7 +52,7 @@
   </section>
   
   
-  <section class="synopsis-item" aria-labelledby="your-plea">
+  <section class="synopsis-item" aria-labelledby="your-plea" data-ng-show="confirmPlea.pleaApp.yourPlea">
     
     <header class="synopsis-heading">
       <h2 class="bold-small" id="your-plea">Your plea</h2>
@@ -68,7 +68,7 @@
       <dd>{{confirmPlea.pleaApp.yourPlea.mitigation}}</dd>
     </dl>
     
-    <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not Guilty'">
+    <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not guilty'">
       <dt>Plea</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
       <dt>Not guilty because?</dt>
@@ -94,7 +94,7 @@
   </section>
   
   
-  <section class="synopsis-item" aria-labelledby="your-employment-and-income">
+  <section class="synopsis-item" aria-labelledby="your-employment-and-income" data-ng-show="confirmPlea.pleaApp.yourEmployment">
     
     
     <h2 class="bold-medium" id="your-employment-and-income">Your employment and income</h2>
@@ -172,7 +172,7 @@
   </section>
   
   
-  <section class="synopsis-item" aria-labelledby="special-financial-circumstances">
+  <section class="synopsis-item" aria-labelledby="special-financial-circumstances" data-ng-show="confirmPlea.pleaApp.yourExpenses">
     
     
     <h2 class="bold-medium" id="special-financial-circumstances">Special financial circumstances</h2>
@@ -188,8 +188,8 @@
       <dl>
         <dt>Other contributors to household bills</dt>
         <dd>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</dd>
-        <dt>Amount</dt>
-        <dd>&pound;{{confirmPlea.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt data-ng-show="confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses">Amount</dt>
+        <dd data-ng-show="confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses">&pound;{{confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -205,8 +205,8 @@
       <dl>
         <dt>Other expenses (not listed)</dt>
         <dd>{{confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesDetails}}</dd>
-        <dt>Amount</dt>
-        <dd>&pound;{{confirmPlea.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt data-ng-show="confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal">Amount</dt>
+        <dd data-ng-show="confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal">&pound;{{confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
