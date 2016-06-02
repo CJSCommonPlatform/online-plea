@@ -38,7 +38,7 @@
           dateOfBirthMonth: 'dateOfBirthMonth',
           dateOfBirthYear: 'dateOfBirthYear',
           nationalInsurance: 'Yes',
-          nationalInsuranceNumber: 'nationalInsuranceNumber',
+          nationalInsuranceNumber: 'nationalInsuranceNumber'
         }
         //when
         yourDetails.updateSessionStorage(vm);

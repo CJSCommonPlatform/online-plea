@@ -30,7 +30,7 @@
         var vm = {
           plea: pleas.GUILTY,
           court: 'court',
-          mitigation: 'mitigation',
+          mitigation: 'mitigation'
         }
         //when
         yourPlea.updateSessionStorage(vm);
