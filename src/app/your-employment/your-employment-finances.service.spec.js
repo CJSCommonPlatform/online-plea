@@ -5,15 +5,13 @@
     var yourEmploymentFinances;
     var sessionStorage;
     var employmentStatus;
-    var yesNoAnswer;
 
     beforeEach(module('pleaApp'));
 
-    beforeEach(inject(function(_yourEmploymentFinances_, _sessionStorage_, _employmentStatus_, _yesNoAnswer_) {
+    beforeEach(inject(function(_yourEmploymentFinances_, _sessionStorage_, _employmentStatus_) {
       yourEmploymentFinances = _yourEmploymentFinances_;
       sessionStorage = _sessionStorage_;
       employmentStatus = _employmentStatus_;
-      yesNoAnswer = _yesNoAnswer_;
     }));
 
     it('should be registered', function() {
