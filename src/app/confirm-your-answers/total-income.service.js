@@ -3,9 +3,9 @@
 
   angular
     .module('pleaApp')
-    .factory('totalWeeklyIncome', totalWeeklyIncome);
+    .factory('totalIncome', totalIncome);
 
-  function totalWeeklyIncome(lodash) {
+  function totalIncome(lodash) {
     var service = {
       calculate: calculate
     };
@@ -16,16 +16,16 @@
       var paymentAmount = lodash.get(vm, 'pleaApp.yourEmployment.paymentAmount');
       var benefitAmount = lodash.get(vm, 'pleaApp.yourBenefits.benefitAmount');
 
-      var totalWeeklyIncome = 0;
+      var totalIncome = 0;
 
       if (paymentAmount) {
-        totalWeeklyIncome = totalWeeklyIncome + parseFloat(paymentAmount);
+        totalIncome = totalIncome + parseFloat(paymentAmount);
       }
       if (benefitAmount) {
-        totalWeeklyIncome = totalWeeklyIncome + parseFloat(benefitAmount);
+        totalIncome = totalIncome + parseFloat(benefitAmount);
       }
 
-      return totalWeeklyIncome;
+      return totalIncome;
     }
   }
 })();
