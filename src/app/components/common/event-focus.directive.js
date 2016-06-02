@@ -3,12 +3,12 @@
 
     angular
       .module('pleaApp')
-      .directive('eventFocus', function($timeout, $window) {
+      .directive('focus', function($timeout, $window) {
         return {
           restrict: 'A',
           link: function(scope, elem, attr) {
-            elem.on(attr.eventFocus, function() {
-              var id = attr.scrollTo;
+            elem.on(attr.focusEvent, function() {
+              var id = attr.focusTarget;
 
               $timeout(function () {
                 var element = $window.document.getElementById(id);
@@ -19,7 +19,7 @@
 
             });
             scope.$on('$destroy', function() {
-               elem.off(attr.eventFocus);
+               elem.off(attr.focusEvent);
             });
           }
         };
