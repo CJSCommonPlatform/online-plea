@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  fdescribe('service yourDetails', function() {
+  describe('service yourDetails', function() {
     var yourDetails;
     var sessionStorage;
 
@@ -19,6 +19,44 @@
     describe('updateSessionStorage function', function() {
       it('should exist', function() {
         expect(yourDetails.updateSessionStorage).not.toEqual(null);
+      });
+
+      it('should update sessionStorage with data from vm', function() {
+        //given
+        var vm = {
+          personalTitle: 'personalTitle',
+          firstName: 'firstName',
+          lastName: 'lastName',
+          addressStreet: 'addressStreet',
+          addressCity: 'addressCity',
+          addressPostcode: 'addressPostcode',
+          detailsCorrect: 'No',
+          update: 'update',
+          contactNumber: 'contactNumber',
+          dateOfBirthDay: 'dateOfBirthDay',
+          dateOfBirthMonth: 'dateOfBirthMonth',
+          dateOfBirthYear: 'dateOfBirthYear',
+          nationalInsurance: 'Yes',
+          nationalInsuranceNumber: 'nationalInsuranceNumber',
+        }
+        //when
+        yourDetails.updateSessionStorage(vm);
+        //then
+        var get = sessionStorage.getGetter('pleaApp.yourDetails.');
+        expect(get('personalTitle')).toEqual('Mr');
+        expect(get('firstName')).toEqual('Mike');
+        expect(get('lastName')).toEqual('Mouse');
+        expect(get('address.street')).toEqual('38A Baker Street');
+        expect(get('address.city')).toEqual('London');
+        expect(get('address.postcode')).toEqual('007 700');
+        expect(get('detailsCorrect')).toEqual('No');
+        expect(get('update')).toEqual('update');
+        expect(get('contactNumber')).toEqual('contactNumber');
+        expect(get('dateOfBirthDay')).toEqual('dateOfBirthDay');
+        expect(get('dateOfBirthMonth')).toEqual('dateOfBirthMonth');
+        expect(get('dateOfBirthYear')).toEqual('dateOfBirthYear');
+        expect(get('nationalInsurance')).toEqual('Yes');
+        expect(get('nationalInsuranceNumber')).toEqual('nationalInsuranceNumber');
       });
     });
 
