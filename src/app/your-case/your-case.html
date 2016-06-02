@@ -10,13 +10,36 @@
     <h1 class="heading-xlarge">Your case</h1>
 
 
-    <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1" data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
+    <div  class="error-summary"
+          id="error-summary"
+          role="group"
+          tabindex="-1"
+          aria-labelledby="error-summary-heading" 
+          data-event-focus="click" 
+          data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
       <ul class="error-summary-list">
+<<<<<<< Updated upstream
         <li data-ng-show="yourCase.form['case-unique-reference-number'].$myinvalid"><a href="" data-ng-click="enterCaseUniqueReferenceNumberLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-unique-reference-number">Case or Unique Reference Number</a></li>
         <li data-ng-show="yourCase.form['case-postcode'].$myinvalid"><a href="" data-ng-click="enterCasePostcodeLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-postcode">Your postcode</a></li>
+=======
+        <li data-ng-show="yourCase.form.caseNumber.$myinvalid">
+          <a  href="" 
+              data-ng-click="enterCaseNumberLinkClicked()" 
+              data-event-focus="click"
+              data-scroll-to="error-case-number">Case number
+          </a>
+        </li>
+        <li data-ng-show="yourCase.form.casePostcode.$myinvalid">
+          <a href="" 
+              data-ng-click="enterCasePostcodeLinkClicked()" 
+              data-event-focus="click"
+              data-scroll-to="error-case-postcode">Your postcode
+          </a>
+        </li>
+>>>>>>> Stashed changes
       </ul>
 
     </div>
@@ -51,7 +74,11 @@
 
 
       <div class="form-group">
+<<<<<<< Updated upstream
         <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)">{{yourCase.buttonContinueLabel}}</button>
+=======
+        <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)" data-event-focus="click" data-scroll-to="error-summary">Continue</button>
+>>>>>>> Stashed changes
       </div>
 
 
