@@ -4,7 +4,7 @@
   'use strict';
 
 
-  fdescribe('YourCaseController', function(){
+  describe('YourCaseController', function(){
     var vm;
     var scope;
     var $state;
