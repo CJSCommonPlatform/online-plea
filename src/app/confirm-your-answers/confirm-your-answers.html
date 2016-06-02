@@ -75,20 +75,20 @@
       <dd>{{confirmPlea.pleaApp.yourPlea.notGuiltyBecause}}</dd>
       <dt>Do you need an interpreter in court?</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.interpreter}}</dd>
-      <dt>Interpreter language</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.interpreterLanguage}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">Interpreter language</dt>
+      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">{{confirmPlea.pleaApp.yourPlea.interpreterLanguage}}</dd>
       <dt>Evidence and witness information</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDisagree}}</dd>
-      <dt>Name of the witness</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">Name of the witness</dt>
+      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails}}</dd>
       <dt>Do you want to call a witness?</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessCall}}</dd>
-      <dt>Witness contact details</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails}}</dd>
-      <dt>Does your witness need an interpreter?</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter}}</dd>
-      <dt>Witness interpreter language</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">Witness contact details</dt>
+      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">{{confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">Does your witness need an interpreter?</dt>
+      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">Witness interpreter language</dt>
+      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</dd>
     </dl>
     
   </section>
