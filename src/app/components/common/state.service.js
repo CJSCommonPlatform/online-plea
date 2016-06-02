@@ -11,26 +11,18 @@
     var service = {
       getNext: getNext,
       goNext: goNext,
-      goPrevious: goPrevious,
-      getPrevious: getPrevious
+      go: go
     };
 
     return service;
 
+    function go(stateName) {
+      $state.go(stateName);
+    }
+
     function goNext(viewModel) {
       var nextState = getNext(viewModel);
       $state.go(nextState);
-    }
-
-    function goPrevious() {
-      var previousState = getPrevious();
-      $state.go(previousState);
-    }
-
-    function getPrevious() {
-      if ($state.current.previous) {
-        return $state.current.previous.name;
-      }
     }
 
     function getNext(viewModel) {

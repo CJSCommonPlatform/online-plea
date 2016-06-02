@@ -5,42 +5,26 @@
   angular.module('pleaApp')
     .controller('YourDetailsController', YourDetailsController);
 
-  YourDetailsController.$inject = ['yourDetails', 'state'];
+  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams'];
 
-  function YourDetailsController(yourDetails, state) {
+  function YourDetailsController(yourDetails, state, $stateParams) {
     var vm = this;
 
-    vm.buttonContinueLabel = 'Continue';
+    vm.buttonContinueLabel = angular.isDefined($stateParams.nextState) ? 'Change and continue' : 'Save and continue';
     vm.buttonContinue = buttonContinueClicked;
-    vm.showCancelLink = showCancelLink;
+    vm.nextState = $stateParams.nextState;
+    vm.getNextState = getNextState;
 
     yourDetails.updateVm(vm);
-    _updateContinueButtonLabel();
-
-    //public
 
     function buttonContinueClicked(event) {
       event.preventDefault();     
       yourDetails.updateSessionStorage(vm);
-      _updateState();
+      state.go(getNextState());
     }
-    
-    function showCancelLink() {
-      return state.getPrevious() === 'confirm-your-answers';
-    }
-    
-    //private
-    
-    function _updateContinueButtonLabel() {
-      vm.buttonContinueLabel = state.getPrevious() === 'confirm-your-answers' ? 'Change' : 'Save and continue';
-    }
-    
-    function _updateState() {
-      if (state.getPrevious() === 'confirm-your-answers') {
-        state.goPrevious();
-      } else {
-        state.goNext();
-      }
+
+    function getNextState() {
+      return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext();
     }
   }
 })();
