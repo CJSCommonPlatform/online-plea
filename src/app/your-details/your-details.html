@@ -53,10 +53,10 @@
 
           <div class="panel panel-border-narrow js-hidden" id="correct-details">
 
-              <div class="form-group">
-                <label class="form-label" for="update-details">Enter correct details</label>
-                <textarea class="form-control form-control-textarea" id="update-details" name="update-details" cols="30" rows="5" data-ng-model="yourDetails.update"></textarea>
-              </div>
+            <div class="form-group">
+              <label class="form-label" for="update-details">Enter correct details</label>
+              <textarea class="form-control form-control-textarea" id="update-details" name="update-details" cols="30" rows="5" data-ng-model="yourDetails.update"></textarea>
+            </div>
 
           </div>
 
@@ -76,6 +76,18 @@
         </label>
 
         <input class="form-control form-control-1-3" type="tel" id="contact-number" name="contact-number" aria-describedby="contact-number-hint" data-ng-model="yourDetails.contactNumber">
+
+      </div>
+      
+      
+      <div class="form-group">
+
+        <label for="email-address">
+          <span class="form-label-bold">Email address (optional)</span>
+          <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
+        </label>
+
+        <input class="form-control form-control-1-3" type="email" id="email-address" name="email-address" aria-describedby="email-address-hint" data-ng-model="yourDetails.emailAddress">
 
       </div>
 
@@ -149,7 +161,7 @@
       </div>
 
 
-      <p data-ng-show="yourDetails.showCancelLink()"><a href="" data-ui-sref="confirm-your-answers">Cancel</a></p>
+      <p data-ng-show="yourDetails.nextState"><a href="" data-ui-sref="{{yourDetails.getNextState()}}">Cancel</a></p>
 
 
     </form>

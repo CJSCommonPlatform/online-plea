@@ -11,6 +11,9 @@
           templateUrl: 'app/your-case/your-case.html',
           controller: 'YourCaseController',
           controllerAs: 'yourCase',
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: 'your-details'
           }

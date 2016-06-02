@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('confirmYourAnswers', confirmYourAnswers);
 
-  confirmYourAnswers.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash'];
+  confirmYourAnswers.$inject = ['totalIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash'];
 
-  function confirmYourAnswers(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash) {
+  function confirmYourAnswers(totalIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash) {
     var BASE_NAME = '';
 
     var service = {
@@ -29,26 +29,23 @@
 
       vm.dateOfBirth = new Date(year, month - 1, day);
 
-      vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
+      lodash.set(vm, 'yourEmployment.totalIncome', totalIncome.calculate(vm));
+      lodash.set(vm, 'yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
+      lodash.set(vm, 'yourExpenses.other.totalOtherExpenses', totalOtherExpenses.calculate(vm));
 
-      vm.totalWeeklyIncome = totalWeeklyIncome.calculate(vm);
-      vm.totalHouseholdExpenses = totalHouseholdExpenses.calculate(vm);
-      vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
-
-      vm.otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
-
-      if (vm.otherSignificantExpenses === 'Yes') {
-        vm.otherSignificantExpensesDetails = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails');
-        vm.otherSignificantExpensesTotal = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesTotal');
-      } else {
-        vm.otherSignificantExpensesDetails = 'No';
+      var otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
+      lodash.set(vm, 'yourExpenses.other.otherSignificantExpensesDetails', 'None');
+      if (otherSignificantExpenses === 'Yes') {
+        lodash.set(vm, 'yourExpenses.other.otherSignificantExpensesDetails', lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails'));
       }
 
-      if (vm.employmentStatus === 'Other') {
-        vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.provideDetails');
+      var employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
+      lodash.set(vm, 'yourEmployment.employmentStatus', employmentStatus);
+      if (employmentStatus === 'Other') {
+        lodash.set(vm, 'yourEmployment.employmentStatus', lodash.get(vm, 'pleaApp.yourEmployment.provideDetails'));
       }
 
-      vm.totalExpenses = totalExpenses.calculate(vm);
+      lodash.set(vm, 'yourExpenses.totalExpenses', totalExpenses.calculate(vm));
     }
   }
 })();

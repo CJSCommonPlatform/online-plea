@@ -11,6 +11,9 @@
           templateUrl : 'app/your-details/your-details.html',
           controller: 'YourDetailsController',
           controllerAs: 'yourDetails',
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: 'your-plea'
           }

@@ -18,6 +18,9 @@
     function continueButtonClicked(event) {
       event.preventDefault();
       yourEmploymentFinances.updateSessionStorage(vm);
+
+      console.log('!!!!' + vm.financialProblems);
+
       state.goNext(vm);
     }
   }

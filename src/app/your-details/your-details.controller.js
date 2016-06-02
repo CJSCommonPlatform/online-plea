@@ -5,94 +5,26 @@
   angular.module('pleaApp')
     .controller('YourDetailsController', YourDetailsController);
 
-  YourDetailsController.$inject = ['sessionStorage', 'state'];
+  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams'];
 
-  function YourDetailsController(sessionStorage, state) {
+  function YourDetailsController(yourDetails, state, $stateParams) {
     var vm = this;
-    var BASE_NAME = 'pleaApp.yourDetails.';
 
-    vm.buttonContinueLabel = 'Continue';
+    vm.buttonContinueLabel = angular.isDefined($stateParams.nextState) ? 'Change and continue' : 'Save and continue';
     vm.buttonContinue = buttonContinueClicked;
-    vm.showCancelLink = showCancelLink;
+    vm.nextState = $stateParams.nextState;
+    vm.getNextState = getNextState;
 
-    _updateViewModel();
-    _updateContinueButtonLabel();
-
-    //public
+    yourDetails.updateVm(vm);
 
     function buttonContinueClicked(event) {
       event.preventDefault();     
-      _updateSessionStorage();
-      _updateState();
+      yourDetails.updateSessionStorage(vm);
+      state.go(getNextState());
     }
-    
-    function showCancelLink() {
-      return state.getPrevious() === 'confirm-your-answers';
+
+    function getNextState() {
+      return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
     }
-    
-    //private
-    
-    function _updateContinueButtonLabel() {
-      vm.buttonContinueLabel = state.getPrevious() === 'confirm-your-answers' ? 'Change' : 'Save and continue';
-    }
-    
-    function _updateState() {
-      if (state.getPrevious() === 'confirm-your-answers') {
-        state.goPrevious();
-      } else {
-        state.goNext();
-      }
-    }
-    
-    function _updateViewModel() {
-      var get = sessionStorage.getGetter(BASE_NAME);
-      
-      vm.personalTitle = get('personalTitle');
-      vm.firstName = get('firstName');
-      vm.lastName = get('lastName');
-      vm.addressStreet = get('address.street');
-      vm.addressCity = get('address.city');
-      vm.addressPostcode = get('address.postcode');
-      
-      vm.detailsCorrect = get('detailsCorrect');
-      vm.update = get('update');
-      vm.contactNumber = get('contactNumber');
-      
-      vm.dateOfBirthDay = get('dateOfBirthDay');
-      vm.dateOfBirthMonth = get('dateOfBirthMonth');
-      vm.dateOfBirthYear = get('dateOfBirthYear');
-      
-      vm.nationalInsurance = get('nationalInsurance');
-      vm.nationalInsuranceNumber = get('nationalInsuranceNumber');
-    }
-    
-    function _updateSessionStorage() {
-      var set = sessionStorage.getSetter(BASE_NAME);
-      
-      set('', undefined);
-      
-      set('personalTitle', 'Mr');
-      set('firstName', 'Mike');
-      set('lastName', 'Mouse');
-      set('address.street', '38A Baker Street');
-      set('address.city', 'London');
-      set('address.postcode', '007 700');
-      set('detailsCorrect', vm.detailsCorrect);
-      
-      if (vm.detailsCorrect === 'No') {
-        set('update', vm.update);
-      }
-      
-      set('contactNumber', vm.contactNumber);
-      set('dateOfBirthDay', vm.dateOfBirthDay);
-      set('dateOfBirthMonth', vm.dateOfBirthMonth);
-      set('dateOfBirthYear', vm.dateOfBirthYear);
-      set('nationalInsurance', vm.nationalInsurance);
-      
-      if (vm.nationalInsurance === 'Yes') {
-        set('nationalInsuranceNumber', vm.nationalInsuranceNumber);
-      }
-      
-    }    
   }
 })();

@@ -1,13 +1,17 @@
-// Image path
+// ==========================================================================
+// Plead online: Transport for London (imports)
+// ==========================================================================
+
 
 $path: "/images/";
 
 
-// Import GOVUK elements
+// Import GOV.UK elements
 
 @import "../govuk/sass/govuk-elements";
 
 
-// Import Plea elements
+// Import Plead online elements
 
-@import "online-plea/manifest";
+@import "plead-online/manifest";
+

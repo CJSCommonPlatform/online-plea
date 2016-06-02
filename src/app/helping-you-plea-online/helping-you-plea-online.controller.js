@@ -3,19 +3,18 @@
   'use strict';  
     
   angular.module('pleaApp')
-    .controller('PleaHelpController', PleaHelpController);
+    .controller('HelpingYouPleaOnlineController', HelpingYouPleaOnlineController);
     
-  PleaHelpController.$inject = ['$state'];  
+  HelpingYouPleaOnlineController.$inject = ['state'];
     
-  function PleaHelpController($state) {
+  function HelpingYouPleaOnlineController(state) {
     var vm = this;
 
     vm.buttonContinue = continueButtonClicked;
 
     function continueButtonClicked(event) {
       event.preventDefault();
-      $state.go('index');
+      state.goNext(vm);
     }
   }
-
 })();

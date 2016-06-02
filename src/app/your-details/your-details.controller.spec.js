@@ -6,35 +6,81 @@
     var vm;
     var scope;
     var event;
+    var $controller;
     var $state;
 
     beforeEach(module('pleaApp'));
 
-    beforeEach(inject(function($rootScope, _$controller_, _$state_) {
-      scope = $rootScope.$new();
-      vm = _$controller_('YourDetailsController', { $scope: scope });
-      $state = _$state_;
-      event = jasmine.createSpyObj('event', ['preventDefault']);
+    describe('buttonContinue', function() {
 
-      $state.go('your-details');
-      scope.$apply();
-    }));
+      beforeEach(inject(function($rootScope, _$controller_, _$state_) {
+        scope = $rootScope.$new();
+        $controller = _$controller_;
+        vm = _$controller_('YourDetailsController', { $scope: scope });
+        $state = _$state_;
+        event = jasmine.createSpyObj('event', ['preventDefault']);
+      }));
 
-    it('should preventDefault on the event when continue button was clicked', function() {
-      //when
-      vm.buttonContinue(event);
-      //then
-      expect(event.preventDefault).toHaveBeenCalled();
-    });
+      it('should preventDefault on the event when continue button was clicked', function() {
+        //given
+        $state.go('your-details');
+        scope.$apply();
+        //when
+        vm.buttonContinue(event);
+        //then
+        expect(event.preventDefault).toHaveBeenCalled();
+      });
 
-    it('should move to your-plea after continue button was clicked', function() {
-      //given
-      expect($state.current.name).toEqual('your-details');
-      //when
-      vm.buttonContinue(event);
-      scope.$apply();
-      //then
-      expect($state.current.name).toEqual('your-plea');
+      it('should move to the next state; nextState param provided', function() {
+        //given
+        $state.go('your-details', {nextState: 'confirm-your-answers'});
+        scope.$apply();
+        expect($state.current.name).toEqual('your-details');
+        //when
+        vm.buttonContinue(event);
+        scope.$apply();
+        //then
+        expect($state.current.name).toEqual('confirm-your-answers');
+      });
+
+      it('should move to the next state; nextState param not provided', function() {
+        //given
+        $state.go('your-details');
+        scope.$apply();
+        expect($state.current.name).toEqual('your-details');
+        //when
+        vm.buttonContinue(event);
+        scope.$apply();
+        //then
+        expect($state.current.name).toEqual('your-plea');
+      });
+
+      it('should show correct button label; nextState param provided', function() {
+        //given
+        $state.go('your-details', {nextState: 'confirm-your-answers'});
+        scope.$apply();
+        vm = $controller('YourDetailsController', { $scope: scope });
+        expect($state.current.name).toEqual('your-details');
+        //when
+        vm.buttonContinue(event);
+        scope.$apply();
+        //then
+        expect(vm.buttonContinueLabel).toEqual('Change and continue');
+      });
+
+      it('should show correct button label; nextState param not provided', function() {
+        //given
+        $state.go('your-details');
+        scope.$apply();
+        vm = $controller('YourDetailsController', { $scope: scope });
+        expect($state.current.name).toEqual('your-details');
+        //when
+        vm.buttonContinue(event);
+        scope.$apply();
+        //then
+        expect(vm.buttonContinueLabel).toEqual('Save and continue');
+      });
+
     });
 
   });

@@ -4,7 +4,7 @@
   'use strict';
 
 
-  describe('YourCaseController', function(){
+  fdescribe('YourCaseController', function(){
     var vm;
     var scope;
     var $state;
@@ -22,9 +22,9 @@
       $state.go('your-case');
       scope.$apply();
       event = jasmine.createSpyObj('event', ['preventDefault']);
-      vm.form = jasmine.createSpyObj('form', ['$submitted', '$valid', '$myinvalid', 'caseNumber', 'casePostcode']);
+      vm.form = jasmine.createSpyObj('form', ['$submitted', '$valid', '$myinvalid', 'case-unique-reference-number', 'case-postcode']);
       vm.form.$submitted = false;
-      vm.form.number = jasmine.createSpyObj('caseNumber', ['$myinvalid']);
+      vm.form.number = jasmine.createSpyObj('caseUniqueReferenceNumber', ['$myinvalid']);
       vm.form.postcode = jasmine.createSpyObj('casePostcode', ['$myinvalid']);
     }));
 
@@ -71,34 +71,34 @@
     });
 
 
-    it('should update case number aria attributes when continue button was clicked and the case number field was invalid', function() {
+    it('should update case unique reference number aria attributes when continue button was clicked and the case unique reference number field was invalid', function() {
       //given
-      expect(vm.caseNumberAriaDescribedBy).toBe('case-number-hint');
-      expect(vm.caseNumberAriaInvalid).toBe(false);
+      expect(vm.caseUniqueReferenceNumberAriaDescribedBy).toBe('case-unique-reference-number-hint');
+      expect(vm.caseUniqueReferenceNumberAriaInvalid).toBe(false);
       //when
       vm.form.$valid = false;
-      vm.form.caseNumber.$invalid = true;
+      vm.form['case-unique-reference-number'].$invalid = true;
       vm.continueButtonClicked(event);
       //then
-      expect(vm.caseNumberAriaDescribedBy).toBe('error-message-case-number');
-      expect(vm.caseNumberAriaInvalid).toBe(true);
+      expect(vm.caseUniqueReferenceNumberAriaDescribedBy).toBe('error-message-case-unique-reference-number');
+      expect(vm.caseUniqueReferenceNumberAriaInvalid).toBe(true);
     });
 
 
-    it('should update case number aria attributes when continue button was clicked and the case number field was valid', function() {
+    it('should update case unique reference number aria attributes when continue button was clicked and the case unique reference number field was valid', function() {
       //given
       vm.form.$valid = false;
-      vm.form.caseNumber.$invalid = true;
+      vm.form['case-unique-reference-number'].$invalid = true;
       vm.continueButtonClicked(event);
-      expect(vm.caseNumberAriaDescribedBy).toBe('error-message-case-number');
-      expect(vm.caseNumberAriaInvalid).toBe(true);
+      expect(vm.caseUniqueReferenceNumberAriaDescribedBy).toBe('error-message-case-unique-reference-number');
+      expect(vm.caseUniqueReferenceNumberAriaInvalid).toBe(true);
       //when
       vm.form.$valid = true;
-      vm.form.caseNumber.$invalid = false;
+      vm.form['case-unique-reference-number'].$invalid = false;
       vm.continueButtonClicked(event);
       //then
-      expect(vm.caseNumberAriaDescribedBy).toBe('case-number-hint');
-      expect(vm.caseNumberAriaInvalid).toBe(false);
+      expect(vm.caseUniqueReferenceNumberAriaDescribedBy).toBe('case-unique-reference-number-hint');
+      expect(vm.caseUniqueReferenceNumberAriaInvalid).toBe(false);
     });
 
 
@@ -106,7 +106,7 @@
       //given
       expect(vm.casePostcodeAriaDescribedBy).toBe('case-postcode-hint');
       expect(vm.casePostcodeAriaInvalid).toBe(false);
-      vm.form.casePostcode.$invalid = true;
+      vm.form['case-postcode'].$invalid = true;
       //when
       vm.continueButtonClicked(event);
       //then
@@ -117,11 +117,11 @@
 
     it('should update postcode aria attributes when continue button was clicked and the postcode field was valid', function() {
       //given
-      vm.form.casePostcode.$invalid = true;
+      vm.form['case-postcode'].$invalid = true;
       vm.continueButtonClicked(event);
       expect(vm.casePostcodeAriaDescribedBy).toBe('error-message-case-postcode');
       expect(vm.casePostcodeAriaInvalid).toBe(true);
-      vm.form.casePostcode.$invalid = false;
+      vm.form['case-postcode'].$invalid = false;
       //when
       vm.continueButtonClicked(event);
       //then
@@ -141,13 +141,13 @@
     });
 
 
-    it('should focus case number input when enter case number link was clicked', function() {
+    it('should focus case unique refererence number input when enter case unique reference number link was clicked', function() {
       //given
-      expect(vm.caseNumberFocused).not.toBe(true);
+      expect(vm.caseUniqueReferenceNumberFocused).not.toBe(true);
       //when
-      vm.enterCaseNumberLinkClicked();
+      vm.enterCaseUniqueReferenceNumberLinkClicked();
       //then
-      expect(vm.caseNumberFocused).toBe(true);
+      expect(vm.caseUniqueReferenceNumberFocused).toBe(true);
     });
 
 
@@ -173,16 +173,16 @@
 
 
     it('should store user input values in session storage when continue button was clicked and the form was valid ', function() {
-      var exampleCaseNumber = '13LD0338416';
+      var exampleCaseUniqueReferenceNumber = '13LD0338416';
       var exampleCasePostcode = 'LS9 6DP';
       //given
-      vm.caseNumber = exampleCaseNumber;
+      vm.caseUniqueReferenceNumber = exampleCaseUniqueReferenceNumber;
       vm.casePostcode = exampleCasePostcode;
       vm.form.$valid = true;
       //when
       vm.continueButtonClicked(event);
       //then
-      expect(sessionStorage.pleaApp.yourCase.caseNumber).toBe(exampleCaseNumber);
+      expect(sessionStorage.pleaApp.yourCase.caseUniqueReferenceNumber).toBe(exampleCaseUniqueReferenceNumber);
       expect(sessionStorage.pleaApp.yourCase.casePostcode).toBe(exampleCasePostcode);
     });
 
