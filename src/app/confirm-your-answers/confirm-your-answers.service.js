@@ -29,24 +29,23 @@
 
       vm.dateOfBirth = new Date(year, month - 1, day);
 
-      vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
+      lodash.set(vm, 'yourEmployment.totalIncome', totalWeeklyIncome.calculate(vm));
+      lodash.set(vm, 'yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
+      lodash.set(vm, 'yourExpenses.other.totalOtherExpenses', totalOtherExpenses.calculate(vm));
 
-      vm.totalWeeklyIncome = totalWeeklyIncome.calculate(vm);
-      lodash.set(vm, 'pleaApp.yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
-
-      vm.totalOtherExpenses = totalOtherExpenses.calculate(vm);
-
-      vm.otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
-
-      if (vm.otherSignificantExpenses === 'No') {
-        lodash.set(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails', 'None');
+      var otherSignificantExpenses = lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpenses');
+      lodash.set(vm, 'yourExpenses.other.otherSignificantExpensesDetails', 'None');
+      if (otherSignificantExpenses === 'Yes') {
+        lodash.set(vm, 'yourExpenses.other.otherSignificantExpensesDetails', lodash.get(vm, 'pleaApp.yourExpenses.other.otherSignificantExpensesDetails'));
       }
 
-      if (vm.employmentStatus === 'Other') {
-        vm.employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.provideDetails');
+      var employmentStatus = lodash.get(vm, 'pleaApp.yourEmployment.employmentStatus');
+      lodash.set(vm, 'yourEmployment.employmentStatus', employmentStatus);
+      if (employmentStatus === 'Other') {
+        lodash.set(vm, 'yourEmployment.employmentStatus', lodash.get(vm, 'pleaApp.yourEmployment.provideDetails'));
       }
 
-      vm.totalExpenses = totalExpenses.calculate(vm);
+      lodash.set(vm, 'yourExpenses.totalExpenses', totalExpenses.calculate(vm));
     }
   }
 })();

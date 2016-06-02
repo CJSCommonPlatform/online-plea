@@ -109,7 +109,7 @@
     
       <dl>
         <dt>You are</dt>
-        <dd>{{confirmPlea.employmentStatus}}</dd>
+        <dd>{{confirmPlea.yourEmployment.employmentStatus}}</dd>
         <dt>You get paid</dt>
         <dd>{{confirmPlea.pleaApp.yourEmployment.paymentFrequency}}</dd>
         <dt>Amount (after tax)</dt>
@@ -163,7 +163,7 @@
     
       <dl>
         <dt>Amount</dt>
-        <dd><span class="bold-medium">&pound;{{confirmPlea.totalWeeklyIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
+        <dd><span class="bold-medium">&pound;{{confirmPlea.yourEmployment.totalIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -188,8 +188,8 @@
       <dl>
         <dt>Other contributors to household bills</dt>
         <dd>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</dd>
-        <dt data-ng-show="confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses">Amount</dt>
-        <dd data-ng-show="confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses">&pound;{{confirmPlea.pleaApp.yourExpenses.household.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">Amount</dt>
+        <dd data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">&pound;{{confirmPlea.yourExpenses.household.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -204,9 +204,9 @@
     
       <dl>
         <dt>Other expenses (not listed)</dt>
-        <dd>{{confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesDetails}}</dd>
-        <dt data-ng-show="confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal">Amount</dt>
-        <dd data-ng-show="confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal">&pound;{{confirmPlea.pleaApp.yourExpenses.other.otherSignificantExpensesTotal | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dd>{{confirmPlea.yourExpenses.other.otherSignificantExpensesDetails}}</dd>
+        <dt data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">Amount</dt>
+        <dd data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">&pound;{{confirmPlea.yourExpenses.other.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -220,7 +220,7 @@
     
       <dl class="synopsis-content">
         <dt>Amount</dt>
-        <dd><span class="bold-medium">&pound;{{confirmPlea.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
+        <dd><span class="bold-medium">&pound;{{confirmPlea.yourExpenses.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
