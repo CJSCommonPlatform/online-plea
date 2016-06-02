@@ -33,6 +33,7 @@
           detailsCorrect: 'No',
           update: 'update',
           contactNumber: 'contactNumber',
+          emailAddress: 'emailAddress',
           dateOfBirthDay: 'dateOfBirthDay',
           dateOfBirthMonth: 'dateOfBirthMonth',
           dateOfBirthYear: 'dateOfBirthYear',
@@ -52,6 +53,7 @@
         expect(get('detailsCorrect')).toEqual('No');
         expect(get('update')).toEqual('update');
         expect(get('contactNumber')).toEqual('contactNumber');
+        expect(get('emailAddress')).toEqual('emailAddress');
         expect(get('dateOfBirthDay')).toEqual('dateOfBirthDay');
         expect(get('dateOfBirthMonth')).toEqual('dateOfBirthMonth');
         expect(get('dateOfBirthYear')).toEqual('dateOfBirthYear');
@@ -77,6 +79,7 @@
         set('detailsCorrect', 'detailsCorrect');
         set('update', 'update');
         set('contactNumber', 'contactNumber');
+        set('emailAddress', 'emailAddress');
         set('dateOfBirthDay', 'dateOfBirthDay');
         set('dateOfBirthMonth', 'dateOfBirthMonth');
         set('dateOfBirthYear', 'dateOfBirthYear');
@@ -96,6 +99,7 @@
         expect(vm.detailsCorrect).toEqual('detailsCorrect');
         expect(vm.update).toEqual('update');
         expect(vm.contactNumber).toEqual('contactNumber');
+        expect(vm.emailAddress).toEqual('emailAddress');
         expect(vm.dateOfBirthDay).toEqual('dateOfBirthDay');
         expect(vm.dateOfBirthMonth).toEqual('dateOfBirthMonth');
         expect(vm.dateOfBirthYear).toEqual('dateOfBirthYear');
