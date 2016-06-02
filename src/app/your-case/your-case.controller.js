@@ -5,15 +5,16 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
 
-  YourCaseController.$inject = ['sessionStorage', 'state'];
+  YourCaseController.$inject = ['sessionStorage', 'state', '$stateParams'];
 
-  function YourCaseController(sessionStorage, state) {
+  function YourCaseController(sessionStorage, state, $stateParams) {
     var vm = this;
 
     var BASE_NAME = 'pleaApp.yourCase.';
     var get = sessionStorage.getGetter(BASE_NAME);
     var set = sessionStorage.getSetter(BASE_NAME);
 
+    vm.buttonContinueLabel = angular.isDefined($stateParams.nextState) ? 'Change and continue' : 'Save and continue';
     vm.showErrorSummary = false;
     vm.enterCaseNumberLinkClicked = enterCaseNumberLinkClicked;
     vm.enterCasePostcodeLinkClicked = enterCasePostcodeLinkClicked;
@@ -22,6 +23,8 @@
     vm.caseNumberAriaDescribedBy = 'case-number-hint';
     vm.casePostcodeAriaInvalid = false;
     vm.casePostcodeAriaDescribedBy = 'case-postcode-hint';
+    vm.nextState = $stateParams.nextState;
+    vm.getNextState = getNextState;
 
     _updateViewModel();
 
@@ -96,12 +99,16 @@
 
     function updateState() {
       if (vm.form.$valid) {
-        state.goNext(vm);
+        state.go(getNextState(vm));
       }
     }
 
     function updateShowErrorSummary() {
       vm.showErrorSummary = vm.form.$submitted && vm.form.$myinvalid;
+    }
+
+    function getNextState(vm) {
+      return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
     }
   }
 

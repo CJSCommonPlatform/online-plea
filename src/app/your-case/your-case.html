@@ -51,8 +51,11 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)">Continue</button>
+        <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)">{{yourCase.buttonContinueLabel}}</button>
       </div>
+
+
+      <p data-ng-show="yourCase.nextState"><a href="" data-ui-sref="{{yourCase.getNextState()}}">Cancel</a></p>
 
 
     </form>
