@@ -37,3 +37,15 @@ $module: "form";
 
 }
 
+
+// Added to override GDS inline inheritance
+
+.stacked .block-label {
+  
+  @include media (tablet) {
+    margin-right: 0;
+    margin-bottom: em(10);
+  }
+  
+}
+

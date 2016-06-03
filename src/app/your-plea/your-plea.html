@@ -72,30 +72,23 @@
             <p>Pleading guilty to this charge means you don&rsquo;t need to come to court to respond to this charge &ndash; we&rsquo;ll send you details of the court&rsquo;s decision and what to do next.</p>
 
 
-
             <div class="form-group">
 
 
-              <fieldset>
+              <fieldset class="stacked">
 
 
                 <legend><span class="form-label-bold">What would you like to do?</span></legend>
 
 
-                <div class="form-group">
+                <label class="block-label" for="court-yes">
+                  <input type="radio" id="court-yes" name="court" value="Yes" data-ng-model="yourPlea.court"> Plead guilty online (no need to attend court)
+                </label>
 
 
-                  <label class="block-label" for="court-yes">
-                    <input type="radio" id="court-yes" name="court" value="Yes" data-ng-model="yourPlea.court"> Plead guilty online (no need to attend court)
-                  </label>
-
-
-                  <label class="block-label" for="court-no">
-                    <input type="radio" id="court-no" name="court" value="No" data-ng-model="yourPlea.court"> Attend court to plead guilty
-                  </label>
-
-
-                </div>
+                <label class="block-label" for="court-no">
+                  <input type="radio" id="court-no" name="court" value="No" data-ng-model="yourPlea.court"> Attend court to plead guilty
+                </label>
 
 
               </fieldset>
