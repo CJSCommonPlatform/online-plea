@@ -23,6 +23,9 @@
               controllerAs: 'otherFinances'
             }
           },
+          params: {
+            nextState: undefined
+          },
           data: {
             propertyName: 'pensionCredit',
             constantName: 'yesNoAnswer',

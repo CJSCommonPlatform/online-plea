@@ -75,8 +75,11 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="pensionCredit.buttonContinue($event)">Continue</button>
+        <button class="button" type="submit" data-ng-click="pensionCredit.buttonContinue($event)">Continue and save</button>
       </div>
+
+
+      <p data-ng-if="pensionCredit.nextState"><a href="" data-ui-sref="{{pensionCredit.nextState}}">Cancel</a></p>
 
 
     </form>

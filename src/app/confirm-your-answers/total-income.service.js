@@ -15,6 +15,7 @@
     function calculate(vm) {
       var paymentAmount = lodash.get(vm, 'pleaApp.yourEmployment.paymentAmount');
       var benefitAmount = lodash.get(vm, 'pleaApp.yourBenefits.benefitAmount');
+      var pensionCreditAmount = lodash.get(vm, 'pleaApp.yourPensionCredit.pensionCreditAmount');
 
       var totalIncome = 0;
 
@@ -23,6 +24,9 @@
       }
       if (benefitAmount) {
         totalIncome = totalIncome + parseFloat(benefitAmount);
+      }
+      if (pensionCreditAmount) {
+        totalIncome = totalIncome + parseFloat(pensionCreditAmount);
       }
 
       return totalIncome;

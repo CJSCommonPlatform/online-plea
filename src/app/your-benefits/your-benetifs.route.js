@@ -11,6 +11,9 @@
           templateUrl : 'app/your-benefits/your-benefits.html',
           controller: 'YourBenefitsController',
           controllerAs: 'yourBenefits',
+          params: {
+            nextState: undefined
+          },
           data: {
             propertyName: 'financialProblems',
             constantName: 'yesNoAnswer',
