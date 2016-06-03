@@ -23,6 +23,9 @@
               controllerAs: 'selfEmployedBenefitsFinances'
             }
           },
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: 'your-benefits'
           }

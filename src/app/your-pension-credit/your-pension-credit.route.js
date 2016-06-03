@@ -15,6 +15,9 @@
               controllerAs: 'pensionCredit'
             }
           },
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: 'your-employment.other.finances.expenses'
           }

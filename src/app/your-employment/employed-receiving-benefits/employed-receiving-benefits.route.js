@@ -23,6 +23,9 @@
               controllerAs: 'employedBenefitsFinances'
             }
           },
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: 'your-benefits'
           }
