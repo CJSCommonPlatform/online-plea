@@ -10,30 +10,51 @@
     <h1 class="heading-xlarge">Your case</h1>
 
 
-    <div class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1" data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
+    <div  class="error-summary"
+          id="error-summary"
+          role="group"
+          tabindex="-1"
+          aria-labelledby="error-summary-heading"
+          data-focus
+          data-focus-event="click" 
+          data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
       <ul class="error-summary-list">
-        <li data-ng-show="yourCase.form.caseNumber.$myinvalid"><a href="" data-ng-click="enterCaseNumberLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-number">Case number</a></li>
-        <li data-ng-show="yourCase.form.casePostcode.$myinvalid"><a href="" data-ng-click="enterCasePostcodeLinkClicked()" data-scroll-to-item data-scroll-to="#error-case-postcode">Your postcode</a></li>
+        <li data-ng-show="yourCase.form['case-unique-reference-number'].$myinvalid">
+          <a  href="" 
+              data-ng-click="enterCaseUniqueReferenceNumberLinkClicked()"             
+              data-focus
+              data-focus-event="click"
+              data-focus-target="error-case-unique-reference-number">Case or Unique Reference Number
+          </a>
+        </li>
+        <li data-ng-show="yourCase.form['case-postcode'].$myinvalid">
+          <a href="" 
+              data-ng-click="enterCasePostcodeLinkClicked()"
+              data-focus
+              data-focus-event="click"
+              data-focus-target="error-case-postcode">Your postcode
+          </a>
+        </li>
       </ul>
 
     </div>
 
 
-    <form class="form" method="post" name="yourCase.form" action="" autocomplete="off" data-form-selection data-form-toggle novalidate>
+    <form class="form" method="post" name="yourCase.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
-      <div class="form-group" data-ng-class="{'error': yourCase.caseNumberAriaInvalid}">
+      <div class="form-group" data-ng-class="{'error': yourCase.caseUniqueReferenceNumberAriaInvalid}">
 
-        <label for="case-number" id="error-case-number">
-          <span class="form-label-bold">Case number</span>
-          <span class="form-hint" id="case-number-hint">Find this on your notice, eg 13LD0338416</span>
-          <span class="error-message" id="error-message-case-number" data-ng-show="yourCase.caseNumberAriaInvalid">Provide this information</span>
+        <label for="case-unique-reference-number" id="error-case-unique-reference-number">
+          <span class="form-label-bold">Case or Unique Reference Number</span>
+          <span class="form-hint" id="case-unique-reference-number-hint">Find this on your notice</span>
+          <span class="error-message" id="error-message-case-unique-reference-number" data-ng-show="yourCase.caseUniqueReferenceNumberAriaInvalid">Provide this information</span>
         </label>
 
-        <input class="form-control" type="text" id="case-number" name="caseNumber" aria-describedby="{{yourCase.caseNumberAriaDescribedBy}}" aria-invalid="{{yourCase.caseNumberAriaInvalid}}" value="{{yourCase.caseNumber}}" required data-ng-model="yourCase.caseNumber" data-focus-me="numberFocused">
+        <input class="form-control" type="text" id="case-unique-reference-number" name="case-unique-reference-number" aria-describedby="{{yourCase.caseUniqueReferenceNumberAriaDescribedBy}}" aria-invalid="{{yourCase.caseUniqueReferenceNumberAriaInvalid}}" value="{{yourCase.caseUniqueReferenceNumber}}" required data-ng-model="yourCase.caseUniqueReferenceNumber">
 
       </div>
 
@@ -45,13 +66,18 @@
           <span class="error-message" id="error-message-case-postcode" data-ng-show="yourCase.casePostcodeAriaInvalid">Provide this information</span>
         </label>
 
-        <input class="form-control form-control-1-4" type="text" id="case-postcode" name="casePostcode" aria-invalid="{{yourCase.casePostcodeAriaInvalid}}" value="{{yourCase.casePostcode}}" required data-ng-model="yourCase.casePostcode" data-focus-me="yourCase.postcodeFocused">
+        <input class="form-control form-control-1-4" type="text" id="case-postcode" name="case-postcode" aria-invalid="{{yourCase.casePostcodeAriaInvalid}}" value="{{yourCase.casePostcode}}" required data-ng-model="yourCase.casePostcode">
 
       </div>
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="yourCase.continueButtonClicked($event)">{{yourCase.buttonContinueLabel}}</button>
+        <button class="button" type="submit" 
+          data-ng-click="yourCase.continueButtonClicked($event)" 
+          data-focus
+          data-focus-event="click" 
+          data-focus-target="error-summary">{{yourCase.buttonContinueLabel}}
+        </button>
       </div>
 
 

@@ -6,43 +6,107 @@
 
 // Form focus
 
-angular.module('pleaApp').directive('focusMe', function($timeout, $parse) {
-  return {
-    //scope: true,   // optionally create a child scope
-    link: function(scope, element, attrs) {
-      var model = $parse(attrs.focusMe);
-      scope.$watch(model, function(value) {
-        if(value === true) { 
-          $timeout(function() {
-            element[0].focus(); 
-          });
-        }
-      });
-      // to address @blesh's comment, set attribute value to 'false'
-      // on blur event:
-      element.bind('blur', function() {
-         scope.$apply(model.assign(scope, false));
-      });
-    }
-  };
-});
+// angular.module('pleaApp').directive('focusMe', function($timeout, $parse) {
+//   return {
+//     link: function(scope, element, attrs) {
+//       var model = $parse(attrs.focusMe);
+//       scope.$watch(model, function(value) {
+//         if(value === true) { 
+//           $timeout(function() {
+//             element[0].focus(); 
+//           });
+//         }
+//       });
+//       // to address @blesh's comment, set attribute value to 'false'
+//       // on blur event:
+//       element.bind('blur', function() {
+//          scope.$apply(model.assign(scope, false));
+//       });
+//     }
+//   };
+// });
 
+// angular
+//   .module('pleaApp')
+//   .directive('focusMe', function($timeout, $parse) {
+//     return {
+//       link: function(scope, element, attrs) {
+//         var model = $parse(attrs.focusMe);
+//         scope.$watch(model, function(value) {
+//           if(value === true) { 
+//             element[0].focus();
+//             scope[attrs.focusMe] = true;
+//           }
+//         });
+//         element.bind('blur', function() {
+//            scope.$apply(model.assign(scope, false));
+//         });
+//       }
+//     };
+// });
 
-// Scroll to item
+// angular
+//   .module('pleaApp')
+//   .directive('focusOn', function() {
+//     return {
+//       restrict: 'A',
+//       scope: {
 
-angular.module('pleaApp').directive('scrollToItem', function() {                                                      
-  return {                                                                                 
-    restrict: 'A',                                                                       
-    scope: {                                                                             
-        scrollTo: "@"                                                                    
-    },                                                                                   
-    link: function(scope, $elm,attr) {                                                   
+//       },
+//       controller: 'focusOnController'
+//       link: function(scope, element, attr) {
+//         scope.$on(attr.focusOn, function(e) {
+//           console.log(attr.focusOn);
+//           element[0].focus(); 
+//         });
+//       }
+//     };
+//   })
+//   .controller(function ($scope) {
+//     $scope.addHearing = function() {
+     
+//     };
+//   });
 
-        $elm.on('click', function() {                                                    
-            $('html,body').animate({scrollTop: $(scope.scrollTo).offset().top }, 0);
-        });                                                                              
-    }                                                                                    
-}}); 
+// angular
+//   .module('pleaApp')
+//   .directive('ngFocus', ['$parse', function($parse) {
+//     return function(scope, element, attr) {
+//         var fn = $parse(attr['ngFocus']);
+//         console.log(fn.ngFocus);
+//         element.on('focus', function(event) {
+//             scope.$apply(function() {
+//                 fn(scope, {$event:event});
+//             });
+//         });
+//     };
+// }]);
+
+// angular
+//   .module('pleaApp')
+//   .directive('ngBlur', ['$parse', function($parse) {
+//     return function(scope, element, attr) {
+//         var fn = $parse(attr['ngBlur']);
+//         element.on('blur', function(event) {
+//             scope.$apply(function() {
+//                 fn(scope, {$event:event});
+//             });
+//         });
+//     };
+// }]);
+
+// angular.module('pleaApp').directive('scrollToItem', function() {                                                      
+//   return {                                                                                 
+//     restrict: 'A',                                                                       
+//     scope: {                                                                             
+//       scrollTo: "@"                                                                    
+//     },                                                                                   
+//     link: function(scope, elm, attr) {                                                   
+//       elm.on('click', function() {    
+//         $(scope.scrollTo).focus();                                             
+//       });                                                                              
+//     }                                                                                    
+// }}); 
 
 
 // Form selection

@@ -30,6 +30,7 @@
       vm.detailsCorrect = get('detailsCorrect');
       vm.update = get('update');
       vm.contactNumber = get('contactNumber');
+      vm.emailAddress = get('emailAddress');
 
       vm.dateOfBirthDay = get('dateOfBirthDay');
       vm.dateOfBirthMonth = get('dateOfBirthMonth');
@@ -57,6 +58,7 @@
       }
 
       set('contactNumber', vm.contactNumber);
+      set('emailAddress', vm.emailAddress);
       set('dateOfBirthDay', vm.dateOfBirthDay);
       set('dateOfBirthMonth', vm.dateOfBirthMonth);
       set('dateOfBirthYear', vm.dateOfBirthYear);
