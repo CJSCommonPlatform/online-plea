@@ -2,11 +2,11 @@
   
   <h1 class="bold-large">Your plea has been submitted</h1>
   
-  <p>Your case reference number is <br> <strong class="heading-medium">51/AB/12367/00</strong></p>
+  <p>Your case reference number is <br> <strong class="heading-medium">{{vm.pleaApp.yourCase.caseUniqueReferenceNumber}}</strong></p>
   
   <p>You will need to quote this if you contact the court.</p>
 
-  <p>We&rsquo;ve sent you a confirmation email.</p>
+  <p class="font-xsmall" data-ng-show="vm.pleaApp.yourDetails.emailAddress">We&rsquo;ve sent you a confirmation email to {{vm.pleaApp.yourDetails.emailAddress}}.</p>
   
 </div>
 
