@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('HelpingYouPleaOnlineController', function() {
+  describe('HelpingYouPleadOnlineController', function() {
     var scope;
     var vm;
     var $state;
@@ -11,7 +11,7 @@
 
     beforeEach(inject(function($rootScope, _$controller_, _$state_) {
       scope = $rootScope.$new();
-      vm = _$controller_('HelpingYouPleaOnlineController');
+      vm = _$controller_('HelpingYouPleadOnlineController');
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
     }));
@@ -23,9 +23,9 @@
     describe('buttonContinue function', function() {
       beforeEach(function() {
         //given
-        $state.go('helping-you-plea-online');
+        $state.go('helping-you-plead-online');
         scope.$apply();
-        expect($state.current.name).toEqual('helping-you-plea-online');
+        expect($state.current.name).toEqual('helping-you-plead-online');
       });
 
       it('should preventDefault on the event', function() {
