@@ -6,10 +6,10 @@
     .config(function($stateProvider) {
 
       $stateProvider
-        .state('helping-you-plea-online', {
-          url: '/helping-you-plea-online',
-          templateUrl : 'app/helping-you-plea-online/helping-you-plea-online.html',
-          controller  : 'HelpingYouPleaOnlineController',
+        .state('helping-you-plead-online', {
+          url: '/helping-you-plead-online',
+          templateUrl : 'app/helping-you-plead-online/helping-you-plead-online.html',
+          controller  : 'HelpingYouPleadOnlineController',
           controllerAs: 'pleaHelp',
           data: {
             nextState: 'index'
