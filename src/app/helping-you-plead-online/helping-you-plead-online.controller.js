@@ -5,7 +5,7 @@
   angular.module('pleaApp')
     .controller('HelpingYouPleadOnlineController', HelpingYouPleadOnlineController);
     
-  HelpingYouPleaOnlineController.$inject = ['state'];
+  HelpingYouPleadOnlineController.$inject = ['state'];
     
   function HelpingYouPleadOnlineController(state) {
     var vm = this;
