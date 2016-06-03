@@ -41,6 +41,11 @@ $module: "synopsis";
   }
   
   
+  dl {
+    overflow: hidden;
+  }
+  
+  
   dt {
     float: left;
     padding-top: em(10);
