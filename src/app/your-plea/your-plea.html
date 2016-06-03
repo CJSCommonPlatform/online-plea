@@ -57,12 +57,12 @@
 
 
           <label class="block-label" for="plea-guilty" data-target="guilty">
-            <input type="radio" id="plea-guilty" name="plea" value="Guilty" data-ng-model="yourPlea.plea"> Guilty
+            <input type="radio" id="plea-guilty" name="plea" value="Guilty" data-ng-click="yourPlea.enterYourPleaClicked()" data-ng-model="yourPlea.plea"> Guilty
           </label>
 
 
           <label class="block-label" for="plea-notguilty" data-target="not-guilty">
-            <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" data-ng-model="yourPlea.plea"> Not guilty
+            <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" data-ng-click="yourPlea.enterYourPleaClicked()" data-ng-model="yourPlea.plea"> Not guilty
           </label>
 
 
@@ -311,6 +311,9 @@
       <div class="form-group">
         <button class="button" type="submit" data-ng-click="yourPlea.buttonContinue($event)">Save and continue</button>
       </div>
+
+
+      <p data-ng-if="yourPlea.nextState"><a href="" data-ui-sref="{{yourPlea.nextState}}">Cancel</a></p>
 
 
     </form>

@@ -56,7 +56,7 @@
     
     <header class="synopsis-heading">
       <h2 class="bold-small" id="your-plea">Your plea</h2>
-      <a class="synopsis-action" href="" data-ui-sref="your-plea">Change<span class="visuallyhidden"> Your plea</span></a>
+      <a class="synopsis-action" href="" data-ui-sref="your-plea({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Your plea</span></a>
     </header>
     
     <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Guilty'">
@@ -119,7 +119,7 @@
     </section>
     
     
-    <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.pensionCredit">
+    <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourPensionCredit">
         
       <header class="synopsis-heading">
         <h3 class="bold-small">Your pension credit</h3>

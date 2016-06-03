@@ -36,7 +36,10 @@
 
     function updateSessionStorage(vm) {
 
+      var get = sessionStorage.getGetter(BASE_NAME);
       var set = sessionStorage.getSetter(BASE_NAME);
+
+      var plea = get('plea');
 
       sessionStorage.reset(BASE_NAME);
 
@@ -75,6 +78,8 @@
           }
         }
       }
+
+      return angular.isDefined(plea) && plea !== vm.plea;
     }
   }
 })();

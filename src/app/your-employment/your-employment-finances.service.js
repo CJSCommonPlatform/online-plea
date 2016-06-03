@@ -60,8 +60,11 @@
       }
 
       set('pensionCredit', vm.pensionCredit);
-      set('financialProblems', vm.financialProblems);
+      if (vm.pensionCredit !== 'Yes') {
+        sessionStorage.reset('pleaApp.yourPensionCredit');
+      }
 
+      set('financialProblems', vm.financialProblems);
       if (vm.financialProblems === 'Yes') {
         set('financialProblemsJustification', vm.financialProblemsJustification);
       } else {

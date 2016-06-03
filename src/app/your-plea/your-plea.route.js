@@ -11,6 +11,9 @@
           templateUrl : 'app/your-plea/your-plea.html',
           controller: 'YourPleaController',
           controllerAs: "yourPlea",
+          params: {
+            nextState: undefined
+          },
           data: {
             propertyName: 'plea',
             constantName: 'pleas',
