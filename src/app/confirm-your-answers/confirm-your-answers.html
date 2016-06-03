@@ -19,7 +19,7 @@
     
     <dl>
       <dt>Case number</dt>
-      <dd>{{confirmPlea.pleaApp.yourCase.caseNumber | chkEmpty}}</dd>
+      <dd>{{confirmPlea.pleaApp.yourCase.caseUniqueReferenceNumber | chkEmpty}}</dd>
       <dt>Your postcode</dt>
       <dd>{{confirmPlea.pleaApp.yourCase.casePostcode | chkEmpty}}</dd>
     </dl>
@@ -69,7 +69,7 @@
       <dt>Plead guilty in court</dt>
       <dd>{{confirmPlea.pleaApp.yourPlea.court}}</dd>
       <dt>Mitigation</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.mitigation}}</dd>
+      <dd>{{confirmPlea.pleaApp.yourPlea.mitigation | chkEmpty}}</dd>
     </dl>
     
     <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not guilty'">
@@ -127,14 +127,14 @@
         
       <header class="synopsis-heading">
         <h3 class="bold-small">Your pension credit</h3>
-        <a class="synopsis-action" href="" data-ui-sref="pension-credit">Change<span class="visuallyhidden"> Your pension credit</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-pension-credit">Change<span class="visuallyhidden"> Your pension credit</span></a>
       </header>
     
       <dl>
         <dt>Your pension credit is paid</dt>
-        <dd>{{confirmPlea.pleaApp.pensionCredit.pensionCreditFrequency}}</dd>
+        <dd>{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditFrequency}}</dd>
         <dt>Amount</dt>
-        <dd>&pound;{{confirmPlea.pleaApp.pensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dd>&pound;{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
