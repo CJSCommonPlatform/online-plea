@@ -137,28 +137,34 @@
 
       <div class="form-group">
 
-
         <fieldset class="inline">
-
 
           <legend>
             <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
-            <span class="form-hint" id="financial-problems-hint">For example, you would become homeless.</span>
+            <span class="form-hint" id="financial-problems-hint">For example, you would become homeless</span>
           </legend>
 
-
-          <label class="block-label" for="financial-problems-yes">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="otherFinances.financialProblems"> Yes
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems">
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="employedFinances.financialProblems"> Yes
           </label>
-
 
           <label class="block-label" for="financial-problems-no">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="otherFinances.financialProblems"> No
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="employedFinances.financialProblems"> No
           </label>
+          
+          <div class="panel panel-border-narrow js-hidden" id="financial-problems">
 
+            <div class="form-group">
+              <label for="financial-problems-justification">
+                <span class="form-label">How would paying a fine cause you financial problems?</span>
+                <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
+              </label>
+              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="employedFinances.financialProblemsJustification"></textarea>
+            </div>
+
+          </div>
 
         </fieldset>
-
 
       </div>
 
