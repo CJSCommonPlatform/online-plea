@@ -8,6 +8,7 @@
   YourCaseController.$inject = ['sessionStorage', 'state', '$stateParams'];
 
   function YourCaseController(sessionStorage, state, $stateParams) {
+
     var vm = this;
 
     var BASE_NAME = 'pleaApp.yourCase.';
@@ -54,6 +55,7 @@
 
       updateSessionStorage();
       updateState();
+
     }
 
     //private

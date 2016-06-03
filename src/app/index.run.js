@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-
+/* eslint-disable */
   angular
     .module('pleaApp')
     .run(function($rootScope, $sessionStorage, $window) {
@@ -14,5 +14,5 @@
       });
 
     });
-
+/* eslint-enable */
 })();
