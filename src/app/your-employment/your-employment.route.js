@@ -11,6 +11,9 @@
           templateUrl : 'app/your-employment/your-employment.html',
           controller: 'EmploymentController',
           controllerAs: 'yourEmployment',
+          params: {
+            nextState: undefined
+          },
           data: {
             propertyName: 'employment',
             constantName: 'employmentStatus',
