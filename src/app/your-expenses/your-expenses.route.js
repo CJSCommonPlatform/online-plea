@@ -20,6 +20,9 @@
           templateUrl : 'app/your-expenses/household-expenses.html',
           controller: 'HouseholdExpensesController',
           controllerAs: 'householdExpenses',
+          params: {
+            nextState: undefined
+          },
           data: {
             nextState: '^.other'
           }
@@ -33,6 +36,9 @@
               controller  : 'OtherExpensesController',
               controllerAs: 'otherExpenses'
             }
+          },
+          params: {
+            nextState: undefined
           },
           data: {
             nextState: 'confirm-your-answers'

@@ -36,7 +36,10 @@
     }
 
     function updateSessionStorage(vm) {
+      var get = sessionStorage.getGetter(BASE_NAME);
       var set = sessionStorage.getSetter(BASE_NAME);
+
+      var financialProblems = get('financialProblems');
 
       sessionStorage.reset(BASE_NAME);
 
@@ -58,6 +61,8 @@
       } else {
         sessionStorage.reset('pleaApp.yourExpenses.');
       }
+
+      return angular.isDefined(financialProblems) && financialProblems !== vm.financialProblems;
     }
   }
 })();

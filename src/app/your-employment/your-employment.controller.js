@@ -27,7 +27,7 @@
       _updateSessionStorage();
 
       var nextState = state.getNext(vm);
-      state.goNext(nextState, {nextState: vm.nextState});
+      state.go(nextState, {nextState: vm.nextState});
     }
   
     //private
