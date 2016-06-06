@@ -24,7 +24,7 @@
       it('should update sessionStorage with data from vm', function() {
         //given
         var vm = {
-          personalTitle: 'personalTitle',
+          title: 'title',
           firstName: 'firstName',
           lastName: 'lastName',
           addressStreet: 'addressStreet',
@@ -44,7 +44,7 @@
         yourDetails.updateSessionStorage(vm);
         //then
         var get = sessionStorage.getGetter('pleaApp.yourDetails.');
-        expect(get('personalTitle')).toEqual('Mr');
+        expect(get('title')).toEqual('Mr');
         expect(get('firstName')).toEqual('Mike');
         expect(get('lastName')).toEqual('Mouse');
         expect(get('address.street')).toEqual('38A Baker Street');
@@ -70,7 +70,7 @@
       it('should update vm with data from sessionStorage', function() {
         //given
         var set = sessionStorage.getSetter('pleaApp.yourDetails.');
-        set('personalTitle', 'personalTitle');
+        set('title', 'title');
         set('firstName', 'firstName');
         set('lastName', 'lastName');
         set('address.street', 'address.street');
@@ -90,7 +90,7 @@
         var vm = {};
         yourDetails.updateVm(vm);
         //then
-        expect(vm.personalTitle).toEqual('personalTitle');
+        expect(vm['title']).toEqual('title');
         expect(vm.firstName).toEqual('firstName');
         expect(vm.lastName).toEqual('lastName');
         expect(vm.addressStreet).toEqual('address.street');

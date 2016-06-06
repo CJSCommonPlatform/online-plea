@@ -20,7 +20,7 @@
     function updateVm(vm) {
       var get = sessionStorage.getGetter(BASE_NAME);
 
-      vm.personalTitle = get('personalTitle');
+      vm['title'] = get('title');
       vm.firstName = get('firstName');
       vm.lastName = get('lastName');
       vm.addressStreet = get('address.street');
@@ -45,7 +45,7 @@
 
       set('', undefined);
 
-      set('personalTitle', 'Mr');
+      set('title', 'Mr');
       set('firstName', 'Mike');
       set('lastName', 'Mouse');
       set('address.street', '38A Baker Street');
