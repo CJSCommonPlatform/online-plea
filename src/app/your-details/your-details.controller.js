@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('YourDetailsController', YourDetailsController);
 
-  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams'];
+  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams', 'formValidation'];
 
-  function YourDetailsController(yourDetails, state, $stateParams) {
+  function YourDetailsController(yourDetails, state, $stateParams, formValidation) {
     var vm = this;
 
     vm.buttonContinueLabel = angular.isDefined($stateParams.nextState) ? 'Change and continue' : 'Save and continue';
@@ -18,9 +18,13 @@
     yourDetails.updateVm(vm);
 
     function buttonContinueClicked(event) {
+      formValidation.validate(vm.form);
+      vm.form.submitted = true;
       event.preventDefault();     
       yourDetails.updateSessionStorage(vm);
-      state.go(getNextState());
+      if (!vm.form.invalid) {
+        state.go(getNextState());
+      }
     }
 
     function getNextState() {
