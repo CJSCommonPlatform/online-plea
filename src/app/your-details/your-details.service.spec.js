@@ -31,7 +31,7 @@
           addressCity: 'addressCity',
           addressPostcode: 'addressPostcode',
           detailsCorrect: 'No',
-          update: 'update',
+          yourUpdateDetails: 'yourUpdateDetails',
           contactNumber: 'contactNumber',
           emailAddress: 'emailAddress',
           dateOfBirthDay: 'dateOfBirthDay',
@@ -51,7 +51,7 @@
         expect(get('address.city')).toEqual('London');
         expect(get('address.postcode')).toEqual('007 700');
         expect(get('detailsCorrect')).toEqual('No');
-        expect(get('update')).toEqual('update');
+        expect(get('yourUpdateDetails')).toEqual('yourUpdateDetails');
         expect(get('contactNumber')).toEqual('contactNumber');
         expect(get('emailAddress')).toEqual('emailAddress');
         expect(get('dateOfBirthDay')).toEqual('dateOfBirthDay');
@@ -77,7 +77,7 @@
         set('address.city', 'address.city');
         set('address.postcode', 'address.postcode');
         set('detailsCorrect', 'detailsCorrect');
-        set('update', 'update');
+        set('yourUpdateDetails', 'yourUpdateDetails');
         set('contactNumber', 'contactNumber');
         set('emailAddress', 'emailAddress');
         set('dateOfBirthDay', 'dateOfBirthDay');
@@ -97,7 +97,7 @@
         expect(vm.addressCity).toEqual('address.city');
         expect(vm.addressPostcode).toEqual('address.postcode');
         expect(vm.detailsCorrect).toEqual('detailsCorrect');
-        expect(vm.update).toEqual('update');
+        expect(vm.yourUpdateDetails).toEqual('yourUpdateDetails');
         expect(vm.contactNumber).toEqual('contactNumber');
         expect(vm.emailAddress).toEqual('emailAddress');
         expect(vm.dateOfBirthDay).toEqual('dateOfBirthDay');

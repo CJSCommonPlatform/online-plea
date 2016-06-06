@@ -28,7 +28,7 @@
       vm.addressPostcode = get('address.postcode');
 
       vm.detailsCorrect = get('detailsCorrect');
-      vm.update = get('update');
+      vm.yourUpdateDetails = get('yourUpdateDetails');
       vm.contactNumber = get('contactNumber');
       vm.emailAddress = get('emailAddress');
 
@@ -54,7 +54,7 @@
       set('detailsCorrect', vm.detailsCorrect);
 
       if (vm.detailsCorrect === 'No') {
-        set('update', vm.update);
+        set('yourUpdateDetails', vm.yourUpdateDetails);
       }
 
       set('contactNumber', vm.contactNumber);
