@@ -6,13 +6,14 @@
     .factory('formValidation', formValidation);
 
   function formValidation() {
-  	var service = {
-  		validate: validate
-  	}
+    var service = {
+      validate: validate
+    }
 
-  	return service;
+    return service;
 
-  	function validate(form) {
+    function validate(form) {
+      
       var formProperties = _.filter(Object.keys(form), function(key) {
         return !key.startsWith('$');
       });
@@ -20,11 +21,9 @@
         return angular.isObject(form[formProperty]);
       });
       _.forEach(formProperties, function (formProperty) {
-        if (form[formProperty] instanceof Object) {
-          form[formProperty].invalid = form[formProperty].$invalid;
-        }
+        form[formProperty].invalid = form[formProperty].$invalid;
       });
       form.invalid = form.$invalid;
-  	}
+    }
   }
 })();
