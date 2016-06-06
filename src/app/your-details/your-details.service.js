@@ -20,7 +20,7 @@
     function updateVm(vm) {
       var get = sessionStorage.getGetter(BASE_NAME);
 
-      vm.personalTitle = get('personalTitle');
+      vm['title'] = get('title');
       vm.firstName = get('firstName');
       vm.lastName = get('lastName');
       vm.addressStreet = get('address.street');
@@ -28,7 +28,7 @@
       vm.addressPostcode = get('address.postcode');
 
       vm.detailsCorrect = get('detailsCorrect');
-      vm.update = get('update');
+      vm.yourUpdateDetails = get('yourUpdateDetails');
       vm.contactNumber = get('contactNumber');
       vm.emailAddress = get('emailAddress');
 
@@ -45,7 +45,7 @@
 
       set('', undefined);
 
-      set('personalTitle', 'Mr');
+      set('title', 'Mr');
       set('firstName', 'Mike');
       set('lastName', 'Mouse');
       set('address.street', '38A Baker Street');
@@ -54,7 +54,7 @@
       set('detailsCorrect', vm.detailsCorrect);
 
       if (vm.detailsCorrect === 'No') {
-        set('update', vm.update);
+        set('yourUpdateDetails', vm.yourUpdateDetails);
       }
 
       set('contactNumber', vm.contactNumber);

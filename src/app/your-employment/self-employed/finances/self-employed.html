@@ -39,53 +39,53 @@
           </legend>
     
           <label class="block-label" for="paid-weekly" data-target="weekly">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="selfEmployedFinances.paymentFrequency"> Weekly
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="vm.paymentFrequency"> Weekly
           </label>
           
             <div class="panel panel-border-narrow js-hidden" id="weekly">
               
               <div class="form-group">
                 <label class="form-label" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="selfEmployedFinances.weeklyPay"></span>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="vm.weeklyPay"></span>
               </div>
               
             </div>
           
           <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="selfEmployedFinances.paymentFrequency"> Fortnightly
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
           
             <div class="panel panel-border-narrow js-hidden" id="fortnightly">
                 
               <div class="form-group">
                 <label class="form-label" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="selfEmployedFinances.fortnightlyPay"></span>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="vm.fortnightlyPay"></span>
               </div>
               
             </div>
           
           <label class="block-label" for="paid-monthly" data-target="monthly">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="selfEmployedFinances.paymentFrequency"> Monthly
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="vm.paymentFrequency"> Monthly
           </label>
           
             <div class="panel panel-border-narrow js-hidden" id="monthly">
                 
               <div class="form-group">
                 <label class="form-label" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="selfEmployedFinances.monthlyPay"></span>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="vm.monthlyPay"></span>
               </div>
               
             </div>
             
           <label class="block-label" for="paid-other" data-target="other">
-            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="selfEmployedFinances.paymentFrequency"> Other
+            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="vm.paymentFrequency"> Other
           </label>
           
             <div class="panel panel-border-narrow js-hidden" id="other">
                 
               <div class="form-group">
                 <label class="form-label" for="other-pay">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay" data-ng-model="selfEmployedFinances.otherPay"></span>
+                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay" data-ng-model="vm.otherPay"></span>
               </div>
               
             </div>
@@ -107,11 +107,11 @@
           </legend>
 
           <label class="block-label" for="financial-problems-yes" data-target="financial-problems">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="selfEmployedFinances.financialProblems"> Yes
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="vm.financialProblems"> Yes
           </label>
 
           <label class="block-label" for="financial-problems-no">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="selfEmployedFinances.financialProblems"> No
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="vm.financialProblems"> No
           </label>
           
           <div class="panel panel-border-narrow js-hidden" id="financial-problems">
@@ -121,7 +121,7 @@
                 <span class="form-label">How would paying a fine cause you financial problems?</span>
                 <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
               </label>
-              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="selfEmployedFinances.financialProblemsJustification"></textarea>
+              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="vm.financialProblemsJustification"></textarea>
             </div>
 
           </div>
@@ -132,7 +132,7 @@
       
       
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="selfEmployedFinances.buttonContinue($event)">Save and continue</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
       </div>
       
     

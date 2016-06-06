@@ -10,7 +10,7 @@
           url: '/your-case',
           templateUrl: 'app/your-case/your-case.html',
           controller: 'YourCaseController',
-          controllerAs: 'yourCase',
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },

@@ -9,14 +9,14 @@
 
     <h1 class="heading-xlarge">Your details</h1>
 
-      <div  class="error-summary"
-          id="error-summary"
-          role="group"
-          tabindex="-1"
-          aria-labelledby="error-summary-heading"
-          data-focus
-          data-focus-event="click" 
-          data-ng-show="yourDetails.form.submitted && yourDetails.form.invalid">
+      <div class="error-summary"
+           id="error-summary"
+           role="group"
+           tabindex="-1"
+           aria-labelledby="error-summary-heading"
+           data-focus
+           data-focus-event="click" 
+           data-ng-show="vm.form.submitted && vm.form.invalid">
 
         <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
@@ -25,7 +25,7 @@
     <p class="lede">We may need to contact you about your plea.</p>
 
 
-    <form class="form" method="post" name="yourDetails.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <h2 class="heading-medium">Check your name and address</h2>
@@ -36,10 +36,10 @@
         <div class="panel panel-border-wide">
 
           <p>
-            <span class="bold-small">Mr Mike Mouse</span><br>
-            38A Baker Street<br>
-            London<br>
-            007 700
+            <span class="bold-small">{{vm.title}} {{vm.firstName}} {{vm.lastName}}</span><br>
+            {{vm.addressStreet}}<br>
+            {{vm.addressCity}}<br>
+            {{vm.addressPostcode}}
           </p>
 
         </div>
@@ -56,18 +56,18 @@
         <div class="form-group">
 
           <label class="block-label" for="correct-details-yes">
-            <input required type="radio" id="correct-details-yes" name="correct-details" value="Yes" data-ng-model="yourDetails.detailsCorrect"> Yes
+            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details">
-            <input required type="radio" id="correct-details-no" name="correct-details" value="No" data-ng-model="yourDetails.detailsCorrect"> No
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
           </label>
 
           <div class="panel panel-border-narrow js-hidden" id="correct-details">
 
             <div class="form-group">
-              <label class="form-label" for="update-details">Enter correct details</label>
-              <textarea class="form-control form-control-textarea" id="update-details" name="update-details" cols="30" rows="3" data-ng-model="yourDetails.update"></textarea>
+              <label class="form-label" for="your-update-details">Enter correct details</label>
+              <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-model="vm.yourUpdateDetails"></textarea>
             </div>
 
           </div>
@@ -87,7 +87,8 @@
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="yourDetails.contactNumber">
+        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber">
+        
       </div>
       
       <div class="form-group">
@@ -97,7 +98,8 @@
           <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="yourDetails.emailAddress">
+        <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress">
+        
       </div>
 
 
@@ -114,18 +116,19 @@
 
             <div class="form-group form-group-day">
               <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" data-ng-model="yourDetails.dateOfBirthDay">
+              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" data-ng-model="vm.dateOfBirthDay">
             </div>
 
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" data-ng-model="yourDetails.dateOfBirthMonth">
+              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" data-ng-model="vm.dateOfBirthMonth">
             </div>
 
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" data-ng-model="yourDetails.dateOfBirthYear">
+              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" data-ng-model="vm.dateOfBirthYear">
             </div>
+            
           </div>
 
         </fieldset>
@@ -142,11 +145,11 @@
         <div class="form-group">
 
           <label class="block-label" for="national-insurance-yes" data-target="national-insurance">
-            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" data-ng-model="yourDetails.nationalInsurance"> Yes
+            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" data-ng-model="vm.nationalInsurance"> Yes
           </label>
 
           <label class="block-label" for="national-insurance-no">
-            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" data-ng-model="yourDetails.nationalInsurance"> No
+            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" data-ng-model="vm.nationalInsurance"> No
           </label>
 
           <div class="panel panel-border-narrow js-hidden" id="national-insurance">
@@ -156,7 +159,7 @@
               <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg JH 21 90 0A</span>
             </label>
 
-            <input class="form-control" type="text" id="national-insurance-number" name="national-insurance-number" aria-describedby="national-insurance-hint" data-ng-model="yourDetails.nationalInsuranceNumber">
+            <input class="form-control" type="text" id="national-insurance-number" name="national-insurance-number" aria-describedby="national-insurance-hint" data-ng-model="vm.nationalInsuranceNumber">
 
           </div>
 
@@ -166,11 +169,11 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="yourDetails.buttonContinue($event)">Save and continue</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
       </div>
 
 
-      <p data-ng-show="yourDetails.nextState"><a href="" data-ui-sref="{{yourDetails.getNextState()}}">Cancel</a></p>
+      <p data-ng-show="vm.nextState"><a href="" data-ui-sref="{{vm.getNextState()}}">Cancel</a></p>
 
 
     </form>

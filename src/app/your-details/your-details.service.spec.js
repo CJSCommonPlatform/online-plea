@@ -24,14 +24,14 @@
       it('should update sessionStorage with data from vm', function() {
         //given
         var vm = {
-          personalTitle: 'personalTitle',
+          title: 'title',
           firstName: 'firstName',
           lastName: 'lastName',
           addressStreet: 'addressStreet',
           addressCity: 'addressCity',
           addressPostcode: 'addressPostcode',
           detailsCorrect: 'No',
-          update: 'update',
+          yourUpdateDetails: 'yourUpdateDetails',
           contactNumber: 'contactNumber',
           emailAddress: 'emailAddress',
           dateOfBirthDay: 'dateOfBirthDay',
@@ -44,14 +44,14 @@
         yourDetails.updateSessionStorage(vm);
         //then
         var get = sessionStorage.getGetter('pleaApp.yourDetails.');
-        expect(get('personalTitle')).toEqual('Mr');
+        expect(get('title')).toEqual('Mr');
         expect(get('firstName')).toEqual('Mike');
         expect(get('lastName')).toEqual('Mouse');
         expect(get('address.street')).toEqual('38A Baker Street');
         expect(get('address.city')).toEqual('London');
         expect(get('address.postcode')).toEqual('007 700');
         expect(get('detailsCorrect')).toEqual('No');
-        expect(get('update')).toEqual('update');
+        expect(get('yourUpdateDetails')).toEqual('yourUpdateDetails');
         expect(get('contactNumber')).toEqual('contactNumber');
         expect(get('emailAddress')).toEqual('emailAddress');
         expect(get('dateOfBirthDay')).toEqual('dateOfBirthDay');
@@ -70,14 +70,14 @@
       it('should update vm with data from sessionStorage', function() {
         //given
         var set = sessionStorage.getSetter('pleaApp.yourDetails.');
-        set('personalTitle', 'personalTitle');
+        set('title', 'title');
         set('firstName', 'firstName');
         set('lastName', 'lastName');
         set('address.street', 'address.street');
         set('address.city', 'address.city');
         set('address.postcode', 'address.postcode');
         set('detailsCorrect', 'detailsCorrect');
-        set('update', 'update');
+        set('yourUpdateDetails', 'yourUpdateDetails');
         set('contactNumber', 'contactNumber');
         set('emailAddress', 'emailAddress');
         set('dateOfBirthDay', 'dateOfBirthDay');
@@ -90,14 +90,14 @@
         var vm = {};
         yourDetails.updateVm(vm);
         //then
-        expect(vm.personalTitle).toEqual('personalTitle');
+        expect(vm['title']).toEqual('title');
         expect(vm.firstName).toEqual('firstName');
         expect(vm.lastName).toEqual('lastName');
         expect(vm.addressStreet).toEqual('address.street');
         expect(vm.addressCity).toEqual('address.city');
         expect(vm.addressPostcode).toEqual('address.postcode');
         expect(vm.detailsCorrect).toEqual('detailsCorrect');
-        expect(vm.update).toEqual('update');
+        expect(vm.yourUpdateDetails).toEqual('yourUpdateDetails');
         expect(vm.contactNumber).toEqual('contactNumber');
         expect(vm.emailAddress).toEqual('emailAddress');
         expect(vm.dateOfBirthDay).toEqual('dateOfBirthDay');

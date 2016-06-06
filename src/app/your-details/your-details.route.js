@@ -10,7 +10,7 @@
           url: '/your-details',
           templateUrl : 'app/your-details/your-details.html',
           controller: 'YourDetailsController',
-          controllerAs: 'yourDetails',
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },
