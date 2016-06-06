@@ -3,6 +3,7 @@
   'use strict';
 
   angular.module('pleaApp')
+    
     .config(function($stateProvider) {
 
       $stateProvider
@@ -10,7 +11,7 @@
           url: '/your-plea',
           templateUrl : 'app/your-plea/your-plea.html',
           controller: 'YourPleaController',
-          controllerAs: "vm",
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },
@@ -23,11 +24,13 @@
                 stateName: 'your-employment'
               },
               {
-                constantValue: "NOT_GUILTY",
+                constantValue: 'NOT_GUILTY',
                 stateName: 'confirm-your-answers'
               }
             ]
           }
         })
+        
     });
+    
 })();
