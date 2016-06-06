@@ -10,7 +10,7 @@
           url: '/your-plea-has-been-submitted',
           templateUrl: 'app/your-plea-has-been-submitted/your-plea-has-been-submitted.html',
           controller: 'YourPleaHasBeenSubmittedController',
-          controllerAs: 'yourPleaHasBeenSubmitted',
+          controllerAs: 'vm',
           data: {
             nextState: 'index'
           }

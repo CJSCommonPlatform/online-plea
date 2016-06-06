@@ -10,34 +10,34 @@
     <h1 class="heading-xlarge">Your case</h1>
 
 
-    <div  class="error-summary"
-          id="error-summary"
-          role="group"
-          tabindex="-1"
-          aria-labelledby="error-summary-heading"
-          data-focus
-          data-focus-event="click" 
-          data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus
+         data-focus-event="click"
+         data-ng-show="yourCase.form.$submitted && yourCase.form.$myinvalid">
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
       <ul class="error-summary-list">
         <li data-ng-show="yourCase.form['case-unique-reference-number'].$myinvalid">
-          <a  href="" 
-              data-ng-click="enterCaseUniqueReferenceNumberLinkClicked()"             
-              data-focus
-              data-focus-event="click"
-              data-focus-target="error-case-unique-reference-number"
-              data-scroll-to="error-case-unique-reference-number">Case or Unique Reference Number
+          <a href=""
+             data-ng-click="enterCaseUniqueReferenceNumberLinkClicked()"
+             data-focus
+             data-focus-event="click"
+             data-focus-target="error-case-unique-reference-number"
+             data-scroll-to="error-case-unique-reference-number">Case or Unique Reference Number
           </a>
         </li>
         <li data-ng-show="yourCase.form['case-postcode'].$myinvalid">
           <a href="" 
-              data-ng-click="enterCasePostcodeLinkClicked()"
-              data-focus
-              data-focus-event="click"
-              data-focus-target="error-case-postcode"
-              data-scroll-to="error-case-postcode">Your postcode
+             data-ng-click="enterCasePostcodeLinkClicked()"
+             data-focus
+             data-focus-event="click"
+             data-focus-target="error-case-postcode"
+             data-scroll-to="error-case-postcode">Your postcode
           </a>
         </li>
       </ul>

@@ -18,10 +18,8 @@
     </header>
     
     <dl>
-      <dt>Case number</dt>
-      <dd>{{confirmPlea.pleaApp.yourCase.caseUniqueReferenceNumber | chkEmpty}}</dd>
-      <dt>Your postcode</dt>
-      <dd>{{confirmPlea.pleaApp.yourCase.casePostcode | chkEmpty}}</dd>
+      <dt>Case or Unique Reference Number</dt><dd>{{confirmPlea.pleaApp.yourCase.caseUniqueReferenceNumber | chkEmpty}}</dd>
+      <dt>Your postcode</dt><dd>{{confirmPlea.pleaApp.yourCase.casePostcode | chkEmpty}}</dd>
     </dl>
     
   </section>
@@ -35,22 +33,14 @@
     </header>
     
     <dl>
-      <dt>First name</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.firstName | chkEmpty}}</dd>
-      <dt>Last name</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.lastName | chkEmpty}}</dd>
-      <dt>Address</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.address.street | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.city}}<br>{{confirmPlea.pleaApp.yourDetails.address.postcode}}</dd>
-      <dt>Your updated details</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.update | chkEmpty}}</dd>
-      <dt>Contact number</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.contactNumber | chkEmpty}}</dd>
-      <dt>Email address</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.emailAddress | chkEmpty}}</dd>
-      <dt>Date of birth</dt>
-      <dd>{{confirmPlea.dateOfBirth | date: 'd MMMM yyyy' | chkEmpty}}</dd>
-      <dt>National Insurance number</dt>
-      <dd>{{confirmPlea.pleaApp.yourDetails.nationalInsuranceNumber | chkEmpty}}</dd>
+      <dt>First name</dt><dd>{{confirmPlea.pleaApp.yourDetails.firstName | chkEmpty}}</dd>
+      <dt>Last name</dt><dd>{{confirmPlea.pleaApp.yourDetails.lastName | chkEmpty}}</dd>
+      <dt>Address</dt><dd>{{confirmPlea.pleaApp.yourDetails.address.street | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.city}}<br>{{confirmPlea.pleaApp.yourDetails.address.postcode}}</dd>
+      <dt>Your updated details</dt><dd>{{confirmPlea.pleaApp.yourDetails.update | chkEmpty}}</dd>
+      <dt>Contact number</dt><dd>{{confirmPlea.pleaApp.yourDetails.contactNumber | chkEmpty}}</dd>
+      <dt>Email address</dt><dd>{{confirmPlea.pleaApp.yourDetails.emailAddress | chkEmpty}}</dd>
+      <dt>Date of birth</dt><dd>{{confirmPlea.dateOfBirth | date: 'd MMMM yyyy' | chkEmpty}}</dd>
+      <dt>National Insurance number</dt><dd>{{confirmPlea.pleaApp.yourDetails.nationalInsuranceNumber | chkEmpty}}</dd>
     </dl>
     
   </section>
@@ -64,35 +54,22 @@
     </header>
     
     <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Guilty'">
-      <dt>Plea</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
-      <dt>Plead guilty in court</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.court}}</dd>
-      <dt>Mitigation</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.mitigation | chkEmpty}}</dd>
+      <dt>Plea</dt><dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
+      <dt>Plead guilty in court</dt><dd>{{confirmPlea.pleaApp.yourPlea.court}}</dd>
+      <dt>Mitigation</dt><dd>{{confirmPlea.pleaApp.yourPlea.mitigation | chkEmpty}}</dd>
     </dl>
     
     <dl data-ng-show="confirmPlea.pleaApp.yourPlea.plea === 'Not guilty'">
-      <dt>Plea</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
-      <dt>Not guilty because?</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.notGuiltyBecause}}</dd>
-      <dt>Do you need an interpreter in court?</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.interpreter}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">Interpreter language</dt>
-      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">{{confirmPlea.pleaApp.yourPlea.interpreterLanguage}}</dd>
-      <dt>Evidence and witness information</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDisagree}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">Name of the witness</dt>
-      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails}}</dd>
-      <dt>Do you want to call a witness?</dt>
-      <dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessCall}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">Witness contact details</dt>
-      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">{{confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">Does your witness need an interpreter?</dt>
-      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">Witness interpreter language</dt>
-      <dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</dd>
+      <dt>Plea</dt><dd>{{confirmPlea.pleaApp.yourPlea.plea}}</dd>
+      <dt>Not guilty because?</dt><dd>{{confirmPlea.pleaApp.yourPlea.notGuiltyBecause}}</dd>
+      <dt>Do you need an interpreter in court?</dt><dd>{{confirmPlea.pleaApp.yourPlea.interpreter}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">Interpreter language</dt><dd data-ng-show="confirmPlea.pleaApp.yourPlea.interpreterLanguage">{{confirmPlea.pleaApp.yourPlea.interpreterLanguage}}</dd>
+      <dt>Evidence and witness information</dt><dd>{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDisagree}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">Name of the witness</dt><dd data-ng-show="confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails">{{confirmPlea.pleaApp.yourPlea.prosecutorWitnessDetails}}</dd>
+      <dt>Do you want to call a witness?</dt><dd>{{confirmPlea.pleaApp.yourPlea.defenceWitnessCall}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">Witness contact details</dt><dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails">{{confirmPlea.pleaApp.yourPlea.defenceWitnessContactDetails}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">Does your witness need an interpreter?</dt><dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreter}}</dd>
+      <dt data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">Witness interpreter language</dt><dd data-ng-show="confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage">{{confirmPlea.pleaApp.yourPlea.defenceWitnessInterpreterLanguage}}</dd>
     </dl>
     
   </section>
@@ -108,16 +85,13 @@
         
       <header class="synopsis-heading">
         <h3 class="bold-small">Your employment</h3>
-        <a class="synopsis-action" href="" data-ui-sref="your-employment">Change<span class="visuallyhidden"> Your employment</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-employment({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Your employment</span></a>
       </header>
     
       <dl>
-        <dt>You are</dt>
-        <dd>{{confirmPlea.yourEmployment.employmentStatus}}</dd>
-        <dt>You get paid</dt>
-        <dd>{{confirmPlea.pleaApp.yourEmployment.paymentFrequency}}</dd>
-        <dt>Amount (after tax)</dt>
-        <dd>&pound;{{confirmPlea.pleaApp.yourEmployment.paymentAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt>You are</dt><dd>{{confirmPlea.yourEmployment.employmentStatus}}</dd>
+        <dt>You get paid</dt><dd>{{confirmPlea.pleaApp.yourEmployment.paymentFrequency}}</dd>
+        <dt>Amount (after tax)</dt><dd>&pound;{{confirmPlea.pleaApp.yourEmployment.paymentAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -127,14 +101,12 @@
         
       <header class="synopsis-heading">
         <h3 class="bold-small">Your pension credit</h3>
-        <a class="synopsis-action" href="" data-ui-sref="your-pension-credit">Change<span class="visuallyhidden"> Your pension credit</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-pension-credit({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Your pension credit</span></a>
       </header>
     
       <dl>
-        <dt>Your pension credit is paid</dt>
-        <dd>{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditFrequency}}</dd>
-        <dt>Amount</dt>
-        <dd>&pound;{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt>Your pension credit is paid</dt><dd>{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditFrequency}}</dd>
+        <dt>Amount</dt><dd>&pound;{{confirmPlea.pleaApp.yourPensionCredit.pensionCreditAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -144,16 +116,13 @@
         
       <header class="synopsis-heading">
         <h3 class="bold-small">Your benefits</h3>
-        <a class="synopsis-action" href="" data-ui-sref="your-benefits">Change<span class="visuallyhidden"> Your benefits</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-benefits({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Your benefits</span></a>
       </header>
     
       <dl>
-        <dt>You receive</dt>
-        <dd>{{confirmPlea.pleaApp.yourBenefits.benefit}}</dd>
-        <dt>Your benefits are paid</dt>
-        <dd>{{confirmPlea.pleaApp.yourBenefits.benefitFrequency}}</dd>
-        <dt>Amount</dt>
-        <dd>&pound;{{confirmPlea.pleaApp.yourBenefits.benefitAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt>You receive</dt><dd>{{confirmPlea.pleaApp.yourBenefits.benefit}}</dd>
+        <dt>Your benefits are paid</dt><dd>{{confirmPlea.pleaApp.yourBenefits.benefitFrequency}}</dd>
+        <dt>Amount</dt><dd>&pound;{{confirmPlea.pleaApp.yourBenefits.benefitAmount | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -166,8 +135,7 @@
       </header>
     
       <dl>
-        <dt>Amount</dt>
-        <dd><span class="bold-small">&pound;{{confirmPlea.yourEmployment.totalIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
+        <dt>Amount</dt><dd><span class="bold-small">&pound;{{confirmPlea.yourEmployment.totalIncome | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -186,14 +154,12 @@
         
       <header class="synopsis-heading">
         <h2 class="bold-small">Household expenses</h2>
-        <a class="synopsis-action" href="" data-ui-sref="your-expenses.household">Change<span class="visuallyhidden"> Household expenses</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-expenses.household({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Household expenses</span></a>
       </header>
     
       <dl>
-        <dt>Other contributors to household bills</dt>
-        <dd>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</dd>
-        <dt data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">Amount</dt>
-        <dd data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">&pound;{{confirmPlea.yourExpenses.household.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt>Other contributors to household bills</dt><dd>{{confirmPlea.pleaApp.yourExpenses.household.contribute}}</dd>
+        <dt data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">Amount</dt><dd data-ng-show="confirmPlea.yourExpenses.household.totalHouseholdExpenses">&pound;{{confirmPlea.yourExpenses.household.totalHouseholdExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -203,14 +169,12 @@
         
       <header class="synopsis-heading">
         <h2 class="bold-small">Other expenses</h2>
-        <a class="synopsis-action" href="" data-ui-sref="your-expenses.other">Change<span class="visuallyhidden"> Other expenses</span></a>
+        <a class="synopsis-action" href="" data-ui-sref="your-expenses.other({nextState: 'confirm-your-answers'})">Change<span class="visuallyhidden"> Other expenses</span></a>
       </header>
     
       <dl>
-        <dt>Other expenses (not listed)</dt>
-        <dd>{{confirmPlea.yourExpenses.other.otherSignificantExpensesDetails}}</dd>
-        <dt data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">Amount</dt>
-        <dd data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">&pound;{{confirmPlea.yourExpenses.other.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
+        <dt>Other expenses (not listed)</dt><dd>{{confirmPlea.yourExpenses.other.otherSignificantExpensesDetails}}</dd>
+        <dt data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">Amount</dt><dd data-ng-show="confirmPlea.yourExpenses.other.totalOtherExpenses">&pound;{{confirmPlea.yourExpenses.other.totalOtherExpenses | number : 2}}<span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -223,8 +187,7 @@
       </header>
     
       <dl class="synopsis-content">
-        <dt>Amount</dt>
-        <dd><span class="bold-small">&pound;{{confirmPlea.yourExpenses.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
+        <dt>Amount</dt><dd><span class="bold-small">&pound;{{confirmPlea.yourExpenses.totalExpenses | number : 2}}</span><span class="visuallyhidden">, in pounds</span></dd>
       </dl>
       
     </section>
@@ -236,6 +199,4 @@
 </div>
 
 
-<div class="button-container">
-  <a class="button" href="" role="button" data-ng-click="confirmPlea.buttonContinue($event)">Confirm and continue</a>
-</div>
+<p><a class="button" href="" role="button" data-ng-click="confirmPlea.buttonContinue($event)">Confirm and continue</a></p>

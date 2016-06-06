@@ -23,6 +23,9 @@
               controllerAs: 'selfEmployedFinances'
             }
           },
+          params: {
+            nextState: undefined
+          },
           data: {
             propertyName: 'financialProblems',
             constantName: 'yesNoAnswer',

@@ -16,8 +16,8 @@
 
     return service;
 
-    function go(stateName) {
-      $state.go(stateName);
+    function go(to, toParams, options) {
+      $state.go(to, toParams, options);
     }
 
     function goNext(viewModel) {

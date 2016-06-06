@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('EmploymentController', EmploymentController);
     
-  EmploymentController.$inject = ['employmentStatus', 'sessionStorage', 'state'];  
+  EmploymentController.$inject = ['employmentStatus', 'sessionStorage', 'state', '$stateParams'];
     
-  function EmploymentController(employmentStatus, sessionStorage, state) {
+  function EmploymentController(employmentStatus, sessionStorage, state, $stateParams) {
     var vm = this;
     
     var BASE_NAME = 'pleaApp.yourEmployment.';
@@ -16,6 +16,7 @@
 
     vm.employmentStatus = employmentStatus;
     vm.buttonContinue = buttonContinueClicked;
+    vm.nextState = $stateParams.nextState;
 
     _updateViewModel();
 
@@ -24,7 +25,9 @@
     function buttonContinueClicked(event) {
       event.preventDefault();
       _updateSessionStorage();
-      state.goNext(vm);
+
+      var nextState = state.getNext(vm);
+      state.go(nextState, {nextState: vm.nextState});
     }
   
     //private

@@ -151,7 +151,10 @@
       <div class="form-group">
         <button class="button" type="submit" data-ng-click="yourBenefits.buttonContinue($event)">Save and continue</button>
       </div>
-      
+
+
+      <p data-ng-if="yourBenefits.nextState"><a href="" data-ui-sref="{{yourBenefits.nextState}}">Cancel</a></p>
+
     
     </form>
   
