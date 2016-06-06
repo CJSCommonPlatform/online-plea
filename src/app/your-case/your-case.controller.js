@@ -23,7 +23,7 @@
     vm.caseUniqueReferenceNumberAriaInvalid = false;
     vm.caseUniqueReferenceNumberAriaDescribedBy = 'case-unique-reference-number-hint';
     vm.casePostcodeAriaInvalid = false;
-    vm.casePostcodeAriaDescribedBy = 'case-postcode-hint';
+    vm.casePostcodeAriaDescribedBy = '';
     vm.nextState = $stateParams.nextState;
     vm.getNextState = getNextState;
 
@@ -80,7 +80,7 @@
     }
 
     function updateCasePostcodeAriaDescribedBy() {
-      vm.casePostcodeAriaDescribedBy = vm.form['case-postcode'].$myinvalid ? 'error-message-case-postcode' : 'case-postcode-hint';
+      vm.casePostcodeAriaDescribedBy = vm.form['case-postcode'].$myinvalid ? 'error-message-case-postcode' : '';
     }
 
     function updateCasePostcodeAriaInvalid() {

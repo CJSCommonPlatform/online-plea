@@ -56,7 +56,15 @@
           <span class="error-message" id="error-message-case-unique-reference-number" data-ng-show="yourCase.caseUniqueReferenceNumberAriaInvalid">Provide this information</span>
         </label>
 
-        <input class="form-control" type="text" id="case-unique-reference-number" name="case-unique-reference-number" aria-describedby="{{yourCase.caseUniqueReferenceNumberAriaDescribedBy}}" aria-invalid="{{yourCase.caseUniqueReferenceNumberAriaInvalid}}" value="{{yourCase.caseUniqueReferenceNumber}}" required data-ng-model="yourCase.caseUniqueReferenceNumber">
+        <input class="form-control"
+               id="case-unique-reference-number"
+               type="text"
+               name="case-unique-reference-number"
+               aria-invalid="{{yourCase.caseUniqueReferenceNumberAriaInvalid}}"
+               value="{{yourCase.caseUniqueReferenceNumber}}"
+               required
+               data-ng-model="yourCase.caseUniqueReferenceNumber"
+               data-form-aria-describedby>
 
       </div>
 
@@ -68,7 +76,16 @@
           <span class="error-message" id="error-message-case-postcode" data-ng-show="yourCase.casePostcodeAriaInvalid">Provide this information</span>
         </label>
 
-        <input class="form-control form-control-1-4" type="text" id="case-postcode" name="case-postcode" aria-invalid="{{yourCase.casePostcodeAriaInvalid}}" value="{{yourCase.casePostcode}}" required data-ng-model="yourCase.casePostcode">
+        <input class="form-control form-control-1-4"
+               id="case-postcode"
+               type="text"
+               name="case-postcode"
+               aria-invalid="{{yourCase.casePostcodeAriaInvalid}}"
+               value="{{yourCase.casePostcode}}"
+               required
+               data-ng-model="yourCase.casePostcode"
+               data-form-aria-describedb
+                parent="yourCase">
 
       </div>
 
