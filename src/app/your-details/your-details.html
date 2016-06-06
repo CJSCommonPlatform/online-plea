@@ -117,21 +117,22 @@
           <span class="form-label-bold">Are these details correct?</span>
         </legend>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['correct-details'].invalid}">
 
           <label class="block-label" for="correct-details-yes">
-            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
+            <input id="correct-details-yes" type="radio"  name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
+            <input id="correct-details-no" type="radio" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
           </label>
 
           <div class="panel panel-border-narrow js-hidden" id="correct-details">
 
-            <div class="form-group">
+            <div class="form-group" 
+              data-ng-class="{'error': vm.form['your-update-details'].invalid}">
               <label class="form-label" for="your-update-details">Enter correct details</label>
-              <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-model="vm.yourUpdateDetails"></textarea>
+              <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" ng-required="vm.detailsCorrect==='No'" data-ng-model="vm.yourUpdateDetails"></textarea>
             </div>
 
           </div>
@@ -178,19 +179,19 @@
 
           <div class="form-date">
 
-            <div class="form-group form-group-day">
+            <div class="form-group form-group-day" data-ng-class="{'error': vm.form['dob-day'].invalid}">
               <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" data-ng-model="vm.dateOfBirthDay">
+              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" required data-ng-model="vm.dateOfBirthDay">
             </div>
 
-            <div class="form-group form-group-month">
+            <div class="form-group form-group-month" data-ng-class="{'error': vm.form['dob-month'].invalid}">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" data-ng-model="vm.dateOfBirthMonth">
+              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required data-ng-model="vm.dateOfBirthMonth">
             </div>
 
-            <div class="form-group form-group-year">
+            <div class="form-group form-group-year" data-ng-class="{'error': vm.form['dob-year'].invalid}">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" data-ng-model="vm.dateOfBirthYear">
+              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required data-ng-model="vm.dateOfBirthYear">
             </div>
             
           </div>
@@ -209,21 +210,20 @@
         <div class="form-group">
 
           <label class="block-label" for="national-insurance-yes" data-target="national-insurance">
-            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" data-ng-model="vm.nationalInsurance"> Yes
+            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" required data-ng-model="vm.nationalInsurance"> Yes
           </label>
 
           <label class="block-label" for="national-insurance-no">
-            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" data-ng-model="vm.nationalInsurance"> No
+            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required data-ng-model="vm.nationalInsurance"> No
           </label>
 
-          <div class="panel panel-border-narrow js-hidden" id="national-insurance">
+          <div class="form-group panel panel-border-narrow js-hidden" id="national-insurance" data-ng-class="{'error': vm.form['national-insurance-number'].invalid}">
 
             <label for="national-insurance-number">
               <span class="form-label">National Insurance number</span>
               <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg JH 21 90 0A</span>
             </label>
-
-            <input class="form-control" type="text" id="national-insurance-number" name="national-insurance-number" aria-describedby="national-insurance-hint" data-ng-model="vm.nationalInsuranceNumber">
+            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" required aria-describedby="national-insurance-hint" ng-required="vm.nationalInsurance==='Yes'" data-ng-model="vm.nationalInsuranceNumber">
 
           </div>
 
