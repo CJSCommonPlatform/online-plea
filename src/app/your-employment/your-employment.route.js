@@ -23,27 +23,29 @@
                 stateName: 'your-employment.employed.finances'
               },
               {
-                constantValue: "EMPLOYED_BENEFITS",
+                constantValue: 'EMPLOYED_BENEFITS',
                 stateName: 'your-employment.employed-receiving-benefits.finances'
               },
               {
-                constantValue: "SELF_EMPLOYED",
+                constantValue: 'SELF_EMPLOYED',
                 stateName: 'your-employment.self-employed.finances'
               },
               {
-                constantValue: "SELF_EMPLOYED_BENEFITS",
+                constantValue: 'SELF_EMPLOYED_BENEFITS',
                 stateName: 'your-employment.self-employed-receiving-benefits.finances'
               },
               {
-                constantValue: "OUT_OF_WORK_BENEFITS",
+                constantValue: 'OUT_OF_WORK_BENEFITS',
                 stateName: 'your-benefits'
               },
               {
-                constantValue: "OTHER",
+                constantValue: 'OTHER',
                 stateName: 'your-employment.other.finances'
               }
             ]
           }
         })
+        
     });
+    
 })();
