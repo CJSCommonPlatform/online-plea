@@ -16,7 +16,7 @@
            aria-labelledby="error-summary-heading"
            data-focus
            data-focus-event="click" 
-           data-ng-show="vm.form.submitted && vm.form.invalid">
+           data-ng-show="vm.form.$submitted && vm.form.$invalid">
 
         <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
@@ -167,11 +167,14 @@
 
       </fieldset>
 
-
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus
+          data-focus-event="click" 
+          data-focus-target="error-summary">Save and continue
+        </button>
       </div>
-
 
       <p data-ng-show="vm.nextState"><a href="" data-ui-sref="{{vm.getNextState()}}">Cancel</a></p>
 
