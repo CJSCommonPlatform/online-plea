@@ -10,7 +10,7 @@
           url: '/your-plea',
           templateUrl : 'app/your-plea/your-plea.html',
           controller: 'YourPleaController',
-          controllerAs: "yourPlea",
+          controllerAs: "vm",
           params: {
             nextState: undefined
           },
