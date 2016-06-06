@@ -56,11 +56,11 @@
         <div class="form-group">
 
           <label class="block-label" for="correct-details-yes">
-            <input required type="radio" id="correct-details-yes" name="correct-details" value="Yes" data-ng-model="vm.detailsCorrect"> Yes
+            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details">
-            <input required type="radio" id="correct-details-no" name="correct-details" value="No" data-ng-model="vm.detailsCorrect"> No
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
           </label>
 
           <div class="panel panel-border-narrow js-hidden" id="correct-details">
@@ -88,6 +88,7 @@
         </label>
 
         <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber">
+        
       </div>
       
       <div class="form-group">
@@ -98,6 +99,7 @@
         </label>
 
         <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress">
+        
       </div>
 
 
@@ -126,6 +128,7 @@
               <label for="dob-year">Year</label>
               <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" data-ng-model="vm.dateOfBirthYear">
             </div>
+            
           </div>
 
         </fieldset>
