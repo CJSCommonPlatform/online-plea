@@ -20,7 +20,7 @@
             '@': {
               templateUrl : 'app/your-employment/employed-receiving-benefits/finances/employed-receiving-benefits.html',
               controller  : 'YourEmploymentFinancesController',
-              controllerAs: 'employedBenefitsFinances'
+              controllerAs: 'vm'
             }
           },
           params: {
