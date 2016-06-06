@@ -13,19 +13,18 @@
   	return service;
 
   	function validate(form) {
-  		var formProperties = _.filter(Object.keys(form), function(key) {
-  			return !key.startsWith('$');
-  		});
-      formProperties = _.filter(formProperties, function(formProperty) {
-        return formProperties instanceof angular.isObject(value)
+      var formProperties = _.filter(Object.keys(form), function(key) {
+        return !key.startsWith('$');
       });
-  		_.forEach(formProperties, function (value) {
-        console.log(typeof form[value]);
-        if (form[value] instanceof Object) {
-	        form[value].invalid = form[value].$invalid;
+      formProperties = _.filter(formProperties, function(formProperty) {
+        return angular.isObject(form[formProperty]);
+      });
+      _.forEach(formProperties, function (formProperty) {
+        if (form[formProperty] instanceof Object) {
+          form[formProperty].invalid = form[formProperty].$invalid;
         }
-  		});
-  		form.invalid = form.$invalid;
+      });
+      form.invalid = form.$invalid;
   	}
   }
 })();
