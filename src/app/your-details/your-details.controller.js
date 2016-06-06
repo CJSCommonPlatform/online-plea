@@ -19,7 +19,7 @@
 
     function buttonContinueClicked(event) {
       formValidation.validate(vm.form);
-      vm.form.submitted = true;
+      vm.form.$submitted = true;
       event.preventDefault();     
       yourDetails.updateSessionStorage(vm);
       if (!vm.form.invalid) {
