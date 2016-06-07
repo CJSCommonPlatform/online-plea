@@ -19,10 +19,10 @@
     function continueButtonClicked(event) {
       event.preventDefault();
       yourPensionCredit.updateSessionStorage(vm);
-      state.go(getNextState());
+      state.go(getNextState(vm));
     }
 
-    function getNextState() {
+    function getNextState(vm) {
       return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
     }
 

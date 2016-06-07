@@ -12,7 +12,7 @@
             '@' : {
               templateUrl : 'app/your-pension-credit/your-pension-credit.html',
               controller  : 'YourPensionCreditController',
-              controllerAs: 'pensionCredit'
+              controllerAs: 'vm'
             }
           },
           params: {

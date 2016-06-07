@@ -36,7 +36,7 @@
           <span class="form-hint">Eg, student loan, pension or investment</span>
         </label>
 
-        <input class="form-control" type="text" id="source-income" name="source-income" data-ng-model="otherFinances.sourceIncome">
+        <input class="form-control" type="text" id="source-income" name="source-income" data-ng-model="vm.sourceIncome">
 
       </div>
 
@@ -49,57 +49,57 @@
             <span class="form-label-bold">How often is your main income paid?</span>
           </legend>
 
-          <label class="block-label" for="paid-weekly" data-target="weekly">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="otherFinances.paymentFrequency"> Weekly
+          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="vm.paymentFrequency"> Weekly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="weekly">
+          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}">
 
-              <div class="form-group">
-                <label class="form-label" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="otherFinances.weeklyPay"></span>
-              </div>
-
+            <div class="form-group">
+              <label class="form-label" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay" data-ng-model="vm.weeklyPay"></span>
             </div>
 
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="otherFinances.paymentFrequency"> Fortnightly
+          </div>
+
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}">
 
-              <div class="form-group">
-                <label class="form-label" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="otherFinances.fortnightlyPay"></span>
-              </div>
-
+            <div class="form-group">
+              <label class="form-label" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-model="vm.fortnightlyPay"></span>
             </div>
 
-          <label class="block-label" for="paid-monthly" data-target="monthly">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="otherFinances.paymentFrequency"> Monthly
+          </div>
+
+          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="vm.paymentFrequency"> Monthly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="monthly">
+          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Monthly'}">
 
-              <div class="form-group">
-                <label class="form-label" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="otherFinances.monthlyPay"></span>
-              </div>
-
+            <div class="form-group">
+              <label class="form-label" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-model="vm.monthlyPay"></span>
             </div>
 
-          <label class="block-label" for="paid-other" data-target="other">
-            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="otherFinances.paymentFrequency"> Other
+          </div>
+
+          <label class="block-label" for="paid-other" data-target="other" data-ng-class="{'selected': vm.paymentFrequency === 'Other'}">
+            <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="vm.paymentFrequency"> Other
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="other">
+          <div class="panel panel-border-narrow" id="other" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}">
 
-              <div class="form-group">
-                <label class="form-labelx" for="other-pay">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay" data-ng-model="otherFinances.otherPay"></span>
-              </div>
-
+            <div class="form-group">
+              <label class="form-labelx" for="other-pay">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
+              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay" data-ng-model="vm.otherPay"></span>
             </div>
+
+          </div>
 
         </fieldset>
 
@@ -114,12 +114,12 @@
             <span class="form-label-bold">Do you receive Pension Credit?</span>
           </legend>
 
-          <label class="block-label" for="pension-credit-yes">
-            <input type="radio" id="pension-credit-yes"  name="pension-credit" value="Yes" data-ng-model="otherFinances.pensionCredit"> Yes
+          <label class="block-label" for="pension-credit-yes" data-ng-class="{'selected': vm.pensionCredit === 'Yes'}">
+            <input type="radio" id="pension-credit-yes"  name="pension-credit" value="Yes" data-ng-model="vm.pensionCredit"> Yes
           </label>
 
-          <label class="block-label" for="pension-credit-no">
-            <input type="radio" id="pension-credit-no" name="pension-credit" value="No" data-ng-model="otherFinances.pensionCredit"> No
+          <label class="block-label" for="pension-credit-no" data-ng-class="{'selected': vm.pensionCredit === 'No'}">
+            <input type="radio" id="pension-credit-no" name="pension-credit" value="No" data-ng-model="vm.pensionCredit"> No
           </label>
 
         </fieldset>
@@ -138,15 +138,15 @@
             </span>
           </legend>
 
-          <label class="block-label" for="financial-problems-yes" data-target="financial-problems">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="otherFinances.financialProblems"> Yes
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="vm.financialProblems"> Yes
           </label>
 
-          <label class="block-label" for="financial-problems-no">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="employedFinances.financialProblems"> No
+          <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="vm.financialProblems"> No
           </label>
           
-          <div class="panel panel-border-narrow js-hidden" id="financial-problems">
+          <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
 
             <div class="form-group">
               
@@ -155,7 +155,7 @@
                 <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
               </label>
               
-              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="otherFinances.financialProblemsJustification"></textarea>
+              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="vm.financialProblemsJustification"></textarea>
             
             </div>
 
@@ -167,7 +167,7 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="otherFinances.buttonContinue($event)">Continue</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
       </div>
 
 

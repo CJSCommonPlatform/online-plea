@@ -20,7 +20,7 @@
             '@' : { // here we are using absolute name targeting
               templateUrl: 'app/your-employment/other/finances/other-finances.html',
               controller: 'YourEmploymentFinancesController',
-              controllerAs: 'otherFinances'
+              controllerAs: 'vm'
             }
           },
           params: {

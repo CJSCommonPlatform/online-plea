@@ -22,46 +22,46 @@
             <span class="form-label-bold">How often is your Pension Credit paid?</span>
           </legend>
 
-          <label class="block-label" for="paid-weekly" data-target="weekly">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="pensionCredit.pensionCreditFrequency"> Weekly
+          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Weekly'}">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="vm.pensionCreditFrequency"> Weekly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="weekly">
+            <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Weekly'}">
 
               <div class="form-group">
                 <label class="form-label" for="weekly-credit-pay">Weekly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
                 <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="weekly-credit-pay" name="weekly-credit-pay" data-ng-model="pensionCredit.weeklyPensionCreditPay">
+                  <input class="form-control form-control-1-4" type="text" id="weekly-credit-pay" name="weekly-credit-pay" data-ng-model="vm.weeklyPensionCreditPay">
                 </span>
               </div>
 
             </div>
 
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="pensionCredit.pensionCreditFrequency"> Fortnightly
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.pensionCreditFrequency"> Fortnightly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+            <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Fortnightly'}">
 
               <div class="form-group">
                 <label class="form-label" for="fortnightly-credit-pay">Fortnightly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
                 <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay" data-ng-model="pensionCredit.fortnightlyPensionCreditPay">
+                  <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay" data-ng-model="vm.fortnightlyPensionCreditPay">
                 </span>
               </div>
 
             </div>
 
-          <label class="block-label" for="paid-monthly" data-target="monthly">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="pensionCredit.pensionCreditFrequency"> Monthly
+          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Monthly'}">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="vm.pensionCreditFrequency"> Monthly
           </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="monthly">
+            <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Monthly'}">
 
               <div class="form-group">
                 <label class="form-label" for="monthly-credit-pay">Monthly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
                 <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay" data-ng-model="pensionCredit.monthlyPensionCreditPay">
+                  <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay" data-ng-model="vm.monthlyPensionCreditPay">
                 </span>
               </div>
 
@@ -75,11 +75,11 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="pensionCredit.buttonContinue($event)">Continue and save</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Continue and save</button>
       </div>
 
 
-      <p data-ng-if="pensionCredit.nextState"><a href="" data-ui-sref="{{pensionCredit.nextState}}">Cancel</a></p>
+      <p data-ng-if="vm.nextState"><a href="" data-ui-sref="{{vm.nextState}}">Cancel</a></p>
 
 
     </form>
