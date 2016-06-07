@@ -4,7 +4,7 @@
   angular
     .module('pleaApp')
     .run(function($rootScope, $sessionStorage, $window) {
-      //$sessionStorage.$reset();
+      $sessionStorage.$reset();
       console.log('session storage was reset');
       
       $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {

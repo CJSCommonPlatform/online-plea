@@ -7,7 +7,8 @@
 
   function formValidation() {
     var service = {
-      validate: validate
+      validate: validate,
+      validateDate: validateDate
     }
 
     return service;
@@ -25,5 +26,16 @@
       });
       form.invalid = form.$invalid;
     }
+    
+    function validateDate(form, year, month, day) {
+      var date = new Date(form[year].$modelValue, form[month].$modelValue + 1, form[day].$modelValue);
+      var invalid = (date === 'Invalid Date');
+            
+      form[year].invalid = invalid;
+      form[month].invalid = invalid;
+      form[day].invalid = invalid;
+    }
+    
   }
+  
 })();

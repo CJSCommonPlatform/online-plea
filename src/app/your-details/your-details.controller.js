@@ -19,8 +19,12 @@
 
     function buttonContinueClicked(event) {
       event.preventDefault();
+      formValidation.validate(vm.form);
+      //formValidation.validateDate(vm.form, 'dob-year', 'dob-month', 'dob-day')
       yourDetails.updateSessionStorage(vm);
-      state.go(getNextState());
+      if (!vm.form.invalid) {
+        state.go(getNextState());
+      }
     }
 
     function getNextState() {

@@ -8,6 +8,42 @@
 
 
     <h1 class="heading-xlarge">Your details</h1>
+    
+    
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        
+        <li data-ng-show="vm.form['contact-number'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-contact-number"
+             data-scroll-to="error-contact-number"
+             data-focus>Contact number
+          </a>
+        </li>
+        
+        <li data-ng-show="vm.form['email-address'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-email-address"
+             data-scroll-to="error-email-address"
+             data-focus>Email address (optional)
+          </a>
+        </li>
+        
+      </ul>
+
+    </div>
 
     
     <p class="lede">We may need to contact you about your plea.</p>
@@ -39,14 +75,14 @@
             <span class="form-label-bold">Are these details correct?</span>
           </legend>
   
-          <label class="block-label" for="correct-details-yes" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
-            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
+          <label class="block-label" for="correct-details-yes" id="error-correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
+            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" data-ng-model="vm.detailsCorrect"> No
           </label>
-
+          
           <div class="panel panel-border-narrow" id="correct-details" data-ng-class="{'js-hidden': vm.detailsCorrect !== 'No'}">
             <label class="form-label" for="your-update-details">Enter correct details</label>
             <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-model="vm.yourUpdateDetails"></textarea>
@@ -60,11 +96,12 @@
       <h2 class="heading-medium">Enter other details</h2>
 
 
-      <div class="form-group">
+      <div class="form-group" data-ng-class="{'error': vm.form['contact-number'].invalid}">
 
-        <label for="contact-number">
+        <label for="contact-number" id="error-contact-number">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
+          <span class="error-message" data-ng-show="vm.form['contact-number'].invalid">Provide information</span>
         </label>
 
         <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber">
@@ -72,19 +109,20 @@
       </div>
       
       
-      <div class="form-group">
+      <div class="form-group" data-ng-class="{'error': vm.form['email-address'].invalid}">
 
-        <label for="email-address">
+        <label for="email-address" id="error-email-address">
           <span class="form-label-bold">Email address (optional)</span>
           <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
+          <span class="error-message" data-ng-show="vm.form['email-address'].invalid">Invalid email address</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress">
+        <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress" data-ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i">
         
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group ">
 
         <fieldset>
 
@@ -152,7 +190,7 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)" data-focus-event="click" data-focus-target="error-summary" data-focus>Save and continue</button>
       </div>
 
 
