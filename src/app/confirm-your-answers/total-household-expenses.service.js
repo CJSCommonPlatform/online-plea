@@ -13,15 +13,15 @@
     return service;
 
     function calculate(vm) {
-      var accomodation = lodash.get(vm, 'pleaApp.yourExpenses.household.accomodation');
+      var accommodation = lodash.get(vm, 'pleaApp.yourExpenses.household.accommodation');
       var utilityBills = lodash.get(vm, 'pleaApp.yourExpenses.household.utilityBills');
       var insurance = lodash.get(vm, 'pleaApp.yourExpenses.household.insurance');
       var councilTax = lodash.get(vm, 'pleaApp.yourExpenses.household.councilTax');
 
       var totalHouseholdExpenses = 0;
 
-      if (accomodation) {
-        totalHouseholdExpenses = totalHouseholdExpenses + parseFloat(accomodation);
+      if (accommodation) {
+        totalHouseholdExpenses = totalHouseholdExpenses + parseFloat(accommodation);
       }
       if (utilityBills) {
         totalHouseholdExpenses = totalHouseholdExpenses + parseFloat(utilityBills);

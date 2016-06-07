@@ -24,7 +24,7 @@
       it('should update sessionStorage with data from vm', function() {
         //given
         var vm = {
-          accomodation: 'accomodation',
+          accommodation: 'accommodation',
           utilityBills: 'utilityBills',
           insurance: 'insurance',
           councilTax: 'councilTax',
@@ -34,7 +34,7 @@
         householdExpenses.updateSessionStorage(vm);
         //then
         var get = sessionStorage.getGetter('pleaApp.yourExpenses.household.');
-        expect(get('accomodation')).toEqual('accomodation');
+        expect(get('accommodation')).toEqual('accommodation');
         expect(get('utilityBills')).toEqual('utilityBills');
         expect(get('insurance')).toEqual('insurance');
         expect(get('councilTax')).toEqual('councilTax');
@@ -51,7 +51,7 @@
       it('should update vm with data from sessionStorage', function() {
         //given
         var set = sessionStorage.getSetter('pleaApp.yourExpenses.household.');
-        set('accomodation', 'accomodation');
+        set('accommodation', 'accommodation');
         set('utilityBills', 'utilityBills')
         set('insurance', 'insurance')
         set('councilTax', 'councilTax')
@@ -60,7 +60,7 @@
         var vm = {};
         householdExpenses.updateVm(vm);
         //then
-        expect(vm.accomodation).toEqual('accomodation');
+        expect(vm.accommodation).toEqual('accommodation');
         expect(vm.utilityBills).toEqual('utilityBills');
         expect(vm.insurance).toEqual('insurance');
         expect(vm.councilTax).toEqual('councilTax');

@@ -20,7 +20,7 @@
     function updateVm(vm) {
       var get = sessionStorage.getGetter(BASE_NAME);
 
-      vm.accomodation = get('accomodation');
+      vm.accommodation = get('accommodation');
       vm.utilityBills = get('utilityBills');
       vm.insurance = get('insurance');
       vm.councilTax = get('councilTax');
@@ -30,7 +30,7 @@
     function updateSessionStorage(vm) {
       var set = sessionStorage.getSetter(BASE_NAME);
 
-      set('accomodation', vm.accomodation);
+      set('accommodation', vm.accommodation);
       set('utilityBills', vm.utilityBills);
       set('insurance', vm.insurance);
       set('councilTax', vm.councilTax);
