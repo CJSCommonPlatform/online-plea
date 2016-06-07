@@ -114,15 +114,15 @@
               <span class="form-label-bold">Any other significant expenses not listed?</span>
             </legend>
 
-            <label class="block-label" for="other-significant-expenses-yes" data-target="other-significant-expenses">
+            <label class="block-label" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'Yes'}">
               <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" data-ng-model="otherExpenses.otherSignificantExpenses"> Yes
             </label>
 
-            <label class="block-label" for="other-significant-expenses-no">
+            <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'No'}">
               <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" data-ng-model="otherExpenses.otherSignificantExpenses"> No
             </label>
 
-            <div class="panel panel-border-narrow js-hidden" id="other-significant-expenses">
+            <div class="panel panel-border-narrow" id="other-significant-expenses" data-ng-class="{'js-hidden': otherExpenses.otherSignificantExpenses !== 'Yes'}">
 
               <div class="form-group">
 
