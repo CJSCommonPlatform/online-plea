@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('yourDetails', yourDetails);
 
-  yourDetails.$inject = ['sessionStorage'];
+  yourDetails.$inject = ['yourDetailsRetrieve', 'sessionStorage'];
 
-  function yourDetails(sessionStorage) {
+  function yourDetails(yourDetailsRetrieve, sessionStorage) {
     var BASE_NAME = 'pleaApp.yourDetails.';
 
     var service = {
@@ -19,25 +19,40 @@
 
     function updateVm(vm) {
       var get = sessionStorage.getGetter(BASE_NAME);
+      
+      if (get('') === undefined) {
+        
+        var retrieved = yourDetailsRetrieve.retrieve();
+        
+        vm['title'] = retrieved['title'];
+        vm.firstName = retrieved.firstName;
+        vm.lastName = retrieved.lastName;
+        vm.addressStreet = retrieved.address.street;
+        vm.addressCity = retrieved.address.city;
+        vm.addressPostcode = retrieved.address.postcode;
+        
+      } else {
 
-      vm['title'] = get('title');
-      vm.firstName = get('firstName');
-      vm.lastName = get('lastName');
-      vm.addressStreet = get('address.street');
-      vm.addressCity = get('address.city');
-      vm.addressPostcode = get('address.postcode');
-
-      vm.detailsCorrect = get('detailsCorrect');
-      vm.yourUpdateDetails = get('yourUpdateDetails');
-      vm.contactNumber = get('contactNumber');
-      vm.emailAddress = get('emailAddress');
-
-      vm.dateOfBirthDay = get('dateOfBirthDay');
-      vm.dateOfBirthMonth = get('dateOfBirthMonth');
-      vm.dateOfBirthYear = get('dateOfBirthYear');
-
-      vm.nationalInsurance = get('nationalInsurance');
-      vm.nationalInsuranceNumber = get('nationalInsuranceNumber');
+        vm['title'] = get('title');
+        vm.firstName = get('firstName');
+        vm.lastName = get('lastName');
+        vm.addressStreet = get('address.street');
+        vm.addressCity = get('address.city');
+        vm.addressPostcode = get('address.postcode');
+  
+        vm.detailsCorrect = get('detailsCorrect');
+        vm.yourUpdateDetails = get('yourUpdateDetails');
+        vm.contactNumber = get('contactNumber');
+        vm.emailAddress = get('emailAddress');
+  
+        vm.dateOfBirthDay = get('dateOfBirthDay');
+        vm.dateOfBirthMonth = get('dateOfBirthMonth');
+        vm.dateOfBirthYear = get('dateOfBirthYear');
+  
+        vm.nationalInsurance = get('nationalInsurance');
+        vm.nationalInsuranceNumber = get('nationalInsuranceNumber');
+      }
+      
     }
 
     function updateSessionStorage(vm) {
@@ -45,12 +60,12 @@
 
       set('', undefined);
 
-      set('title', 'Mr');
-      set('firstName', 'Mike');
-      set('lastName', 'Mouse');
-      set('address.street', '38A Baker Street');
-      set('address.city', 'London');
-      set('address.postcode', '007 700');
+      set('title', vm['title']);
+      set('firstName', vm.firstName);
+      set('lastName', vm.lastName);
+      set('address.street', vm.addressStreet);
+      set('address.city', vm.addressCity);
+      set('address.postcode', vm.addressPostcode);
       set('detailsCorrect', vm.detailsCorrect);
 
       if (vm.detailsCorrect === 'No') {
