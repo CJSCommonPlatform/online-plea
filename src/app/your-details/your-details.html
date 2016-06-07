@@ -39,15 +39,15 @@
             <span class="form-label-bold">Are these details correct?</span>
           </legend>
   
-          <label class="block-label" for="correct-details-yes">
+          <label class="block-label" for="correct-details-yes" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
             <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
-          <label class="block-label" for="correct-details-no" data-target="correct-details">
+          <label class="block-label" for="correct-details-no" data-target="correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
             <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
           </label>
 
-          <div class="panel panel-border-narrow js-hidden" id="correct-details">
+          <div class="panel panel-border-narrow" id="correct-details" data-ng-class="{'js-hidden': vm.detailsCorrect !== 'No'}">
             <label class="form-label" for="your-update-details">Enter correct details</label>
             <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-model="vm.yourUpdateDetails"></textarea>
           </div>
@@ -127,15 +127,15 @@
             <span class="form-label-bold">Do you have a National Insurance number?</span>
           </legend>
   
-          <label class="block-label" for="national-insurance-yes" data-target="national-insurance">
+          <label class="block-label" for="national-insurance-yes" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
             <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" data-ng-model="vm.nationalInsurance"> Yes
           </label>
   
-          <label class="block-label" for="national-insurance-no">
+          <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsurance === 'No'}">
             <input id="national-insurance-no" type="radio" name="national-insurance" value="No" data-ng-model="vm.nationalInsurance"> No
           </label>
   
-          <div class="panel panel-border-narrow js-hidden" id="national-insurance">
+          <div class="panel panel-border-narrow" id="national-insurance" data-ng-class="{'js-hidden': vm.nationalInsurance !== 'Yes'}">
   
             <label for="national-insurance-number">
               <span class="form-label">National Insurance number</span>
