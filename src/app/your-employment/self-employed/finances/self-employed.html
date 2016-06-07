@@ -37,11 +37,11 @@
             <span class="form-label-bold">How often do you get paid?</span>
           </legend>
     
-          <label class="block-label" for="paid-weekly" data-target="weekly">
+          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="vm.paymentFrequency"> Weekly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="weekly">
+            <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}">
               
               <div class="form-group">
                 <label class="form-label" for="weekly-pay">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
@@ -50,11 +50,11 @@
               
             </div>
           
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+            <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}">
                 
               <div class="form-group">
                 <label class="form-label" for="fortnightly-pay">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
@@ -63,11 +63,11 @@
               
             </div>
           
-          <label class="block-label" for="paid-monthly" data-target="monthly">
+          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="vm.paymentFrequency"> Monthly
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="monthly">
+            <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Monthly'}">
                 
               <div class="form-group">
                 <label class="form-label" for="monthly-pay">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
@@ -76,11 +76,11 @@
               
             </div>
             
-          <label class="block-label" for="paid-other" data-target="other">
+          <label class="block-label" for="paid-other" data-target="other" data-ng-class="{'selected': vm.paymentFrequency === 'Other'}">
             <input type="radio" id="paid-other" name="paid" value="Other" data-ng-model="vm.paymentFrequency"> Other
           </label>
           
-            <div class="panel panel-border-narrow js-hidden" id="other">
+            <div class="panel panel-border-narrow" id="other" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}">
                 
               <div class="form-group">
                 <label class="form-label" for="other-pay">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</label>
@@ -99,21 +99,20 @@
         <fieldset class="inline">
 
           <legend>
-            <span class="form-label-bold">
-              Would paying a fine cause you serious financial problems?
+            <span class="form-label-bold">Would paying a fine cause you serious financial problems?
               <span class="form-hint" id="financial-problems-hint">For example, you would become homeless</span>
             </span>
           </legend>
 
-          <label class="block-label" for="financial-problems-yes" data-target="financial-problems">
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
             <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="vm.financialProblems"> Yes
           </label>
 
-          <label class="block-label" for="financial-problems-no">
+          <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
             <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="vm.financialProblems"> No
           </label>
           
-          <div class="panel panel-border-narrow js-hidden" id="financial-problems">
+          <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
 
             <div class="form-group">
               <label for="financial-problems-justification">
