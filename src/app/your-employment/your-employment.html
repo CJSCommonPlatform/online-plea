@@ -31,70 +31,59 @@
 
       <div class="form-group">
 
-
         <fieldset>
-
 
           <legend>
             <span class="form-label-bold">Are you?</span>
           </legend>
 
-
-          <label class="block-label" for="employed">
-            <input type="radio" id="employed" name="employment" value="{{yourEmployment.employmentStatus.EMPLOYED}}" data-ng-model="yourEmployment.employment"> Employed
+          <label class="block-label" for="employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED}">
+            <input type="radio" id="employed" name="employment" value="{{vm.employmentStatus.EMPLOYED}}" data-ng-model="vm.employment"> Employed
           </label>
 
-
-          <label class="block-label" for="employed-with-benefits">
-            <input type="radio" id="employed-with-benefits" name="employment" value="{{yourEmployment.employmentStatus.EMPLOYED_BENEFITS}}" data-ng-model="yourEmployment.employment"> Employed and also receiving benefits
+          <label class="block-label" for="employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED_BENEFITS}">
+            <input type="radio" id="employed-with-benefits" name="employment" value="{{vm.employmentStatus.EMPLOYED_BENEFITS}}" data-ng-model="vm.employment"> Employed and also receiving benefits
           </label>
 
-
-          <label class="block-label" for="self-employed">
-            <input type="radio" id="self-employed" name="employment" value="{{yourEmployment.employmentStatus.SELF_EMPLOYED}}" data-ng-model="yourEmployment.employment"> Self&ndash;employed
+          <label class="block-label" for="self-employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED}">
+            <input type="radio" id="self-employed" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED}}" data-ng-model="vm.employment"> Self&ndash;employed
           </label>
 
-
-          <label class="block-label" for="self-employed-with-benefits">
-            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{yourEmployment.employmentStatus.SELF_EMPLOYED_BENEFITS}}" data-ng-model="yourEmployment.employment"> Self&ndash;employed and also receiving benefits
+          <label class="block-label" for="self-employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED_BENEFITS}">
+            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED_BENEFITS}}" data-ng-model="vm.employment"> Self&ndash;employed and also receiving benefits
           </label>
 
-
-          <label class="block-label" for="work-benefits">
-            <input type="radio" id="work-benefits" name="employment" value="{{yourEmployment.employmentStatus.OUT_OF_WORK_BENEFITS}}" data-ng-model="yourEmployment.employment"> Receiving out of work benefits
+          <label class="block-label" for="work-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OUT_OF_WORK_BENEFITS}">
+            <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" data-ng-model="vm.employment"> Receiving out of work benefits
           </label>
 
-
-          <label class="block-label" for="other" data-target="provide-more-details">
-            <input type="radio" id="other" name="employment" value="{{yourEmployment.employmentStatus.OTHER}}" data-ng-model="yourEmployment.employment"> Other
+          <label class="block-label" for="other" data-target="provide-more-details" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
+            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" data-ng-model="vm.employment"> Other
           </label>
 
-
-          <div class="panel panel-border-narrow js-hidden" id="provide-more-details">
+          <div class="panel panel-border-narrow" id="provide-more-details" data-ng-class="{'js-hidden': vm.employment !== vm.employmentStatus.OTHER}">
 
             <div class="form-group">
               <label for="provide-details">
                 <span class="form-label">Provide details</span>
                 <span class="form-hint" id="provide-details-hint">For example, student or retired.</span>
               </label>
-              <input class="form-control" type="text" id="provide-details" name="provide-details" aria-describedby="provide-details-hint" data-ng-model="yourEmployment.provideDetails">
+              <input class="form-control" type="text" id="provide-details" name="provide-details" aria-describedby="provide-details-hint" data-ng-model="vm.provideDetails">
             </div>
 
           </div>
 
-
         </fieldset>
-
 
       </div>
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="yourEmployment.buttonContinue($event)">Save and continue</button>
+        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
       </div>
 
 
-      <p data-ng-if="yourEmployment.nextState"><a href="" data-ui-sref="{{yourEmployment.nextState}}">Cancel</a></p>
+      <p data-ng-if="vm.nextState"><a href="" data-ui-sref="{{vm.nextState}}">Cancel</a></p>
 
 
     </form>
