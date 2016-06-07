@@ -56,17 +56,17 @@
         <div class="form-group">
 
 
-          <label class="block-label" for="plea-guilty" data-target="guilty">
+          <label class="block-label" for="plea-guilty" data-target="guilty" data-ng-class="{'selected': vm.plea === 'Guilty'}">
             <input type="radio" id="plea-guilty" name="plea" value="Guilty" data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Guilty
           </label>
 
 
-          <label class="block-label" for="plea-notguilty" data-target="not-guilty">
+          <label class="block-label" for="plea-notguilty" data-target="not-guilty" data-ng-class="{'selected': vm.plea === 'Not guilty'}">
             <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Not guilty
           </label>
 
 
-          <div class="panel panel-border-narrow js-hidden" id="guilty">
+          <div class="panel panel-border-narrow" id="guilty" data-ng-class="{'js-hidden': vm.plea !== 'Guilty'}">
 
 
             <p>Pleading guilty to this charge means you don&rsquo;t need to come to court to respond to this charge &ndash; we&rsquo;ll send you details of the court&rsquo;s decision and what to do next.</p>
@@ -81,12 +81,12 @@
                 <legend><span class="form-label-bold">What would you like to do?</span></legend>
 
 
-                <label class="block-label" for="court-yes">
+                <label class="block-label" for="court-yes" data-ng-class="{'selected': vm.court === 'Yes'}">
                   <input type="radio" id="court-yes" name="court" value="Yes" data-ng-model="vm.court"> Plead guilty online (no need to attend court)
                 </label>
 
 
-                <label class="block-label" for="court-no">
+                <label class="block-label" for="court-no" data-ng-class="{'selected': vm.court === 'No'}">
                   <input type="radio" id="court-no" name="court" value="No" data-ng-model="vm.court"> Attend court to plead guilty
                 </label>
 
@@ -112,7 +112,7 @@
           </div>
 
 
-          <div class="panel panel-border-narrow js-hidden" id="not-guilty">
+          <div class="panel panel-border-narrow" id="not-guilty" data-ng-class="{'js-hidden': vm.plea !== 'Not guilty'}">
 
 
             <div class="form-group">
@@ -136,15 +136,15 @@
 
                 <div class="form-group">
 
-                  <label class="block-label" for="interpreter-yes" data-target="interpreter">
+                  <label class="block-label" for="interpreter-yes" data-target="interpreter" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
                     <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" data-ng-model="vm.interpreter"> Yes
                   </label>
 
-                  <label class="block-label" for="interpreter-no">
+                  <label class="block-label" for="interpreter-no" data-ng-class="{'selected': vm.interpreter === 'No'}">
                     <input type="radio" id="interpreter-no" name="interpreter" value="No" data-ng-model="vm.interpreter"> No
                   </label>
 
-                  <div class="panel panel-border-narrow js-hidden" id="interpreter">
+                  <div class="panel panel-border-narrow" id="interpreter" data-ng-class="{'js-hidden': vm.interpreter !== 'Yes'}">
 
                     <div class="form-group">
 
@@ -178,15 +178,15 @@
 
                 <div class="form-group">
 
-                  <label class="block-label" for="evidence-yes" data-target="evidence">
+                  <label class="block-label" for="evidence-yes" data-target="evidence" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'Yes'}">
                     <input type="radio" id="evidence-yes" name="evidence" value="Yes" data-ng-model="vm.prosecutorWitnessDisagree"> Yes
                   </label>
 
-                  <label class="block-label" for="evidence-no">
+                  <label class="block-label" for="evidence-no" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'No'}">
                     <input type="radio" id="evidence-no" name="evidence" value="No" data-ng-model="vm.prosecutorWitnessDisagree"> No
                   </label>
 
-                  <div class="panel panel-border-narrow js-hidden" id="evidence">
+                  <div class="panel panel-border-narrow" id="evidence" data-ng-class="{'js-hidden': vm.prosecutorWitnessDisagree !== 'Yes'}">
 
                     <div class="form-group">
 
@@ -223,15 +223,15 @@
 
                 <div class="form-group">
 
-                  <label class="block-label" for="witness-yes" data-target="witness">
+                  <label class="block-label" for="witness-yes" data-target="witness" data-ng-class="{'selected': vm.defenceWitnessCall === 'Yes'}">
                     <input type="radio" id="witness-yes" name="witness" value="Yes" aria-describedby="witness-hint" data-ng-model="vm.defenceWitnessCall"> Yes
                   </label>
 
-                  <label class="block-label" for="witness-no">
+                  <label class="block-label" for="witness-no" data-ng-class="{'selected': vm.defenceWitnessCall === 'No'}">
                     <input type="radio" id="witness-no" name="witness" value="No" data-ng-model="vm.defenceWitnessCall"> No
                   </label>
 
-                  <div class="panel panel-border-narrow js-hidden" id="witness">
+                  <div class="panel panel-border-narrow" id="witness" data-ng-class="{'js-hidden': vm.defenceWitnessCall !== 'Yes'}">
 
                     <div class="form-group">
 
@@ -253,15 +253,15 @@
 
                         <div class="form-group">
 
-                          <label class="block-label" for="witness-interpreter-yes" data-target="witness-interpreter">
+                          <label class="block-label" for="witness-interpreter-yes" data-target="witness-interpreter" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'Yes'}">
                             <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes" data-ng-model="vm.defenceWitnessInterpreter"> Yes
                           </label>
 
-                          <label class="block-label" for="witness-interpreter-no">
+                          <label class="block-label" for="witness-interpreter-no" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'No'}">
                             <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No" data-ng-model="vm.defenceWitnessInterpreter"> No
                           </label>
 
-                          <div class="panel panel-border-narrow js-hidden" id="witness-interpreter">
+                          <div class="panel panel-border-narrow" id="witness-interpreter" data-ng-class="{'js-hidden': vm.defenceWitnessInterpreter !== 'Yes'}">
 
                             <div class="form-group">
 
