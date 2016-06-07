@@ -82,11 +82,11 @@
               <span class="form-label-bold">Does anyone else contribute to these bills?</span>
             </legend>
 
-            <label class="block-label" for="contribute-yes">
+            <label class="block-label" for="contribute-yes" data-ng-class="{'selected': householdExpenses.contribute === 'Yes'}">
               <input type="radio" id="contribute-yes" name="contribute" value="Yes" data-ng-model="householdExpenses.contribute"> Yes
             </label>
 
-            <label class="block-label" for="contribute-no">
+            <label class="block-label" for="contribute-no" data-ng-class="{'selected': householdExpenses.contribute === 'No'}">
               <input type="radio" id="contribute-no" name="contribute" value="No" data-ng-model="householdExpenses.contribute"> No
             </label>
 
@@ -103,6 +103,7 @@
 
 
       <p data-ng-if="householdExpenses.nextState"><a href="" data-ui-sref="{{householdExpenses.nextState}}">Cancel</a></p>
+      
 
     </form>
 
