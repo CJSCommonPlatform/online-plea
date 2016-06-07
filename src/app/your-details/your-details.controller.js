@@ -18,13 +18,9 @@
     yourDetails.updateVm(vm);
 
     function buttonContinueClicked(event) {
-      formValidation.validate(vm.form);
-      vm.form.submitted = true;
-      event.preventDefault();     
+      event.preventDefault();
       yourDetails.updateSessionStorage(vm);
-      if (!vm.form.invalid) {
-        state.go(getNextState());
-      }
+      state.go(getNextState());
     }
 
     function getNextState() {
