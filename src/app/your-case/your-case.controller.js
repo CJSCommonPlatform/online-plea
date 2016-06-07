@@ -95,7 +95,7 @@
     function updateSessionStorage() {
       if (vm.form.$valid) {
         set('caseUniqueReferenceNumber', vm.caseUniqueReferenceNumber);
-        set('casePostcode', vm.casePostcode);
+        set('casePostcode', vm.casePostcode.toUpperCase());
       }
     }
 
