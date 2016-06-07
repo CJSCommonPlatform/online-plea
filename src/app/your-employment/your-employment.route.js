@@ -10,7 +10,7 @@
           url: '/your-employment',
           templateUrl : 'app/your-employment/your-employment.html',
           controller: 'EmploymentController',
-          controllerAs: 'yourEmployment',
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },
