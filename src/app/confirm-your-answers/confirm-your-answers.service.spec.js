@@ -25,7 +25,7 @@
         //given
         var set = sessionStorage.getSetter('pleaApp.');
 
-        set('yourExpenses.household.accomodation', '11');
+        set('yourExpenses.household.accommodation', '11');
         set('yourExpenses.household.utilityBills', '20');
         set('yourExpenses.household.insurance', '30');
         set('yourExpenses.household.councilTax', '40');
