@@ -17,13 +17,13 @@
               if (!isFinite(viewValue)) {
                 return false;
               }
-              if (!isFinite(form[month].$viewValue)) {
+              if (!isFinite(form[month].value)) {
                 return false;
               }
-              if (!isFinite(form[year].$viewValue)) {
+              if (!isFinite(form[year].value)) {
                 return false;
               }
-              var lastDayOfMonth = new Date(form[year].$viewValue, form[month].$viewValue, 0).getDate();
+              var lastDayOfMonth = new Date(form[year].value, form[month].value, 0).getDate();
               return viewValue <= lastDayOfMonth;
             };
 
@@ -31,6 +31,7 @@
               if (viewValue < 1 || viewValue > 12) {
                 return false;
               }
+              form[month].value = viewValue;
               form[day].$validate();
               return true;
             };
@@ -39,6 +40,7 @@
               if (viewValue < 1900 || viewValue > new Date().getFullYear()) {
                 return false;
               }
+              form[year].value = viewValue;
               form[day].$validate();
               return true;
             }
