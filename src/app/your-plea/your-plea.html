@@ -12,6 +12,30 @@
 
     <div class="panel panel-border-wide">
 
+      <div class="error-summary"
+           id="error-summary"
+           role="group"
+           tabindex="-1"
+           aria-labelledby="error-summary-heading"
+           data-focus
+           data-focus-event="click" 
+           data-ng-show="vm.form.$submitted && vm.form.$invalid">
+
+        <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+        <ul class="error-summary-list">
+          <li data-ng-show="vm.form['national-insurance-number'].$invalid">
+            <a href="" 
+               data-focus
+               data-focus-event="click"
+               data-focus-target="national-insurance-number"
+               data-scroll-to="national-insurance-number">National Insurance
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
       <p>This is your opportunity to present your case to the court.</p>
 
       <ul class="list list-bullet">
