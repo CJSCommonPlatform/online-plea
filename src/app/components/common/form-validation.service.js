@@ -7,8 +7,7 @@
 
   function formValidation() {
     var service = {
-      validate: validate,
-      validateDate: validateDate
+      validate: validate
     }
 
     return service;
