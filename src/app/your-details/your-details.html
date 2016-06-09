@@ -22,6 +22,22 @@
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
       <ul class="error-summary-list">
+        <li data-ng-show="vm.form['correct-details'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-correct-details"
+             data-scroll-to="error-correct-details"
+             data-focus>Are these details correct?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['your-update-details'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-your-update-details"
+             data-scroll-to="error-your-update-details"
+             data-focus>Enter correct details
+          </a>
+        </li>
         <li data-ng-show="vm.form['contact-number'].invalid">
           <a href=""
              data-focus-event="click"
@@ -44,6 +60,22 @@
              data-focus-target="error-dob-day"
              data-scroll-to="error-dob-day"
              data-focus>Your date of birth
+          </a>
+        </li>
+        <li data-ng-show="vm.form['national-insurance'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-national-insurance"
+             data-scroll-to="error-national-insurance"
+             data-focus>Do you have a National Insurance number?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['national-insurance-number'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-national-insurance-number"
+             data-scroll-to="error-national-insurance-number"
+             data-focus>National Insurance number
           </a>
         </li>
       </ul>
@@ -72,12 +104,15 @@
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group" data-ng-class="{'error': vm.form['correct-details'].invalid}">
 
         <fieldset class="inline">
 
           <legend>
-            <span class="form-label-bold">Are these details correct?</span>
+            <span class="form-label-bold">
+              Are these details correct?
+              <span class="error-message" data-ng-show="vm.form['correct-details'].invalid">Choose an answer</span>
+            </span>
           </legend>
 
           <label class="block-label" for="correct-details-yes" id="error-correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
@@ -89,8 +124,18 @@
           </label>
 
           <div class="panel panel-border-narrow" id="correct-details" data-ng-class="{'js-hidden': vm.detailsCorrect !== 'No'}">
-            <label class="form-label" for="your-update-details">Enter correct details</label>
-            <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-required="vm.detailsCorrect==='No'" data-ng-model="vm.yourUpdateDetails"></textarea>
+
+            <div class="form-group" data-ng-class="{'error': vm.form['your-update-details'].invalid}">
+
+              <label for="your-update-details" id="error-your-update-details">
+                <span class="form-label">Enter correct details</span>
+                <span class="error-message" data-ng-show="vm.form['your-update-details'].invalid">Provide this information</span>
+              </label>
+
+              <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-required="vm.detailsCorrect==='No'" data-ng-model="vm.yourUpdateDetails"></textarea>
+
+            </div>
+
           </div>
 
         </fieldset>
@@ -161,30 +206,38 @@
       </div>
 
 
-      <div class="form-group">
+      <div class="form-group" data-ng-class="{'error': vm.form['national-insurance'].invalid}">
 
         <fieldset class="inline">
   
           <legend>
-            <span class="form-label-bold">Do you have a National Insurance number?</span>
+            <span class="form-label-bold">
+              Do you have a National Insurance number?
+              <span class="error-message" data-ng-show="vm.form['national-insurance'].invalid">Choose an answer</span>
+            </span>
           </legend>
   
-          <label class="block-label" for="national-insurance-yes" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsuranceNumber === 'Yes'}">
-            <input id="national-insurance-yes" type="radio" name="national-insurance-number" value="Yes" required data-ng-model="vm.nationalInsuranceNumber"> Yes
+          <label class="block-label" for="national-insurance-yes" id="error-national-insurance" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
+            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" required data-ng-model="vm.nationalInsurance"> Yes
           </label>
   
-          <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsuranceNumber === 'No'}">
-            <input id="national-insurance-no" type="radio" name="national-insurance-number" value="No" required data-ng-model="vm.nationalInsuranceNumber"> No
+          <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsurance === 'No'}">
+            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required data-ng-model="vm.nationalInsurance"> No
           </label>
   
-          <div class="panel panel-border-narrow" id="national-insurance" data-ng-class="{'js-hidden': vm.nationalInsuranceNumber !== 'Yes'}">
-  
-            <label for="national-insurance-number" id="error-national-insurance-number">
-              <span class="form-label">National Insurance number</span>
-              <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg JH 21 90 0A</span>
-            </label>
+          <div class="panel panel-border-narrow" id="national-insurance" data-ng-class="{'js-hidden': vm.nationalInsurance !== 'Yes'}">
 
-            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-hint" data-ng-required="vm.nationalInsuranceNumber==='Yes'">
+            <div class="form-group" data-ng-class="{'error': vm.form['national-insurance-number'].invalid}">
+
+              <label for="national-insurance-number" id="error-national-insurance-number">
+                <span class="form-label">National Insurance number</span>
+                <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg JH 21 90 0A</span>
+                <span class="error-message" data-ng-show="vm.form['national-insurance-number'].invalid">Provide this information</span>
+              </label>
+
+              <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ng-model="vm.nationalInsuranceNumber">
+
+            </div>
 
           </div>
   
