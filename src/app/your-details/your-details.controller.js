@@ -5,12 +5,14 @@
   angular.module('pleaApp')
     .controller('YourDetailsController', YourDetailsController);
 
-  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams', 'formValidation'];
+  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams', 'formValidation', 'nationalInsuranceNumberRegex', 'emailAddressRegex', 'ukTelephoneNumberRegex'];
 
-  function YourDetailsController(yourDetails, state, $stateParams, formValidation) {
+  function YourDetailsController(yourDetails, state, $stateParams, formValidation, nationalInsuranceNumberRegex, emailAddressRegex, ukTelephoneNumberRegex) {
     var vm = this;
 
-    vm.buttonContinueLabel = angular.isDefined($stateParams.nextState) ? 'Change and continue' : 'Save and continue';
+    vm.nationalInsuranceNumberRegex = nationalInsuranceNumberRegex;
+    vm.emailAddressRegex = emailAddressRegex;
+    vm.ukTelephoneNumberRegex = ukTelephoneNumberRegex;
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
     vm.getNextState = getNextState;

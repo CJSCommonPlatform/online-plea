@@ -148,13 +148,14 @@
 
       <div class="form-group" data-ng-class="{'error': vm.form['contact-number'].invalid}">
 
-        <label for="contact-number" id="error-contact-number">
+        <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
-          <span class="error-message" data-ng-show="vm.form['contact-number'].invalid">Provide information</span>
+          <span class="error-message" data-ng-message="required">Provide information</span>
+          <span class="error-message" data-ng-message="pattern">Invalid number - enter correct number</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber">
+        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber" data-ng-pattern="vm.ukTelephoneNumberRegex">
         
       </div>
       
@@ -167,7 +168,7 @@
           <span class="error-message" data-ng-show="vm.form['email-address'].invalid">Invalid email address</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="email-address" type="email" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress" data-ng-pattern="/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i">
+        <input class="form-control form-control-1-3" id="email-address" type="text" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress" data-ng-pattern="vm.emailAddressRegex">
         
       </div>
 
@@ -176,10 +177,10 @@
 
         <fieldset>
 
-          <legend>
+          <legend data-ng-messages="vm.form['dob-day'].error">
             <span class="form-label-bold">Your date of birth</span>
             <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
-            <span class="error-message" data-ng-show="vm.form['dob-day'].invalid || vm.form['dob-month'].invalid || vm.form['dob-year'].invalid">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </legend>
 
           <div class="form-date" data-form-date="{'day': 'dob-day', 'month': 'dob-month', 'year': 'dob-year'}">
@@ -231,11 +232,11 @@
 
               <label for="national-insurance-number" id="error-national-insurance-number">
                 <span class="form-label">National Insurance number</span>
-                <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg JH 21 90 0A</span>
+                <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg QQ 12 34 56 C</span>
                 <span class="error-message" data-ng-show="vm.form['national-insurance-number'].invalid">Provide this information</span>
               </label>
 
-              <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ng-model="vm.nationalInsuranceNumber">
+              <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ng-pattern="vm.nationalInsuranceNumberRegex" data-ng-model="vm.nationalInsuranceNumber">
 
             </div>
 
