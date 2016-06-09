@@ -35,7 +35,7 @@ textarea {
 // 2. Form wrappers
 // ==========================================================================
 
-// Form section is used to create spacing between form sections
+// Form section is used to wrap .form-group and has twice its margin
 .form-section {
   @extend %contain-floats;
   @include box-sizing(border-box);
@@ -46,7 +46,7 @@ textarea {
   margin-bottom: $gutter;
 
   @include media(tablet) {
-    margin-bottom: $gutter*2;
+    margin-bottom: $gutter * 2;
   }
 }
 
@@ -124,8 +124,16 @@ textarea {
   display: block;
   color: $secondary-text-colour;
   font-weight: normal;
+
+  margin-top: -2px;
+  padding-bottom: 2px;
 }
 
+.form-label .form-hint,
+.form-label-bold .form-hint {
+  margin-top: 0;
+  padding-bottom: 0;
+}
 
 // 5. Form controls
 // ==========================================================================
