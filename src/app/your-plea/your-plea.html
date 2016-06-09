@@ -8,34 +8,40 @@
 
 
     <h1 class="heading-xlarge">Your plea</h1>
+    
+    
+    <div class="error-summary"
+       id="error-summary"
+       role="group"
+       tabindex="-1"
+       aria-labelledby="error-summary-heading"
+       data-focus-event="click"
+       data-ng-show="vm.form.invalid"
+       data-focus>
 
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['plea'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-plea"
+             data-scroll-to="error-plea"
+             data-focus>Enter your plea
+          </a>
+        </li>
+        <li data-ng-show="vm.form['not-guilty-because'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-not-guilty-because"
+             data-scroll-to="error-not-guilty-because"
+             data-focus>Why do you believe you’re not guilty?
+          </a>
+        </li>
+      </ul>
+    </div>
 
     <div class="panel panel-border-wide">
-
-      <div class="error-summary"
-           id="error-summary"
-           role="group"
-           tabindex="-1"
-           aria-labelledby="error-summary-heading"
-           data-focus-event="click" 
-           data-ng-show="vm.form.$submitted && vm.form.$invalid"
-           data-focus>
-
-        <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
-
-        <ul class="error-summary-list">
-          <li data-ng-show="vm.form['national-insurance-number'].$invalid">
-            <a href=""
-               data-focus-event="click"
-               data-focus-target="national-insurance-number"
-               data-scroll-to="national-insurance-number"
-               data-focus>National Insurance
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
       <p>This is your opportunity to present your case to the court.</p>
 
       <ul class="list list-bullet">
@@ -68,7 +74,7 @@
     <h3 class="heading-medium">Enter your plea</h3>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <fieldset class="inline">
@@ -77,16 +83,16 @@
         <legend class="visuallyhidden">Enter your plea</legend>
 
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['plea'].invalid}">
 
 
-          <label class="block-label" for="plea-guilty" data-target="guilty" data-ng-class="{'selected': vm.plea === 'Guilty'}">
-            <input type="radio" id="plea-guilty" name="plea" value="Guilty" data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Guilty
+          <label class="block-label" for="plea-guilty" id="error-plea" data-target="guilty" data-ng-class="{'selected': vm.plea === 'Guilty'}">
+            <input type="radio" id="plea-guilty" name="plea" value="Guilty" required data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Guilty
           </label>
 
 
           <label class="block-label" for="plea-notguilty" data-target="not-guilty" data-ng-class="{'selected': vm.plea === 'Not guilty'}">
-            <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Not guilty
+            <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Not guilty
           </label>
 
 
@@ -134,9 +140,12 @@
 
           <div class="panel panel-border-narrow" id="not-guilty" data-ng-class="{'js-hidden': vm.plea !== 'Not guilty'}">
 
-            <div class="form-group">
-              <label class="form-label-bold" for="not-guilty-because">Why do you believe you&rsquo;re not guilty?</label>
-              <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="3" data-ng-model="vm.notGuiltyBecause"></textarea>
+            <div class="form-group" data-ng-class="{'error': vm.form['not-guilty-because'].invalid}">
+              <label class="form-label-bold" for="not-guilty-because" id="error-not-guilty-because">
+                <span class="from-label">Why do you believe you&rsquo;re not guilty?</span>
+                <span class="error-message" data-ng-show="vm.form['not-guilty-because'].invalid">Provide this information</span>
+              </label>
+              <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="3" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.notGuiltyBecause"></textarea>
             </div>
 
             <div class="form-group">
@@ -147,7 +156,7 @@
                   <span class="form-label-bold">Do you need an interpreter in court?</span>
                 </legend>
 
-                <div class="form-group">
+                <div class="form-group" data-ng-class="{'error': vm.form['interpreter'].invalid}">
 
                   <label class="block-label" for="interpreter-yes" data-target="interpreter" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
                     <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" data-ng-model="vm.interpreter"> Yes
@@ -280,9 +289,15 @@
 
       </fieldset>
 
-
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
+
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+
       </div>
 
 

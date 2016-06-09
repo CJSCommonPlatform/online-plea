@@ -13,7 +13,6 @@
     return service;
 
     function validate(form) {
-      
       var formProperties = _.filter(Object.keys(form), function(key) {
         return !key.startsWith('$');
       });
