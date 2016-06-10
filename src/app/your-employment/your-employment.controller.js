@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('EmploymentController', EmploymentController);
     
-  EmploymentController.$inject = ['employmentStatus', 'sessionStorage', 'state', '$stateParams'];
+  EmploymentController.$inject = ['employmentStatus', 'sessionStorage', 'state', '$stateParams', 'formValidation'];
     
-  function EmploymentController(employmentStatus, sessionStorage, state, $stateParams) {
+  function EmploymentController(employmentStatus, sessionStorage, state, $stateParams, formValidation) {
     var vm = this;
     
     var BASE_NAME = 'pleaApp.yourEmployment.';
@@ -24,10 +24,12 @@
 
     function buttonContinueClicked(event) {
       event.preventDefault();
-      _updateSessionStorage();
-
-      var nextState = state.getNext(vm);
-      state.go(nextState, {nextState: vm.nextState});
+      formValidation.validate(vm.form);
+      if (!vm.form.invalid) {
+        _updateSessionStorage();
+        var nextState = state.getNext(vm);
+        state.go(nextState, {nextState: vm.nextState});
+      }
     }
   
     //private
