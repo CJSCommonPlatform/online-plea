@@ -26,6 +26,8 @@
       vm.form.$submitted = false;
       vm.form.number = jasmine.createSpyObj('caseUniqueReferenceNumber', ['$myinvalid']);
       vm.form.postcode = jasmine.createSpyObj('casePostcode', ['$myinvalid']);
+
+      vm.casePostcode = 'Your postcode';
     }));
 
 

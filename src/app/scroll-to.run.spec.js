@@ -1,4 +1,4 @@
-describe('Scrolling to Top', function (){
+ describe('Scrolling to Top', function (){
   var $rootScope, $window, $location;
 
   beforeEach(module(
