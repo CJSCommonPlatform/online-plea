@@ -94,6 +94,14 @@
              data-focus>Other significant expenses details
           </a>
         </li>
+        <li data-ng-show="vm.form['other-significant-expenses-total'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-other-significant-expenses-total"
+             data-scroll-to="error-other-significant-expenses-total"
+             data-focus>Other significant expenses total
+          </a>
+        </li>
       </ul>
 
     </div>
@@ -123,7 +131,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="television-subscription" type="number" name="television-subscription" required aria-describedby="television-subscription-hint" data-ng-model="otherExpenses.televisionSubscription">
+            <input class="form-control form-control-1-4" id="television-subscription" type="number" name="television-subscription" required aria-describedby="television-subscription-hint" data-ng-model="vm.televisionSubscription">
           </span>
 
         </div>
@@ -137,7 +145,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="travel-expenses" type="number" name="travel-expenses" required aria-describedby="travel-expenses-hint" data-ng-model="otherExpenses.travelExpenses">
+            <input class="form-control form-control-1-4" id="travel-expenses" type="number" name="travel-expenses" required aria-describedby="travel-expenses-hint" data-ng-model="vm.travelExpenses">
           </span>
 
         </div>
@@ -151,7 +159,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="telephone" type="number" name="telephone" required aria-describedby="telephone-hint" data-ng-model="otherExpenses.telephone">
+            <input class="form-control form-control-1-4" id="telephone" type="number" name="telephone" required aria-describedby="telephone-hint" data-ng-model="vm.telephone">
           </span>
 
         </div>
@@ -164,7 +172,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="loan-repayments" type="number" name="loan-repayments" required data-ng-model="otherExpenses.loanRepayments">
+            <input class="form-control form-control-1-4" id="loan-repayments" type="number" name="loan-repayments" required data-ng-model="vm.loanRepayments">
           </span>
 
         </div>
@@ -178,7 +186,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="county-court-orders" type="number" name="county-court-orders" required data-ng-model="otherExpenses.countyCourtOrders">
+            <input class="form-control form-control-1-4" id="county-court-orders" type="number" name="county-court-orders" required data-ng-model="vm.countyCourtOrders">
           </span>
 
         </div>
@@ -191,7 +199,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="fines" type="number" name="fines" required data-ng-model="otherExpenses.fines">
+            <input class="form-control form-control-1-4" id="fines" type="number" name="fines" required data-ng-model="vm.fines">
           </span>
 
         </div>
@@ -204,7 +212,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="child-maintenance" type="number" name="child-maintenance" required data-ng-model="otherExpenses.childMaintenance">
+            <input class="form-control form-control-1-4" id="child-maintenance" type="number" name="child-maintenance" required data-ng-model="vm.childMaintenance">
           </span>
 
         </div>
@@ -218,15 +226,15 @@
               <span class="error-message" data-ng-show="vm.form['other-significant-expenses'].invalid">Choose an answer</span>
             </legend>
 
-            <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'Yes'}">
-              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required data-ng-model="otherExpenses.otherSignificantExpenses"> Yes
+            <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required data-ng-model="vm.otherSignificantExpenses"> Yes
             </label>
 
-            <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'No'}">
-              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required data-ng-model="otherExpenses.otherSignificantExpenses"> No
+            <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': vm.otherSignificantExpenses === 'No'}">
+              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required data-ng-model="vm.otherSignificantExpenses"> No
             </label>
 
-            <div class="panel panel-border-narrow" id="other-significant-expenses" data-ng-class="{'js-hidden': otherExpenses.otherSignificantExpenses !== 'Yes'}">
+            <div class="panel panel-border-narrow" id="other-significant-expenses" data-ng-class="{'js-hidden': vm.otherSignificantExpenses !== 'Yes'}">
 
               <div class="form-group" data-ng-class="{'error': vm.form['other-significant-expenses-details'].invalid}">
 
@@ -234,14 +242,16 @@
                   <span class="form-label">Tell us about other significant expenses</span>
                 </label>
 
-                <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3" data-ng-model="otherExpenses.otherSignificantExpensesDetails"></textarea>
+                <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesDetails"></textarea>
 
               </div>
 
               <div class="form-group" data-ng-class="{'error': vm.form['other-significant-expenses-total'].invalid}">
-                <label class="form-label" for="other-significant-expenses-total">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></label>
+                <label for="other-significant-expenses-total" id="error-other-significant-expenses-total">
+                  <span class="form-label">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></span>
+                </label>
                 <span class="form-currency">
-                  <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="text" name="other-significant-expenses-total" required data-ng-model="otherExpenses.otherSignificantExpensesTotal">
+                  <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="number" name="other-significant-expenses-total" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesTotal">
                 </span>
               </div>
 
@@ -265,7 +275,7 @@
       </div>
 
 
-      <p data-ng-if="otherExpenses.nextState"><a href="" data-ui-sref="{{otherExpenses.nextState}}">Cancel</a></p>
+      <p data-ng-if="vm.nextState"><a href="" data-ui-sref="{{vm.nextState}}">Cancel</a></p>
 
 
     </form>
