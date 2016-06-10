@@ -34,7 +34,7 @@
             '@' : {
               templateUrl : 'app/your-expenses/other-expenses.html',
               controller  : 'OtherExpensesController',
-              controllerAs: 'otherExpenses'
+              controllerAs: 'vm'
             }
           },
           params: {
