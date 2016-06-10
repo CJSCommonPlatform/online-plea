@@ -5,13 +5,14 @@
   angular.module('pleaApp')
     .controller('OtherExpensesController', OtherExpensesController);
     
-  OtherExpensesController.$inject = ['state', 'sessionStorage', 'otherExpenses', 'formValidation', '$stateParams'];
+  OtherExpensesController.$inject = ['state', 'sessionStorage', 'otherExpenses', 'formValidation', 'decimalLimit', '$stateParams'];
     
-  function OtherExpensesController(state, sessionStorage, otherExpenses, formValidation, $stateParams) {
+  function OtherExpensesController(state, sessionStorage, otherExpenses, formValidation, decimalLimit, $stateParams) {
     var vm = this;
 
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     otherExpenses.updateVm(vm);
 
