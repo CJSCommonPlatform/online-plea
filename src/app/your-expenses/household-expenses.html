@@ -8,12 +8,68 @@
 
 
     <h1 class="heading-xlarge">Your expenses</h1>
+    
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['accommodation'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-accommodation"
+             data-scroll-to="error-accommodation"
+             data-focus>Accommodation
+          </a>
+        </li>
+        <li data-ng-show="vm.form['utility'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-utility"
+             data-scroll-to="error-utility"
+             data-focus>Utility bills
+          </a>
+        </li>
+        <li data-ng-show="vm.form['insurance'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-insurance"
+             data-scroll-to="error-insurance"
+             data-focus>Insurance
+          </a>
+        </li>
+        <li data-ng-show="vm.form['council-tax'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-council-tax"
+             data-scroll-to="error-council-tax"
+             data-focus>Council tax
+          </a>
+        </li>
+        <li data-ng-show="vm.form['contribute'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-contribute"
+             data-scroll-to="error-contribute"
+             data-focus>Does anyone else contribute to your household expenses?
+          </a>
+        </li>
+      </ul>
+
+    </div>
 
 
     <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <h2 class="heading-medium">Household expenses</h2>
@@ -25,84 +81,98 @@
 
         <legend class="visuallyhidden">Household expenses</legend>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['accommodation'].invalid}">
 
-          <label for="accommodation">
+          <label for="accommodation" id="error-accommodation" data-ng-messages="vm.form['accommodation'].error">
             <span class="form-label-bold">Accommodation<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="accommodation" name="accommodation" aria-describedby="accommodation-hint" data-ng-model="householdExpenses.accommodation">
+            <input class="form-control form-control-1-4" type="number" id="accommodation" name="accommodation" required aria-describedby="accommodation-hint" data-ng-model="vm.accommodation" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['utility'].invalid}">
 
-          <label for="utility">
+          <label for="utility" id="error-utility" data-ng-messages="vm.form['utility'].error">
             <span class="form-label-bold">Utility bills<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="utility-hint">Eg, gas, water, electricity</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="utility" name="utility" aria-describedby="utility-hint" data-ng-model="householdExpenses.utilityBills">
+            <input class="form-control form-control-1-4" type="number" id="utility" name="utility" required aria-describedby="utility-hint" data-ng-model="vm.utilityBills" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['insurance'].invalid}">
 
-          <label for="insurance">
+          <label for="insurance" id="error-insurance" data-ng-messages="vm.form['insurance'].error">
             <span class="form-label-bold">Insurance<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="insurance-hint">Eg, home, life insurance</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="insurance" name="insurance" aria-describedby="insurance-hint" data-ng-model="householdExpenses.insurance">
+            <input class="form-control form-control-1-4" type="number" id="insurance" name="insurance" required aria-describedby="insurance-hint" data-ng-model="vm.insurance" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['council-tax'].invalid}">
 
-          <label class="form-label-bold" for="council-tax">Council tax<span class="visuallyhidden">, in pounds</span></label>
+          <label for="council-tax" id="error-council-tax" data-ng-messages="vm.form['council-tax'].error">
+            <span class="form-label-bold">Council tax<span class="visuallyhidden">, in pounds</span></span>
+            <span class="visuallyhidden">, in pounds</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
+          </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="council-tax" name="council-tax" data-ng-model="householdExpenses.councilTax">
+            <input class="form-control form-control-1-4" type="number" id="council-tax" name="council-tax" required data-ng-model="vm.councilTax" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['contribute'].invalid}">
 
           <fieldset class="inline">
 
             <legend>
               <span class="form-label-bold">Does anyone else contribute to these bills?</span>
+              <span class="error-message" data-ng-show="vm.form['contribute'].invalid">Choose an answer</span>
             </legend>
 
-            <label class="block-label" for="contribute-yes" data-ng-class="{'selected': householdExpenses.contribute === 'Yes'}">
-              <input type="radio" id="contribute-yes" name="contribute" value="Yes" data-ng-model="householdExpenses.contribute"> Yes
+            <label class="block-label" for="contribute-yes" id="error-contribute" data-ng-class="{'selected': vm.contribute === 'Yes'}">
+              <input type="radio" id="contribute-yes" name="contribute" value="Yes" required data-ng-model="vm.contribute"> Yes
             </label>
 
-            <label class="block-label" for="contribute-no" data-ng-class="{'selected': householdExpenses.contribute === 'No'}">
-              <input type="radio" id="contribute-no" name="contribute" value="No" data-ng-model="householdExpenses.contribute"> No
+            <label class="block-label" for="contribute-no" data-ng-class="{'selected': vm.contribute === 'No'}">
+              <input type="radio" id="contribute-no" name="contribute" value="No" required data-ng-model="vm.contribute"> No
             </label>
 
           </fieldset>
 
         </div>
-
+              
       </fieldset>
-
-
+      
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="householdExpenses.buttonContinue($event)">Save and continue</button>
+
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+
       </div>
 
 
-      <p data-ng-if="householdExpenses.nextState"><a href="" data-ui-sref="{{householdExpenses.nextState}}">Cancel</a></p>
+      <p data-ng-if="vm.nextState"><a href="" data-ui-sref="{{vm.nextState}}">Cancel</a></p>
       
 
     </form>

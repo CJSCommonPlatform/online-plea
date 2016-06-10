@@ -2,26 +2,32 @@
   
   'use strict';  
     
-  angular.module('pleaApp')
+  angular
+    .module('pleaApp')
     .controller('HouseholdExpensesController', HouseholdExpensesController);
     
-  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses', '$stateParams'];
+  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses', 'formValidation', 'decimalLimit', '$stateParams'];
     
-  function HouseholdExpensesController(state, $sessionStorage, householdExpenses, $stateParams) {
+  function HouseholdExpensesController(state, $sessionStorage, householdExpenses, formValidation, decimalLimit, $stateParams) {
     var vm = this;
 
-    vm.buttonContinue = continueButtonClicked;
+    vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     householdExpenses.updateVm(vm);
 
     //public
-
-    function continueButtonClicked(event) {
+    
+    function buttonContinueClicked(event) {
       event.preventDefault();
+      formValidation.validate(vm.form);
       householdExpenses.updateSessionStorage(vm);
-      state.go(getNextState());
+      if (!vm.form.invalid) {
+        state.go(getNextState());
+      }
     }
+    
 
     function getNextState() {
       return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);

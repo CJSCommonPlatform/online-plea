@@ -19,7 +19,7 @@
           url: '/household',
           templateUrl : 'app/your-expenses/household-expenses.html',
           controller: 'HouseholdExpensesController',
-          controllerAs: 'householdExpenses',
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },
@@ -34,7 +34,7 @@
             '@' : {
               templateUrl : 'app/your-expenses/other-expenses.html',
               controller  : 'OtherExpensesController',
-              controllerAs: 'otherExpenses'
+              controllerAs: 'vm'
             }
           },
           params: {
