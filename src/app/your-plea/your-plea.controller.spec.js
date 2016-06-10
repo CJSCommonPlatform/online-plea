@@ -14,6 +14,7 @@
       vm = _$controller_('YourPleaController');
       vm.pleas = _pleas_;
       vm.yesNoAnswer = _yesNoAnswer_;
+      vm.form = {}
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
     }));
