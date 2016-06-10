@@ -6,13 +6,14 @@
     .module('pleaApp')
     .controller('HouseholdExpensesController', HouseholdExpensesController);
     
-  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses', 'formValidation', '$stateParams'];
+  HouseholdExpensesController.$inject = ['state', 'sessionStorage', 'householdExpenses', 'formValidation', 'decimalLimit', '$stateParams'];
     
-  function HouseholdExpensesController(state, $sessionStorage, householdExpenses, formValidation, $stateParams) {
+  function HouseholdExpensesController(state, $sessionStorage, householdExpenses, formValidation, decimalLimit, $stateParams) {
     var vm = this;
 
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     householdExpenses.updateVm(vm);
 
