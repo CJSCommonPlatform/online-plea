@@ -8,9 +8,42 @@
 
 
     <h1 class="heading-xlarge">Your employment</h1>
+    
+    
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['employment'].invalid">
+          <a data-ui-sref="your-employment({'#': 'error-employment'})"
+             data-focus-event="click"
+             data-focus-target="error-employment"
+             data-scroll-to="error-employment"
+             data-focus>Are you?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['provide-details'].invalid">
+          <a data-ui-sref="your-employment({'#': 'error-provide-details'})"
+             data-focus-event="click"
+             data-focus-target="error-provide-details"
+             data-scroll-to="error-provide-details"
+             data-focus>Provide details
+          </a>
+        </li>
+      </ul>
+
+    </div>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <div class="form-group">
@@ -31,55 +64,64 @@
 
       <div class="form-group">
 
-        <fieldset>
+        <fieldset data-ng-class="{'error': vm.form['employment'].invalid}">
 
-          <legend>
+          <legend id="error-employment">
             <span class="form-label-bold">Are you?</span>
+            <span class="erroro-message" data-ng-show="vm.form['employment'].invalid">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED}">
-            <input type="radio" id="employed" name="employment" value="{{vm.employmentStatus.EMPLOYED}}" data-ng-model="vm.employment"> Employed
+            <input type="radio" id="employed" name="employment" value="{{vm.employmentStatus.EMPLOYED}}" required data-ng-model="vm.employment"> Employed
           </label>
 
           <label class="block-label" for="employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED_BENEFITS}">
-            <input type="radio" id="employed-with-benefits" name="employment" value="{{vm.employmentStatus.EMPLOYED_BENEFITS}}" data-ng-model="vm.employment"> Employed and also receiving benefits
+            <input type="radio" id="employed-with-benefits" name="employment" value="{{vm.employmentStatus.EMPLOYED_BENEFITS}}" required data-ng-model="vm.employment"> Employed and also receiving benefits
           </label>
 
           <label class="block-label" for="self-employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED}">
-            <input type="radio" id="self-employed" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED}}" data-ng-model="vm.employment"> Self&ndash;employed
+            <input type="radio" id="self-employed" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED}}" required data-ng-model="vm.employment"> Self&ndash;employed
           </label>
 
           <label class="block-label" for="self-employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED_BENEFITS}">
-            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED_BENEFITS}}" data-ng-model="vm.employment"> Self&ndash;employed and also receiving benefits
+            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED_BENEFITS}}" required data-ng-model="vm.employment"> Self&ndash;employed and also receiving benefits
           </label>
 
           <label class="block-label" for="work-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OUT_OF_WORK_BENEFITS}">
-            <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" data-ng-model="vm.employment"> Receiving out of work benefits
+            <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" required data-ng-model="vm.employment"> Receiving out of work benefits
           </label>
 
           <label class="block-label" for="other" data-target="provide-more-details" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
-            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" data-ng-model="vm.employment"> Other
+            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required data-ng-model="vm.employment"> Other
           </label>
 
-          <div class="panel panel-border-narrow" id="provide-more-details" data-ng-class="{'js-hidden': vm.employment !== vm.employmentStatus.OTHER}">
+        </fieldset>
+        
+        <div class="panel panel-border-narrow" id="provide-more-details" data-ng-class="{'js-hidden': vm.employment !== vm.employmentStatus.OTHER}">
 
-            <div class="form-group">
-              <label for="provide-details">
-                <span class="form-label">Provide details</span>
-                <span class="form-hint" id="provide-details-hint">For example, student or retired.</span>
-              </label>
-              <input class="form-control" type="text" id="provide-details" name="provide-details" aria-describedby="provide-details-hint" data-ng-model="vm.provideDetails">
-            </div>
-
+          <div class="form-group" data-ng-class="{'error': vm.form['provide-details'].invalid}">
+            <label for="provide-details" id="error-provide-details">
+              <span class="form-label">Provide details</span>
+              <span class="form-hint" id="provide-details-hint">For example, student or retired.</span>
+              <span class="error-message" data-ng-show="vm.form['provide-details'].invalid">Provide this information</span>
+            </label>
+            <input class="form-control" type="text" id="provide-details" name="provide-details" aria-describedby="provide-details-hint" data-ng-required="vm.employment === vm.employmentStatus.OTHER" data-ng-model="vm.provideDetails">
           </div>
 
-        </fieldset>
-
+        </div>
+        
       </div>
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Save and continue</button>
+        
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+        
       </div>
 
 
