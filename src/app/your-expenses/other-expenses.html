@@ -9,11 +9,92 @@
 
     <h1 class="heading-xlarge">Your expenses</h1>
 
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['television-subscription'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-television-subscription"
+             data-scroll-to="error-television-subscription"
+             data-focus>Television subscription
+          </a>
+        </li>
+        <li data-ng-show="vm.form['travel-expenses'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-travel-expenses"
+             data-scroll-to="error-travel-expenses"
+             data-focus>Travel expenses
+          </a>
+        </li>
+        <li data-ng-show="vm.form['telephone'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-telephone"
+             data-scroll-to="error-telephone"
+             data-focus>Telephone
+          </a>
+        </li>
+        <li data-ng-show="vm.form['loan-repayments'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-loan-repayments"
+             data-scroll-to="error-loan-repayments"
+             data-focus>Loan repayments
+          </a>
+        </li>
+        <li data-ng-show="vm.form['county-court-orders'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-county-court-orders"
+             data-scroll-to="error-county-court-orders"
+             data-focus>County court orders
+          </a>
+        </li>
+        
+        <li data-ng-show="vm.form['fines'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-fines"
+             data-scroll-to="error-fines"
+             data-focus>Fines
+          </a>
+        </li>
+        <li data-ng-show="vm.form['child-maintenance'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-child-maintenance"
+             data-scroll-to="error-child-maintenance"
+             data-focus>Child maintenance
+          </a>
+        </li>
+        <li data-ng-show="vm.form['other-significant-expenses'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-other-significant-expenses"
+             data-scroll-to="error-other-significant-expenses"
+             data-focus>Other significant expenses
+          </a>
+        </li>
+      </ul>
+
+    </div>
+    
 
     <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <h2 class="heading-medium">Other expenses</h2>
@@ -25,101 +106,116 @@
 
         <legend class="visuallyhidden">Other expenses</legend>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['television-subscription'].invalid}">
 
-          <label for="television-subscription">
+          <label for="television-subscription" id="error-television-subscription" data-ng-messages="vm.form['television-subscription'].error">
             <span class="form-label-bold">Television subscriptions<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="television-subscription-hint">Eg, tv licence, satellite</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="television-subscription" name="television-subscription" aria-describedby="television-subscription-hint" data-ng-model="otherExpenses.televisionSubscription">
+            <input class="form-control form-control-1-4" id="television-subscription" type="number" name="television-subscription" required aria-describedby="television-subscription-hint" data-ng-model="otherExpenses.televisionSubscription">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['travel-expenses'].invalid}">
 
-          <label for="travel-expenses">
+          <label for="travel-expenses" id="error-travel-expenses" data-ng-messages="vm.form['travel-expenses'].error">
             <span class="form-label-bold">Travel expenses<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="travel-expenses-hint">Eg, fuel, car, public transport</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="travel-expenses" name="travel-expenses" aria-describedby="travel-expenses-hint" data-ng-model="otherExpenses.travelExpenses">
+            <input class="form-control form-control-1-4" id="travel-expenses" type="number" name="travel-expenses" required aria-describedby="travel-expenses-hint" data-ng-model="otherExpenses.travelExpenses">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['telephone'].invalid}">
 
-          <label for="telephone">
+          <label for="telephone" id="error-telephone" data-ng-messages="vm.form['telephone'].error">
             <span class="form-label-bold">Telephone<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="telephone-hint">Eg, landline or mobile</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="telephone" name="telephone" aria-describedby="telephone-hint" data-ng-model="otherExpenses.telephone">
+            <input class="form-control form-control-1-4" id="telephone" type="number" name="telephone" required aria-describedby="telephone-hint" data-ng-model="otherExpenses.telephone">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['loan-repayments'].invalid}">
 
-          <label for="loan-repayments">
+          <label for="loan-repayments" id="error-loan-repayments" data-ng-messages="vm.form['loan-repayments'].error">
             <span class="form-label-bold">Loan repayments<span class="visuallyhidden">, in pounds</span></span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="loan-repayments" name="loan-repayments" data-ng-model="otherExpenses.loanRepayments">
+            <input class="form-control form-control-1-4" id="loan-repayments" type="number" name="loan-repayments" required data-ng-model="otherExpenses.loanRepayments">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['county-court-orders'].invalid}">
 
-          <label class="form-label-bold" for="county-court-orders">County court orders<span class="visuallyhidden">, in pounds</span></label>
+          <label for="county-court-orders" id="error-county-court-orders" data-ng-messages="vm.form['county-court-orders'].error">
+            <span class="form-label-bold">County court orders<span class="visuallyhidden">, in pounds</span></span>
+            <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
+          </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="county-court-orders" name="county-court-orders" data-ng-model="otherExpenses.countyCourtOrders">
+            <input class="form-control form-control-1-4" id="county-court-orders" type="number" name="county-court-orders" required data-ng-model="otherExpenses.countyCourtOrders">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['fines'].invalid}">
 
-          <label class="form-label-bold" for="fines">Fines<span class="visuallyhidden">, in pounds</span></label>
+          <label for="fines" id="error-fines" data-ng-messages="vm.form['fines'].error">
+            <span class="form-label-bold">Fines<span class="visuallyhidden">, in pounds</span></span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
+          </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="fines" name="fines" data-ng-model="otherExpenses.fines">
+            <input class="form-control form-control-1-4" id="fines" type="number" name="fines" required data-ng-model="otherExpenses.fines">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['child-maintenance'].invalid}">
 
-          <label class="form-label-bold" for="child-maintenance">Child maintenance<span class="visuallyhidden">, in pounds</span></label>
+          <label for="child-maintenance" id="error-child-maintenance" data-ng-messages="vm.form['child-maintenance'].error">
+            <span class="form-label-bold">Child maintenance<span class="visuallyhidden">, in pounds</span></span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
+          </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="child-maintenance" name="child-maintenance" data-ng-model="otherExpenses.childMaintenance">
+            <input class="form-control form-control-1-4" id="child-maintenance" type="number" name="child-maintenance" required data-ng-model="otherExpenses.childMaintenance">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['other-significant-expenses'].invalid}">
 
           <fieldset class="inline">
 
             <legend>
               <span class="form-label-bold">Any other significant expenses not listed?</span>
+              <span class="error-message" data-ng-show="vm.form['other-significant-expenses'].invalid">Choose an answer</span>
             </legend>
 
-            <label class="block-label" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'Yes'}">
-              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" data-ng-model="otherExpenses.otherSignificantExpenses"> Yes
+            <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'Yes'}">
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required data-ng-model="otherExpenses.otherSignificantExpenses"> Yes
             </label>
 
             <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': otherExpenses.otherSignificantExpenses === 'No'}">
-              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" data-ng-model="otherExpenses.otherSignificantExpenses"> No
+              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required data-ng-model="otherExpenses.otherSignificantExpenses"> No
             </label>
 
             <div class="panel panel-border-narrow" id="other-significant-expenses" data-ng-class="{'js-hidden': otherExpenses.otherSignificantExpenses !== 'Yes'}">
@@ -147,9 +243,15 @@
 
       </fieldset>
 
-
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="otherExpenses.buttonContinue($event)">Save and continue</button>
+
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+
       </div>
 
 

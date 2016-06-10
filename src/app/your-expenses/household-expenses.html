@@ -53,6 +53,14 @@
              data-focus>Council tax
           </a>
         </li>
+        <li data-ng-show="vm.form['contribute'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-contribute"
+             data-scroll-to="error-contribute"
+             data-focus>Does anyone else contribute to your household expenses?
+          </a>
+        </li>
       </ul>
 
     </div>
@@ -129,20 +137,21 @@
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['contribute'].invalid}">
 
           <fieldset class="inline">
 
             <legend>
               <span class="form-label-bold">Does anyone else contribute to these bills?</span>
+              <span class="error-message" data-ng-show="vm.form['contribute'].invalid">Choose an answer</span>
             </legend>
 
-            <label class="block-label" for="contribute-yes" data-ng-class="{'selected': householdExpenses.contribute === 'Yes'}">
-              <input type="radio" id="contribute-yes" name="contribute" value="Yes" data-ng-model="householdExpenses.contribute"> Yes
+            <label class="block-label" for="contribute-yes" id="error-contribute" data-ng-class="{'selected': householdExpenses.contribute === 'Yes'}">
+              <input type="radio" id="contribute-yes" name="contribute" value="Yes" required data-ng-model="householdExpenses.contribute"> Yes
             </label>
 
             <label class="block-label" for="contribute-no" data-ng-class="{'selected': householdExpenses.contribute === 'No'}">
-              <input type="radio" id="contribute-no" name="contribute" value="No" data-ng-model="householdExpenses.contribute"> No
+              <input type="radio" id="contribute-no" name="contribute" value="No" required data-ng-model="householdExpenses.contribute"> No
             </label>
 
           </fieldset>
