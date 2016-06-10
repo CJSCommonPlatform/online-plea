@@ -104,7 +104,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="number" id="utility" name="utility" required aria-describedby="utility-hint" data-ng-model="vm.utilityBills">
+            <input class="form-control form-control-1-4" type="number" id="utility" name="utility" required aria-describedby="utility-hint" data-ng-model="vm.utilityBills" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -118,7 +118,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="number" id="insurance" name="insurance" required aria-describedby="insurance-hint" data-ng-model="vm.insurance">
+            <input class="form-control form-control-1-4" type="number" id="insurance" name="insurance" required aria-describedby="insurance-hint" data-ng-model="vm.insurance" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -132,7 +132,7 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="number" id="council-tax" name="council-tax" required data-ng-model="vm.councilTax">
+            <input class="form-control form-control-1-4" type="number" id="council-tax" name="council-tax" required data-ng-model="vm.councilTax" data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
