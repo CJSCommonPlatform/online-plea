@@ -8,12 +8,60 @@
 
 
     <h1 class="heading-xlarge">Your expenses</h1>
+    
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['accommodation'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-accommodation"
+             data-scroll-to="error-accommodation"
+             data-focus>Accommodation
+          </a>
+        </li>
+        <li data-ng-show="vm.form['utility'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-utility"
+             data-scroll-to="error-utility"
+             data-focus>Utility bills
+          </a>
+        </li>
+        <li data-ng-show="vm.form['insurance'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-insurance"
+             data-scroll-to="error-insurance"
+             data-focus>Insurance
+          </a>
+        </li>
+        <li data-ng-show="vm.form['council-tax'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-council-tax"
+             data-scroll-to="error-council-tax"
+             data-focus>Council tax
+          </a>
+        </li>
+      </ul>
+
+    </div>
 
 
     <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
 
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <h2 class="heading-medium">Household expenses</h2>
