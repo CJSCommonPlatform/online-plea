@@ -38,6 +38,14 @@
              data-focus>Why do you believe you’re not guilty?
           </a>
         </li>
+        <li data-ng-show="vm.form['interpreter'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-interpreter"
+             data-scroll-to="error-interpreter"
+             data-focus>Do you need an interpreter in court?
+          </a>
+        </li>
       </ul>
     </div>
 
@@ -158,7 +166,7 @@
 
                 <div class="form-group" data-ng-class="{'error': vm.form['interpreter'].invalid}">
 
-                  <label class="block-label" for="interpreter-yes" data-target="interpreter" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
+                  <label class="block-label" for="interpreter-yes" id="error-interpreter" data-target="interpreter" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
                     <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" data-ng-model="vm.interpreter"> Yes
                   </label>
 
