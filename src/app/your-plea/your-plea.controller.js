@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('YourPleaController', YourPleaController);
 
-  YourPleaController.$inject = ['pleas', 'yesNoAnswer', 'yourPlea', 'state', '$stateParams'];
+  YourPleaController.$inject = ['pleas', 'yesNoAnswer', 'yourPlea', 'state', '$stateParams', 'formValidation'];
 
-  function YourPleaController(pleas, yesNoAnswer, yourPlea, state, $stateParams) {
+  function YourPleaController(pleas, yesNoAnswer, yourPlea, state, $stateParams, formValidation) {
     var vm = this;
 
     vm.pleas = pleas;
@@ -19,8 +19,11 @@
 
     function buttonContinueClicked(event) {
       event.preventDefault();
-      var hasPleaChanged = yourPlea.updateSessionStorage(vm);
-      return updateState(hasPleaChanged);
+      formValidation.validate(vm.form);
+      if (!vm.form.invalid) {
+        var hasPleaChanged = yourPlea.updateSessionStorage(vm);
+        updateState(hasPleaChanged);
+      }
     }
 
     function updateState(hasPleaChanged) {
