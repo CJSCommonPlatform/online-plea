@@ -19,6 +19,8 @@
         vm = _$controller_('YourDetailsController', { $scope: scope });
         $state = _$state_;
         event = jasmine.createSpyObj('event', ['preventDefault']);
+
+        vm.form = {};
       }));
 
       it('should preventDefault on the event when continue button was clicked', function() {
@@ -53,32 +55,6 @@
         scope.$apply();
         //then
         expect($state.current.name).toEqual('your-plea');
-      });
-
-      it('should show correct button label; nextState param provided', function() {
-        //given
-        $state.go('your-details', {nextState: 'confirm-your-answers'});
-        scope.$apply();
-        vm = $controller('YourDetailsController', { $scope: scope });
-        expect($state.current.name).toEqual('your-details');
-        //when
-        vm.buttonContinue(event);
-        scope.$apply();
-        //then
-        expect(vm.buttonContinueLabel).toEqual('Change and continue');
-      });
-
-      it('should show correct button label; nextState param not provided', function() {
-        //given
-        $state.go('your-details');
-        scope.$apply();
-        vm = $controller('YourDetailsController', { $scope: scope });
-        expect($state.current.name).toEqual('your-details');
-        //when
-        vm.buttonContinue(event);
-        scope.$apply();
-        //then
-        expect(vm.buttonContinueLabel).toEqual('Save and continue');
       });
 
     });

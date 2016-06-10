@@ -44,12 +44,12 @@
         yourDetails.updateSessionStorage(vm);
         //then
         var get = sessionStorage.getGetter('pleaApp.yourDetails.');
-        expect(get('title')).toEqual('Mr');
-        expect(get('firstName')).toEqual('Mike');
-        expect(get('lastName')).toEqual('Mouse');
-        expect(get('address.street')).toEqual('38A Baker Street');
-        expect(get('address.city')).toEqual('London');
-        expect(get('address.postcode')).toEqual('007 700');
+        expect(get('title')).toEqual('title');
+        expect(get('firstName')).toEqual('firstName');
+        expect(get('lastName')).toEqual('lastName');
+        expect(get('address.street')).toEqual('addressStreet');
+        expect(get('address.city')).toEqual('addressCity');
+        expect(get('address.postcode')).toEqual('addressPostcode');
         expect(get('detailsCorrect')).toEqual('No');
         expect(get('yourUpdateDetails')).toEqual('yourUpdateDetails');
         expect(get('contactNumber')).toEqual('contactNumber');
