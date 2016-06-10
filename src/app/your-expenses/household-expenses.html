@@ -73,51 +73,58 @@
 
         <legend class="visuallyhidden">Household expenses</legend>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['accommodation'].invalid}">
 
-          <label for="accommodation">
+          <label for="accommodation" id="error-accommodation" data-ng-messages="vm.form['accommodation'].error">
             <span class="form-label-bold">Accommodation<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="accommodation" name="accommodation" aria-describedby="accommodation-hint" data-ng-model="householdExpenses.accommodation">
+            <input class="form-control form-control-1-4" type="number" id="accommodation" name="accommodation" required aria-describedby="accommodation-hint" data-ng-model="householdExpenses.accommodation">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['utility'].invalid}">
 
-          <label for="utility">
+          <label for="utility" id="error-utility" data-ng-messages="vm.form['utility'].error">
             <span class="form-label-bold">Utility bills<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="utility-hint">Eg, gas, water, electricity</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="utility" name="utility" aria-describedby="utility-hint" data-ng-model="householdExpenses.utilityBills">
+            <input class="form-control form-control-1-4" type="number" id="utility" name="utility" required aria-describedby="utility-hint" data-ng-model="householdExpenses.utilityBills">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['insurance'].invalid}">
 
-          <label for="insurance">
+          <label for="insurance" id="error-insurance" data-ng-messages="vm.form['insurance'].error">
             <span class="form-label-bold">Insurance<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="insurance-hint">Eg, home, life insurance</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="insurance" name="insurance" aria-describedby="insurance-hint" data-ng-model="householdExpenses.insurance">
+            <input class="form-control form-control-1-4" type="number" id="insurance" name="insurance" required aria-describedby="insurance-hint" data-ng-model="householdExpenses.insurance">
           </span>
 
         </div>
 
-        <div class="form-group">
+        <div class="form-group" data-ng-class="{'error': vm.form['council-tax'].invalid}">
 
-          <label class="form-label-bold" for="council-tax">Council tax<span class="visuallyhidden">, in pounds</span></label>
+          <label for="council-tax" id="error-council-tax" data-ng-messages="vm.form['council-tax'].error">
+            <span class="form-label-bold">Council tax<span class="visuallyhidden">, in pounds</span></span>
+            <span class="visuallyhidden">, in pounds</span>
+            <span class="error-message" data-ng-message="required">Provide information</span>
+          </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="council-tax" name="council-tax" data-ng-model="householdExpenses.councilTax">
+            <input class="form-control form-control-1-4" type="number" id="council-tax" name="council-tax" required data-ng-model="householdExpenses.councilTax">
           </span>
 
         </div>
@@ -143,10 +150,16 @@
         </div>
 
       </fieldset>
-
-
+      
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="householdExpenses.buttonContinue($event)">Save and continue</button>
+
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+
       </div>
 
 
