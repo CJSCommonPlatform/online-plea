@@ -9,6 +9,7 @@
 
     <h1 class="heading-xlarge">Your expenses</h1>
     
+    
     <div class="error-summary"
          id="error-summary"
          role="group"
@@ -58,7 +59,7 @@
              data-focus-event="click"
              data-focus-target="error-contribute"
              data-scroll-to="error-contribute"
-             data-focus>Does anyone else contribute to your household expenses?
+             data-focus>Does anyone else contribute to these bills?
           </a>
         </li>
       </ul>
@@ -66,13 +67,14 @@
     </div>
 
 
-    <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
+    <p class="lede">To help the court make a decision about your payment terms, you must Provide this information about your expenses.</p>
 
 
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <h2 class="heading-medium">Household expenses</h2>
+
 
       <p>What are your monthly bills for the following?</p>
 
@@ -86,7 +88,7 @@
           <label for="accommodation" id="error-accommodation" data-ng-messages="vm.form['accommodation'].error">
             <span class="form-label-bold">Accommodation<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -101,7 +103,7 @@
           <label for="utility" id="error-utility" data-ng-messages="vm.form['utility'].error">
             <span class="form-label-bold">Utility bills<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="utility-hint">Eg, gas, water, electricity</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -116,7 +118,7 @@
           <label for="insurance" id="error-insurance" data-ng-messages="vm.form['insurance'].error">
             <span class="form-label-bold">Insurance<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="insurance-hint">Eg, home, life insurance</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -131,7 +133,7 @@
           <label for="council-tax" id="error-council-tax" data-ng-messages="vm.form['council-tax'].error">
             <span class="form-label-bold">Council tax<span class="visuallyhidden">, in pounds</span></span>
             <span class="visuallyhidden">, in pounds</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -163,6 +165,7 @@
         </div>
               
       </fieldset>
+      
       
       <div class="form-group">
 
