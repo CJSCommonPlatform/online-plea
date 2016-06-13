@@ -219,11 +219,14 @@
         <div class="panel panel-border-narrow" id="not-guilty" data-ng-class="{'js-hidden': vm.plea !== 'Not guilty'}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['not-guilty-because'].invalid}">
+            
             <label for="not-guilty-because" id="error-not-guilty-because">
               <span class="form-label-bold">Why do you believe you&rsquo;re not guilty?</span>
               <span class="error-message" data-ng-show="vm.form['not-guilty-because'].invalid">Provide information</span>
             </label>
+            
             <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="3" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.notGuiltyBecause"></textarea>
+            
           </div>
 
           <div class="form-group">
@@ -248,11 +251,14 @@
             <div class="panel panel-border-narrow" id="interpreter" data-ng-class="{'js-hidden': vm.interpreter !== 'Yes'}">
               
               <div class="form-group" data-ng-class="{'error': vm.form['interpreter-language'].invalid}">
+                
                 <label for="interpreter-language" id="error-interpreter-language">
                   <span class="form-label">Which language? (Including sign language)</span>
                   <span class="error-message" data-ng-show="vm.form['interpreter-language'].invalid">Provide this information</span>
                 </label>
+                
                 <input class="form-control" type="text" id="interpreter-language" name="interpreter-language" data-ng-required="vm.interpreter === 'Yes'" data-ng-model="vm.interpreterLanguage">
+                
               </div>
               
             </div>
@@ -281,11 +287,14 @@
             <div class="panel panel-border-narrow" id="evidence" data-ng-class="{'js-hidden': vm.prosecutorWitnessDisagree !== 'Yes'}">
 
               <div class="form-group" data-ng-class="{'error': vm.form['witness-name'].invalid}">
+                
                 <label for="witness-name" id="error-witness-name">
                   <span class="form-label">Enter the name of the witness and what you disagree with</span>
                   <span class="error-message" data-ng-show="vm.form['witness-name'].invalid">Provide this information</span>
                 </label>
+                
                 <textarea class="form-control form-control-textarea" id="witness-name" name="witness-name" cols="30" rows="3" data-ng-required="vm.prosecutorWitnessDisagree === 'Yes'" data-ng-model="vm.prosecutorWitnessDetails"></textarea>
+                
               </div>
 
             </div>
@@ -315,11 +324,14 @@
             <div class="panel panel-border-narrow" id="witness" data-ng-class="{'js-hidden': vm.defenceWitnessCall !== 'Yes'}">
               
               <div class="form-group" data-ng-class="{'error': vm.form['witness-contact-details'].invalid}">
+                
                 <label for="witness-contact-details" id="error-witness-contact-details">
                   <span class="form-label">Enter name, address and date of birth of any witnesses you want to call to support your case</span>
                   <span class="error-message" data-ng-show="vm.form['witness-contact-details'].invalid">Provide this information</span>
                 </label>
+                
                 <textarea class="form-control form-control-textarea" id="witness-contact-details" name="witness-contact-details" cols="30" rows="3" data-ng-required="vm.defenceWitnessCall === 'Yes'" data-ng-model="vm.defenceWitnessContactDetails"></textarea>
+                
               </div>
               
               <div class="form-group">
@@ -344,11 +356,14 @@
                 <div class="panel panel-border-narrow" id="witness-interpreter" data-ng-class="{'js-hidden': vm.defenceWitnessInterpreter !== 'Yes'}">
 
                   <div class="form-group" data-ng-class="{'error': vm.form['witness-interpreter-language'].invalid}">
+                    
                     <label for="witness-interpreter-language" id="error-witness-interpreter-language">
                       <span class="form-label">Which language? (Including sign language)</span>
                       <span class="error-message" data-ng-show="vm.form['witness-interpreter-language'].invalid">Provide this information</span>
                     </label>
+                    
                     <input class="form-control" type="text" id="witness-interpreter-language" name="witness-interpreter-language" data-ng-required="vm.defenceWitnessInterpreter === 'Yes'" data-ng-model="vm.defenceWitnessInterpreterLanguage">
+                    
                   </div>
 
                 </div>
