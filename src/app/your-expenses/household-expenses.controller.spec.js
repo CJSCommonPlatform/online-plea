@@ -12,6 +12,7 @@
     beforeEach(inject(function($rootScope, _$controller_, _$state_) {
       scope = $rootScope.$new();
       vm = _$controller_('HouseholdExpensesController');
+      vm.form = {};
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
     }));
