@@ -5,21 +5,29 @@
   angular.module('pleaApp')
     .controller('YourEmploymentFinancesController', YourEmploymentFinancesController);
 
-  YourEmploymentFinancesController.$inject = ['yesNoAnswer', 'yourEmploymentFinances', 'state', '$stateParams'];
+  YourEmploymentFinancesController.$inject = ['yesNoAnswer', 'yourEmploymentFinances', 'state', '$stateParams', 'formValidation', 'decimalLimit'];
 
-  function YourEmploymentFinancesController(yesNoAnswer, yourEmploymentFinances, state, $stateParams) {
+  function YourEmploymentFinancesController(yesNoAnswer, yourEmploymentFinances, state, $stateParams, formValidation, decimalLimit) {
     var vm = this;
 
     vm.yesNoAnswer = yesNoAnswer;
-    vm.buttonContinue = continueButtonClicked;
+    vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     yourEmploymentFinances.updateVm(vm);
 
-    function continueButtonClicked(event) {
+    function buttonContinueClicked(event) {
       event.preventDefault();
-      yourEmploymentFinances.updateSessionStorage(vm);
-      state.goNext(vm);
+      formValidation.validate(vm.form);
+      
+      if (!vm.form.invalid) {
+        yourEmploymentFinances.updateSessionStorage(vm);
+        state.goNext(vm);
+      }
+      
     }
+    
   }
+  
 })();
