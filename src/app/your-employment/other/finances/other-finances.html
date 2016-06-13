@@ -9,8 +9,32 @@
 
     <h1 class="heading-xlarge">Your finances</h1>
 
+    <div class="error-summary"
+     id="error-summary"
+     role="group"
+     tabindex="-1"
+     aria-labelledby="error-summary-heading"
+     data-focus-event="click"
+     data-ng-show="vm.form.invalid"
+     data-focus>
 
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['source-income'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-source-income"
+             data-scroll-to="error-source-income"
+             data-focus>What’s your main source of income?
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
       
       
       <div class="panel panel-border-wide">
@@ -29,14 +53,14 @@
       <h2 class="heading-medium">Your income</h2>
 
 
-      <div class="form-group">
-
-        <label for="source-income">
+      <div class="form-group" data-ng-class="{'error': vm.form['source-income'].invalid}">
+        <label id="error-source-income"  for="source-income" data-ng-messages="vm.form['source-income'].error">
           <span class="form-label-bold">What&rsquo;s your main source of income?</span>
           <span class="form-hint">Eg, student loan, pension or investment</span>
+          <span class="error-message" data-ng-message="required">Provide information</span>
         </label>
 
-        <input class="form-control" type="text" id="source-income" name="source-income" data-ng-model="vm.sourceIncome">
+        <input class="form-control" id="source-income" type="text" name="source-income" required data-ng-model="vm.sourceIncome">
 
       </div>
 
