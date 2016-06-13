@@ -9,6 +9,7 @@
 
     <h1 class="heading-xlarge">Your expenses</h1>
 
+
     <div class="error-summary"
          id="error-summary"
          role="group"
@@ -83,7 +84,7 @@
              data-focus-event="click"
              data-focus-target="error-other-significant-expenses"
              data-scroll-to="error-other-significant-expenses"
-             data-focus>Other significant expenses
+             data-focus>Any other significant expenses not listed?
           </a>
         </li>
         <li data-ng-show="vm.form['other-significant-expenses-details'].invalid">
@@ -91,7 +92,7 @@
              data-focus-event="click"
              data-focus-target="error-other-significant-expenses-details"
              data-scroll-to="error-other-significant-expenses-details"
-             data-focus>Other significant expenses details
+             data-focus>Tell us about other significant expenses
           </a>
         </li>
         <li data-ng-show="vm.form['other-significant-expenses-total'].invalid">
@@ -99,7 +100,7 @@
              data-focus-event="click"
              data-focus-target="error-other-significant-expenses-total"
              data-scroll-to="error-other-significant-expenses-total"
-             data-focus>Other significant expenses total
+             data-focus>Monthly total of other significant expenses
           </a>
         </li>
       </ul>
@@ -107,7 +108,7 @@
     </div>
     
 
-    <p class="lede">To help the court make a decision about your payment terms, you must provide information about your expenses.</p>
+    <p class="lede">To help the court make a decision about your payment terms, you must Provide this information about your expenses.</p>
 
 
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
@@ -123,10 +124,11 @@
         <legend class="visuallyhidden">Other expenses</legend>
 
         <div class="form-group" data-ng-class="{'error': vm.form['television-subscription'].invalid}">
+          
           <label for="television-subscription" id="error-television-subscription" data-ng-messages="vm.form['television-subscription'].error">
             <span class="form-label-bold">Television subscriptions<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="television-subscription-hint">Eg, tv licence, satellite</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -141,7 +143,7 @@
           <label for="travel-expenses" id="error-travel-expenses" data-ng-messages="vm.form['travel-expenses'].error">
             <span class="form-label-bold">Travel expenses<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="travel-expenses-hint">Eg, fuel, car, public transport</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -156,7 +158,7 @@
           <label for="telephone" id="error-telephone" data-ng-messages="vm.form['telephone'].error">
             <span class="form-label-bold">Telephone<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="telephone-hint">Eg, landline or mobile</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -170,7 +172,7 @@
 
           <label for="loan-repayments" id="error-loan-repayments" data-ng-messages="vm.form['loan-repayments'].error">
             <span class="form-label-bold">Loan repayments<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -185,7 +187,7 @@
           <label for="county-court-orders" id="error-county-court-orders" data-ng-messages="vm.form['county-court-orders'].error">
             <span class="form-label-bold">County court orders<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -199,7 +201,7 @@
 
           <label for="fines" id="error-fines" data-ng-messages="vm.form['fines'].error">
             <span class="form-label-bold">Fines<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -210,9 +212,10 @@
         </div>
 
         <div class="form-group" data-ng-class="{'error': vm.form['child-maintenance'].invalid}">
+          
           <label for="child-maintenance" id="error-child-maintenance" data-ng-messages="vm.form['child-maintenance'].error">
             <span class="form-label-bold">Child maintenance<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
           </label>
 
@@ -245,7 +248,7 @@
 
                 <label for="other-significant-expenses-details" id="error-other-significant-expenses-details" data-ng-messages="vm.form['other-significant-expenses-details'].error">
                   <span class="form-label">Tell us about other significant expenses</span>
-                  <span class="error-message" data-ng-message="required">Provide information</span>
+                  <span class="error-message" data-ng-message="required">Provide this information</span>
                 </label>
 
                 <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesDetails"></textarea>
@@ -253,14 +256,17 @@
               </div>
 
               <div class="form-group" data-ng-class="{'error': vm.form['other-significant-expenses-total'].invalid}">
+                
                 <label for="other-significant-expenses-total" id="error-other-significant-expenses-total" data-ng-messages="vm.form['other-significant-expenses-total'].error">
                   <span class="form-label">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></span>
-                  <span class="error-message" data-ng-message="required">Provide information</span>
+                  <span class="error-message" data-ng-message="required">Provide this information</span>
                   <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
                 </label>
+                
                 <span class="form-currency">
                   <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="number" name="other-significant-expenses-total" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesTotal" data-ng-pattern="vm.decimalLimit">
                 </span>
+                
               </div>
 
             </div>
@@ -270,6 +276,7 @@
         </div>
 
       </fieldset>
+
 
       <div class="form-group">
 
