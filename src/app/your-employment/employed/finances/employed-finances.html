@@ -140,7 +140,7 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-required="vm.paymentFrequency === 'Fortnightly'" required data-ng-model="vm.fortnightlyPay">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-required="vm.paymentFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPay" data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -162,7 +162,7 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-required="vm.paymentFrequency === 'Monthly'" required data-ng-model="vm.monthlyPay">
+                <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-required="vm.paymentFrequency === 'Monthly'" data-ng-model="vm.monthlyPay" data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
