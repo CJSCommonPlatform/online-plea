@@ -78,7 +78,9 @@
       
       
       <div class="form-group">
+        
         <fieldset data-ng-class="{'error': vm.form['paid'].invalid}">
+          
           <legend id="error-paid" data-ng-messages="vm.form['paid'].error">
             <span class="form-label-bold">How often do you get paid?</span>
             <span class="error-message" data-ng-message="required">Choose an answer</span>
@@ -91,14 +93,17 @@
           <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}">
             
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-pay'].invalid}">
+              
               <label id="error-weekly-pay" for="weekly-pay" data-ng-messages="vm.form['weekly-pay'].error">
                 <span class="form-label">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
+              
               <span class="form-currency">
                 <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay" data-ng-required="vm.paymentFrequency === 'Weekly'" data-ng-model="vm.weeklyPay" data-ng-pattern="vm.decimalLimit">
               </span>
+              
             </div>
             
           </div>
@@ -110,14 +115,17 @@
           <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-pay'].invalid}">
+              
               <label id="error-fortnightly-pay" for="fortnightly-pay" data-ng-messages="vm.form['fortnightly-pay'].error">
                 <span class="form-label">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
+              
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-required="vm.paymentFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPay" data-ng-pattern="vm.decimalLimit">
               </span>
+              
             </div>
             
           </div>
@@ -129,6 +137,7 @@
           <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Monthly'}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['monthly-pay'].invalid}">
+              
               <label id="error-monthly-pay" for="monthly-pay" data-ng-messages="vm.form['monthly-pay'].error">
                 <span class="form-label">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide information</span>
@@ -138,6 +147,7 @@
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-required="vm.paymentFrequency === 'Monthly'" data-ng-model="vm.monthlyPay" data-ng-pattern="vm.decimalLimit">
               </span>
+              
             </div>
             
           </div>
