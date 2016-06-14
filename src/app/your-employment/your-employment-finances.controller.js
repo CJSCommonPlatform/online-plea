@@ -23,11 +23,14 @@
       
       if (!vm.form.invalid) {
         yourEmploymentFinances.updateSessionStorage(vm);
-        state.goNext(vm);
-      }
-      
+        state.go(getNextState());
+      }      
     }
-    
+
+    function getNextState() {
+      return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
+    }
+
   }
   
 })();
