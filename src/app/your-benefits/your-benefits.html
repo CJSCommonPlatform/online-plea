@@ -50,7 +50,7 @@
           <a href=""
              data-focus-event="click"
              data-focus-target="error-fortnightly-benefit-pay"
-             data-scroll-to="error-fornightly-benefit-pay"
+             data-scroll-to="error-fortnightly-benefit-pay"
              data-focus>How much is your fortnightly benefit payment?
           </a>
         </li>
@@ -95,24 +95,24 @@
             <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
 
-          <label class="block-label" for="contributory-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Suport Allowance'}">
-            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Suport Allowance" required data-ng-model="yourBenefits.benefit"> Contributory Employment and Suport Allowance
+          <label class="block-label" for="contributory-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Support Allowance'}">
+            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Support Allowance" required data-ng-model="vm.benefit"> Contributory Employment and Support Allowance
           </label>
           
-          <label class="block-label" for="income-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Suport Allowance'}">
-            <input type="radio" id="income-support-allowance" name="benefit" value="Income-related Employment and Support Allowance" required data-ng-model="yourBenefits.benefit"> Income&ndash;related Employment and Support Allowance
+          <label class="block-label" for="income-support-allowance" data-ng-class="{'selected': vm.benefit === 'Income-related Employment and Support Allowance'}">
+            <input type="radio" id="income-support-allowance" name="benefit" value="Income-related Employment and Support Allowance" required data-ng-model="vm.benefit"> Income&ndash;related Employment and Support Allowance
           </label>
           
           <label class="block-label" for="income-support" data-ng-class="{'selected': vm.benefit === 'Income Support'}">
-            <input type="radio" id="income-support" name="benefit" value="Income Support" required data-ng-model="yourBenefits.benefit"> Income Support
+            <input type="radio" id="income-support" name="benefit" value="Income Support" required data-ng-model="vm.benefit"> Income Support
           </label>
 
           <label class="block-label" for="universal-credit" data-ng-class="{'selected': vm.benefit === 'Universal Credit'}">
-            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" required data-ng-model="yourBenefits.benefit"> Universal Credit
+            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" required data-ng-model="vm.benefit"> Universal Credit
           </label>
 
           <label class="block-label" for="other" data-ng-class="{'selected': vm.benefit === 'Other'}">
-            <input type="radio" id="other" name="benefit" value="Other" required data-ng-model="yourBenefits.benefit"> Other
+            <input type="radio" id="other" name="benefit" value="Other" required data-ng-model="vm.benefit"> Other
           </label>
 
         </fieldset>
@@ -151,8 +151,8 @@
             
           </div>
 
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.benefitFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required data-ng-model="vm.benefitFrequency"> Fortnightly
+          <label class="block-label" for="paid-fortnightly" data-target="fortnightly" data-ng-class="{'selected': vm.benefitFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required data-ng-model="vm.benefitFrequency"> Fortnightly
           </label>
           
           <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Fortnightly'}">
@@ -230,7 +230,7 @@
               <span class="error-message" data-ng-message="required">Provide this information</span>
             </label>
 
-            <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-required="vm.financialProblems === 'Yes'" data-ng-model="yourBenefits.financialProblemsJustification"></textarea>
+            <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-required="vm.financialProblems === 'Yes'" data-ng-model="vm.financialProblemsJustification"></textarea>
 
           </div>
 
@@ -251,7 +251,7 @@
       </div>
 
 
-      <p data-ng-if="yourBenefits.nextState"><a href="" data-ui-sref="{{yourBenefits.nextState}}">Cancel</a></p>
+      <p data-ng-if="vm.nextState"><a href="" data-ui-sref="{{vm.nextState}}">Cancel</a></p>
 
     
     </form>
