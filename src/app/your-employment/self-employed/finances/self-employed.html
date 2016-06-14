@@ -8,6 +8,7 @@
   
 
     <h1 class="heading-xlarge">Your finances</h1>
+    
 
     <div class="error-summary"
       id="error-summary"
@@ -58,7 +59,7 @@
              data-focus-event="click"
              data-focus-target="error-other-pay"
              data-scroll-to="error-other-pay"
-             data-focus>Other pay (after tax)?
+             data-focus>Average weekly take home pay (after tax), in pounds?
           </a>
         </li>
         <li data-ng-show="vm.form['financial-problems'].invalid">
@@ -105,7 +106,7 @@
       
         <fieldset data-ng-class="{'error': vm.form['paid'].invalid}">
 
-          <legend data-ng-messages="vm.form['paid'].error" id="error-paid">
+          <legend id="error-paid" data-ng-messages="vm.form['paid'].error">
             <span class="form-label-bold">How often do you get paid?</span>
             <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
@@ -183,14 +184,17 @@
           <div class="panel panel-border-narrow" id="other" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['other-pay'].invalid}">
+              
               <label id="error-other-pay" for="other-pay" data-ng-messages="vm.form['other-pay'].error">
                 <span class="form-label">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
+              
               <span class="form-currency">
                 <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay" data-ng-required="vm.paymentFrequency === 'Other'" data-ng-model="vm.otherPay" data-ng-pattern="vm.decimalLimit">
               </span>
+              
             </div>
             
           </div>
@@ -221,12 +225,15 @@
           <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['financial-problems-justification'].invalid}">
+              
               <label id="error-financial-problems-justification" for="financial-problems-justification" data-ng-messages="vm.form['financial-problems-justification'].error">
                 <span class="form-label">How would paying a fine cause you financial problems?</span>
                 <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
               </label>
+              
               <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" cols="30" rows="3" data-ng-required="vm.financialProblems === 'Yes'" data-ng-model="vm.financialProblemsJustification"></textarea>
+              
             </div>
 
           </div>
