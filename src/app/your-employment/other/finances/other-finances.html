@@ -67,7 +67,7 @@
              data-focus-event="click"
              data-focus-target="error-other-pay"
              data-scroll-to="error-other-pay"
-             data-focus>Other pay (after tax)?
+             data-focus>Average weekly take home pay (after tax), in pounds?
           </a>
         </li>
         <li data-ng-show="vm.form['pension-credit'].invalid">
@@ -119,6 +119,7 @@
 
 
       <div class="form-group" data-ng-class="{'error': vm.form['source-income'].invalid}">
+        
         <label id="error-source-income"  for="source-income" data-ng-messages="vm.form['source-income'].error">
           <span class="form-label-bold">What&rsquo;s your main source of income?</span>
           <span class="form-hint">Eg, student loan, pension or investment</span>
@@ -211,14 +212,17 @@
           <div class="panel panel-border-narrow" id="other" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['other-pay'].invalid}">
+              
               <label id="error-other-pay" for="other-pay" data-ng-messages="vm.form['other-pay'].error">
                 <span class="form-label">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
+              
               <span class="form-currency">
                 <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay" data-ng-required="vm.paymentFrequency === 'Other'" data-ng-model="vm.otherPay" data-ng-pattern="vm.decimalLimit">
               </span>
+              
             </div>
 
           </div>
