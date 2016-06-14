@@ -149,7 +149,7 @@
         <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
-          <span class="error-message" data-ng-message="required">Provide information</span>
+          <span class="error-message" data-ng-message="required">Provide this information</span>
           <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
         </label>
 
@@ -163,7 +163,7 @@
         <label for="email-address" id="error-email-address">
           <span class="form-label-bold">Email address (optional)</span>
           <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
-          <span class="error-message" data-ng-show="vm.form['email-address'].invalid">Invalid email address</span>
+          <span class="error-message" data-ng-show="vm.form['email-address'].invalid">Email not valid &ndash; enter correct address</span>
         </label>
 
         <input class="form-control form-control-1-3" id="email-address" type="text" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress" data-ng-pattern="vm.emailAddressRegex">
@@ -177,8 +177,8 @@
 
           <legend data-ng-messages="vm.form['dob-day'].error">
             <span class="form-label-bold">Your date of birth</span>
-            <span class="form-hint" id="dob-hint">For example, 31 3 1980</span>
-            <span class="error-message" data-ng-message="required">Provide information</span>
+            <span class="form-hint" id="dob-hint">Eg 31 3 1980</span>
+            <span class="error-message" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="dayOfMonth">Invalid date &ndash; enter correct date</span>
           </legend>
 
@@ -232,8 +232,8 @@
             <label for="national-insurance-number" id="error-national-insurance-number">
               <span class="form-label">National Insurance number</span>
               <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg VO 12 34 56 D</span>
-              <span class="error-message" data-ng-message="required">Provide information</span>
-              <span class="error-message" data-ng-message="pattern">Invalid number &ndash; enter correct number</span>
+              <span class="error-message" data-ng-message="required">Provide this information</span>
+              <span class="error-message" data-ng-message="pattern">Number not valid &ndash; enter correct format, eg VO 12 34 56 D</span>
             </label>
 
             <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ng-pattern="vm.nationalInsuranceNumberRegex" data-ng-model="vm.nationalInsuranceNumber">
