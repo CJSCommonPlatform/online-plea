@@ -10,18 +10,9 @@
   function YourDetailsController(yourDetails, state, $stateParams, formValidation, nationalInsuranceNumberRegex, emailAddressRegex, ukTelephoneNumberRegex) {
     var vm = this;
 
-    // Needs refactoring for reuse (TS)
-    /*vm.nationalInsuranceNumberRegex = (function() {
-      var regexp = new RegExp(nationalInsuranceNumberRegex);
-      return {
-        test: function(value) {
-          if (vm.nationalInsurance === 'No') {
-              return true;
-          }
-          return regexp.test(value);
-        }
-       };
-    })();*/
+    vm.validateNationalInsuranceNumber = function (value) {
+      return vm.nationalInsurance !== 'Yes' || (new RegExp(nationalInsuranceNumberRegex)).test(value);
+    };
 
     vm.emailAddressRegex = emailAddressRegex;
     vm.ukTelephoneNumberRegex = ukTelephoneNumberRegex;

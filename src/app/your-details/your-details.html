@@ -236,7 +236,7 @@
               <span class="error-message" data-ng-message="pattern">Number not valid &ndash; enter correct format, eg VO 12 34 56 D</span>
             </label>
 
-            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ng-pattern="vm.nationalInsuranceNumberRegex" data-ng-model="vm.nationalInsuranceNumber">
+            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ui-validate="{pattern: 'vm.validateNationalInsuranceNumber($value)'}" data-ng-model="vm.nationalInsuranceNumber">
 
           </div>
 
