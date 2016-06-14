@@ -11,7 +11,7 @@
     var vm = this;
 
     // Needs refactoring for reuse (TS)
-    vm.nationalInsuranceNumberRegex = (function() {
+    /*vm.nationalInsuranceNumberRegex = (function() {
       var regexp = new RegExp(nationalInsuranceNumberRegex);
       return {
         test: function(value) {
@@ -21,7 +21,7 @@
           return regexp.test(value);
         }
        };
-    })();
+    })();*/
 
     vm.emailAddressRegex = emailAddressRegex;
     vm.ukTelephoneNumberRegex = ukTelephoneNumberRegex;
