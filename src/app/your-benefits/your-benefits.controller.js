@@ -5,14 +5,15 @@
   angular.module('pleaApp')
     .controller('YourBenefitsController', YourBenefitsController);
 
-  YourBenefitsController.$inject = ['yesNoAnswer', 'yourBenefits', 'state', '$stateParams', 'formValidation'];
+  YourBenefitsController.$inject = ['yesNoAnswer', 'yourBenefits', 'state', '$stateParams', 'formValidation', 'decimalLimit'];
 
-  function YourBenefitsController(yesNoAnswer, yourBenefits, state, $stateParams, formValidation) {
+  function YourBenefitsController(yesNoAnswer, yourBenefits, state, $stateParams, formValidation, decimalLimit) {
     var vm = this;
 
     vm.yesNoAnswer = yesNoAnswer;
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     yourBenefits.updateVm(vm);
 
