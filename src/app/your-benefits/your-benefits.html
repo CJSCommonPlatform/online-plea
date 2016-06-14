@@ -8,148 +8,246 @@
   
 
     <h1 class="heading-xlarge">Your benefits</h1>
+
+
+    <div class="error-summary"
+         id="error-summary"
+         role="group"
+         tabindex="-1"
+         aria-labelledby="error-summary-heading"
+         data-focus-event="click"
+         data-ng-show="vm.form.invalid"
+         data-focus>
+
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['benefit'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-benefit"
+             data-scroll-to="error-benefit"
+             data-focus>Which benefit do you receive?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['paid'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-paid"
+             data-scroll-to="error-paid"
+             data-focus>How often is your benefit paid?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['weekly-benefit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-weekly-benefit-pay"
+             data-scroll-to="error-weekly-benefit-pay"
+             data-focus>How much is your weekly benefit payment?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['fortnightly-benefit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-fortnightly-benefit-pay"
+             data-scroll-to="error-fornightly-benefit-pay"
+             data-focus>How much is your fortnightly benefit payment?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['monthly-benefit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-monthly-benefit-pay"
+             data-scroll-to="error-monthly-benefit-pay"
+             data-focus>How much is your monthly benefit payment?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['financial-problems'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-financial-problems"
+             data-scroll-to="error-financial-problems"
+             data-focus>Would paying a fine cause you serious financial problems?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['financial-problems-justification'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-financial-problems-justification"
+             data-scroll-to="error-financial-problems-justification"
+             data-focus>How would paying a fine cause you financial problems?
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
     
-    
-    <form class="form" method="post" name="form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
       
       
       <div class="form-group">
     
-    
-        <fieldset>
+        <fieldset data-ng-class="{'error': vm.form['benefit'].invalid}">
 
-    
-          <legend>
+          <legend id="error-benefit" data-ng-messages="vm.form['benefit'].error">
             <span class="form-label-bold">Which benefit do you receive?</span>
+            <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
-    
-    
-          <label class="block-label" for="contributory-support-allowance">
-            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Suport Allowance" data-ng-model="yourBenefits.benefit"> Contributory Employment and Suport Allowance
+
+          <label class="block-label" for="contributory-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Suport Allowance'}">
+            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Suport Allowance" required data-ng-model="yourBenefits.benefit"> Contributory Employment and Suport Allowance
           </label>
           
-          
-          <label class="block-label" for="income-support-allowance">
-            <input type="radio" id="income-support-allowance" name="benefit" value="Income&ndash;related Employment and Support Allowance" data-ng-model="yourBenefits.benefit"> Income&ndash;related Employment and Support Allowance
+          <label class="block-label" for="income-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Suport Allowance'}">
+            <input type="radio" id="income-support-allowance" name="benefit" value="Income-related Employment and Support Allowance" required data-ng-model="yourBenefits.benefit"> Income&ndash;related Employment and Support Allowance
           </label>
           
-          
-          <label class="block-label" for="income-support">
-            <input type="radio" id="income-support" name="benefit" value="Income Support" data-ng-model="yourBenefits.benefit"> Income Support
+          <label class="block-label" for="income-support" data-ng-class="{'selected': vm.benefit === 'Income Support'}">
+            <input type="radio" id="income-support" name="benefit" value="Income Support" required data-ng-model="yourBenefits.benefit"> Income Support
           </label>
-          
-          
-          <label class="block-label" for="universal-credit">
-            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" data-ng-model="yourBenefits.benefit"> Universal Credit
+
+          <label class="block-label" for="universal-credit" data-ng-class="{'selected': vm.benefit === 'Universal Credit'}">
+            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" required data-ng-model="yourBenefits.benefit"> Universal Credit
           </label>
-          
-          
-          <label class="block-label" for="other">
-            <input type="radio" id="other" name="benefit" value="Other" data-ng-model="yourBenefits.benefit"> Other
+
+          <label class="block-label" for="other" data-ng-class="{'selected': vm.benefit === 'Other'}">
+            <input type="radio" id="other" name="benefit" value="Other" required data-ng-model="yourBenefits.benefit"> Other
           </label>
-          
-    
+
         </fieldset>
-      
       
       </div>
       
       
       <div class="form-group">
-      
-      
-        <fieldset>
-  
-  
-          <legend>
+
+        <fieldset data-ng-class="{'error': vm.form['paid'].invalid}">
+
+          <legend id="error-paid" data-ng-messages="vm.form['paid'].error">
             <span class="form-label-bold">How often is your benefit paid?</span>
+            <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
-    
-    
-          <label class="block-label" for="paid-weekly" data-target="weekly">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="yourBenefits.benefitFrequency"> Weekly
+
+          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.benefitFrequency === 'Weekly'}">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.benefitFrequency"> Weekly
           </label>
           
-          <div class="panel panel-border-narrow js-hidden" id="weekly">
+          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Weekly'}">
               
-            <div class="form-group">
-              <label class="form-label" for="weekly-benefit-pay">How much is your weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
-              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="weekly-benefit-pay" name="weekly-benefit-pay" data-ng-model="yourBenefits.weeklyBenefitPay"></span>
+            <div class="form-group" data-ng-class="{'error': vm.form['weekly-benefit-pay'].invalid}">
+
+              <label for="weekly-benefit-pay" id="error-weekly-benefit-pay" data-ng-messages="vm.form['weekly-benefit-pay'].error">
+                <span class="form-label">How much is your weekly benefit payment<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" type="text" id="weekly-benefit-pay" name="weekly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Weekly'" data-ng-model="vm.weeklyBenefitPay" data-ng-pattern="vm.decimalLimit">
+              </span>
+
             </div>
             
           </div>
-          
-          
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="yourBenefits.benefitFrequency"> Fortnightly
+
+          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.benefitFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required data-ng-model="vm.benefitFrequency"> Fortnightly
           </label>
           
-          <div class="panel panel-border-narrow js-hidden" id="fortnightly">
+          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Fortnightly'}">
                 
-            <div class="form-group">
-              <label class="form-label" for="fortnightly-benefit-pay">How much is your fortnightly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
-              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="fortnightly-benefit-pay" name="fortnightly-beneift-pay" data-ng-model="yourBenefits.fortnightlyBenefitPay"></span>
+            <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-benefit-pay'].invalid}">
+
+              <label for="fortnightly-benefit-pay" id="error-fortnightly-benefit-pay" data-ng-messages="vm.form['fortnightly-benefit-pay'].error">
+                <span class="form-label">How much is your fortnightly benefit payment<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-benefit-pay" name="fortnightly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyBenefitPay" data-ng-pattern="vm.decimalLimit">
+              </span>
+
             </div>
             
           </div>
           
-          
-          <label class="block-label" for="paid-monthly" data-target="monthly">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="yourBenefits.benefitFrequency"> Monthly
+          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.benefitFrequency === 'Monthly'}">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.benefitFrequency"> Monthly
           </label>
           
-          <div class="panel panel-border-narrow js-hidden" id="monthly">
+          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Monthly'}">
                 
-            <div class="form-group">
-              <label class="form-label" for="monthly-benefit-pay">How much is your monthly benefit payment<span class="visuallyhidden">, in pounds</span>?</label>
-              <span class="form-currency"><input class="form-control form-control-1-4" type="text" id="monthly-benefit-pay" name="monthly-benefit-pay" data-ng-model="yourBenefits.monthlyBenefitPay"></span>
+            <div class="form-group" data-ng-class="{'error': vm.form['monthly-benefit-pay'].invalid}">
+
+              <label for="monthly-benefit-pay" id="error-monthly-benefit-pay" data-ng-messages="vm.form['monthly-benefit-pay'].error">
+                <span class="form-label">How much is your monthly benefit payment<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" type="text" id="monthly-benefit-pay" name="monthly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Monthly'" data-ng-model="vm.monthlyBenefitPay" data-ng-pattern="vm.decimalLimit">
+              </span>
+
             </div>
             
           </div>
-    
     
         </fieldset>
-      
-      
+
       </div>
       
       
       <div class="form-group">
 
-        <fieldset class="inline">
+        <fieldset class="inline" data-ng-class="{'error': vm.form['financial-problems'].invalid}">
 
-          <legend>
+          <legend id="error-financial-problems" data-ng-messages="vm.form['financial-problems'].error">
             <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
             <span class="form-hint" id="financial-problems-hint">For example, you would become homeless</span>
+            <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
 
-          <label class="block-label" for="financial-problems-yes" data-target="financial-problems">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" data-ng-model="yourBenefits.financialProblems"> Yes
+          <label class="block-label" for="financial-problems-yes" data-target="financial-problems" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" required data-ng-model="vm.financialProblems"> Yes
           </label>
 
-          <label class="block-label" for="financial-problems-no">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" data-ng-model="yourBenefits.financialProblems"> No
+          <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required data-ng-model="vm.financialProblems"> No
           </label>
-          
-          <div class="panel panel-border-narrow js-hidden" id="financial-problems">
-
-            <div class="form-group">
-              <label for="financial-problems-justification">
-                <span class="form-label">How would paying a fine cause you financial problems?</span>
-                <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
-              </label>
-              <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-model="yourBenefits.financialProblemsJustification"></textarea>
-            </div>
-
-          </div>
 
         </fieldset>
 
+        <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
+
+          <div class="form-group" data-ng-class="{'error': vm.form['financial-problems-justification'].invalid}">
+
+            <label for="financial-problems-justification" id="error-financial-problems-justification" data-ng-messages="vm.form['financial-problems-justification'].error">
+              <span class="form-label">How would paying a fine cause you financial problems?</span>
+              <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
+              <span class="error-message" data-ng-message="required">Provide this information</span>
+            </label>
+
+            <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-required="vm.financialProblems === 'Yes'" data-ng-model="yourBenefits.financialProblemsJustification"></textarea>
+
+          </div>
+
+        </div>
+
       </div>
-      
-      
+
+
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="yourBenefits.buttonContinue($event)">Save and continue</button>
+
+        <button class="button" type="submit"
+          data-ng-click="vm.buttonContinue($event)"
+          data-focus-event="click"
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+
       </div>
 
 

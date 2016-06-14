@@ -10,7 +10,7 @@
           url: '/your-benefits',
           templateUrl : 'app/your-benefits/your-benefits.html',
           controller: 'YourBenefitsController',
-          controllerAs: 'yourBenefits',
+          controllerAs: 'vm',
           params: {
             nextState: undefined
           },

@@ -5,22 +5,29 @@
   angular.module('pleaApp')
     .controller('YourBenefitsController', YourBenefitsController);
 
-  YourBenefitsController.$inject = ['yesNoAnswer', 'yourBenefits', 'state', '$stateParams'];
+  YourBenefitsController.$inject = ['yesNoAnswer', 'yourBenefits', 'state', '$stateParams', 'formValidation'];
 
-  function YourBenefitsController(yesNoAnswer, yourBenefits, state, $stateParams) {
+  function YourBenefitsController(yesNoAnswer, yourBenefits, state, $stateParams, formValidation) {
     var vm = this;
 
     vm.yesNoAnswer = yesNoAnswer;
-    vm.buttonContinue = continueButtonClicked;
+    vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
 
     yourBenefits.updateVm(vm);
 
-    function continueButtonClicked(event) {
+    // public
+
+    function buttonContinueClicked(event) {
       event.preventDefault();
-      var hasFinancialProblemsChanged = yourBenefits.updateSessionStorage(vm);
-      return updateState(hasFinancialProblemsChanged);
+      formValidation.validate(vm.form);
+      if (!vm.form.invalid) {
+        var hasFinancialProblemsChanged = yourBenefits.updateSessionStorage(vm);
+        return updateState(hasFinancialProblemsChanged);
+      }
     }
+
+    //private
 
     function updateState(hasFinancialProblemsChanged) {
       if (hasFinancialProblemsChanged) {
@@ -33,4 +40,5 @@
     }
 
   }
+
 })();
