@@ -8,6 +8,7 @@
 
 
     <h1 class="heading-xlarge">Your finances</h1>
+    
 
     <div class="error-summary"
      id="error-summary"
@@ -121,7 +122,7 @@
         <label id="error-source-income"  for="source-income" data-ng-messages="vm.form['source-income'].error">
           <span class="form-label-bold">What&rsquo;s your main source of income?</span>
           <span class="form-hint">Eg, student loan, pension or investment</span>
-          <span class="error-message" data-ng-message="required">Provide information</span>
+          <span class="error-message" data-ng-message="required">Provide this information</span>
         </label>
 
         <input class="form-control" id="source-income" type="text" name="source-income" required data-ng-model="vm.sourceIncome">
@@ -147,7 +148,7 @@
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-pay'].invalid}">
               <label id="error-weekly-pay" for="weekly-pay" data-ng-messages="vm.form['weekly-pay'].error">
                 <span class="form-label">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
 
@@ -169,7 +170,7 @@
               
               <label id="error-fortnightly-pay" for="fortnightly-pay" data-ng-messages="vm.form['fortnightly-pay'].error">
                 <span class="form-label">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
               
@@ -191,7 +192,7 @@
               
               <label id="error-monthly-pay" for="monthly-pay" data-ng-messages="vm.form['monthly-pay'].error">
                 <span class="form-label">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
               
@@ -212,7 +213,7 @@
             <div class="form-group" data-ng-class="{'error': vm.form['other-pay'].invalid}">
               <label id="error-other-pay" for="other-pay" data-ng-messages="vm.form['other-pay'].error">
                 <span class="form-label">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
                 <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
               </label>
               <span class="form-currency">
@@ -274,7 +275,7 @@
               <label id="error-financial-problems-justification" for="financial-problems-justification" data-ng-messages="vm.form['financial-problems-justification'].error">
                 <span class="form-label">How would paying a fine cause you financial problems?</span>
                 <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
-                <span class="error-message" data-ng-message="required">Provide information</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
               </label>
               
               <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" data-ng-required="vm.financialProblems === 'Yes'" cols="30" rows="3" data-ng-model="vm.financialProblemsJustification"></textarea>
