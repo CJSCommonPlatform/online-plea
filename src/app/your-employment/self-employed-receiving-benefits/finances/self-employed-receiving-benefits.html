@@ -19,7 +19,7 @@
       data-ng-show="vm.form.invalid"
       data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
       <ul class="error-summary-list">
         <li data-ng-show="vm.form['paid'].invalid">
@@ -106,7 +106,7 @@
               <label for="weekly-pay" id="error-weekly-pay" data-ng-messages="vm.form['weekly-pay'].error">
                 <span class="form-label">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
               
               <span class="form-currency">
@@ -128,7 +128,7 @@
               <label for="fortnightly-pay" id="error-fortnightly-pay" data-ng-messages="vm.form['fortnightly-pay'].error">
                 <span class="form-label">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
 
               <span class="form-currency">
@@ -150,7 +150,7 @@
               <label for="monthly-pay" id="error-monthly-pay" data-ng-messages="vm.form['monthly-pay'].error">
                 <span class="form-label">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
 
               <span class="form-currency">
@@ -171,7 +171,7 @@
               <label id="error-other-pay" for="other-pay" data-ng-messages="vm.form['other-pay'].error">
                 <span class="form-label">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
                 <span class="error-message" data-ng-message="required">Provide information</span>
-                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
               <span class="form-currency">
                 <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay" data-ng-required="vm.paymentFrequency === 'Other'" data-ng-model="vm.otherPay" data-ng-pattern="vm.decimalLimit">

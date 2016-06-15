@@ -19,7 +19,7 @@
          data-ng-show="vm.form.invalid"
          data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
       <ul class="error-summary-list">
         <li data-ng-show="vm.form['employment'].invalid">
@@ -27,7 +27,7 @@
              data-focus-event="click"
              data-focus-target="error-employment"
              data-scroll-to="error-employment"
-             data-focus>Are you?
+             data-focus>Your status
           </a>
         </li>
         <li data-ng-show="vm.form['provide-details'].invalid">
@@ -67,7 +67,7 @@
         <fieldset data-ng-class="{'error': vm.form['employment'].invalid}">
 
           <legend id="error-employment">
-            <span class="form-label-bold">Are you?</span>
+            <span class="form-label-bold">Your status</span>
             <span class="error-message" data-ng-show="vm.form['employment'].invalid">Choose an answer</span>
           </legend>
 
