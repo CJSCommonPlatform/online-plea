@@ -12,6 +12,7 @@
     beforeEach(inject(function($rootScope, _$controller_, _$state_, _yesNoAnswer_) {
       scope = $rootScope.$new();
       vm = _$controller_('YourBenefitsController');
+      vm.form = {};
       vm.yesNoAnswer = _yesNoAnswer_;
       $state = _$state_;
       event = jasmine.createSpyObj('event', ['preventDefault']);
