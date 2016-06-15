@@ -24,7 +24,7 @@
       <ul class="error-summary-list">
         <li data-ng-show="vm.form['correct-details'].invalid">
           <a href="" 
-              ng-click="vm.scrollToAnchor('error-correct-details')"
+              data-ng-click="vm.scrollToAnchor('error-correct-details')"
               data-focus-event="click"
               data-focus-target="error-correct-details"
               data-focus>Are these details correct?
@@ -32,7 +32,7 @@
         </li>
         <li data-ng-show="vm.form['your-update-details'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-your-update-details')"
+              data-ng-click="vm.scrollToAnchor('error-your-update-details')"
               data-focus-event="click"
               data-focus-target="error-your-update-details"
               data-focus>Enter correct details
@@ -40,7 +40,7 @@
         </li>
         <li data-ng-show="vm.form['contact-number'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-contact-number')"
+              data-ng-click="vm.scrollToAnchor('error-contact-number')"
               data-focus-event="click"
               data-focus-target="error-contact-number"
               data-focus>Contact number
@@ -48,7 +48,7 @@
         </li>
         <li data-ng-show="vm.form['email-address'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-email-address')"
+              data-ng-click="vm.scrollToAnchor('error-email-address')"
               data-focus-event="click"
               data-focus-target="error-email-address"
               data-focus>Email address (optional)
@@ -56,7 +56,7 @@
         </li>
         <li data-ng-show="vm.form['dob-day'].invalid || vm.form['dob-month'].invalid || vm.form['dob-year'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-dob-day')"
+              data-ng-click="vm.scrollToAnchor('error-dob')"
               data-focus-event="click"
               data-focus-target="error-dob-day"
               data-focus>Your date of birth
@@ -64,7 +64,7 @@
         </li>
         <li data-ng-show="vm.form['national-insurance'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-national-insurance')"
+              data-ng-click="vm.scrollToAnchor('error-national-insurance')"
               data-focus-event="click"
               data-focus-target="error-national-insurance"
               data-focus>Do you have a National Insurance number?
@@ -72,7 +72,7 @@
         </li>
         <li data-ng-show="vm.form['national-insurance-number'].invalid">
           <a href=""
-              ng-click="vm.scrollToAnchor('error-national-insurance-number')"
+              data-ng-click="vm.scrollToAnchor('error-national-insurance-number')"
               data-focus-event="click"
               data-focus-target="error-national-insurance-number"
               data-focus>National Insurance number
@@ -145,7 +145,6 @@
 
 
       <div class="form-group" data-ng-class="{'error': vm.form['contact-number'].invalid}">
-
         <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
@@ -153,7 +152,11 @@
           <span class="error-message" data-ng-message="pattern">Number not valid &ndash; enter correct number</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-describedby="contact-number-hint" data-ng-model="vm.contactNumber" data-ng-pattern="vm.ukTelephoneNumberRegex">
+        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required
+          data-ng-attr-aria-invalid="{{vm.form['contact-number'].invalid}}"
+          data-ng-attr-aria-described-by="{{vm.form['contact-number'].invalid ? 'error-contact-number' : 'contact-number-hint'}}"
+          data-ng-model="vm.contactNumber" 
+          data-ng-pattern="vm.ukTelephoneNumberRegex">
 
       </div>
       
@@ -175,7 +178,7 @@
 
         <fieldset>
 
-          <legend data-ng-messages="vm.form['dob-day'].error">
+          <legend id="error-dob" data-ng-messages="vm.form['dob-day'].error">
             <span class="form-label-bold">Your date of birth</span>
             <span class="form-hint" id="dob-hint">Eg 31 3 1980</span>
             <span class="error-message" data-ng-message="required">Provide this information</span>
@@ -189,7 +192,7 @@
           <div class="form-date" data-form-date="{'day': 'dob-day', 'month': 'dob-month', 'year': 'dob-year'}">
 
             <div class="form-group form-group-day">
-              <label for="dob-day" id="error-dob-day">Day</label>
+              <label for="dob-day">Day</label>
               <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" required data-ng-model="vm.dateOfBirthDay">
             </div>
 
