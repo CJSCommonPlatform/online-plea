@@ -5,13 +5,14 @@
     .module('pleaApp')
     .factory('state', state);
 
-  state.$inject = ['$state', 'lodash'];
+  state.$inject = ['$location', '$anchorScroll', '$state', 'lodash'];
 
-  function state($state, lodash) {
+  function state($location, $anchorScroll, $state, lodash) {
     var service = {
       getNext: getNext,
       goNext: goNext,
-      go: go
+      go: go,
+      scrollToAnchor: scrollToAnchor
     };
 
     return service;
@@ -30,6 +31,11 @@
         return _getNextGivenViewModel(viewModel);
       }
       return $state.current.data.nextState;
+    }
+
+    function scrollToAnchor(target) {
+      $location.hash(target);
+      $anchorScroll();
     }
 
     function _getNextGivenViewModel(viewModel) {

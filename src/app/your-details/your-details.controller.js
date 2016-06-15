@@ -19,6 +19,7 @@
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
     vm.getNextState = getNextState;
+    vm.scrollToAnchor = state.scrollToAnchor;
 
     yourDetails.updateVm(vm);
 
