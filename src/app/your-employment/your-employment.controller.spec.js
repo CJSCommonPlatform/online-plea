@@ -15,7 +15,7 @@
       scope = $rootScope.$new();
       $state = _$state_;
       employmentStatus = _employmentStatus_;
-      vm = _$controller_('EmploymentController', { $scope: scope, $state: $state, employmentStatus: employmentStatus });
+      vm = _$controller_('EmploymentController');
       vm.form = {};
 
       event = jasmine.createSpyObj('event', ['preventDefault']);
