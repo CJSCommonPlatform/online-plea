@@ -9,63 +9,135 @@
 
     <h1 class="heading-xlarge">Your Pension Credit</h1>
 
+    <div class="error-summary"
+       id="error-summary"
+       role="group"
+       tabindex="-1"
+       aria-labelledby="error-summary-heading"
+       data-focus-event="click"
+       data-ng-show="vm.form.invalid"
+       data-focus>
 
-    <form class="form" method="post" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
+
+      <ul class="error-summary-list">
+        <li data-ng-show="vm.form['paid'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-paid"
+             data-scroll-to="error-paid"
+             data-focus>How often is your Pension Credit paid?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['weekly-credit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-weekly-credit-pay"
+             data-scroll-to="error-weekly-credit-pay"
+             data-focus>Weekly Pension Credit payment?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['fortnightly-credit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-fortnightly-credit-pay"
+             data-scroll-to="error-fortnightly-credit-pay"
+             data-focus>Fortnightly Pension Credit payment?
+          </a>
+        </li>
+        <li data-ng-show="vm.form['monthly-credit-pay'].invalid">
+          <a href=""
+             data-focus-event="click"
+             data-focus-target="error-monthly-credit-pay"
+             data-scroll-to="error-monthly-credit-pay"
+             data-focus>Monthly Pension Credit payment?
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
       <div class="form-group">
 
 
-        <fieldset>
+        <fieldset data-ng-class="{'error': vm.form['paid'].invalid}">
 
-          <legend>
+          <legend id="error-paid" data-ng-messages="vm.form['paid'].error">
             <span class="form-label-bold">How often is your Pension Credit paid?</span>
+            <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" data-ng-model="vm.pensionCreditFrequency"> Weekly
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.pensionCreditFrequency"> Weekly
           </label>
 
-            <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Weekly'}">
-
-              <div class="form-group">
-                <label class="form-label" for="weekly-credit-pay">Weekly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="weekly-credit-pay" name="weekly-credit-pay" data-ng-model="vm.weeklyPensionCreditPay">
-                </span>
-              </div>
-
+          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Weekly'}">
+            
+            <div class="form-group" data-ng-class="{'error': vm.form['weekly-credit-pay'].invalid}">
+              
+              <label id="error-weekly-credit-pay" for="weekly-credit-pay" data-ng-messages="vm.form['weekly-credit-pay'].error">
+                <span class="form-label">Weekly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+              
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" id="weekly-credit-pay" type="text" name="weekly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Weekly'" data-ng-model="vm.weeklyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+              </span>
+              
             </div>
+            
+          </div>
+
 
           <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Fortnightly'}">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.pensionCreditFrequency"> Fortnightly
           </label>
 
-            <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Fortnightly'}">
 
-              <div class="form-group">
-                <label class="form-label" for="fortnightly-credit-pay">Fortnightly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay" data-ng-model="vm.fortnightlyPensionCreditPay">
-                </span>
-              </div>
+          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Fortnightly'}">
+              
+            <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-credit-pay'].invalid}">
+
+              <label for="fortnightly-credit-pay" id="error-fortnightly-credit-pay" data-ng-messages="vm.form['fortnightly-credit-pay'].error">
+                <span class="form-label">Fortnightly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+              </span>
 
             </div>
+
+          </div>
+
 
           <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" data-ng-model="vm.pensionCreditFrequency"> Monthly
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.pensionCreditFrequency"> Monthly
           </label>
 
-            <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Monthly'}">
-
-              <div class="form-group">
-                <label class="form-label" for="monthly-credit-pay">Monthly Pension Credit payment<span class="visuallyhidden">, in pounds</span>?</label>
-                <span class="form-currency">
-                  <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay" data-ng-model="vm.monthlyPensionCreditPay">
-                </span>
-              </div>
-
+          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Monthly'}">
+              
+            <div class="form-group" data-ng-class="{'error': vm.form['monthly-credit-pay'].invalid}">
+              
+              <label id="error-monthly-credit-pay" for="monthly-credit-pay" data-ng-messages="vm.form['monthly-credit-pay'].error">
+                <span class="form-label">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
+                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" data-ng-message="pattern">Invalid amount &ndash; enter correct amount</span>
+              </label>
+              
+              <span class="form-currency">
+                <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Monthly'" data-ng-model="vm.monthlyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+              </span>
+              
             </div>
+            
+          </div>
 
 
         </fieldset>
@@ -75,7 +147,14 @@
 
 
       <div class="form-group">
-        <button class="button" type="submit" data-ng-click="vm.buttonContinue($event)">Continue and save</button>
+        
+        <button class="button" type="submit" 
+          data-ng-click="vm.buttonContinue($event)" 
+          data-focus-event="click" 
+          data-focus-target="error-summary"
+          data-focus>Save and continue
+        </button>
+        
       </div>
 
 

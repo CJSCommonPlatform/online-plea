@@ -5,22 +5,28 @@
   angular.module('pleaApp')
     .controller('YourPensionCreditController', YourPensionCreditController);
 
-  YourPensionCreditController.$inject = ['yesNoAnswer', 'yourPensionCredit', 'state', '$stateParams'];
+  YourPensionCreditController.$inject = ['yesNoAnswer', 'yourPensionCredit', 'state', '$stateParams', 'formValidation', 'decimalLimit'];
 
-  function YourPensionCreditController(yesNoAnswer, yourPensionCredit, state, $stateParams) {
+  function YourPensionCreditController(yesNoAnswer, yourPensionCredit, state, $stateParams, formValidation, decimalLimit) {
     var vm = this;
 
     vm.yesNoAnswer = yesNoAnswer;
-    vm.buttonContinue = continueButtonClicked;
+    vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.decimalLimit = decimalLimit;
 
     yourPensionCredit.updateVm(vm);
 
-    function continueButtonClicked(event) {
+    function buttonContinueClicked(event) {
       event.preventDefault();
-      yourPensionCredit.updateSessionStorage(vm);
-      state.go(getNextState(vm));
+      formValidation.validate(vm.form);
+
+      if (!vm.form.invalid) {
+        yourPensionCredit.updateSessionStorage(vm);
+        state.go(getNextState(vm));
+      }
     }
+
 
     function getNextState(vm) {
       return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
