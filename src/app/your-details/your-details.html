@@ -217,12 +217,12 @@
 
         <fieldset class="inline" data-ng-class="{'error': vm.form['national-insurance'].invalid}">
   
-          <legend>
+          <legend id="error-national-insurance">
             <span class="form-label-bold">Do you have a National Insurance number?</span>
             <span class="error-message" data-ng-show="vm.form['national-insurance'].invalid">Choose an answer</span>
           </legend>
   
-          <label class="block-label" for="national-insurance-yes" id="error-national-insurance" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
+          <label class="block-label" for="national-insurance-yes" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
             <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" required data-ng-model="vm.nationalInsurance"> Yes
           </label>
   
