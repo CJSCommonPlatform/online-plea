@@ -16,27 +16,25 @@
          tabindex="-1"
          aria-labelledby="error-summary-heading"
          data-focus-event="click"
-         data-ng-show="vm.form.$submitted && vm.form.$myinvalid"
+         data-ng-show="vm.form.invalid"
          data-focus>
 
       <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
       <ul class="error-summary-list">
-        <li data-ng-show="vm.form['case-unique-reference-number'].$myinvalid">
+        <li data-ng-show="vm.form['case-unique-reference-number'].invalid">
           <a href=""
-             data-ng-click="enterCaseUniqueReferenceNumberLinkClicked()"
+             data-ng-click="vm.scrollToAnchor('error-case-unique-reference-number')"
              data-focus-event="click"
              data-focus-target="error-case-unique-reference-number"
-             data-scroll-to="error-case-unique-reference-number"
              data-focus>Case or Unique Reference Number
           </a>
         </li>
-        <li data-ng-show="vm.form['case-postcode'].$myinvalid">
+        <li data-ng-show="vm.form['case-postcode'].invalid">
           <a href="" 
-             data-ng-click="enterCasePostcodeLinkClicked()"
+             data-ng-click="vm.scrollToAnchor('error-case-postcode')"
              data-focus-event="click"
              data-focus-target="error-case-postcode"
-             data-scroll-to="error-case-postcode"
              data-focus>Your postcode
           </a>
         </li>
@@ -48,32 +46,34 @@
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
 
-      <div class="form-group" data-ng-class="{'error': vm.caseUniqueReferenceNumberAriaInvalid}">
+      <div class="form-group" data-ng-class="{'error': vm.form['case-unique-reference-number'].invalid}">
 
         <label for="case-unique-reference-number" id="error-case-unique-reference-number">
           <span class="form-label-bold">Case or Unique Reference Number</span>
           <span class="form-hint" id="case-unique-reference-number-hint">Find this on your notice</span>
-          <span class="error-message" id="error-message-case-unique-reference-number" data-ng-show="vm.caseUniqueReferenceNumberAriaInvalid">Provide this information</span>
+          <span class="error-message" id="error-message-case-unique-reference-number" data-ng-show="vm.form['case-unique-reference-number'].invalid">Provide this information</span>
         </label>
 
         <input class="form-control" type="text" id="case-unique-reference-number" name="case-unique-reference-number" required
-          data-ng-attr-aria-invalid="{{vm.caseUniqueReferenceNumberAriaInvalid}}"
-          data-ng-attr-aria-describedby="{{vm.caseUniqueReferenceNumberAriaDescribedBy}}"
+          aria-required="true"
+          data-ng-attr-aria-invalid="{{vm.form['case-unique-reference-number'].invalid ? 'true' : undefined}}"
+          data-ng-attr-aria-describedby="{{vm.form['case-unique-reference-number'].invalid ? 'error-message-case-postcode' : 'form-hint'}}"
           data-ng-model="vm.caseUniqueReferenceNumber">
 
       </div>
 
 
-      <div class="form-group" data-ng-class="{'error': vm.casePostcodeAriaInvalid}">
+      <div class="form-group" data-ng-class="{'error': vm.form['case-postcode'].invalid}">
 
         <label for="case-postcode" id="error-case-postcode">
           <span class="form-label-bold">Your postcode</span>
-          <span class="error-message" id="error-message-case-postcode" data-ng-show="vm.casePostcodeAriaInvalid">Provide this information</span>
+          <span class="error-message" id="error-message-case-postcode" data-ng-show="vm.form['case-postcode'].invalid">Provide this information</span>
         </label>
 
         <input class="form-control form-control-1-4" type="text" id="case-postcode" name="case-postcode" required
-          data-ng-attr-aria-invalid="{{vm.casePostcodeAriaInvalid}}"
-          data-ng-attr-aria-describedby="{{vm.casePostcodeAriaInvalid ? 'error-message-case-postcode' : undefined}}"
+          aria-required="true"
+          data-ng-attr-aria-invalid="{{vm.form['case-postcode'].invalid ? 'true' : undefined}}"
+          data-ng-attr-aria-describedby="{{vm.form['case-postcode'].invalid ? 'error-message-case-postcode' : undefined}}"
           data-ng-model="vm.casePostcode">
 
       </div>
@@ -84,7 +84,7 @@
           data-ng-click="vm.continueButtonClicked($event)" 
           data-focus-event="click" 
           data-focus-target="error-summary"
-          data-focus>{{vm.buttonContinueLabel}}
+          data-focus>Save and continue
         </button>
       </div>
 

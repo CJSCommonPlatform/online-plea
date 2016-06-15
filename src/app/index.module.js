@@ -7,7 +7,6 @@
       'ngCookies',
       'ngSanitize',
       'ngMessages',
-      'ngAria',
       'restangular',
       'ui.router',
       'ui.validate',
