@@ -14,6 +14,7 @@
     vm.yesNoAnswer = yesNoAnswer;
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.scrollToAnchor = state.scrollToAnchor;
 
     yourPlea.updateVm(vm);
 
