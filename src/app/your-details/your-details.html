@@ -110,15 +110,21 @@
 
           <legend id="error-correct-details">
             <span class="form-label-bold">Are these details correct?</span>
-            <span class="error-message" data-ng-show="vm.form['correct-details'].invalid">Choose an answer</span>
+            <span class="error-message" id="error-message-correct-details" data-ng-show="vm.form['correct-details'].invalid">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="correct-details-yes" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
-            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required data-ng-model="vm.detailsCorrect"> Yes
+            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['correct-details'].invalid ? 'error-message-correct-details' : undefined}}"
+                   data-ng-model="vm.detailsCorrect"> Yes
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['correct-details'].invalid ? 'error-message-correct-details' : undefined}}"
+                   data-ng-model="vm.detailsCorrect"> No
           </label>
 
         </fieldset>
@@ -129,10 +135,15 @@
 
             <label for="your-update-details" id="error-your-update-details">
               <span class="form-label">Enter correct details</span>
-              <span class="error-message" data-ng-show="vm.form['your-update-details'].invalid">Provide this information</span>
+              <span class="error-message" id="error-message-your-update-details" data-ng-show="vm.form['your-update-details'].invalid">Provide this information</span>
             </label>
 
-            <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3" data-ng-required="vm.detailsCorrect==='No'" data-ng-model="vm.yourUpdateDetails"></textarea>
+            <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3"
+                      data-ng-attr-aria-invalid="{{vm.form['your-update-details'].invalid ? 'true' : undefined}}"
+                      data-ng-attr-aria-describedby="{{vm.form['your-update-details'].invalid ? 'error-message-your-update-details' : undefined}}"
+                      data-ng-attr-aria-required="vm.detailsCorrect==='No'"
+                      data-ng-required="vm.detailsCorrect==='No'"
+                      data-ng-model="vm.yourUpdateDetails"></textarea>
 
           </div>
 
@@ -148,15 +159,16 @@
         <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
-          <span class="error-message" data-ng-message="required">Provide this information</span>
-          <span class="error-message" data-ng-message="pattern">Number not valid &ndash; enter correct number</span>
+          <!-- Two elements with same id are ok here as only one will be present in the DOM at a time -->
+          <span class="error-message" id="error-message-contact-number" data-ng-message="required">Provide this information</span>
+          <span class="error-message" id="error-message-contact-number" data-ng-message="pattern">Number not valid &ndash; enter correct number</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required
-          data-ng-attr-aria-invalid="{{vm.form['contact-number'].invalid}}"
-          data-ng-attr-aria-described-by="{{vm.form['contact-number'].invalid ? 'error-contact-number' : 'contact-number-hint'}}"
-          data-ng-model="vm.contactNumber" 
-          data-ng-pattern="vm.ukTelephoneNumberRegex">
+        <input class="form-control form-control-1-3" id="contact-number" type="tel" name="contact-number" required aria-required="true"
+               data-ng-attr-aria-invalid="{{vm.form['contact-number'].invalid ? 'true' : undefined}}}"
+               data-ng-attr-aria-described-by="{{vm.form['contact-number'].invalid ? 'error-message-contact-number' : 'contact-number-hint'}}"
+               data-ng-pattern="vm.ukTelephoneNumberRegex"
+               data-ng-model="vm.contactNumber">
 
       </div>
       
@@ -166,10 +178,14 @@
         <label for="email-address" id="error-email-address">
           <span class="form-label-bold">Email address (optional)</span>
           <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
-          <span class="error-message" data-ng-show="vm.form['email-address'].invalid">Email not valid &ndash; enter correct address</span>
+          <span class="error-message" id="error-message-email-address" data-ng-show="vm.form['email-address'].invalid">Email not valid &ndash; enter correct address</span>
         </label>
 
-        <input class="form-control form-control-1-3" id="email-address" type="text" name="email-address" aria-describedby="email-address-hint" data-ng-model="vm.emailAddress" data-ng-pattern="vm.emailAddressRegex">
+        <input class="form-control form-control-1-3" id="email-address" type="text" name="email-address"
+               data-ng-attr-aria-invalid="{{vm.form['email-address'].invalid ? 'true' : undefined}}}"
+               data-ng-attr-aria-described-by="{{vm.form['email-address'].invalid ? 'error-message-email-address' : 'email-address-hint'}}"
+               data-ng-pattern="vm.emailAddressRegex"
+               data-ng-model="vm.emailAddress">
         
       </div>
 
@@ -181,7 +197,7 @@
           <legend id="error-dob" data-ng-messages="vm.form['dob-day'].error">
             <span class="form-label-bold">Your date of birth</span>
             <span class="form-hint" id="dob-hint">Eg 31 3 1980</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-dob" data-ng-message="required">Provide this information</span>
             <span class="error-message" data-ng-message="dayOfMonth">Date not recognised &ndash; use this format, eg 19 8 2016</span>
             <span class="error-message" data-ng-message="">Date can&rsquo;t be in future &ndash; enter valid date</span>
             <span class="error-message" data-ng-message="">Date can&rsquo;t be in past &ndash; enter valid date</span>
@@ -193,17 +209,26 @@
 
             <div class="form-group form-group-day">
               <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" aria-describedby="dob-hint" required data-ng-model="vm.dateOfBirthDay">
+              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
+                     data-ng-attr-aria-described-by="{{vm.form['dob-day'].invalid ? 'error-message-dob' : 'dob-hint'}}"
+                     data-ng-model="vm.dateOfBirthDay">
             </div>
 
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required data-ng-model="vm.dateOfBirthMonth">
+              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['dob-month'].invalid ? 'true' : undefined}}"
+                     data-ng-attr-aria-described-by="{{vm.form['dob-month'].invalid ? 'error-message-dob' : 'dob-hint'}}"
+                     data-ng-model="vm.dateOfBirthMonth">
             </div>
 
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required data-ng-model="vm.dateOfBirthYear">
+              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['dob-year'].invalid ? 'true' : undefined}}"
+                     data-ng-attr-aria-described-by="{{vm.form['dob-year'].invalid ? 'error-message-dob' : 'dob-hint'}}"
+                     data-ng-model="vm.dateOfBirthYear">
             </div>
             
           </div>
@@ -219,15 +244,21 @@
   
           <legend id="error-national-insurance">
             <span class="form-label-bold">Do you have a National Insurance number?</span>
-            <span class="error-message" data-ng-show="vm.form['national-insurance'].invalid">Choose an answer</span>
+            <span class="error-message" id="error-message-national-insurance" data-ng-show="vm.form['national-insurance'].invalid">Choose an answer</span>
           </legend>
   
           <label class="block-label" for="national-insurance-yes" data-target="national-insurance" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
-            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" required data-ng-model="vm.nationalInsurance"> Yes
+            <input id="national-insurance-yes" type="radio" name="national-insurance" value="Yes" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['national-insurance'].invalid ? 'error-message-national-insurance' : undefined}}"
+                   data-ng-model="vm.nationalInsurance"> Yes
           </label>
   
           <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsurance === 'No'}">
-            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required data-ng-model="vm.nationalInsurance"> No
+            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['national-insurance'].invalid ? 'error-message-national-insurance' : undefined}}"
+                   data-ng-model="vm.nationalInsurance"> No
           </label>
   
         </fieldset>
@@ -239,11 +270,17 @@
             <label for="national-insurance-number" id="error-national-insurance-number">
               <span class="form-label">National Insurance number</span>
               <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return, eg VO 12 34 56 D</span>
-              <span class="error-message" data-ng-message="required">Provide this information</span>
-              <span class="error-message" data-ng-message="pattern">Number not valid &ndash; enter correct format, eg VO 12 34 56 D</span>
+              <span class="error-message" id="error-message-national-insurance-number" data-ng-message="required">Provide this information</span>
+              <span class="error-message" id="error-message-national-insurance-number" data-ng-message="pattern">Number not valid &ndash; enter correct format, eg VO 12 34 56 D</span>
             </label>
 
-            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number" aria-describedby="national-insurance-number-hint" data-ng-required="vm.nationalInsurance === 'Yes'" data-ui-validate="{pattern: 'vm.validateNationalInsuranceNumber($value)'}" data-ng-model="vm.nationalInsuranceNumber">
+            <input class="form-control" id="national-insurance-number" type="text" name="national-insurance-number"
+                   data-ng-attr-aria-invalid="{{vm.form['national-insurance-number'].invalid ? 'true' : undefined}}}"
+                   data-ng-attr-aria-described-by="{{vm.form['national-insurance-number'].invalid ? 'error-message-national-insurance-number' : 'national-insurance-number-hint'}}"
+                   data-ng-attr-aria-required="vm.nationalInsurance === 'Yes'"
+                   data-ng-required="vm.nationalInsurance === 'Yes'"
+                   data-ui-validate="{pattern: 'vm.validateNationalInsuranceNumber($value)'}"
+                   data-ng-model="vm.nationalInsuranceNumber">
 
           </div>
 
