@@ -121,10 +121,7 @@
           </label>
 
           <label class="block-label" for="correct-details-no" data-target="correct-details" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true"
-                   data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-describedby="{{vm.form['correct-details'].invalid ? 'error-message-correct-details' : undefined}}"
-                   data-ng-model="vm.detailsCorrect"> No
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" required data-ng-model="vm.detailsCorrect"> No
           </label>
 
         </fieldset>
@@ -159,7 +156,6 @@
         <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
           <span class="form-label-bold">Contact number</span>
           <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
-          <!-- Two elements with same id are ok here as only one will be present in the DOM at a time -->
           <span class="error-message" id="error-message-contact-number" data-ng-message="required">Provide this information</span>
           <span class="error-message" id="error-message-contact-number" data-ng-message="pattern">Number not valid &ndash; enter correct number</span>
         </label>
@@ -217,18 +213,12 @@
 
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required aria-required="true"
-                     data-ng-attr-aria-invalid="{{vm.form['dob-month'].invalid ? 'true' : undefined}}"
-                     data-ng-attr-aria-described-by="{{vm.form['dob-month'].invalid ? 'error-message-dob' : 'dob-hint'}}"
-                     data-ng-model="vm.dateOfBirthMonth">
+              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required data-ng-model="vm.dateOfBirthMonth">
             </div>
 
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required aria-required="true"
-                     data-ng-attr-aria-invalid="{{vm.form['dob-year'].invalid ? 'true' : undefined}}"
-                     data-ng-attr-aria-described-by="{{vm.form['dob-year'].invalid ? 'error-message-dob' : 'dob-hint'}}"
-                     data-ng-model="vm.dateOfBirthYear">
+              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required data-ng-model="vm.dateOfBirthYear">
             </div>
             
           </div>
@@ -255,10 +245,7 @@
           </label>
   
           <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsurance === 'No'}">
-            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required aria-required="true"
-                   data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-describedby="{{vm.form['national-insurance'].invalid ? 'error-message-national-insurance' : undefined}}"
-                   data-ng-model="vm.nationalInsurance"> No
+            <input id="national-insurance-no" type="radio" name="national-insurance" value="No" required data-ng-model="vm.nationalInsurance"> No
           </label>
   
         </fieldset>
