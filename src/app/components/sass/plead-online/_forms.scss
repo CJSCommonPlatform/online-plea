@@ -27,9 +27,15 @@ $module: "form";
       content: "\00a3";
       display: inline-block;
       font-weight: bold;
-      position: absolute; left: em(12); top: em(7);
+      position: absolute;
       text-align: center;
       vertical-align: middle;
+      left: em(12); top: 50%;
+      
+      /* IE9 Support and above */
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
     }
     
   }
