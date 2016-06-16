@@ -44,3 +44,14 @@ fieldset legend {
   float: left;
   width: 100%;
 }
+
+
+// Due to error on fieldset the legend was being hidden behind the block element (quick fix to override problem)
+
+@include media (mobile) {
+
+  .inline .block-label { 
+    clear: left;
+  }
+  
+}
