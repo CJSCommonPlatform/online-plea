@@ -32,6 +32,7 @@
     function getNextState(vm) {
       return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
     }
+
   }
 
 })();
