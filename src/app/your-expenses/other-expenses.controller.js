@@ -13,6 +13,7 @@
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
     vm.decimalLimit = decimalLimit;
+    vm.scrollToAnchor = state.scrollToAnchor;
 
     otherExpenses.updateVm(vm);
 
