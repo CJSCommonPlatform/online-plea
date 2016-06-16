@@ -13,6 +13,7 @@
     vm.employmentStatus = employmentStatus;
     vm.buttonContinue = buttonContinueClicked;
     vm.nextState = $stateParams.nextState;
+    vm.scrollToAnchor = state.scrollToAnchor;
 
     yourEmploymentStorage.updateVm(vm);
 
