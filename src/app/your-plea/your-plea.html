@@ -191,15 +191,22 @@
 
               <legend id="error-court">
                 <span class="form-label-bold">What would you like to do?</span>
-                <span class="error-message" data-ng-show="vm.form['court'].invalid">Choose an answer</span>
+                <span class="error-message" id="error-message-court" data-ng-show="vm.form['court'].invalid">Choose an answer</span>
               </legend>
 
               <label class="block-label" for="court-yes" data-ng-class="{'selected': vm.court === 'Yes'}">
-                <input type="radio" id="court-yes" name="court" value="Yes" data-ng-required="vm.plea === 'Guilty'" data-ng-model="vm.court"> Plead guilty online (no need to attend court)
+                <input type="radio" id="court-yes" name="court" value="Yes"
+                       data-ng-attr-aria-invalid="{{vm.form['court'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['court'].invalid ? 'error-message-court' : undefined}}"
+                       data-ng-attr-aria-required="vm.plea === 'Guilty'"
+                       data-ng-required="vm.plea === 'Guilty'"
+                       data-ng-model="vm.court"> Plead guilty online (no need to attend court)
               </label>
 
               <label class="block-label" for="court-no" data-ng-class="{'selected': vm.court === 'No'}">
-                <input type="radio" id="court-no" name="court" value="No" data-ng-required="vm.plea === 'Guilty'" data-ng-model="vm.court"> Attend court to plead guilty
+                <input type="radio" id="court-no" name="court" value="No"
+                       data-ng-required="vm.plea === 'Guilty'"
+                       data-ng-model="vm.court"> Attend court to plead guilty
               </label>
 
             </fieldset>
@@ -228,10 +235,15 @@
             
             <label for="not-guilty-because" id="error-not-guilty-because">
               <span class="form-label-bold">Why do you believe you&rsquo;re not guilty?</span>
-              <span class="error-message" data-ng-show="vm.form['not-guilty-because'].invalid">Provide information</span>
+              <span class="error-message" id="error-message-not-guilty-because" data-ng-show="vm.form['not-guilty-because'].invalid">Provide information</span>
             </label>
             
-            <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="3" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.notGuiltyBecause"></textarea>
+            <textarea class="form-control form-control-textarea" id="not-guilty-because" name="not-guilty-because" cols="30" rows="3"
+                      data-ng-attr-aria-invalid="{{vm.form['not-guilty-because'].invalid ? 'true' : undefined}}"
+                      data-ng-attr-aria-describedby="{{vm.form['not-guilty-because'].invalid ? 'error-message-not-guilty-because' : undefined}}"
+                      data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                      data-ng-required="vm.plea === 'Not guilty'"
+                      data-ng-model="vm.notGuiltyBecause"></textarea>
             
           </div>
 
@@ -241,15 +253,22 @@
   
               <legend id="error-interpreter">
                 <span class="form-label-bold">Do you need an interpreter in court?</span>
-                <span class="error-message" data-ng-show="vm.form['interpreter'].invalid">Choose an answer</span>
+                <span class="error-message" id="error-message-interpreter" data-ng-show="vm.form['interpreter'].invalid">Choose an answer</span>
               </legend>
   
               <label class="block-label" for="interpreter-yes" data-target="interpreter" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
-                <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.interpreter"> Yes
+                <input type="radio" id="interpreter-yes" name="interpreter" value="Yes"
+                       data-ng-attr-aria-invalid="{{vm.form['interpreter'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['interpreter'].invalid ? 'error-message-interpreter' : undefined}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.interpreter"> Yes
               </label>
   
               <label class="block-label" for="interpreter-no" data-ng-class="{'selected': vm.interpreter === 'No'}">
-                <input type="radio" id="interpreter-no" name="interpreter" value="No" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.interpreter"> No
+                <input type="radio" id="interpreter-no" name="interpreter" value="No"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.interpreter"> No
               </label>
   
             </fieldset>
@@ -260,10 +279,15 @@
                 
                 <label for="interpreter-language" id="error-interpreter-language">
                   <span class="form-label">Which language? (Including sign language)</span>
-                  <span class="error-message" data-ng-show="vm.form['interpreter-language'].invalid">Provide this information</span>
+                  <span class="error-message" id="error-message-interpreter-language" data-ng-show="vm.form['interpreter-language'].invalid">Provide this information</span>
                 </label>
                 
-                <input class="form-control" type="text" id="interpreter-language" name="interpreter-language" data-ng-required="vm.interpreter === 'Yes'" data-ng-model="vm.interpreterLanguage">
+                <input class="form-control" type="text" id="interpreter-language" name="interpreter-language"
+                       data-ng-attr-aria-invalid="{{vm.form['interpreter-language'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['interpreter-language'].invalid ? 'error-message-interpreter-language' : undefined}}"
+                       data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.interpreter === 'Yes'"
+                       data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.interpreter === 'Yes'"
+                       data-ng-model="vm.interpreterLanguage">
                 
               </div>
               
@@ -277,11 +301,16 @@
 
               <legend id="error-evidence">
                 <span class="form-label-bold">Do you disagree with evidence in a witness statement sent to you?</span>
-                <span class="error-message" data-ng-show="vm.form['evidence'].invalid">Choose an answer</span>
+                <span class="error-message" id="error-message-evidence" data-ng-show="vm.form['evidence'].invalid">Choose an answer</span>
               </legend>
               
               <label class="block-label" for="evidence-yes" data-target="evidence" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'Yes'}">
-                <input type="radio" id="evidence-yes" name="evidence" value="Yes" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.prosecutorWitnessDisagree"> Yes
+                <input type="radio" id="evidence-yes" name="evidence" value="Yes"
+                       data-ng-attr-aria-invalid="{{vm.form['evidence'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['evidence'].invalid ? 'error-message-evidence' : undefined}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.prosecutorWitnessDisagree"> Yes
               </label>
 
               <label class="block-label" for="evidence-no" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'No'}">
@@ -296,10 +325,15 @@
                 
                 <label for="witness-name" id="error-witness-name">
                   <span class="form-label">Enter the name of the witness and what you disagree with</span>
-                  <span class="error-message" data-ng-show="vm.form['witness-name'].invalid">Provide this information</span>
+                  <span class="error-message" id="error-message-witness-name" data-ng-show="vm.form['witness-name'].invalid">Provide this information</span>
                 </label>
                 
-                <textarea class="form-control form-control-textarea" id="witness-name" name="witness-name" cols="30" rows="3" data-ng-required="vm.prosecutorWitnessDisagree === 'Yes'" data-ng-model="vm.prosecutorWitnessDetails"></textarea>
+                <textarea class="form-control form-control-textarea" id="witness-name" name="witness-name" cols="30" rows="3"
+                          data-ng-attr-aria-invalid="{{vm.form['witness-name'].invalid ? 'true' : undefined}}"
+                          data-ng-attr-aria-describedby="{{vm.form['witness-name'].invalid ? 'error-message-witness-name' : undefined}}"
+                          data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.prosecutorWitnessDisagree === 'Yes'"
+                          data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.prosecutorWitnessDisagree === 'Yes'"
+                          data-ng-model="vm.prosecutorWitnessDetails"></textarea>
                 
               </div>
 
@@ -314,11 +348,16 @@
               <legend id="error-witness">
                 <span class="form-label-bold">Do you want to call a witness?</span>
                 <span class="form-hint" id="witness-hint">Someone who can give evidence in court supporting your case</span>
-                <span class="error-message" data-ng-show="vm.form['witness'].invalid">Choose an answer</span>
+                <span class="error-message" id="error-message-witness" data-ng-show="vm.form['witness'].invalid">Choose an answer</span>
               </legend>
               
               <label class="block-label" for="witness-yes" data-target="witness" data-ng-class="{'selected': vm.defenceWitnessCall === 'Yes'}">
-                <input type="radio" id="witness-yes" name="witness" value="Yes" aria-describedby="witness-hint" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.defenceWitnessCall"> Yes
+                <input type="radio" id="witness-yes" name="witness" value="Yes"
+                       data-ng-attr-aria-invalid="{{vm.form['witness'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['witness'].invalid ? 'error-message-witness' : 'witness-hint'}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.defenceWitnessCall"> Yes
               </label>
               
               <label class="block-label" for="witness-no" data-ng-class="{'selected': vm.defenceWitnessCall === 'No'}">
@@ -333,10 +372,15 @@
                 
                 <label for="witness-contact-details" id="error-witness-contact-details">
                   <span class="form-label">Enter name, address and date of birth of any witnesses you want to call to support your case</span>
-                  <span class="error-message" data-ng-show="vm.form['witness-contact-details'].invalid">Provide this information</span>
+                  <span class="error-message" id="error-message-witness-contact-details" data-ng-show="vm.form['witness-contact-details'].invalid">Provide this information</span>
                 </label>
                 
-                <textarea class="form-control form-control-textarea" id="witness-contact-details" name="witness-contact-details" cols="30" rows="3" data-ng-required="vm.defenceWitnessCall === 'Yes'" data-ng-model="vm.defenceWitnessContactDetails"></textarea>
+                <textarea class="form-control form-control-textarea" id="witness-contact-details" name="witness-contact-details" cols="30" rows="3"
+                          data-ng-attr-aria-invalid="{{vm.form['witness-contact-details'].invalid ? 'true' : undefined}}"
+                          data-ng-attr-aria-describedby="{{vm.form['witness-contact-details'].invalid ? 'error-message-witness-contact-details' : undefined}}"
+                          data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
+                          data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
+                          data-ng-model="vm.defenceWitnessContactDetails"></textarea>
                 
               </div>
               
@@ -346,15 +390,22 @@
 
                   <legend id="error-witness-interpreter">
                     <span class="form-label-bold">Does your witness need an interpreter?</span>
-                    <span class="error-message" data-ng-show="vm.form['witness-interpreter'].invalid">Choose an answer</span>
+                    <span class="error-message" id="error-message-witness-interpreter" data-ng-show="vm.form['witness-interpreter'].invalid">Choose an answer</span>
                   </legend>
 
                   <label class="block-label" for="witness-interpreter-yes" data-target="witness-interpreter" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'Yes'}">
-                    <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes" data-ng-required="vm.defenceWitnessCall === 'Yes'" data-ng-model="vm.defenceWitnessInterpreter"> Yes
+                    <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes"
+                           data-ng-attr-aria-invalid="{{vm.form['witness-interpreter'].invalid ? 'true' : undefined}}"
+                           data-ng-attr-aria-describedby="{{vm.form['witness-interpreter'].invalid ? 'error-message-witness-interpreter' : undefined}}"
+                           data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
+                           data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
+                           data-ng-model="vm.defenceWitnessInterpreter"> Yes
                   </label>
 
                   <label class="block-label" for="witness-interpreter-no" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'No'}">
-                    <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No" data-ng-required="vm.defenceWitnessCall === 'Yes'" data-ng-model="vm.defenceWitnessInterpreter"> No
+                    <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No"
+                           data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
+                           data-ng-model="vm.defenceWitnessInterpreter"> No
                   </label>
 
                 </fieldset>
@@ -365,10 +416,15 @@
                     
                     <label for="witness-interpreter-language" id="error-witness-interpreter-language">
                       <span class="form-label">Which language? (Including sign language)</span>
-                      <span class="error-message" data-ng-show="vm.form['witness-interpreter-language'].invalid">Provide this information</span>
+                      <span class="error-message" id="error-message-witness-interpreter-language" data-ng-show="vm.form['witness-interpreter-language'].invalid">Provide this information</span>
                     </label>
                     
-                    <input class="form-control" type="text" id="witness-interpreter-language" name="witness-interpreter-language" data-ng-required="vm.defenceWitnessInterpreter === 'Yes'" data-ng-model="vm.defenceWitnessInterpreterLanguage">
+                    <input class="form-control" type="text" id="witness-interpreter-language" name="witness-interpreter-language"
+                           data-ng-attr-aria-invalid="{{vm.form['witness-interpreter-language'].invalid ? 'true' : undefined}}"
+                           data-ng-attr-aria-describedby="{{vm.form['witness-interpreter-language'].invalid ? 'error-message-witness-interpreter-language' : undefined}}"
+                           data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes' && vm.defenceWitnessInterpreter === 'Yes'"
+                           data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes' && vm.defenceWitnessInterpreter === 'Yes'"
+                           data-ng-model="vm.defenceWitnessInterpreterLanguage">
                     
                   </div>
 
