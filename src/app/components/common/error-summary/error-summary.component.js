@@ -13,6 +13,7 @@
    * to be objects with the following keys set:
    * name - name of the input field
    * errorLabelId - id of the label to scroll to when summary item is clicked
+   *                (optional, default value is name with 'error-' prepended)
    * label - text to show in the summary item (usually the same as input label)
    *
    * @example
