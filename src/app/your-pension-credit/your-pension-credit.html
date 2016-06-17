@@ -10,53 +10,28 @@
     <h1 class="heading-xlarge">Your Pension Credit</h1>
 
 
-    <div class="error-summary"
-       id="error-summary"
-       role="group"
-       tabindex="-1"
-       aria-labelledby="error-summary-heading"
-       data-focus-event="click"
-       data-ng-show="vm.form.invalid"
-       data-focus>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'paid',
+          label: 'How often is your Pension Credit paid?'
+        },
+        {
+          name: 'weekly-credit-pay',
+          label: 'Weekly Pension Credit payment?'
+        },
+        {
+          name: 'fortnightly-credit-pay',
+          label: 'Fortnightly Pension Credit payment?'
+        },
+        {
+          name: 'monthly-credit-pay',
+          label: 'Monthly Pension Credit payment?'
+        }
+      ]">
+    </error-summary>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
-
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['paid'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-paid')"
-             data-focus-event="click"
-             data-focus-target="error-paid"
-             data-focus>How often is your Pension Credit paid?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['weekly-credit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-weekly-credit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-weekly-credit-pay"
-             data-focus>Weekly Pension Credit payment?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['fortnightly-credit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-fortnightly-credit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-fortnightly-credit-pay"
-             data-focus>Fortnightly Pension Credit payment?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['monthly-credit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-monthly-credit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-monthly-credit-pay"
-             data-focus>Monthly Pension Credit payment?
-          </a>
-        </li>
-      </ul>
-
-    </div>
 
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
