@@ -10,103 +10,52 @@
     <h1 class="heading-xlarge">Your expenses</h1>
 
 
-    <div class="error-summary"
-         id="error-summary"
-         role="group"
-         tabindex="-1"
-         aria-labelledby="error-summary-heading"
-         data-focus-event="click"
-         data-ng-show="vm.form.invalid"
-         data-focus>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'television-subscription',
+          label: 'Television subscription'
+        },
+        {
+          name: 'travel-expenses',
+          label: 'Travel expenses'
+        },
+        {
+          name: 'telephone',
+          label: 'Telephone'
+        },
+        {
+          name: 'loan-repayments',
+          label: 'Loan repayments'
+        },
+        {
+          name: 'county-court-orders',
+          label: 'County court orders'
+        },
+        {
+          name: 'fines',
+          label: 'Fines'
+        },
+        {
+          name: 'child-maintenance',
+          label: 'Child maintenance'
+        },
+        {
+          name: 'other-significant-expenses',
+          label: 'Any other significant expenses not listed?'
+        },
+        {
+          name: 'other-significant-expenses-details',
+          label: 'Tell us about other significant expenses'
+        },
+        {
+          name: 'other-significant-expenses-total',
+          label: 'Monthly total of other significant expenses'
+        }
+      ]">
+    </error-summary>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
-
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['television-subscription'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-television-subscription')"
-             data-focus-event="click"
-             data-focus-target="error-television-subscription"
-             data-focus>Television subscription
-          </a>
-        </li>
-        <li data-ng-show="vm.form['travel-expenses'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-travel-expenses')"
-             data-focus-event="click"
-             data-focus-target="error-travel-expenses"
-             data-focus>Travel expenses
-          </a>
-        </li>
-        <li data-ng-show="vm.form['telephone'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-telephone')"
-             data-focus-event="click"
-             data-focus-target="error-telephone"
-             data-focus>Telephone
-          </a>
-        </li>
-        <li data-ng-show="vm.form['loan-repayments'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-loan-repayments')"
-             data-focus-event="click"
-             data-focus-target="error-loan-repayments"
-             data-focus>Loan repayments
-          </a>
-        </li>
-        <li data-ng-show="vm.form['county-court-orders'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-county-court-orders')"
-             data-focus-event="click"
-             data-focus-target="error-county-court-orders"
-             data-focus>County court orders
-          </a>
-        </li>
-        
-        <li data-ng-show="vm.form['fines'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-fines')"
-             data-focus-event="click"
-             data-focus-target="error-fines"
-             data-focus>Fines
-          </a>
-        </li>
-        <li data-ng-show="vm.form['child-maintenance'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-child-maintenance')"
-             data-focus-event="click"
-             data-focus-target="error-child-maintenance"
-             data-focus>Child maintenance
-          </a>
-        </li>
-        <li data-ng-show="vm.form['other-significant-expenses'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-other-significant-expenses')"
-             data-focus-event="click"
-             data-focus-target="error-other-significant-expenses"
-             data-focus>Any other significant expenses not listed?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['other-significant-expenses-details'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-other-significant-expenses-details')"
-             data-focus-event="click"
-             data-focus-target="error-other-significant-expenses-details"
-             data-focus>Tell us about other significant expenses
-          </a>
-        </li>
-        <li data-ng-show="vm.form['other-significant-expenses-total'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-other-significant-expenses-total')"
-             data-focus-event="click"
-             data-focus-target="error-other-significant-expenses-total"
-             data-focus>Monthly total of other significant expenses
-          </a>
-        </li>
-      </ul>
-
-    </div>
-    
 
     <p class="lede">To help the court make a decision about your payment terms, you must Provide this information about your expenses.</p>
 

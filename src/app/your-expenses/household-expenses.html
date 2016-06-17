@@ -8,63 +8,33 @@
 
 
     <h1 class="heading-xlarge">Your expenses</h1>
-    
-    
-    <div class="error-summary"
-         id="error-summary"
-         role="group"
-         tabindex="-1"
-         aria-labelledby="error-summary-heading"
-         data-focus-event="click"
-         data-ng-show="vm.form.invalid"
-         data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following errors</h2>
 
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['accommodation'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-accommodation')"
-             data-focus-event="click"
-             data-focus-target="error-accommodation"
-             data-focus>Accommodation
-          </a>
-        </li>
-        <li data-ng-show="vm.form['utility'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-utility')"
-             data-focus-event="click"
-             data-focus-target="error-utility"
-             data-focus>Utility bills
-          </a>
-        </li>
-        <li data-ng-show="vm.form['insurance'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-insurance')"
-             data-focus-event="click"
-             data-focus-target="error-insurance"
-             data-focus>Insurance
-          </a>
-        </li>
-        <li data-ng-show="vm.form['council-tax'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-council-tax')"
-             data-focus-event="click"
-             data-focus-target="error-council-tax"
-             data-focus>Council tax
-          </a>
-        </li>
-        <li data-ng-show="vm.form['contribute'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-contribute')"
-             data-focus-event="click"
-             data-focus-target="error-contribute"
-             data-focus>Does anyone else contribute to these bills?
-          </a>
-        </li>
-      </ul>
-
-    </div>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'accommodation',
+          label: 'Accommodation'
+        },
+        {
+          name: 'utility',
+          label: 'Utility bills'
+        },
+        {
+          name: 'insurance',
+          label: 'Insurance'
+        },
+        {
+          name: 'council-tax',
+          label: 'Council tax'
+        },
+        {
+          name: 'contribute',
+          label: 'Does anyone else contribute to these bills?'
+        }
+      ]">
+    </error-summary>
 
 
     <p class="lede">To help the court make a decision about your payment terms, you must Provide this information about your expenses.</p>
