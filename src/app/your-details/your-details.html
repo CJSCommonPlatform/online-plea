@@ -192,7 +192,7 @@
           <legend id="error-dob" data-ng-messages="vm.form['dob-day'].error">
             <span class="form-label-bold">Your date of birth</span>
             <span class="form-hint" id="dob-hint">Eg 31 3 1980</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-dob" data-ng-message="allRequired">Provide this information</span>
             <span class="error-message" id="error-message-dob" data-ng-message="invalidDayOfMonth">Date doesn&rsquo;t exist &ndash; enter again</span>
             <span class="error-message" id="error-message-dob" data-ng-message="invalidMonth">Date doesn&rsquo;t exist &ndash; enter again</span>
             <span class="error-message" id="error-message-dob" data-ng-message="inFuture">Date can&rsquo;t be in future &ndash; enter valid date</span>
@@ -208,7 +208,7 @@
                      data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
                      data-ng-attr-aria-described-by="{{vm.form['dob-day'].invalid ? 'error-message-dob' : 'dob-hint'}}"
                      data-ui-validate="{
-                        required : 'vm.required(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
+                        allRequired : 'vm.allRequired(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         invalidDayOfMonth : 'vm.invalidDayOfMonth(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         invalidMonth : 'vm.invalidMonth(vm.form[\'dob-month\'])',
                         inPast : 'vm.inPast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 1900)',

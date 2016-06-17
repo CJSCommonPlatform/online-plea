@@ -14,11 +14,15 @@
       return vm.nationalInsurance !== 'Yes' || (new RegExp(nationalInsuranceNumberRegex)).test(value);
     };
 
-    vm.required = function(year, month, day) {
+    vm.allRequired = function(year, month, day) {
       var y = year.$viewValue;
       var m = month.$viewValue;
       var d = day.$viewValue;
-      return isFinite(y) && isFinite(m) && isFinite(d);
+      return isNumeric(y) && isNumeric(m) && isNumeric(d);
+
+      function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+      }
     };
 
     vm.inPast = function(year, month, day, threshold) {
