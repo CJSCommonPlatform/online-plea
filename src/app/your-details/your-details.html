@@ -8,81 +8,50 @@
 
 
     <h1 class="heading-xlarge">Your details</h1>
-       
-    <div 
-      class="error-summary"
-      id="error-summary"
-      role="group"
-      tabindex="-1"
-      aria-labelledby="error-summary-heading"
-      data-focus-event="click"
-      data-ng-show="vm.form.invalid"
-      data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['correct-details'].invalid">
-          <a href="" 
-              data-ng-click="vm.scrollToAnchor('error-correct-details')"
-              data-focus-event="click"
-              data-focus-target="error-correct-details"
-              data-focus>Are these details correct?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['your-update-details'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-your-update-details')"
-              data-focus-event="click"
-              data-focus-target="error-your-update-details"
-              data-focus>Enter correct details
-          </a>
-        </li>
-        <li data-ng-show="vm.form['contact-number'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-contact-number')"
-              data-focus-event="click"
-              data-focus-target="error-contact-number"
-              data-focus>Contact number
-          </a>
-        </li>
-        <li data-ng-show="vm.form['email-address'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-email-address')"
-              data-focus-event="click"
-              data-focus-target="error-email-address"
-              data-focus>Email address (optional)
-          </a>
-        </li>
-        <li data-ng-show="vm.form['dob-day'].invalid || vm.form['dob-month'].invalid || vm.form['dob-year'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-dob')"
-              data-focus-event="click"
-              data-focus-target="error-dob-day"
-              data-focus>Your date of birth
-          </a>
-        </li>
-        <li data-ng-show="vm.form['national-insurance'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-national-insurance')"
-              data-focus-event="click"
-              data-focus-target="error-national-insurance"
-              data-focus>Do you have a National Insurance number?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['national-insurance-number'].invalid">
-          <a href=""
-              data-ng-click="vm.scrollToAnchor('error-national-insurance-number')"
-              data-focus-event="click"
-              data-focus-target="error-national-insurance-number"
-              data-focus>National Insurance number
-          </a>
-        </li>
-      </ul>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'correct-details',
+          errorLabelId: 'error-correct-details',
+          label: 'Are these details correct?'
+        },
+        {
+          name: 'your-update-details',
+          errorLabelId: 'error-your-update-details',
+          label: 'Enter correct details'
+        },
+        {
+          name: 'contact-number',
+          errorLabelId: 'error-contact-number',
+          label: 'Contact number'
+        },
+        {
+          name: 'email-address',
+          errorLabelId: 'error-email-address',
+          label: 'Email address (optional)'
+        },
+        {
+          name: 'dob-day',
+          errorLabelId: 'error-dob',
+          label: 'Your date of birth'
+        },
+        {
+          name: 'national-insurance',
+          errorLabelId: 'error-national-insurance',
+          label: 'Do you have a National Insurance number?'
+        },
+        {
+          name: 'national-insurance-number',
+          errorLabelId: 'error-national-insurance-number',
+          label: 'National Insurance number'
+        }
+      ]">
+    </error-summary>
 
-    </div>
-    
-    
+
     <p class="lede">We may need to contact you about your plea.</p>
 
 
