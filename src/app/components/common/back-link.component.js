@@ -4,11 +4,10 @@
 
   angular
     .module('pleaApp')
-    .controller('BackLink', BackLink)
     .component('backLink', {
-      controller: 'BackLink',
+      controller: BackLink,
       controllerAs: 'vm',
-      template: '<a class="link-back" href="" data-ng-click="vm.goBack()">Back</a>',
+      template: '<a class="link-back" href="" data-ng-click="vm.goBack()" title="Go back to previous page">Back</a>',
     });
 
   function BackLink($window) {
@@ -20,5 +19,5 @@
       $window.history.back();
     }
   }
-  
+
 }());
