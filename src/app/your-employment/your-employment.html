@@ -67,11 +67,14 @@
 
           <legend id="error-employment">
             <span class="form-label-bold">Your status</span>
-            <span class="error-message" data-ng-show="vm.form['employment'].invalid">Choose an answer</span>
+            <span class="error-message" id="error-message-employment" data-ng-show="vm.form['employment'].invalid">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED}">
-            <input type="radio" id="employed" name="employment" value="{{vm.employmentStatus.EMPLOYED}}" required data-ng-model="vm.employment"> Employed
+            <input type="radio" id="employed" name="employment" value="{{vm.employmentStatus.EMPLOYED}}" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['employment'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['employment'].invalid ? 'error-message-employment' : undefined}}"
+                   data-ng-model="vm.employment"> Employed
           </label>
 
           <label class="block-label" for="employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED_BENEFITS}">
@@ -102,9 +105,14 @@
             <label for="provide-details" id="error-provide-details">
               <span class="form-label">Provide details</span>
               <span class="form-hint" id="provide-details-hint">For example, student or retired.</span>
-              <span class="error-message" data-ng-show="vm.form['provide-details'].invalid">Provide this information</span>
+              <span class="error-message" id="error-message-provide-details" data-ng-show="vm.form['provide-details'].invalid">Provide this information</span>
             </label>
-            <input class="form-control" type="text" id="provide-details" name="provide-details" aria-describedby="provide-details-hint" data-ng-required="vm.employment === vm.employmentStatus.OTHER" data-ng-model="vm.provideDetails">
+            <input class="form-control" type="text" id="provide-details" name="provide-details"
+                   data-ng-attr-aria-invalid="{{vm.form['provide-details'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['provide-details'].invalid ? 'error-message-provide-details' : 'provide-details-hint'}}"
+                   data-ng-attr-aria-required="vm.employment === vm.employmentStatus.OTHER"
+                   data-ng-required="vm.employment === vm.employmentStatus.OTHER"
+                   data-ng-model="vm.provideDetails">
           </div>
 
         </div>
