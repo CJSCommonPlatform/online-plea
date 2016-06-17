@@ -8,111 +8,68 @@
 
 
     <h1 class="heading-xlarge">Your plea</h1>
-    
-    
-    <div class="error-summary"
-         id="error-summary"
-         role="group"
-         tabindex="-1"
-         aria-labelledby="error-summary-heading"
-         data-focus-event="click"
-         data-ng-show="vm.form.invalid"
-         data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['plea'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-plea')"
-             data-focus-event="click"
-             data-focus-target="error-plea"
-             data-focus>How do you plead?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['court'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-court')"
-             data-focus-event="click"
-             data-focus-target="error-court"
-             data-focus>What would you like to do?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['not-guilty-because'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-not-guilty-because')"
-             data-focus-event="click"
-             data-focus-target="error-not-guilty-because"
-             data-focus>Why do you believe you’re not guilty?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['interpreter'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-interpreter')"
-             data-focus-event="click"
-             data-focus-target="error-interpreter"
-             data-focus>Do you need an interpreter in court?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['interpreter-language'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-interpreter-language')"
-             data-focus-event="click"
-             data-focus-target="error-interpreter-language"
-             data-focus>Which language? (Including sign language)
-          </a>
-        </li>
-        <li data-ng-show="vm.form['evidence'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-evidence')"
-             data-focus-event="click"
-             data-focus-target="error-evidence"
-             data-focus>Do you disagree with evidence in a witness statement sent to you?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['witness-name'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-witness-name')"
-             data-focus-event="click"
-             data-focus-target="error-witness-name"
-             data-focus>Enter the name of the witness and what you disagree with
-          </a>
-        </li>
-        <li data-ng-show="vm.form['witness'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-witness')"
-             data-focus-event="click"
-             data-focus-target="error-witness"
-             data-focus>Do you want to call a witness?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['witness-contact-details'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-witness-contact-details')"
-             data-focus-event="click"
-             data-focus-target="error-witness-contact-details"
-             data-focus>Enter name, address and date of birth of any witnesses you want to call to support your case
-          </a>
-        </li>
-        <li data-ng-show="vm.form['witness-interpreter'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-witness-interpreter')"
-             data-focus-event="click"
-             data-focus-target="error-witness-interpreter"
-             data-focus>Does your witness need an interpreter?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['witness-interpreter-language'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-witness-interpreter-language')"
-             data-focus-event="click"
-             data-focus-target="error-witness-interpreter-language"
-             data-focus>Which language? (Including sign language)
-          </a>
-        </li>
-      </ul>
-
-    </div>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'plea',
+          errorLabelId: 'error-plea',
+          label: 'How do you plead?'
+        },
+        {
+          name: 'court',
+          errorLabelId: 'error-court',
+          label: 'What would you like to do?'
+        },
+        {
+          name: 'not-guilty-because',
+          errorLabelId: 'error-not-guilty-because',
+          label: 'Why do you believe you’re not guilty?'
+        },
+        {
+          name: 'interpreter',
+          errorLabelId: 'error-interpreter',
+          label: 'Do you need an interpreter in court?'
+        },
+        {
+          name: 'interpreter-language',
+          errorLabelId: 'error-interpreter-language',
+          label: 'Which language? (Including sign language)'
+        },
+        {
+          name: 'evidence',
+          errorLabelId: 'error-evidence',
+          label: 'Do you disagree with evidence in a witness statement sent to you?'
+        },
+        {
+          name: 'witness-name',
+          errorLabelId: 'error-witness-name',
+          label: 'Enter the name of the witness and what you disagree with'
+        },
+        {
+          name: 'witness',
+          errorLabelId: 'error-witness',
+          label: 'Do you want to call a witness?'
+        },
+        {
+          name: 'witness-contact-details',
+          errorLabelId: 'error-witness-contact-details',
+          label: 'Enter name, address and date of birth of any witnesses you want to call to support your case'
+        },
+        {
+          name: 'witness-interpreter',
+          errorLabelId: 'error-witness-interpreter',
+          label: 'Does your witness need an interpreter?'
+        },
+        {
+          name: 'witness-interpreter-language',
+          errorLabelId: 'error-witness-interpreter-language',
+          label: 'Which language? (Including sign language)'
+        }
+      ]">
+    </error-summary>
 
 
     <div class="panel panel-border-wide">
