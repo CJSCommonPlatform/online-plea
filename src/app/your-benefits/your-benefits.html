@@ -10,79 +10,41 @@
     <h1 class="heading-xlarge">Your benefits</h1>
 
 
-    <div class="error-summary"
-         id="error-summary"
-         role="group"
-         tabindex="-1"
-         aria-labelledby="error-summary-heading"
-         data-focus-event="click"
-         data-ng-show="vm.form.invalid"
-         data-focus>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'benefit',
+          label: 'Which benefit do you receive?'
+        },
+        {
+          name: 'paid',
+          label: 'How often is your benefit paid?'
+        },
+        {
+          name: 'weekly-benefit-pay',
+          label: 'How much is your weekly benefit payment?'
+        },
+        {
+          name: 'fortnightly-benefit-pay',
+          label: 'How much is your fortnightly benefit payment?'
+        },
+        {
+          name: 'monthly-benefit-pay',
+          label: 'How much is your monthly benefit payment?'
+        },
+        {
+          name: 'financial-problems',
+          label: 'Would paying a fine cause you serious financial problems?'
+        },
+        {
+          name: 'financial-problems-justification',
+          label: 'How would paying a fine cause you financial problems?'
+        }
+      ]">
+    </error-summary>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
 
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['benefit'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-benefit')"
-             data-focus-event="click"
-             data-focus-target="error-benefit"
-             data-focus>Which benefit do you receive?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['paid'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-paid')"
-             data-focus-event="click"
-             data-focus-target="error-paid"
-             data-focus>How often is your benefit paid?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['weekly-benefit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-weekly-benefit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-weekly-benefit-pay"
-             data-focus>How much is your weekly benefit payment?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['fortnightly-benefit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-fortnightly-benefit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-fortnightly-benefit-pay"
-             data-focus>How much is your fortnightly benefit payment?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['monthly-benefit-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-monthly-benefit-pay')"
-             data-focus-event="click"
-             data-focus-target="error-monthly-benefit-pay"
-             data-focus>How much is your monthly benefit payment?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['financial-problems'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-financial-problems')"
-             data-focus-event="click"
-             data-focus-target="error-financial-problems"
-             data-focus>Would paying a fine cause you serious financial problems?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['financial-problems-justification'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-financial-problems-justification')"
-             data-focus-event="click"
-             data-focus-target="error-financial-problems-justification"
-             data-focus>How would paying a fine cause you financial problems?
-          </a>
-        </li>
-      </ul>
-
-    </div>
-
-    
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
       
       
