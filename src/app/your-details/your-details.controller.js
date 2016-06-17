@@ -21,12 +21,12 @@
       return isFinite(y) && isFinite(m) && isFinite(d);
     };
 
-    vm.inPast = function(year, month, day) {
+    vm.inPast = function(year, month, day, threshold) {
       var y = year.$viewValue;
       var m = month.$viewValue;
       var d = day.$viewValue;
       var date = new Date(y, m - 1, d);
-      var pastDate = new Date(1900, 0, 1);
+      var pastDate = new Date(threshold, 0, 1);
       return date.getTime() > pastDate.getTime();
     };
 

@@ -205,14 +205,14 @@
 
             <div class="form-group form-group-day">
               <label for="dob-day">Day</label>
-              <input class="form-control" id="dob-day" type="number" max="31" min="0" pattern="[0-9]*" name="dob-day" required aria-required="true"
+              <input class="form-control" id="dob-day" type="number" max="31" min="1" pattern="[0-9]{1,2}" name="dob-day" required aria-required="true"
                      data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
                      data-ng-attr-aria-described-by="{{vm.form['dob-day'].invalid ? 'error-message-dob' : 'dob-hint'}}"
                      data-ui-validate="{
                         required : 'vm.required(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         invalidDayOfMonth : 'vm.invalidDayOfMonth(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         invalidMonth : 'vm.invalidMonth(vm.form[\'dob-month\'])',
-                        inPast : 'vm.inPast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
+                        inPast : 'vm.inPast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 1900)',
                         inFuture : 'vm.inFuture(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         atLeast16 : 'vm.atLeast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 16)'
                      }"
@@ -221,14 +221,14 @@
 
             <div class="form-group form-group-month">
               <label for="dob-month">Month</label>
-              <input class="form-control" id="dob-month" type="number" max="12" min="0" pattern="[0-9]*" name="dob-month" required
+              <input class="form-control" id="dob-month" type="number" max="12" min="1" pattern="[0-9]{1,2}" name="dob-month" required
                      data-ui-validate="'vm.validateDay(vm.form[\'dob-day\'])'"
                      data-ng-model="vm.dateOfBirthMonth">
             </div>
 
             <div class="form-group form-group-year">
               <label for="dob-year">Year</label>
-              <input class="form-control" id="dob-year" type="number" max="2016" min="0" pattern="[0-9]*" name="dob-year" required
+              <input class="form-control" id="dob-year" type="number" max="2050" min="1900" pattern="[0-9]{4}" name="dob-year" required
                      data-ui-validate="'vm.validateDay(vm.form[\'dob-day\'])'"
                      data-ng-model="vm.dateOfBirthYear">
             </div>
