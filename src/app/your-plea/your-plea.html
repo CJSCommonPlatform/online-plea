@@ -156,15 +156,21 @@
 
         <legend id="error-plea">
           <span class="form-label-bold">How do you plead?</span>
-          <span class="error-message" data-ng-show="vm.form['plea'].invalid">Choose an answer</span>
+          <span class="error-message" id="error-message-plea" data-ng-show="vm.form['plea'].invalid">Choose an answer</span>
         </legend>
 
         <label class="block-label" for="plea-guilty" data-target="guilty" data-ng-class="{'selected': vm.plea === 'Guilty'}">
-          <input type="radio" id="plea-guilty" name="plea" value="Guilty" required data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Guilty
+          <input type="radio" id="plea-guilty" name="plea" value="Guilty" required aria-required="true"
+                 data-ng-attr-aria-invalid="{{vm.form['plea'].invalid ? 'true' : undefined}}"
+                 data-ng-attr-aria-describedby="{{vm.form['plea'].invalid ? 'error-message-plea' : undefined}}"
+                 data-ng-click="vm.enterYourPleaClicked()"
+                 data-ng-model="vm.plea"> Guilty
         </label>
 
         <label class="block-label" for="plea-notguilty" data-target="not-guilty" data-ng-class="{'selected': vm.plea === 'Not guilty'}">
-          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required data-ng-click="vm.enterYourPleaClicked()" data-ng-model="vm.plea"> Not guilty
+          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required
+                 data-ng-click="vm.enterYourPleaClicked()"
+                 data-ng-model="vm.plea"> Not guilty
         </label>
 
       </fieldset>
