@@ -14,6 +14,59 @@
       return vm.nationalInsurance !== 'Yes' || (new RegExp(nationalInsuranceNumberRegex)).test(value);
     };
 
+    vm.required = function(year, month, day) {
+      var y = year.$viewValue;
+      var m = month.$viewValue;
+      var d = day.$viewValue;
+      return isFinite(y) && isFinite(m) && isFinite(d);
+    };
+
+    vm.inPast = function(year, month, day, threshold) {
+      var y = year.$viewValue;
+      var m = month.$viewValue;
+      var d = day.$viewValue;
+      var date = new Date(y, m - 1, d);
+      var pastDate = new Date(threshold, 0, 1);
+      return date.getTime() > pastDate.getTime();
+    };
+
+    vm.inFuture = function(year, month, day) {
+      var y = year.$viewValue;
+      var m = month.$viewValue;
+      var d = day.$viewValue;
+      var date = new Date(y, m - 1, d);
+      var now = new Date();
+      return date.getTime() < now.getTime();
+    };
+
+    vm.atLeast = function(year, month, day, age) {
+      var y = year.$viewValue;
+      var m = month.$viewValue;
+      var d = day.$viewValue;
+      var date = new Date(y, m, d);
+      var minusAge = new Date();
+      minusAge.setMonth(minusAge.getMonth() - 12 * age);
+      return date.getTime() < minusAge.getTime();
+    };
+
+    vm.invalidDayOfMonth = function(year, month, day) {
+      var y = year.$viewValue;
+      var m = month.$viewValue;
+      var d = parseInt(day.$viewValue);
+      var lastDayOfMonth = new Date(y, m, 0).getDate();
+      return d > 0 && d <= lastDayOfMonth;
+    };
+
+    vm.invalidMonth = function(month) {
+      var m = parseInt(month.$viewValue);
+      return m >= 1 && m <= 12;
+    };
+
+    vm.validateDay = function(day) {
+      day.$validate();
+      return true;
+    };
+
     vm.emailAddressRegex = emailAddressRegex;
     vm.ukTelephoneNumberRegex = ukTelephoneNumberRegex;
     vm.buttonContinue = buttonContinueClicked;
