@@ -20,7 +20,7 @@
 
     vm.invalidFields = function () {
       return lodash.reject(vm.fields, function (field) {
-        return lodash.isEmpty(vm.form[field.name].$error);
+        return lodash.isEmpty(vm.form[field.name].error);
       });
     };
   }
