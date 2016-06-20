@@ -1,7 +1,7 @@
 (function() {
     
   'use strict';  
-
+/*
   angular.module('pleaApp')
     .directive('formToggle', formToggle);
 
@@ -9,7 +9,7 @@
     return {
       restrict: 'A',
       link: function(scope, element) {
-        /* eslint-disable */
+
 
         var escapeElementName = function(str) {
           var result = str.replace('[', '\\[').replace(']', '\\]')
@@ -130,8 +130,9 @@
             }); 
           }     
         });
-        /* eslint-enable */
+
       }
     }
-  } 
+  }
+  */
 })();
