@@ -1,0 +1,8 @@
+<legend data-ng-attr-id="{{'error-' + vm.baseId}}" data-ng-messages="vm.formField.error">
+  <span class="form-label-bold">{{vm.label}}</span>
+  <span class="form-hint" data-ng-attr-id="{{vm.baseId + '-hint'}}">{{vm.hint}}</span>
+  <span class="error-message"
+        data-ng-repeat="errorMessage in vm.errorMessages"
+        data-ng-attr-id="{{'error-message-' + vm.baseId}}"
+        data-ng-message="{{errorMessage.name}}">{{errorMessage.text}}</span>
+</legend>

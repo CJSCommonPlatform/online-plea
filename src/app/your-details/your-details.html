@@ -189,16 +189,38 @@
 
         <fieldset>
 
-          <legend id="error-dob" data-ng-messages="vm.form['dob-day'].error">
-            <span class="form-label-bold">Your date of birth</span>
-            <span class="form-hint" id="dob-hint">Eg 31 3 1980</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="allRequired">Provide this information</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="invalidDayOfMonth">Date doesn&rsquo;t exist &ndash; enter again</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="invalidMonth">Date doesn&rsquo;t exist &ndash; enter again</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="inFuture">Date can&rsquo;t be in future &ndash; enter valid date</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="inPast">Date can&rsquo;t be in past &ndash; enter valid date</span>
-            <span class="error-message" id="error-message-dob" data-ng-message="atLeast16">Age too young &ndash; enter valid date of birth</span>
-          </legend>
+          <fieldset-legend
+            data-base-id="dob"
+            data-label="Your date of birth"
+            data-hint="Eg 31 3 1980"
+            data-form-field="vm.form['dob-day']"
+            data-error-messages="[
+              {
+                name: 'allRequired',
+                text: 'Provide this information'
+              },
+              {
+                name: 'invalidDayOfMonth',
+                text: 'Date doesn&rsquo;t exist &ndash; enter again'
+              },
+              {
+                name: 'invalidMonth',
+                text: 'Date doesn&rsquo;t exist &ndash; enter again'
+              },
+              {
+                name: 'inFuture',
+                text: 'Date can&rsquo;t be in future &ndash; enter valid date'
+              },
+              {
+                name: 'inPast',
+                text: 'Date can&rsquo;t be in past &ndash; enter valid date'
+              },
+              {
+                name: 'atLeast16',
+                text: 'Age too young &ndash; enter valid date of birth'
+              }
+            ]">
+          </fieldset-legend>
 
           <div class="form-date">
 
