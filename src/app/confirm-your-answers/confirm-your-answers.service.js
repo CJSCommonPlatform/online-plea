@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('confirmYourAnswers', confirmYourAnswers);
 
-  confirmYourAnswers.$inject = ['totalIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash'];
+  confirmYourAnswers.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash'];
 
-  function confirmYourAnswers(totalIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash) {
+  function confirmYourAnswers(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash) {
     var BASE_NAME = '';
 
     var service = {
@@ -29,7 +29,7 @@
 
       vm.dateOfBirth = new Date(year, month - 1, day);
 
-      lodash.set(vm, 'yourEmployment.totalIncome', totalIncome.calculate(vm));
+      lodash.set(vm, 'yourEmployment.totalWeeklyIncome', totalWeeklyIncome.calculate(vm));
       lodash.set(vm, 'yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
       lodash.set(vm, 'yourExpenses.other.totalOtherExpenses', totalOtherExpenses.calculate(vm));
 

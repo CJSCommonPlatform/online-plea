@@ -48,7 +48,7 @@
         expect(vm.yourExpenses.totalExpenses).toEqual(782);
       });
 
-      it('should update vm with data from sessionStorage; employmentStatus; totalIncome', function() {
+      it('should update vm with data from sessionStorage; employmentStatus; totalWeeklyIncome', function() {
         //given
         var set = sessionStorage.getSetter('pleaApp.');
         set('yourEmployment.employmentStatus', 'Other');
@@ -60,7 +60,7 @@
         confirmYourAnswers.updateVm(vm);
         //then
         expect(vm.yourEmployment.employmentStatus).toEqual('Retired');
-        expect(vm.yourEmployment.totalIncome).toEqual(500);
+        expect(vm.yourEmployment.totalWeeklyIncome).toEqual(500);
       });
 
       it('should update vm with data from sessionStorage; dateOfBirth', function() {

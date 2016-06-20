@@ -18,6 +18,7 @@
       sessionStorage = _$sessionStorage_;
       scope = $rootScope.$new();
       vm = _$controller_('YourCaseController', { $scope: scope, $sessionStorage:sessionStorage });
+      vm.form = {};
       $state = _$state_;
       $state.go('your-case');
       scope.$apply();
