@@ -18,8 +18,9 @@
 
     <error-summary-item
       data-ng-repeat="field in vm.invalidFields()"
-      label-text="{{field.label}}"
-      error-label-id="field.errorLabelId || 'error-' + field.name">
+      label="{{field.label}}"
+      scroll-to-id="field.scrollToId || 'error-' + field.name"
+      focus-id="field.focusId || 'error-' + field.name">
     </error-summary-item>
   </ul>
 </div>

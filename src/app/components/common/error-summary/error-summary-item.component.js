@@ -8,8 +8,9 @@
       controller: ErrorSummaryItemController,
       controllerAs: 'vm',
       bindings: {
-        labelText: '@',
-        errorLabelId: '<'
+        label: '@',
+        scrollToId: '<',
+        focusId: '<'
       }
     });
 

@@ -12,16 +12,17 @@
    * @param fields {Array} - list of fields to be used. Values are expected
    * to be objects with the following keys set:
    * name - name of the input field
-   * errorLabelId - id of the label to scroll to when summary item is clicked
-   *                (optional, default value is name with 'error-' prepended)
    * label - text to show in the summary item (usually the same as input label)
+   * scrollToId - id of the element to scroll to when summary item is clicked
+   *                (optional, default value is name with 'error-' prepended)
+   * focusId - id of the element to focus summary item is clicked
+   *                (optional, default value is name with 'error-' prepended)
    *
    * @example
       <error-summary
         form="vm.form"
         fields="[
           { name: 'postcode'
-            errorLabelId: 'error-postcode',
             label: 'Postcode'
           }
         ]">
