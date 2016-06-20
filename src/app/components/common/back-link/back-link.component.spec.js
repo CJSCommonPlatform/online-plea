@@ -1,10 +1,8 @@
 describe('Should take you to the previous page', function (){
 
-  var scope, elem, compiled, backLink;
+  var scope, elem, backLink;
 
-  beforeEach(module(
-    'pleaApp'
-  ));
+  beforeEach(module('pleaApp'));
 
   beforeEach(inject(function ($injector) {
     $window     = $injector.get('$window');
@@ -12,7 +10,7 @@ describe('Should take you to the previous page', function (){
     $rootScope  = $injector.get('$rootScope');
     scope       = $rootScope.$new();
     elem        = angular.element('<back-link></back-link>');
-    compiled    = $compile(elem)(scope);
+    $compile(elem)(scope);
     scope.$digest();
     backLink = elem.find('a');
   }));
