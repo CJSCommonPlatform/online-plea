@@ -8,95 +8,49 @@
 
 
     <h1 class="heading-xlarge">Your finances</h1>
-    
 
-    <div class="error-summary"
-     id="error-summary"
-     role="group"
-     tabindex="-1"
-     aria-labelledby="error-summary-heading"
-     data-focus-event="click"
-     data-ng-show="vm.form.invalid"
-     data-focus>
 
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
-
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['source-income'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-source-income')"
-             data-focus-event="click"
-             data-focus-target="error-source-income"
-             data-focus>What’s your main source of income?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['paid'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-paid')"
-             data-focus-event="click"
-             data-focus-target="error-paid"
-             data-focus>How often is your main income paid?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['weekly-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-weekly-pay')"
-             data-focus-event="click"
-             data-focus-target="error-weekly-pay"
-             data-focus>Weekly take home pay (after tax)?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['fortnightly-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-fortnightly-pay')"
-             data-focus-event="click"
-             data-focus-target="error-fortnightly-pay"
-             data-focus>Fortnightly take home pay (after tax)?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['monthly-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-monthly-pay')"
-             data-focus-event="click"
-             data-focus-target="error-monthly-pay"
-             data-focus>Monthly take home pay (after tax)?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['other-pay'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-other-pay')"
-             data-focus-event="click"
-             data-focus-target="error-other-pay"
-             data-focus>Average weekly take home pay (after tax)?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['pension-credit'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-pension-credit')"
-             data-focus-event="click"
-             data-focus-target="error-pension-credit"
-             data-focus>Do you receive Pension Credit?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['financial-problems'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-financial-problems')"
-             data-focus-event="click"
-             data-focus-target="error-financial-problems"
-             data-focus>Would paying a fine cause you serious financial problems?
-          </a>
-        </li>
-        <li data-ng-show="vm.form['financial-problems-justification'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-financial-problems-justification')"
-             data-focus-event="click"
-             data-focus-target="error-financial-problems-justification"
-             data-focus>How would paying a fine cause you financial problems?
-          </a>
-        </li>
-      </ul>
-
-    </div>
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'source-income',
+          label: 'What’s your main source of income?'
+        },
+        {
+          name: 'paid',
+          label: 'How often do you get paid?'
+        },
+        {
+          name: 'weekly-pay',
+          label: 'Weekly take home pay (after tax)?'
+        },
+        {
+          name: 'fortnightly-pay',
+          label: 'Fortnightly take home pay (after tax)?'
+        },
+        {
+          name: 'monthly-pay',
+          label: 'Monthly take home pay (after tax)?'
+        },
+        {
+          name: 'other-pay',
+          label: 'Average weekly take home pay (after tax)?'
+        },
+        {
+          name: 'pension-credit',
+          label: 'Do you receive Pension Credit?'
+        },
+        {
+          name: 'financial-problems',
+          label: 'Would paying a fine cause you serious financial problems?'
+        },
+        {
+          name: 'financial-problems-justification',
+          label: 'How would paying a fine cause you financial problems?'
+        }
+      ]">
+    </error-summary>
 
 
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>

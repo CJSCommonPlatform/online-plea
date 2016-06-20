@@ -10,38 +10,19 @@
     <h1 class="heading-xlarge">Your case</h1>
 
 
-    <div class="error-summary"
-         id="error-summary"
-         role="group"
-         tabindex="-1"
-         aria-labelledby="error-summary-heading"
-         data-focus-event="click"
-         data-ng-show="vm.form.invalid"
-         data-focus>
-
-      <h2 class="heading-medium error-summary-heading" id="error-summary-heading">Fix the following</h2>
-
-      <ul class="error-summary-list">
-        <li data-ng-show="vm.form['case-unique-reference-number'].invalid">
-          <a href=""
-             data-ng-click="vm.scrollToAnchor('error-case-unique-reference-number')"
-             data-focus-event="click"
-             data-focus-target="error-case-unique-reference-number"
-             data-focus>Case or Unique Reference Number
-          </a>
-        </li>
-        <li data-ng-show="vm.form['case-postcode'].invalid">
-          <a href="" 
-             data-ng-click="vm.scrollToAnchor('error-case-postcode')"
-             data-focus-event="click"
-             data-focus-target="error-case-postcode"
-             data-focus>Your postcode
-          </a>
-        </li>
-      </ul>
-
-    </div>
-
+    <error-summary
+      form="vm.form"
+      fields="[
+        {
+          name: 'case-unique-reference-number',
+          label: 'Case or Unique Reference Number'
+        },
+        {
+          name: 'case-postcode',
+          label: 'Your postcode'
+        }
+      ]">
+    </error-summary>
 
     <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
 
