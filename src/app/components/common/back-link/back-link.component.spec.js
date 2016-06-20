@@ -1,6 +1,6 @@
- describe('Should take you to the previous page', function (){
+describe('Should take you to the previous page', function (){
 
-  var scope, elem, compiled;
+  var scope, elem, compiled, backLink;
 
   beforeEach(module(
     'pleaApp'
@@ -11,17 +11,20 @@
     $compile    = $injector.get('$compile');
     $rootScope  = $injector.get('$rootScope');
     scope       = $rootScope.$new();
-    elem        = angular.element('<a class="link-back" href="" data-ng-click="vm.goBack()" title="Go back to previous page">Back</a>');
-    compiled    = $compile(elem);
-    compiled(scope);
+    elem        = angular.element('<back-link></back-link>');
+    compiled    = $compile(elem)(scope);
     scope.$digest();
-
+    backLink = elem.find('a');
   }));
+
+  it('should have back-link anchor', function() {
+    expect(backLink).toBeDefined();
+    expect(backLink.hasClass('link-back')).toBe(true);
+  });
 
   it('should call history.back when a back link is clicked', function () {
     spyOn($window.history, 'back');
-    elem[0].click();
+    backLink.click();
     expect($window.history.back).toHaveBeenCalled();
   });
-
 });
