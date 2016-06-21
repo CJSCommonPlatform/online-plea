@@ -86,6 +86,7 @@
 
           <label class="block-label" for="correct-details-no" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
             <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.detailsCorrect === 'No' ? 'true' : 'false'}}"
                    data-ng-model="vm.detailsCorrect"> No
           </label>
@@ -185,7 +186,7 @@
                 text: 'Date can&rsquo;t be in past &ndash; enter valid date'
               },
               {
-                name: 'atLeast16',
+                name: 'atLeast18',
                 text: 'Age too young &ndash; enter valid date of birth'
               }
             ]">
@@ -204,7 +205,7 @@
                         invalidMonth : 'vm.invalidMonth(vm.form[\'dob-month\'])',
                         inPast : 'vm.inPast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 1900)',
                         inFuture : 'vm.inFuture(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
-                        atLeast16 : 'vm.atLeast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 16)'
+                        atLeast18 : 'vm.atLeast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 18)'
                      }"
                      data-ng-model="vm.dateOfBirthDay">
             </div>
