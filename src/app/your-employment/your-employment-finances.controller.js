@@ -15,6 +15,7 @@
     vm.nextState = $stateParams.nextState;
     vm.decimalLimit = decimalLimit;
     vm.scrollToAnchor = state.scrollToAnchor;
+    vm.setPaymentFrequency = setPaymentFrequency;
 
     yourEmploymentFinances.updateVm(vm);
 
@@ -30,6 +31,10 @@
 
     function getNextState() {
       return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
+    }
+
+    function setPaymentFrequency(paymentFrequency) {
+      vm.paymentFrequency = paymentFrequency;
     }
 
   }

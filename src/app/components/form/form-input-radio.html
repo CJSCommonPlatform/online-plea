@@ -1,0 +1,7 @@
+<label class="block-label" for="{{vm.name + '-' + vm.value.toLowerCase()}}" data-ng-class="{'selected focused': vm.property === vm.value}">
+  <input type="radio" id="{{vm.name + '-' + vm.value.toLowerCase()}}" name="{{vm.name}}" value="{{vm.value}}" required aria-required="true"
+         data-ng-attr-aria-invalid="{{vm.form[vm.name].invalid ? 'true' : undefined}}"
+         data-ng-attr-aria-describedby="{{vm.form[vm.name].invalid ? ('error-message-' + vm.name) : undefined}}"
+         data-ng-attr-aria-expanded="{{vm.property === vm.value ? 'true' : 'false'}}"
+         data-ng-click="vm.onClick(vm.value)"> {{vm.value}}
+</label>

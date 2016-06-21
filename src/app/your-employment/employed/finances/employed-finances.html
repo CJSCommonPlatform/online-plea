@@ -69,6 +69,14 @@
             <span class="error-message" id="error-message-paid" data-ng-message="required">Choose an answer</span>
           </legend>
 
+          <form-input-radio
+            name="paid"
+            value="Weekly"
+            form="vm.form"
+            property="vm.paymentFrequency"
+            on-update="vm.setPaymentFrequency(value)">
+          </form-input-radio>
+          <!--
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
                    data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
@@ -76,6 +84,7 @@
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Weekly
           </label>
+          -->
 
           <div class="panel panel-border-narrow" id="weekly"
                data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}"
