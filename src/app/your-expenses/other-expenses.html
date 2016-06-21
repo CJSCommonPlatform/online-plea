@@ -60,7 +60,7 @@
     <p class="lede">To help the court make a decision about your payment terms, you must Provide this information about your expenses.</p>
 
 
-    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection>
 
 
       <h2 class="heading-medium">Other expenses</h2>
@@ -183,8 +183,10 @@
               <span class="error-message" data-ng-show="vm.form['other-significant-expenses'].invalid">Choose an answer</span>
             </legend>
 
-            <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-target="other-significant-expenses" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
-              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required data-ng-model="vm.otherSignificantExpenses"> Yes
+            <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required
+                     data-ng-attr-aria-expanded="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : 'false'}}"
+                     data-ng-model="vm.otherSignificantExpenses"> Yes
             </label>
 
             <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': vm.otherSignificantExpenses === 'No'}">

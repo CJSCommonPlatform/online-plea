@@ -45,7 +45,7 @@
     </error-summary>
     
 
-    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection>
       
       
       <div class="panel panel-border-wide">
@@ -73,8 +73,10 @@
             <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
     
-          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.paymentFrequency"> Weekly
+          <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required
+                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' === 'No' ? 'true' : 'false'}}"
+                   data-ng-model="vm.paymentFrequency"> Weekly
           </label>
           
           <div class="panel panel-border-narrow" id="weekly"
@@ -97,8 +99,10 @@
 
           </div>
           
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required data-ng-model="vm.paymentFrequency"> Fortnightly
+          <label class="block-label" for="paid-fortnighly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required
+                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : 'false'}}"
+                   data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
           
           <div class="panel panel-border-narrow" id="fortnightly"
@@ -121,8 +125,10 @@
 
           </div>
 
-          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.paymentFrequency"> Monthly
+          <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required
+                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Monthly' ? 'true' : 'false'}}"
+                   data-ng-model="vm.paymentFrequency"> Monthly
           </label>
           
           <div class="panel panel-border-narrow" id="monthly"
@@ -145,8 +151,10 @@
             
           </div>
             
-          <label class="block-label" for="paid-other" data-target="other" data-ng-class="{'selected': vm.paymentFrequency === 'Other'}">
-            <input type="radio" id="paid-other" name="paid" value="Other" required data-ng-model="vm.paymentFrequency"> Other
+          <label class="block-label" for="paid-other" data-ng-class="{'selected': vm.paymentFrequency === 'Other'}">
+            <input type="radio" id="paid-other" name="paid" value="Other" required
+                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Other' ? 'true' : 'false'}}"
+                   data-ng-model="vm.paymentFrequency"> Other
           </label>
           
           <div class="panel panel-border-narrow" id="other"
@@ -184,8 +192,10 @@
             <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
 
-          <label class="block-label" for="financial-problems-yes" data-target="financial-problems" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-describedby="financial-problems-hint" data-ng-model="vm.financialProblems"> Yes
+          <label class="block-label" for="financial-problems-yes" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-describedby="financial-problems-hint"
+                   data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"
+                   data-ng-model="vm.financialProblems"> Yes
           </label>
 
           <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">

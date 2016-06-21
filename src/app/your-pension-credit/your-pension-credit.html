@@ -33,7 +33,7 @@
     </error-summary>
 
 
-    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection>
 
 
       <div class="form-group">
@@ -46,8 +46,10 @@
             <span class="error-message" data-ng-message="required">Choose an answer</span>
           </legend>
 
-          <label class="block-label" for="paid-weekly" data-target="weekly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.pensionCreditFrequency"> Weekly
+          <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Weekly'}">
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required
+                   data-ng-attr-aria-expanded="{{vm.pensionCreditFrequency === 'Weekly' ? 'true' : 'false'}}"
+                   data-ng-model="vm.pensionCreditFrequency"> Weekly
           </label>
 
           <div class="panel panel-border-narrow" id="weekly"
@@ -71,8 +73,10 @@
           </div>
 
 
-          <label class="block-label" for="paid-fortnighly" data-target="fortnightly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" data-ng-model="vm.pensionCreditFrequency"> Fortnightly
+          <label class="block-label" for="paid-fortnighly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Fortnightly'}">
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly"
+                   data-ng-attr-aria-expanded="{{vm.pensionCreditFrequency === 'Fortnightly' ? 'true' : 'false'}}"
+                   data-ng-model="vm.pensionCreditFrequency"> Fortnightly
           </label>
 
 
@@ -97,8 +101,10 @@
           </div>
 
 
-          <label class="block-label" for="paid-monthly" data-target="monthly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.pensionCreditFrequency"> Monthly
+          <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Monthly'}">
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required
+                   data-ng-attr-aria-expanded="{{vm.pensionCreditFrequency === 'Monthly' ? 'true' : 'false'}}"
+                   data-ng-model="vm.pensionCreditFrequency"> Monthly
           </label>
 
           <div class="panel panel-border-narrow" id="monthly"

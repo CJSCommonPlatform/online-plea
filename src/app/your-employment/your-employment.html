@@ -26,7 +26,7 @@
     </error-summary>
 
 
-    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection>
 
 
       <div class="form-group">
@@ -77,8 +77,10 @@
             <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" required data-ng-model="vm.employment"> Receiving out of work benefits
           </label>
 
-          <label class="block-label" for="other" data-target="provide-more-details" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
-            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required data-ng-model="vm.employment"> Other
+          <label class="block-label" for="other" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
+            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required
+                   data-ng-attr-aria-expanded="{{vm.employment === vm.employmentStatus.OTHER ? 'true' : 'false'}}"
+                   data-ng-model="vm.employment"> Other
           </label>
 
         </fieldset>

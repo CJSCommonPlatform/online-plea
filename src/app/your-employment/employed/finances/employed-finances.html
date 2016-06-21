@@ -41,7 +41,7 @@
     </error-summary>
 
 
-    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection data-form-toggle>
+    <form class="form" method="post" name="vm.form" action="" autocomplete="off" novalidate data-form-selection>
       
       
       <div class="panel panel-border-wide">
@@ -195,7 +195,6 @@
           <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
             <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required aria-required="true"
                    data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"
                    data-ng-model="vm.financialProblems"> No
           </label>
 
