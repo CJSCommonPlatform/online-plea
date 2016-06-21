@@ -240,16 +240,19 @@
 
           <legend id="error-pension-credit" data-ng-messages="vm.form['pension-credit'].error">
             <span class="form-label-bold">Do you receive Pension Credit?</span>
-            <span class="error-message" data-ng-message="required">Choose an answer</span>
+            <span class="error-message" id="error-message-pension-credit" data-ng-message="required">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="pension-credit-yes" data-ng-class="{'selected': vm.pensionCredit === 'Yes'}">
             <input type="radio" id="pension-credit-yes" name="pension-credit" value="Yes" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['pension-credit'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['pension-credit'].invalid ? 'error-message-pension-credit' : undefined}}"
                    data-ng-model="vm.pensionCredit"> Yes
           </label>
 
           <label class="block-label" for="pension-credit-no" data-ng-class="{'selected': vm.pensionCredit === 'No'}">
             <input type="radio" id="pension-credit-no" name="pension-credit" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['pension-credit'].invalid ? 'true' : undefined}}"
                    data-ng-model="vm.pensionCredit"> No
           </label>
 
@@ -265,17 +268,20 @@
           <legend id="error-financial-problems" data-ng-messages="vm.form['financial-problems'].error">
             <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
             <span class="form-hint" id="financial-problems-hint">For example, you would become homeless</span>
-            <span class="error-message" data-ng-message="required">Choose an answer</span>
+            <span class="error-message" id="error-message-financial-problems" data-ng-message="required">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="financial-problems-yes" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-required="true" aria-describedby="financial-problems-hint"
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['financial-problems'].invalid ? 'error-message-financial-problems' : 'financial-problems-hint'}}"
                    data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"
                    data-ng-model="vm.financialProblems"> Yes
           </label>
 
           <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
             <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
                    data-ng-model="vm.financialProblems"> No
           </label>
           
@@ -287,11 +293,13 @@
               
               <label id="error-financial-problems-justification" for="financial-problems-justification" data-ng-messages="vm.form['financial-problems-justification'].error">
                 <span class="form-label">How would paying a fine cause you financial problems?</span>
-                <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="form-hint" id="financial-problems-justification-hint">You may be able to pay in instalments if you provide a good reason</span>
+                <span class="error-message" id="error-message-financial-problems-justification" data-ng-message="required">Provide this information</span>
               </label>
               
               <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" cols="30" rows="3"
+                        data-ng-attr-aria-invalid="{{vm.form['financial-problems-justification'].invalid ? 'true' : undefined}}"
+                        data-ng-attr-aria-describedby="{{vm.form['financial-problems-justification'].invalid ? 'error-message-financial-problems-justification' : 'financial-problems-justification-hint'}}"
                         data-ng-attr-aria-required="{{vm.financialProblems === 'Yes' ? 'true' : undefined}}"
                         data-ng-required="vm.financialProblems === 'Yes'"
                         data-ng-model="vm.financialProblemsJustification"></textarea>
