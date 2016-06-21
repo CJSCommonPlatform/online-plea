@@ -65,7 +65,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="weekly-credit-pay" type="text" name="weekly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Weekly'" data-ng-model="vm.weeklyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" id="weekly-credit-pay" type="text" name="weekly-credit-pay"
+                       data-ng-attr-aria-required="vm.pensionCreditFrequency === 'Weekly' ? 'true' : undefined"
+                       data-ng-required="vm.pensionCreditFrequency === 'Weekly'"
+                       data-ng-model="vm.weeklyPensionCreditPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -93,7 +97,11 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-credit-pay" name="fortnightly-credit-pay"
+                       data-ng-attr-aria-required="vm.pensionCreditFrequency === 'Fortnightly' ? 'true' : undefined"
+                       data-ng-required="vm.pensionCreditFrequency === 'Fortnightly'"
+                       data-ng-model="vm.fortnightlyPensionCreditPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
@@ -120,7 +128,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay" data-ng-required="vm.pensionCreditFrequency === 'Monthly'" data-ng-model="vm.monthlyPensionCreditPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="monthly-credit-pay" name="monthly-credit-pay"
+                       data-ng-attr-aria-required="vm.pensionCreditFrequency === 'Monthly' ? 'true' : undefined"
+                       data-ng-required="vm.pensionCreditFrequency === 'Monthly'"
+                       data-ng-model="vm.monthlyPensionCreditPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>

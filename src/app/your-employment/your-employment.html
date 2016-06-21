@@ -103,7 +103,7 @@
             <input class="form-control" type="text" id="provide-details" name="provide-details"
                    data-ng-attr-aria-invalid="{{vm.form['provide-details'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['provide-details'].invalid ? 'error-message-provide-details' : 'provide-details-hint'}}"
-                   data-ng-attr-aria-required="vm.employment === vm.employmentStatus.OTHER"
+                   data-ng-attr-aria-required="vm.employment === vm.employmentStatus.OTHER ? 'true' : undefined"
                    data-ng-required="vm.employment === vm.employmentStatus.OTHER"
                    data-ng-model="vm.provideDetails">
           </div>
