@@ -156,6 +156,7 @@
 
               <label class="block-label" for="court-no" data-ng-class="{'selected': vm.court === 'No'}">
                 <input type="radio" id="court-no" name="court" value="No"
+                       data-ng-attr-aria-required="vm.plea === 'Guilty'"
                        data-ng-required="vm.plea === 'Guilty'"
                        data-ng-model="vm.court"> Attend court to plead guilty
               </label>
@@ -213,14 +214,15 @@
                 <input type="radio" id="interpreter-yes" name="interpreter" value="Yes"
                        data-ng-attr-aria-invalid="{{vm.form['interpreter'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['interpreter'].invalid ? 'error-message-interpreter' : undefined}}"
-                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-attr-aria-expanded="{{vm.interpreter === 'Yes' ? 'true' : 'false'}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-required="vm.plea === 'Not guilty'"
                        data-ng-model="vm.interpreter"> Yes
               </label>
   
               <label class="block-label" for="interpreter-no" data-ng-class="{'selected': vm.interpreter === 'No'}">
                 <input type="radio" id="interpreter-no" name="interpreter" value="No"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-required="vm.plea === 'Not guilty'"
                        data-ng-model="vm.interpreter"> No
               </label>
@@ -264,14 +266,17 @@
                 <input type="radio" id="evidence-yes" name="evidence" value="Yes"
                        data-ng-attr-aria-invalid="{{vm.form['evidence'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['evidence'].invalid ? 'error-message-evidence' : undefined}}"
-                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-attr-aria-expanded="{{vm.prosecutorWitnessDisagree === 'Yes' ? 'true' : 'false'}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-required="vm.plea === 'Not guilty'"
                        data-ng-model="vm.prosecutorWitnessDisagree"> Yes
               </label>
 
               <label class="block-label" for="evidence-no" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'No'}">
-                <input type="radio" id="evidence-no" name="evidence" value="No" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.prosecutorWitnessDisagree"> No
+                <input type="radio" id="evidence-no" name="evidence" value="No"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.prosecutorWitnessDisagree"> No
               </label>
 
             </fieldset>
@@ -314,14 +319,17 @@
                 <input type="radio" id="witness-yes" name="witness" value="Yes"
                        data-ng-attr-aria-invalid="{{vm.form['witness'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['witness'].invalid ? 'error-message-witness' : 'witness-hint'}}"
-                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-attr-aria-expanded="{{vm.defenceWitnessCall === 'Yes' ? 'true' : 'false'}}"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
                        data-ng-required="vm.plea === 'Not guilty'"
                        data-ng-model="vm.defenceWitnessCall"> Yes
               </label>
               
               <label class="block-label" for="witness-no" data-ng-class="{'selected': vm.defenceWitnessCall === 'No'}">
-                <input type="radio" id="witness-no" name="witness" value="No" data-ng-required="vm.plea === 'Not guilty'" data-ng-model="vm.defenceWitnessCall"> No
+                <input type="radio" id="witness-no" name="witness" value="No"
+                       data-ng-attr-aria-required="vm.plea === 'Not guilty'"
+                       data-ng-required="vm.plea === 'Not guilty'"
+                       data-ng-model="vm.defenceWitnessCall"> No
               </label>
               
             </fieldset>
@@ -359,14 +367,15 @@
                     <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes"
                            data-ng-attr-aria-invalid="{{vm.form['witness-interpreter'].invalid ? 'true' : undefined}}"
                            data-ng-attr-aria-describedby="{{vm.form['witness-interpreter'].invalid ? 'error-message-witness-interpreter' : undefined}}"
-                           data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
                            data-ng-attr-aria-expanded="{{vm.defenceWitnessInterpreter === 'Yes' ? 'true' : 'false'}}"
+                           data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
                            data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
                            data-ng-model="vm.defenceWitnessInterpreter"> Yes
                   </label>
 
                   <label class="block-label" for="witness-interpreter-no" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'No'}">
                     <input type="radio" id="witness-interpreter-no" name="witness-interpreter" value="No"
+                           data-ng-attr-aria-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
                            data-ng-required="vm.plea === vm.pleas.NOT_GUILTY && vm.defenceWitnessCall === 'Yes'"
                            data-ng-model="vm.defenceWitnessInterpreter"> No
                   </label>
