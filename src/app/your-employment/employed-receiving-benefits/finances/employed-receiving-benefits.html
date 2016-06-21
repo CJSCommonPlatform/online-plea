@@ -80,7 +80,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay" data-ng-required="vm.paymentFrequency === 'Weekly'" data-ng-model="vm.weeklyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay"
+                       data-ng-attr-aria-required="vm.paymentFrequency === 'Weekly' ? 'true' : undefined"
+                       data-ng-required="vm.paymentFrequency === 'Weekly'"
+                       data-ng-model="vm.weeklyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -106,7 +110,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-required="vm.paymentFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"
+                       data-ng-attr-aria-required="vm.paymentFrequency === 'Fortnightly'"
+                       data-ng-required="vm.paymentFrequency === 'Fortnightly'"
+                       data-ng-model="vm.fortnightlyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -133,6 +141,7 @@
               
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"
+                       data-ng-attr-aria-required="vm.paymentFrequency === 'Monthly'"
                        data-ng-required="vm.paymentFrequency === 'Monthly'"
                        data-ng-model="vm.monthlyPay"
                        data-ng-pattern="vm.decimalLimit">
