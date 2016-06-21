@@ -112,7 +112,11 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay" data-ng-required="vm.paymentFrequency === 'Weekly'" data-ng-model="vm.weeklyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay"
+                       data-ng-attr-aria-required="{{vm.paymentFrequency === 'Weekly' ? 'true' : undefined}}"
+                       data-ng-required="vm.paymentFrequency === 'Weekly'"
+                       data-ng-model="vm.weeklyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
@@ -138,7 +142,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay" data-ng-required="vm.paymentFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"
+                       data-ng-attr-aria-required="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : undefined}}"
+                       data-ng-required="vm.paymentFrequency === 'Fortnightly'"
+                       data-ng-model="vm.fortnightlyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -164,7 +172,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="monthly-pay" type="text" name="monthly-pay" data-ng-required="vm.paymentFrequency === 'Monthly'" data-ng-model="vm.monthlyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" id="monthly-pay" type="text" name="monthly-pay"
+                       data-ng-attr-aria-required="{{vm.paymentFrequency === 'Monthly' ? 'true' : undefined}}"
+                       data-ng-required="vm.paymentFrequency === 'Monthly'"
+                       data-ng-model="vm.monthlyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -190,7 +202,11 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay" data-ng-required="vm.paymentFrequency === 'Other'" data-ng-model="vm.otherPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay"
+                       data-ng-attr-aria-required="{{vm.paymentFrequency === 'Other' ? 'true' : undefined}}"
+                       data-ng-required="vm.paymentFrequency === 'Other'"
+                       data-ng-model="vm.otherPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>
@@ -259,7 +275,10 @@
                 <span class="error-message" data-ng-message="required">Provide this information</span>
               </label>
               
-              <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" data-ng-required="vm.financialProblems === 'Yes'" cols="30" rows="3" data-ng-model="vm.financialProblemsJustification"></textarea>
+              <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" cols="30" rows="3"
+                        data-ng-attr-aria-required="{{vm.financialProblems === 'Yes' ? 'true' : undefined}}"
+                        data-ng-required="vm.financialProblems === 'Yes'"
+                        data-ng-model="vm.financialProblemsJustification"></textarea>
             
             </div>
 

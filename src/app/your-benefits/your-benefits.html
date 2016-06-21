@@ -115,7 +115,11 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="weekly-benefit-pay" name="weekly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Weekly'" data-ng-model="vm.weeklyBenefitPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="weekly-benefit-pay" name="weekly-benefit-pay"
+                       data-ng-attr-aria-required="{{vm.benefitFrequency === 'Weekly' ? 'true' : undefined}}"
+                       data-ng-required="vm.benefitFrequency === 'Weekly'"
+                       data-ng-model="vm.weeklyBenefitPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
@@ -141,7 +145,11 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="fortnightly-benefit-pay" name="fortnightly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Fortnightly'" data-ng-model="vm.fortnightlyBenefitPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="fortnightly-benefit-pay" name="fortnightly-benefit-pay"
+                       data-ng-attr-aria-required="{{vm.benefitFrequency === 'Fortnightly' ? 'true' : undefined}}"
+                       data-ng-required="vm.benefitFrequency === 'Fortnightly'"
+                       data-ng-model="vm.fortnightlyBenefitPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
@@ -167,7 +175,11 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="monthly-benefit-pay" name="monthly-benefit-pay" data-ng-required="vm.benefitFrequency === 'Monthly'" data-ng-model="vm.monthlyBenefitPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="monthly-benefit-pay" name="monthly-benefit-pay"
+                       data-ng-attr-aria-required="{{vm.benefitFrequency === 'Monthly' ? 'true' : undefined}}"
+                       data-ng-required="vm.benefitFrequency === 'Monthly'"
+                       data-ng-model="vm.monthlyBenefitPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
 
             </div>
@@ -214,7 +226,10 @@
               <span class="error-message" data-ng-message="required">Provide this information</span>
             </label>
 
-            <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3" data-ng-required="vm.financialProblems === 'Yes'" data-ng-model="vm.financialProblemsJustification"></textarea>
+            <textarea class="form-control form-control-textarea" id="financial-problems-justification" name="financial-problems-justification" cols="30" rows="3"
+                      data-ng-attr-aria-required="{{vm.financialProblems === 'Yes' ? 'true' : undefined}}"
+                      data-ng-required="vm.financialProblems === 'Yes'"
+                      data-ng-model="vm.financialProblemsJustification"></textarea>
 
           </div>
 

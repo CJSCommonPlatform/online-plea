@@ -219,7 +219,10 @@
                   <span class="error-message" data-ng-message="required">Provide this information</span>
                 </label>
 
-                <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesDetails"></textarea>
+                <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3"
+                          data-ng-attr-aria-required="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : undefined}}"
+                          data-ng-required="vm.otherSignificantExpenses === 'Yes'"
+                          data-ng-model="vm.otherSignificantExpensesDetails"></textarea>
 
               </div>
 
@@ -232,7 +235,11 @@
                 </label>
                 
                 <span class="form-currency">
-                  <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="text" name="other-significant-expenses-total" data-ng-required="vm.otherSignificantExpenses === 'Yes'" data-ng-model="vm.otherSignificantExpensesTotal" data-ng-pattern="vm.decimalLimit">
+                  <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="text" name="other-significant-expenses-total"
+                         data-ng-attr-aria-required="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : undefined}}"
+                         data-ng-required="vm.otherSignificantExpenses === 'Yes'"
+                         data-ng-model="vm.otherSignificantExpensesTotal"
+                         data-ng-pattern="vm.decimalLimit">
                 </span>
                 
               </div>
