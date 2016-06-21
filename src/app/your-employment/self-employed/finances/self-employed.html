@@ -77,7 +77,9 @@
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.paymentFrequency"> Weekly
           </label>
           
-          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}">
+          <div class="panel panel-border-narrow" id="weekly"
+               data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}"
+               data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Weekly' ? 'true' : 'false'}}">
             
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-pay'].invalid}">
               
@@ -99,7 +101,9 @@
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
           
-          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}">
+          <div class="panel panel-border-narrow" id="fortnightly"
+               data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}"
+               data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Fortnightly' ? 'true' : 'false'}}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-pay'].invalid}">
 
@@ -121,7 +125,9 @@
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.paymentFrequency"> Monthly
           </label>
           
-          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Monthly'}">
+          <div class="panel panel-border-narrow" id="monthly"
+               data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Monthly'}"
+               data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Monthly' ? 'true' : 'false'}}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['monthly-pay'].invalid}">
 
@@ -143,7 +149,9 @@
             <input type="radio" id="paid-other" name="paid" value="Other" required data-ng-model="vm.paymentFrequency"> Other
           </label>
           
-          <div class="panel panel-border-narrow" id="other" data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}">
+          <div class="panel panel-border-narrow" id="other"
+               data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Other'}"
+               data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Other' ? 'true' : 'false'}}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['other-pay'].invalid}">
               
@@ -184,7 +192,9 @@
             <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required data-ng-model="vm.financialProblems"> No
           </label>
           
-          <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
+          <div class="panel panel-border-narrow" id="financial-problems"
+               data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}"
+               data-ng-attr-aria-hidden="{{vm.financialProblems !== 'Yes' ? 'true' : 'false'}}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['financial-problems-justification'].invalid}">
               

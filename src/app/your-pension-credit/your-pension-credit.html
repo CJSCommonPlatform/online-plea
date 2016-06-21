@@ -50,7 +50,9 @@
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.pensionCreditFrequency"> Weekly
           </label>
 
-          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Weekly'}">
+          <div class="panel panel-border-narrow" id="weekly"
+               data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Weekly'}"
+               data-ng-attr-aria-hidden="{{vm.pensionCreditFrequency !== 'Weekly' ? 'true' : 'false'}}">
             
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-credit-pay'].invalid}">
               
@@ -74,7 +76,9 @@
           </label>
 
 
-          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Fortnightly'}">
+          <div class="panel panel-border-narrow" id="fortnightly"
+               data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Fortnightly'}"
+               data-ng-attr-aria-hidden="{{vm.pensionCreditFrequency !== 'Fortnightly' ? 'true' : 'false'}}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-credit-pay'].invalid}">
 
@@ -97,7 +101,9 @@
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.pensionCreditFrequency"> Monthly
           </label>
 
-          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Monthly'}">
+          <div class="panel panel-border-narrow" id="monthly"
+               data-ng-class="{'js-hidden': vm.pensionCreditFrequency !== 'Monthly'}"
+               data-ng-attr-aria-hidden="{{vm.pensionCreditFrequency !== 'Monthly' ? 'true' : 'false'}}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['monthly-credit-pay'].invalid}">
               

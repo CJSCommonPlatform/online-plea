@@ -95,7 +95,9 @@
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required data-ng-model="vm.benefitFrequency"> Weekly
           </label>
           
-          <div class="panel panel-border-narrow" id="weekly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Weekly'}">
+          <div class="panel panel-border-narrow" id="weekly"
+               data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Weekly'}"
+               data-ng-attr-aria-hidden="{{vm.benefitFrequency !== 'Weekly' ? 'true' : 'false'}}">
               
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-benefit-pay'].invalid}">
 
@@ -117,7 +119,9 @@
             <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required data-ng-model="vm.benefitFrequency"> Fortnightly
           </label>
           
-          <div class="panel panel-border-narrow" id="fortnightly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Fortnightly'}">
+          <div class="panel panel-border-narrow" id="fortnightly"
+               data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Fortnightly'}"
+               data-ng-attr-aria-hidden="{{vm.benefitFrequency !== 'Fortnightly' ? 'true' : 'false'}}">
                 
             <div class="form-group" data-ng-class="{'error': vm.form['fortnightly-benefit-pay'].invalid}">
 
@@ -139,7 +143,9 @@
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" required data-ng-model="vm.benefitFrequency"> Monthly
           </label>
           
-          <div class="panel panel-border-narrow" id="monthly" data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Monthly'}">
+          <div class="panel panel-border-narrow" id="monthly"
+               data-ng-class="{'js-hidden': vm.benefitFrequency !== 'Monthly'}"
+               data-ng-attr-aria-hidden="{{vm.benefitFrequency !== 'Monthly' ? 'true' : 'false'}}">
                 
             <div class="form-group" data-ng-class="{'error': vm.form['monthly-benefit-pay'].invalid}">
 
@@ -182,7 +188,9 @@
 
         </fieldset>
 
-        <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
+        <div class="panel panel-border-narrow" id="financial-problems"
+             data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}"
+             data-ng-attr-aria-hidden="{{vm.financialProblems !== 'Yes' ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['financial-problems-justification'].invalid}">
 

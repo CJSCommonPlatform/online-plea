@@ -201,7 +201,9 @@
 
         </fieldset>
         
-        <div class="panel panel-border-narrow" id="financial-problems" data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}">
+        <div class="panel panel-border-narrow" id="financial-problems"
+             data-ng-class="{'js-hidden': vm.financialProblems !== 'Yes'}"
+             data-ng-attr-aria-hidden="{{vm.financialProblems !== 'Yes' ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['financial-problems-justification'].invalid}">
             

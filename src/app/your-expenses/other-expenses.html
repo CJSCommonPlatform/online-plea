@@ -191,7 +191,9 @@
               <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required data-ng-model="vm.otherSignificantExpenses"> No
             </label>
 
-            <div class="panel panel-border-narrow" id="other-significant-expenses" data-ng-class="{'js-hidden': vm.otherSignificantExpenses !== 'Yes'}">
+            <div class="panel panel-border-narrow" id="other-significant-expenses"
+                 data-ng-class="{'js-hidden': vm.otherSignificantExpenses !== 'Yes'}"
+                 data-ng-attr-aria-hidden="{{vm.otherSignificantExpenses !== 'Yes' ? 'true' : 'false'}}">
 
               <div class="form-group" data-ng-class="{'error': vm.form['other-significant-expenses-details'].invalid}">
 

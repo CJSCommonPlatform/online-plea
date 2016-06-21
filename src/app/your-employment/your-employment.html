@@ -83,7 +83,9 @@
 
         </fieldset>
         
-        <div class="panel panel-border-narrow" id="provide-more-details" data-ng-class="{'js-hidden': vm.employment !== vm.employmentStatus.OTHER}">
+        <div class="panel panel-border-narrow" id="provide-more-details"
+             data-ng-class="{'js-hidden': vm.employment !== vm.employmentStatus.OTHER}"
+             data-ng-attr-aria-hidden="{{vm.employment !== vm.employmentStatus.OTHER ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['provide-details'].invalid}">
             <label for="provide-details" id="error-provide-details">

@@ -114,7 +114,8 @@
         </label>
 
         <label class="block-label" for="plea-notguilty" data-target="not-guilty" data-ng-class="{'selected': vm.plea === 'Not guilty'}">
-          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required
+          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required aria-required="true"
+                 data-ng-attr-aria-invalid="{{vm.form['plea'].invalid ? 'true' : undefined}}"
                  data-ng-click="vm.enterYourPleaClicked()"
                  data-ng-model="vm.plea"> Not guilty
         </label>
@@ -127,7 +128,9 @@
 
         <!-- Guilty -->
 
-        <div class="panel panel-border-narrow" id="guilty" data-ng-class="{'js-hidden': vm.plea !== 'Guilty'}">
+        <div class="panel panel-border-narrow" id="guilty"
+             data-ng-class="{'js-hidden': vm.plea !== 'Guilty'}"
+             data-ng-attr-aria-hidden="{{vm.plea !== 'Guilty' ? 'true' : 'false'}}">
 
           <p>Pleading guilty to this charge means you don&rsquo;t need to come to court to respond to this charge &ndash; we&rsquo;ll send you details of the court&rsquo;s decision and what to do next.</p>
 
@@ -175,7 +178,9 @@
 
         <!-- Not guilty -->
 
-        <div class="panel panel-border-narrow" id="not-guilty" data-ng-class="{'js-hidden': vm.plea !== 'Not guilty'}">
+        <div class="panel panel-border-narrow" id="not-guilty"
+             data-ng-class="{'js-hidden': vm.plea !== 'Not guilty'}"
+             data-ng-attr-aria-hidden="{{vm.plea !== 'Not guilty' ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['not-guilty-because'].invalid}">
             
@@ -219,7 +224,9 @@
   
             </fieldset>
   
-            <div class="panel panel-border-narrow" id="interpreter" data-ng-class="{'js-hidden': vm.interpreter !== 'Yes'}">
+            <div class="panel panel-border-narrow" id="interpreter"
+                 data-ng-class="{'js-hidden': vm.interpreter !== 'Yes'}"
+                 data-ng-attr-aria-hidden="{{vm.interpreter !== 'Yes' ? 'true' : 'false'}}">
               
               <div class="form-group" data-ng-class="{'error': vm.form['interpreter-language'].invalid}">
                 
@@ -265,7 +272,9 @@
 
             </fieldset>
             
-            <div class="panel panel-border-narrow" id="evidence" data-ng-class="{'js-hidden': vm.prosecutorWitnessDisagree !== 'Yes'}">
+            <div class="panel panel-border-narrow" id="evidence"
+                 data-ng-class="{'js-hidden': vm.prosecutorWitnessDisagree !== 'Yes'}"
+                 data-ng-attr-aria-hidden="{{vm.prosecutorWitnessDisagree !== 'Yes' ? 'true' : 'false'}}">
 
               <div class="form-group" data-ng-class="{'error': vm.form['witness-name'].invalid}">
                 
@@ -312,7 +321,9 @@
               
             </fieldset>
             
-            <div class="panel panel-border-narrow" id="witness" data-ng-class="{'js-hidden': vm.defenceWitnessCall !== 'Yes'}">
+            <div class="panel panel-border-narrow" id="witness"
+                 data-ng-class="{'js-hidden': vm.defenceWitnessCall !== 'Yes'}"
+                 data-ng-attr-aria-hidden="{{vm.defenceWitnessCall !== 'Yes' ? 'true' : 'false'}}">
               
               <div class="form-group" data-ng-class="{'error': vm.form['witness-contact-details'].invalid}">
                 
@@ -356,7 +367,9 @@
 
                 </fieldset>
                 
-                <div class="panel panel-border-narrow" id="witness-interpreter" data-ng-class="{'js-hidden': vm.defenceWitnessInterpreter !== 'Yes'}">
+                <div class="panel panel-border-narrow" id="witness-interpreter"
+                     data-ng-class="{'js-hidden': vm.defenceWitnessInterpreter !== 'Yes'}"
+                     data-ng-attr-aria-hidden="{{vm.defenceWitnessInterpreter !== 'Yes' ? 'true' : 'false'}}">
 
                   <div class="form-group" data-ng-class="{'error': vm.form['witness-interpreter-language'].invalid}">
                     
