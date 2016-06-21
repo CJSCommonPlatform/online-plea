@@ -1,5 +1,6 @@
 <back-link></back-link>
 
+
 <div class="grid-row">
 
 
@@ -62,23 +63,27 @@
           </label>
 
           <label class="block-label" for="employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.EMPLOYED_BENEFITS}">
-            <input type="radio" id="employed-with-benefits" name="employment" value="{{vm.employmentStatus.EMPLOYED_BENEFITS}}" required data-ng-model="vm.employment"> Employed and also receiving benefits
+            <input type="radio" id="employed-with-benefits" name="employment" value="{{vm.employmentStatus.EMPLOYED_BENEFITS}}" required aria-required="true"
+                   data-ng-model="vm.employment"> Employed and also receiving benefits
           </label>
 
           <label class="block-label" for="self-employed" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED}">
-            <input type="radio" id="self-employed" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED}}" required data-ng-model="vm.employment"> Self&ndash;employed
+            <input type="radio" id="self-employed" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED}}" required aria-required="true"
+                   data-ng-model="vm.employment"> Self&ndash;employed
           </label>
 
           <label class="block-label" for="self-employed-with-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.SELF_EMPLOYED_BENEFITS}">
-            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED_BENEFITS}}" required data-ng-model="vm.employment"> Self&ndash;employed and also receiving benefits
+            <input type="radio" id="self-employed-with-benefits" name="employment" value="{{vm.employmentStatus.SELF_EMPLOYED_BENEFITS}}" required aria-required="true"
+                   data-ng-model="vm.employment"> Self&ndash;employed and also receiving benefits
           </label>
 
           <label class="block-label" for="work-benefits" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OUT_OF_WORK_BENEFITS}">
-            <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" required data-ng-model="vm.employment"> Receiving out of work benefits
+            <input type="radio" id="work-benefits" name="employment" value="{{vm.employmentStatus.OUT_OF_WORK_BENEFITS}}" required aria-required="true"
+                   data-ng-model="vm.employment"> Receiving out of work benefits
           </label>
 
           <label class="block-label" for="other" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
-            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required
+            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.employment === vm.employmentStatus.OTHER ? 'true' : 'false'}}"
                    data-ng-model="vm.employment"> Other
           </label>

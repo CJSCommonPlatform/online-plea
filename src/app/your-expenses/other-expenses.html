@@ -82,7 +82,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="television-subscription" type="text" name="television-subscription" required aria-describedby="television-subscription-hint" data-ng-model="vm.televisionSubscription" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="television-subscription" type="text" name="television-subscription" required aria-required="true" aria-describedby="television-subscription-hint"
+                   data-ng-model="vm.televisionSubscription"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -97,7 +99,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="travel-expenses" type="text" name="travel-expenses" required aria-describedby="travel-expenses-hint" data-ng-model="vm.travelExpenses" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="travel-expenses" type="text" name="travel-expenses" required aria-required="true" aria-describedby="travel-expenses-hint"
+                   data-ng-model="vm.travelExpenses"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -112,7 +116,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="telephone" type="text" name="telephone" required aria-describedby="telephone-hint" data-ng-model="vm.telephone" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="telephone" type="text" name="telephone" required aria-required="true" aria-describedby="telephone-hint"
+                   data-ng-model="vm.telephone"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -126,7 +132,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="loan-repayments" type="text" name="loan-repayments" required data-ng-model="vm.loanRepayments" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="loan-repayments" type="text" name="loan-repayments" required aria-required="true"
+                   data-ng-model="vm.loanRepayments"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -141,7 +149,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="county-court-orders" type="text" name="county-court-orders" required data-ng-model="vm.countyCourtOrders" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="county-court-orders" type="text" name="county-court-orders" required aria-required="true"
+                   data-ng-model="vm.countyCourtOrders"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -155,7 +165,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="fines" type="text" name="fines" required data-ng-model="vm.fines" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="fines" type="text" name="fines" required aria-required="true"
+                   data-ng-model="vm.fines"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -169,7 +181,9 @@
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="child-maintenance" type="text" name="child-maintenance" required data-ng-model="vm.childMaintenance" data-ng-pattern="vm.decimalLimit">
+            <input class="form-control form-control-1-4" id="child-maintenance" type="text" name="child-maintenance" required aria-required="true"
+                   data-ng-model="vm.childMaintenance"
+                   data-ng-pattern="vm.decimalLimit">
           </span>
 
         </div>
@@ -184,13 +198,14 @@
             </legend>
 
             <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
-              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required aria-required="true"
                      data-ng-attr-aria-expanded="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : 'false'}}"
                      data-ng-model="vm.otherSignificantExpenses"> Yes
             </label>
 
             <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': vm.otherSignificantExpenses === 'No'}">
-              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required data-ng-model="vm.otherSignificantExpenses"> No
+              <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required aria-required="true"
+                     data-ng-model="vm.otherSignificantExpenses"> No
             </label>
 
             <div class="panel panel-border-narrow" id="other-significant-expenses"

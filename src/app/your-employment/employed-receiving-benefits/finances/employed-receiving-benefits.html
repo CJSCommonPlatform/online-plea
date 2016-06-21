@@ -62,7 +62,7 @@
           </legend>
     
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Weekly
           </label>
@@ -88,7 +88,7 @@
           </div>
           
           <label class="block-label" for="paid-fortnighly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required
+            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
@@ -114,7 +114,7 @@
           </div>
           
           <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Monthly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Monthly
           </label>
@@ -132,7 +132,10 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay" data-ng-required="vm.paymentFrequency === 'Monthly'" data-ng-model="vm.monthlyPay" data-ng-pattern="vm.decimalLimit">
+                <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"
+                       data-ng-required="vm.paymentFrequency === 'Monthly'"
+                       data-ng-model="vm.monthlyPay"
+                       data-ng-pattern="vm.decimalLimit">
               </span>
               
             </div>

@@ -58,23 +58,28 @@
           </legend>
 
           <label class="block-label" for="contributory-support-allowance" data-ng-class="{'selected': vm.benefit === 'Contributory Employment and Support Allowance'}">
-            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Support Allowance" required data-ng-model="vm.benefit"> Contributory Employment and Support Allowance
+            <input type="radio" id="contributory-support-allowance" name="benefit" value="Contributory Employment and Support Allowance" required aria-required="true"
+                   data-ng-model="vm.benefit"> Contributory Employment and Support Allowance
           </label>
           
           <label class="block-label" for="income-support-allowance" data-ng-class="{'selected': vm.benefit === 'Income-related Employment and Support Allowance'}">
-            <input type="radio" id="income-support-allowance" name="benefit" value="Income-related Employment and Support Allowance" required data-ng-model="vm.benefit"> Income&ndash;related Employment and Support Allowance
+            <input type="radio" id="income-support-allowance" name="benefit" value="Income-related Employment and Support Allowance" required aria-required="true"
+                   data-ng-model="vm.benefit"> Income&ndash;related Employment and Support Allowance
           </label>
           
           <label class="block-label" for="income-support" data-ng-class="{'selected': vm.benefit === 'Income Support'}">
-            <input type="radio" id="income-support" name="benefit" value="Income Support" required data-ng-model="vm.benefit"> Income Support
+            <input type="radio" id="income-support" name="benefit" value="Income Support" required aria-required="true"
+                   data-ng-model="vm.benefit"> Income Support
           </label>
 
           <label class="block-label" for="universal-credit" data-ng-class="{'selected': vm.benefit === 'Universal Credit'}">
-            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" required data-ng-model="vm.benefit"> Universal Credit
+            <input type="radio" id="universal-credit" name="benefit" value="Universal Credit" required aria-required="true"
+                   data-ng-model="vm.benefit"> Universal Credit
           </label>
 
           <label class="block-label" for="other" data-ng-class="{'selected': vm.benefit === 'Other'}">
-            <input type="radio" id="other" name="benefit" value="Other" required data-ng-model="vm.benefit"> Other
+            <input type="radio" id="other" name="benefit" value="Other" required aria-required="true"
+                   data-ng-model="vm.benefit"> Other
           </label>
 
         </fieldset>
@@ -92,7 +97,7 @@
           </legend>
 
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.benefitFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Weekly' ? 'true' : 'false'}}"
                    data-ng-model="vm.benefitFrequency"> Weekly
           </label>
@@ -118,7 +123,7 @@
           </div>
 
           <label class="block-label" for="paid-fortnightly" data-ng-class="{'selected': vm.benefitFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required
+            <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Fortnightly' ? 'true' : 'false'}}"
                    data-ng-model="vm.benefitFrequency"> Fortnightly
           </label>
@@ -144,7 +149,7 @@
           </div>
           
           <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.benefitFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Monthly' ? 'true' : 'false'}}"
                    data-ng-model="vm.benefitFrequency"> Monthly
           </label>
@@ -185,13 +190,14 @@
           </legend>
 
           <label class="block-label" for="financial-problems-yes" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" required
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"
                    data-ng-model="vm.financialProblems"> Yes
           </label>
 
           <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required data-ng-model="vm.financialProblems"> No
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required aria-required="true"
+                   data-ng-model="vm.financialProblems"> No
           </label>
 
         </fieldset>

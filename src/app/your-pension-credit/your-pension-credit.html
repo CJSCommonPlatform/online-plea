@@ -47,7 +47,7 @@
           </legend>
 
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.pensionCreditFrequency === 'Weekly' ? 'true' : 'false'}}"
                    data-ng-model="vm.pensionCreditFrequency"> Weekly
           </label>
@@ -102,7 +102,7 @@
 
 
           <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.pensionCreditFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true"
                    data-ng-attr-aria-expanded="{{vm.pensionCreditFrequency === 'Monthly' ? 'true' : 'false'}}"
                    data-ng-model="vm.pensionCreditFrequency"> Monthly
           </label>
