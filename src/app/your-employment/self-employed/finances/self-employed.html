@@ -70,11 +70,13 @@
 
           <legend id="error-paid" data-ng-messages="vm.form['paid'].error">
             <span class="form-label-bold">How often do you get paid?</span>
-            <span class="error-message" data-ng-message="required">Choose an answer</span>
+            <span class="error-message" id="error-message-paid" data-ng-message="required">Choose an answer</span>
           </legend>
     
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['paid'].invalid ? 'error-message-paid' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' === 'No' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Weekly
           </label>
@@ -87,12 +89,14 @@
               
               <label for="weekly-pay" id="error-weekly-pay" data-ng-messages="vm.form['weekly-pay'].error">
                 <span class="form-label">Weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+                <span class="error-message" id="error-message-weekly-pay" data-ng-message="required">Provide this information</span>
+                <span class="error-message" id="error-message-weekly-pay" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
               
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay"
+                       data-ng-attr-aria-invalid="{{vm.form['weekly-pay'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['weekly-pay'].invalid ? 'error-message-weekly-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Weekly' ? 'true' : undefined}}"
                        data-ng-required="vm.paymentFrequency === 'Weekly'"
                        data-ng-model="vm.weeklyPay"
@@ -105,6 +109,7 @@
           
           <label class="block-label" for="paid-fortnighly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
             <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Fortnightly
           </label>
@@ -117,12 +122,14 @@
 
               <label for="fortnightly-pay" id="error-fortnightly-pay" data-ng-messages="vm.form['fortnightly-pay'].error">
                 <span class="form-label">Fortnightly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+                <span class="error-message" id="error-message-fortnightly-pay" data-ng-message="required">Provide this information</span>
+                <span class="error-message" id="error-message-fortnightly-pay" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
 
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="fortnightly-pay" name="fortnightly-pay"
+                       data-ng-attr-aria-invalid="{{vm.form['fortnightly-pay'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['fortnightly-pay'].invalid ? 'error-message-fortnightly-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : undefined}}"
                        data-ng-required="vm.paymentFrequency === 'Fortnightly'"
                        data-ng-model="vm.fortnightlyPay"
@@ -135,6 +142,7 @@
 
           <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.paymentFrequency === 'Monthly'}">
             <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Monthly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Monthly
           </label>
@@ -147,12 +155,14 @@
 
               <label for="monthly-pay" id="error-monthly-pay" data-ng-messages="vm.form['monthly-pay'].error">
                 <span class="form-label">Monthly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+                <span class="error-message" id="error-message-monthly-pay" data-ng-message="required">Provide this information</span>
+                <span class="error-message" id="error-message-monthly-pay" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
 
               <span class="form-currency">
                 <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"
+                       data-ng-attr-aria-invalid="{{vm.form['monthly-pay'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['monthly-pay'].invalid ? 'error-message-monthly-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Monthly' ? 'true' : undefined}}"
                        data-ng-required="vm.paymentFrequency === 'Monthly'"
                        data-ng-model="vm.monthlyPay"
@@ -165,6 +175,7 @@
             
           <label class="block-label" for="paid-other" data-ng-class="{'selected': vm.paymentFrequency === 'Other'}">
             <input type="radio" id="paid-other" name="paid" value="Other" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Other' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Other
           </label>
@@ -177,12 +188,14 @@
               
               <label id="error-other-pay" for="other-pay" data-ng-messages="vm.form['other-pay'].error">
                 <span class="form-label">Average weekly take home pay (after tax)<span class="visuallyhidden">, in pounds</span>?</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
-                <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+                <span class="error-message" id="error-message-other-pay" data-ng-message="required">Provide this information</span>
+                <span class="error-message" id="error-message-other-pay" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
               </label>
               
               <span class="form-currency">
                 <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay"
+                       data-ng-attr-aria-invalid="{{vm.form['other-pay'].invalid ? 'true' : undefined}}"
+                       data-ng-attr-aria-describedby="{{vm.form['other-pay'].invalid ? 'error-message-other-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Other' ? 'true' : undefined}}"
                        data-ng-required="vm.paymentFrequency === 'Other'"
                        data-ng-model="vm.otherPay"
@@ -205,17 +218,21 @@
           <legend id="error-financial-problems" data-ng-messages="vm.form['financial-problems'].error">
             <span class="form-label-bold">Would paying a fine cause you serious financial problems?</span>
             <span class="form-hint" id="financial-problems-hint">For example, you would become homeless</span>
-            <span class="error-message" data-ng-message="required">Choose an answer</span>
+            <span class="error-message" id="error-message-financial-problems" data-ng-message="required">Choose an answer</span>
           </legend>
 
           <label class="block-label" for="financial-problems-yes" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-required="true" aria-describedby="financial-problems-hint"
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['financial-problems'].invalid ? 'error-message-financial-problems' : 'financial-problems-hint'}}"
                    data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"
                    data-ng-model="vm.financialProblems"> Yes
           </label>
 
           <label class="block-label" for="financial-problems-no" data-ng-class="{'selected': vm.financialProblems === 'No'}">
-            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required aria-required="true" data-ng-model="vm.financialProblems"> No
+            <input type="radio" id="financial-problems-no" name="financial-problems" value="No" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
+                   data-ng-model="vm.financialProblems"> No
           </label>
           
           <div class="panel panel-border-narrow" id="financial-problems"
@@ -227,10 +244,12 @@
               <label id="error-financial-problems-justification" for="financial-problems-justification" data-ng-messages="vm.form['financial-problems-justification'].error">
                 <span class="form-label">How would paying a fine cause you financial problems?</span>
                 <span class="form-hint">You may be able to pay in instalments if you provide a good reason</span>
-                <span class="error-message" data-ng-message="required">Provide this information</span>
+                <span class="error-message" id="error-message-financial-problems-justification" data-ng-message="required">Provide this information</span>
               </label>
               
               <textarea id="financial-problems-justification" class="form-control form-control-textarea" name="financial-problems-justification" cols="30" rows="3"
+                        data-ng-attr-aria-invalid="{{vm.form['financial-problems-justification'].invalid ? 'true' : undefined}}"
+                        data-ng-attr-aria-describedby="{{vm.form['financial-problems-justification'].invalid ? 'error-message-financial-problems-justification' : 'financial-problems-justification-hint'}}"
                         data-ng-attr-aria-required="{{vm.financialProblems === 'Yes' ? 'true' : undefined}}"
                         data-ng-required="vm.financialProblems === 'Yes'"
                         data-ng-model="vm.financialProblemsJustification"></textarea>
