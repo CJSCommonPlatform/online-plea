@@ -58,12 +58,14 @@
           <label for="accommodation" id="error-accommodation" data-ng-messages="vm.form['accommodation'].error">
             <span class="form-label-bold">Accommodation<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-accommodation" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-accommodation" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="accommodation" name="accommodation" required aria-required="true" aria-describedby="accommodation-hint"
+            <input class="form-control form-control-1-4" type="text" id="accommodation" name="accommodation" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['accommodation'].invalid ? 'true' : undefined}}}"
+                   data-ng-attr-aria-described-by="{{vm.form['accommodation'].invalid ? 'error-message-accommodation' : 'accommodation-hint'}}"
                    data-ng-model="vm.accommodation"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -75,12 +77,14 @@
           <label for="utility" id="error-utility" data-ng-messages="vm.form['utility'].error">
             <span class="form-label-bold">Utility bills<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="utility-hint">Eg, gas, water, electricity</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-utility" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-utility" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="utility" name="utility" required aria-required="true" aria-describedby="utility-hint"
+            <input class="form-control form-control-1-4" type="text" id="utility" name="utility" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['utility'].invalid ? 'true' : undefined}}}"
+                   data-ng-attr-aria-described-by="{{vm.form['utility'].invalid ? 'error-message-utility' : 'utility-hint'}}"
                    data-ng-model="vm.utilityBills"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -92,12 +96,14 @@
           <label for="insurance" id="error-insurance" data-ng-messages="vm.form['insurance'].error">
             <span class="form-label-bold">Insurance<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="insurance-hint">Eg, home, life insurance</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-insurance" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-insurance" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" type="text" id="insurance" name="insurance" required aria-required="true" aria-describedby="insurance-hint"
+            <input class="form-control form-control-1-4" type="text" id="insurance" name="insurance" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['insurance'].invalid ? 'true' : undefined}}}"
+                   data-ng-attr-aria-described-by="{{vm.form['insurance'].invalid ? 'error-message-insurance' : 'insurance-hint'}}"
                    data-ng-model="vm.insurance"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -109,12 +115,14 @@
           <label for="council-tax" id="error-council-tax" data-ng-messages="vm.form['council-tax'].error">
             <span class="form-label-bold">Council tax<span class="visuallyhidden">, in pounds</span></span>
             <span class="visuallyhidden">, in pounds</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-council-tax" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-council-tax" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
             <input class="form-control form-control-1-4" type="text" id="council-tax" name="council-tax" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['council-tax'].invalid ? 'true' : undefined}}}"
+                   data-ng-attr-aria-described-by="{{vm.form['council-tax'].invalid ? 'error-message-council-tax' : undefined}}"
                    data-ng-model="vm.councilTax"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -127,15 +135,19 @@
 
             <legend id="error-contribute">
               <span class="form-label-bold">Does anyone else contribute to these bills?</span>
-              <span class="error-message" data-ng-show="vm.form['contribute'].invalid">Choose an answer</span>
+              <span class="error-message" id="error-message-contribute" data-ng-show="vm.form['contribute'].invalid">Choose an answer</span>
             </legend>
 
             <label class="block-label" for="contribute-yes" data-ng-class="{'selected': vm.contribute === 'Yes'}">
-              <input type="radio" id="contribute-yes" name="contribute" value="Yes" required aria-required="true" data-ng-model="vm.contribute"> Yes
+              <input type="radio" id="contribute-yes" name="contribute" value="Yes" required aria-required="true" data-ng-model="vm.contribute"
+                     data-ng-attr-aria-invalid="{{vm.form['contribute'].invalid ? 'true' : undefined}}}"
+                     data-ng-attr-aria-described-by="{{vm.form['contribute'].invalid ? 'error-message-contribute' : undefined}}"> Yes
             </label>
 
             <label class="block-label" for="contribute-no" data-ng-class="{'selected': vm.contribute === 'No'}">
-              <input type="radio" id="contribute-no" name="contribute" value="No" required aria-required="true" data-ng-model="vm.contribute"> No
+              <input type="radio" id="contribute-no" name="contribute" value="No" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['contribute'].invalid ? 'true' : undefined}}}"
+                     data-ng-model="vm.contribute"> No
             </label>
 
           </fieldset>
