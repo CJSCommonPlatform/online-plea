@@ -1,0 +1,51 @@
+<ng-form name="$ctrl.dateForm">
+
+  <div class="date-input-set">
+
+    <!-- Date day -->
+    <div class="date-item-set">
+      <label for="date-dd" data-i18n="date-input.labelDay"></label>
+      <input class="form-control" id="date-dd" type="text" name="dateDay"
+             maxlength="2"
+             placeholder="DD"
+             input-number
+             data-ng-model="$ctrl.dateDay"
+             aria-describedby="date-label"
+             data-ng-change="$ctrl.onChange()"
+             data-ng-blur="$ctrl.onBlur()"
+             data-ng-class="{'cpp-form-valid': $ctrl.dateForm.dateDay.$valid}">
+    </div>
+
+    <!-- Date month -->
+    <div class="date-item-set">
+      <label for="date-mm" data-i18n="date-input.labelMonth"></label>
+      <input class="form-control" id="date-mm" type="text" name="dateMonth"
+             maxlength="2"
+             placeholder="MM"
+             input-number
+             data-ng-model="$ctrl.dateMonth"
+             data-ng-change="$ctrl.onChange()"
+             data-ng-blur="$ctrl.onBlur()"
+             aria-describedby="date-label"
+             data-ng-class="{'cpp-form-valid': $ctrl.dateForm.dateMonth.$valid}">
+    </div>
+
+    <!-- Date yyyy -->
+    <div class="date-item-set date-item-set-year">
+      <label for="date-yyyy" data-i18n="date-input.labelYear"></label>
+      <input class="form-control" id="date-yyyy" type="text" name="dateYear"
+             maxlength="4"
+             placeholder="YYYY"
+             input-number
+             input-number-min="1900"
+             input-number-max="3000"
+             data-ng-model="$ctrl.dateYear"
+             data-ng-change="$ctrl.onChange()"
+             data-ng-blur="$ctrl.onBlur()"
+             aria-describedby="date-label"
+             data-ng-class="{'cpp-form-valid': $ctrl.dateForm.dateYear.$valid}">
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</ng-form>
