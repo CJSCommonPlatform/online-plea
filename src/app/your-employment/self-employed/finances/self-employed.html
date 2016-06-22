@@ -77,7 +77,7 @@
             <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
                    data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['paid'].invalid ? 'error-message-paid' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' === 'No' ? 'true' : 'false'}}"
+                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' ? 'true' : 'false'}}"
                    data-ng-model="vm.paymentFrequency"> Weekly
           </label>
           
