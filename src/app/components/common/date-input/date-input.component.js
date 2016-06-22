@@ -1,5 +1,5 @@
 (function () {
-
+/*
   'use strict';
 
   angular
@@ -112,4 +112,5 @@
       return Object.keys(vm.dateForm.$error).length > 0;
     }
   }
+*/
 }());

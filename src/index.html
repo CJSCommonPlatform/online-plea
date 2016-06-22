@@ -63,7 +63,7 @@
 
   </head>
 
-  <body data-ng-controller="mainController" data-ng-app="pleaApp">
+  <body data-ng-controller="mainController">
 
   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
   
@@ -99,7 +99,7 @@
 
   <div id="global-header-bar"></div>
 
-  <main id="content" role="main">
+  <main id="content" role="main" data-ng-app="pleaApp">
 
     <div class="phase-banner-alpha">
       <p>
