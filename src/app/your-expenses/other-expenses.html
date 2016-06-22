@@ -77,12 +77,14 @@
           <label for="television-subscription" id="error-television-subscription" data-ng-messages="vm.form['television-subscription'].error">
             <span class="form-label-bold">Television subscriptions<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="television-subscription-hint">Eg, tv licence, satellite</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-television-subscription" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-television-subscription" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="television-subscription" type="text" name="television-subscription" required aria-required="true" aria-describedby="television-subscription-hint"
+            <input class="form-control form-control-1-4" id="television-subscription" type="text" name="television-subscription" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['television-subscription'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['television-subscription'].invalid ? 'error-message-television-subscription' : 'television-subscription-hint'}}"
                    data-ng-model="vm.televisionSubscription"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -94,12 +96,14 @@
           <label for="travel-expenses" id="error-travel-expenses" data-ng-messages="vm.form['travel-expenses'].error">
             <span class="form-label-bold">Travel expenses<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="travel-expenses-hint">Eg, fuel, car, public transport</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-travel-expenses" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-travel-expenses" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="travel-expenses" type="text" name="travel-expenses" required aria-required="true" aria-describedby="travel-expenses-hint"
+            <input class="form-control form-control-1-4" id="travel-expenses" type="text" name="travel-expenses" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['travel-expenses'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['travel-expenses'].invalid ? 'error-message-travel-expenses' : 'travel-expenses-hint'}}"
                    data-ng-model="vm.travelExpenses"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -111,12 +115,14 @@
           <label for="telephone" id="error-telephone" data-ng-messages="vm.form['telephone'].error">
             <span class="form-label-bold">Telephone<span class="visuallyhidden">, in pounds</span></span>
             <span class="form-hint" id="telephone-hint">Eg, landline or mobile</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-telephone" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-telephone" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
-            <input class="form-control form-control-1-4" id="telephone" type="text" name="telephone" required aria-required="true" aria-describedby="telephone-hint"
+            <input class="form-control form-control-1-4" id="telephone" type="text" name="telephone" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['telephone'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['telephone'].invalid ? 'error-message-telephone' : 'telephone-hint'}}"
                    data-ng-model="vm.telephone"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -127,12 +133,14 @@
 
           <label for="loan-repayments" id="error-loan-repayments" data-ng-messages="vm.form['loan-repayments'].error">
             <span class="form-label-bold">Loan repayments<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-loan-repayments" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-loan-repayments" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
             <input class="form-control form-control-1-4" id="loan-repayments" type="text" name="loan-repayments" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['loan-repayments'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['loan-repayments'].invalid ? 'error-message-loan-repayments' : undefined}}"
                    data-ng-model="vm.loanRepayments"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -143,13 +151,15 @@
 
           <label for="county-court-orders" id="error-county-court-orders" data-ng-messages="vm.form['county-court-orders'].error">
             <span class="form-label-bold">County court orders<span class="visuallyhidden">, in pounds</span></span>
-            <span class="form-hint" id="accommodation-hint">Eg, rent, mortgage or lodgings</span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="form-hint" id="county-court-orders-hint">Eg, rent, mortgage or lodgings</span>
+            <span class="error-message" id="error-message-county-court-orders" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-county-court-orders" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
             <input class="form-control form-control-1-4" id="county-court-orders" type="text" name="county-court-orders" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['county-court-orders'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['county-court-orders'].invalid ? 'error-message-county-court-orders' : 'county-court-orders-hint'}}"
                    data-ng-model="vm.countyCourtOrders"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -160,12 +170,14 @@
 
           <label for="fines" id="error-fines" data-ng-messages="vm.form['fines'].error">
             <span class="form-label-bold">Fines<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-fines" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-fines" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
             <input class="form-control form-control-1-4" id="fines" type="text" name="fines" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['fines'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['fines'].invalid ? 'error-message-fines' : undefined}}"
                    data-ng-model="vm.fines"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -176,12 +188,14 @@
           
           <label for="child-maintenance" id="error-child-maintenance" data-ng-messages="vm.form['child-maintenance'].error">
             <span class="form-label-bold">Child maintenance<span class="visuallyhidden">, in pounds</span></span>
-            <span class="error-message" data-ng-message="required">Provide this information</span>
-            <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+            <span class="error-message" id="error-message-child-maintenance" data-ng-message="required">Provide this information</span>
+            <span class="error-message" id="error-message-child-maintenance" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
           </label>
 
           <span class="form-currency">
             <input class="form-control form-control-1-4" id="child-maintenance" type="text" name="child-maintenance" required aria-required="true"
+                   data-ng-attr-aria-invalid="{{vm.form['child-maintenance'].invalid ? 'true' : undefined}}"
+                   data-ng-attr-aria-describedby="{{vm.form['child-maintenance'].invalid ? 'error-message-child-maintenance' : undefined}}"
                    data-ng-model="vm.childMaintenance"
                    data-ng-pattern="vm.decimalLimit">
           </span>
@@ -194,17 +208,20 @@
 
             <legend>
               <span class="form-label-bold">Any other significant expenses not listed?</span>
-              <span class="error-message" data-ng-show="vm.form['other-significant-expenses'].invalid">Choose an answer</span>
+              <span class="error-message" id="error-message-other-significant-expenses" data-ng-show="vm.form['other-significant-expenses'].invalid">Choose an answer</span>
             </legend>
 
             <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
               <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['other-significant-expenses'].invalid ? 'true' : undefined}}"
+                     data-ng-attr-aria-describedby="{{vm.form['other-significant-expenses'].invalid ? 'error-message-other-significant-expenses' : undefined}}"
                      data-ng-attr-aria-expanded="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : 'false'}}"
                      data-ng-model="vm.otherSignificantExpenses"> Yes
             </label>
 
             <label class="block-label" for="other-significant-expenses-no" data-ng-class="{'selected': vm.otherSignificantExpenses === 'No'}">
               <input type="radio" id="other-significant-expenses-no" name="other-significant-expenses" value="No" required aria-required="true"
+                     data-ng-attr-aria-invalid="{{vm.form['other-significant-expenses'].invalid ? 'true' : undefined}}"
                      data-ng-model="vm.otherSignificantExpenses"> No
             </label>
 
@@ -216,10 +233,12 @@
 
                 <label for="other-significant-expenses-details" id="error-other-significant-expenses-details" data-ng-messages="vm.form['other-significant-expenses-details'].error">
                   <span class="form-label">Tell us about other significant expenses</span>
-                  <span class="error-message" data-ng-message="required">Provide this information</span>
+                  <span class="error-message" id="error-message-other-significant-expenses-details" data-ng-message="required">Provide this information</span>
                 </label>
 
                 <textarea class="form-control form-control-textarea" id="other-significant-expenses-details" name="other-significant-expenses-details" cols="30" rows="3"
+                          data-ng-attr-aria-invalid="{{vm.form['other-significant-expenses-details'].invalid ? 'true' : undefined}}"
+                          data-ng-attr-aria-describedby="{{vm.form['other-significant-expenses-details'].invalid ? 'error-message-other-significant-expenses-details' : undefined}}"
                           data-ng-attr-aria-required="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : undefined}}"
                           data-ng-required="vm.otherSignificantExpenses === 'Yes'"
                           data-ng-model="vm.otherSignificantExpensesDetails"></textarea>
@@ -230,12 +249,14 @@
                 
                 <label for="other-significant-expenses-total" id="error-other-significant-expenses-total" data-ng-messages="vm.form['other-significant-expenses-total'].error">
                   <span class="form-label">Monthly total of other significant expenses<span class="visuallyhidden">, in pounds</span></span>
-                  <span class="error-message" data-ng-message="required">Provide this information</span>
-                  <span class="error-message" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
+                  <span class="error-message" id="error-message-other-significant-expenses-total" data-ng-message="required">Provide this information</span>
+                  <span class="error-message" id="error-message-other-significant-expenses-total" data-ng-message="pattern">Amount not valid &ndash; enter correct amount</span>
                 </label>
                 
                 <span class="form-currency">
                   <input class="form-control form-control-1-4" id="other-significant-expenses-total" type="text" name="other-significant-expenses-total"
+                         data-ng-attr-aria-invalid="{{vm.form['other-significant-expenses-total'].invalid ? 'true' : undefined}}"
+                         data-ng-attr-aria-describedby="{{vm.form['other-significant-expenses-total'].invalid ? 'error-message-other-significant-expenses-total' : undefined}}"
                          data-ng-attr-aria-required="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : undefined}}"
                          data-ng-required="vm.otherSignificantExpenses === 'Yes'"
                          data-ng-model="vm.otherSignificantExpensesTotal"
