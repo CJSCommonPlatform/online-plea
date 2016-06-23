@@ -80,7 +80,7 @@
           <span class="error-message" id="error-message-source-income" data-ng-message="required">Provide this information</span>
         </label>
 
-        <input class="form-control" id="source-income" type="text" name="source-income" required aria-required="true"
+        <input class="form-control" type="text" id="source-income" name="source-income" required aria-required="true"
                data-ng-attr-aria-invalid="{{vm.form['source-income'].invalid ? 'true' : undefined}}"
                data-ng-attr-aria-describedby="{{vm.form['source-income'].invalid ? 'error-message-source-income' : 'source-income-hint'}}"
                data-ng-model="vm.sourceIncome">
@@ -117,7 +117,7 @@
               </label>
 
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="weekly-pay" type="text" name="weekly-pay"
+                <input class="form-control form-control-1-4" type="text" id="weekly-pay" name="weekly-pay"
                        data-ng-attr-aria-invalid="{{vm.form['weekly-pay'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['weekly-pay'].invalid ? 'error-message-weekly-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Weekly' ? 'true' : undefined}}"
@@ -183,7 +183,7 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="monthly-pay" type="text" name="monthly-pay"
+                <input class="form-control form-control-1-4" type="text" id="monthly-pay" name="monthly-pay"
                        data-ng-attr-aria-invalid="{{vm.form['monthly-pay'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['monthly-pay'].invalid ? 'error-message-monthly-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Monthly' ? 'true' : undefined}}"
@@ -216,7 +216,7 @@
               </label>
               
               <span class="form-currency">
-                <input class="form-control form-control-1-4" id="other-pay" type="text" name="other-pay"
+                <input class="form-control form-control-1-4" type="text" id="other-pay" name="other-pay"
                        data-ng-attr-aria-invalid="{{vm.form['other-pay'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['other-pay'].invalid ? 'error-message-other-pay' : undefined}}"
                        data-ng-attr-aria-required="{{vm.paymentFrequency === 'Other' ? 'true' : undefined}}"
