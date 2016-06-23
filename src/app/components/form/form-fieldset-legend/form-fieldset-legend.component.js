@@ -4,9 +4,9 @@
 
   angular
     .module('pleaApp')
-    .component('fieldsetLegend', {
-      templateUrl: 'app/components/common/fieldset-legend/fieldset-legend.html',
-      controller: FieldsetLegend,
+    .component('formFieldsetLegend', {
+      templateUrl: 'app/components/form/form-fieldset-legend/form-fieldset-legend.html',
+      controller: FormFieldsetLegend,
       controllerAs: 'vm',
       bindings: {
         baseId: '@',
@@ -17,7 +17,7 @@
       }
     });
 
-  function FieldsetLegend() {
+  function FormFieldsetLegend() {
     var vm = this;
   }
 

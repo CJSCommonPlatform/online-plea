@@ -1,4 +1,4 @@
-describe('component: fieldsetLegend', function (){
+describe('component: formFieldsetLegend', function (){
 
   var scope, rootScope, componentController;
 
@@ -37,7 +37,7 @@ describe('component: fieldsetLegend', function (){
   }));
 
   it('should have bindings bound', function() {
-    component = componentController('fieldsetLegend',
+    component = componentController('formFieldsetLegend',
       null,
       {baseId: baseId, label: label, hint: hint, formField: formField, errorMessages: errorMessages}
     );

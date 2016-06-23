@@ -159,7 +159,7 @@
 
         <fieldset>
 
-          <fieldset-legend
+          <form-fieldset-legend
             data-base-id="dob"
             data-label="Your date of birth"
             data-hint="For example, 31 3 1980"
@@ -171,11 +171,11 @@
               },
               {
                 name: 'invalidDayOfMonth',
-                text: 'Date doesn&rsquo;t exist &ndash; enter again'
+                text: 'Date not recognised &ndash; use format, for example 31 3 1980'
               },
               {
                 name: 'invalidMonth',
-                text: 'Date doesn&rsquo;t exist &ndash; enter again'
+                text: 'Date not recognised &ndash; use format, for example 31 3 1980'
               },
               {
                 name: 'inFuture',
@@ -188,9 +188,14 @@
               {
                 name: 'atLeast18',
                 text: 'Age too young &ndash; enter valid date of birth'
+              },
+              {
+                name: 'number',
+                text: 'Date not recognised &ndash; use format, for example 31 3 1980'
               }
             ]">
-          </fieldset-legend>
+          </form-fieldset-legend>
+
 
           <div class="form-date">
 
