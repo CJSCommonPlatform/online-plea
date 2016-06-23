@@ -74,21 +74,12 @@
             value="Weekly"
             form="vm.form"
             property="vm.paymentFrequency"
-            on-update="vm.setPaymentFrequency(value)">
+            on-update="vm.setPaymentFrequency">
           </form-input-radio>
-          <!--
-          <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.paymentFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
-                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-describedby="{{vm.form['paid'].invalid ? 'error-message-paid' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Weekly' ? 'true' : 'false'}}"
-                   data-ng-model="vm.paymentFrequency"> Weekly
-          </label>
-          -->
 
           <div class="panel panel-border-narrow" id="weekly"
-               data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}"
-               data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Weekly' ? 'true' : 'false'}}">
+                data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Weekly'}"
+                data-ng-attr-aria-hidden="{{vm.paymentFrequency !== 'Weekly' ? 'true' : 'false'}}">
 
             <div class="form-group" data-ng-class="{'error': vm.form['weekly-pay'].invalid}">
               
@@ -112,12 +103,13 @@
 
           </div>
 
-          <label class="block-label" for="paid-fortnighly" data-ng-class="{'selected': vm.paymentFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnighly" name="paid" value="Fortnightly" required aria-required="true"
-                   data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.paymentFrequency === 'Fortnightly' ? 'true' : 'false'}}"
-                   data-ng-model="vm.paymentFrequency"> Fortnightly
-          </label>
+          <form-input-radio
+            name="paid"
+            value="Fortnightly"
+            form="vm.form"
+            property="vm.paymentFrequency"
+            on-update="vm.setPaymentFrequency">
+          </form-input-radio>
 
           <div class="panel panel-border-narrow" id="fortnightly"
                data-ng-class="{'js-hidden': vm.paymentFrequency !== 'Fortnightly'}"
