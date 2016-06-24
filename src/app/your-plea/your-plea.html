@@ -106,7 +106,7 @@
         </legend>
 
         <label class="block-label" for="plea-guilty" data-ng-class="{'selected': vm.plea === 'Guilty'}">
-          <input type="radio" id="plea-guilty" name="plea" value="Guilty" required aria-required="true"
+          <input type="radio" id="plea-guilty" name="plea" value="Guilty" required aria-required="true" aria-controls="guilty"
                  data-ng-attr-aria-invalid="{{vm.form['plea'].invalid ? 'true' : undefined}}"
                  data-ng-attr-aria-describedby="{{vm.form['plea'].invalid ? 'error-message-plea' : undefined}}"
                  data-ng-attr-aria-expanded="{{vm.plea === 'Guilty' ? 'true' : 'false'}}"
@@ -115,7 +115,7 @@
         </label>
 
         <label class="block-label" for="plea-notguilty" data-ng-class="{'selected': vm.plea === 'Not guilty'}">
-          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required aria-required="true"
+          <input type="radio" id="plea-notguilty" name="plea" value="Not guilty" required aria-required="true" aria-controls="not-guilty"
                  data-ng-attr-aria-invalid="{{vm.form['plea'].invalid ? 'true' : undefined}}"
                  data-ng-attr-aria-expanded="{{vm.plea === 'Not guilty' ? 'true' : 'false'}}"
                  data-ng-click="vm.enterYourPleaClicked()"
@@ -213,7 +213,7 @@
               </legend>
   
               <label class="block-label" for="interpreter-yes" data-ng-class="{'selected': vm.interpreter === 'Yes'}">
-                <input type="radio" id="interpreter-yes" name="interpreter" value="Yes"
+                <input type="radio" id="interpreter-yes" name="interpreter" value="Yes" aria-controls="interpreter"
                        data-ng-attr-aria-invalid="{{vm.form['interpreter'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['interpreter'].invalid ? 'error-message-interpreter' : undefined}}"
                        data-ng-attr-aria-expanded="{{vm.interpreter === 'Yes' ? 'true' : 'false'}}"
@@ -266,7 +266,7 @@
               </legend>
               
               <label class="block-label" for="evidence-yes" data-ng-class="{'selected': vm.prosecutorWitnessDisagree === 'Yes'}">
-                <input type="radio" id="evidence-yes" name="evidence" value="Yes"
+                <input type="radio" id="evidence-yes" name="evidence" value="Yes" aria-controls="evidence"
                        data-ng-attr-aria-invalid="{{vm.form['evidence'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['evidence'].invalid ? 'error-message-evidence' : undefined}}"
                        data-ng-attr-aria-expanded="{{vm.prosecutorWitnessDisagree === 'Yes' ? 'true' : 'false'}}"
@@ -320,7 +320,7 @@
               </legend>
               
               <label class="block-label" for="witness-yes" data-ng-class="{'selected': vm.defenceWitnessCall === 'Yes'}">
-                <input type="radio" id="witness-yes" name="witness" value="Yes"
+                <input type="radio" id="witness-yes" name="witness" value="Yes" aria-controls="witness"
                        data-ng-attr-aria-invalid="{{vm.form['witness'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['witness'].invalid ? 'error-message-witness' : 'witness-hint'}}"
                        data-ng-attr-aria-expanded="{{vm.defenceWitnessCall === 'Yes' ? 'true' : 'false'}}"
@@ -369,7 +369,7 @@
                   </legend>
 
                   <label class="block-label" for="witness-interpreter-yes" data-ng-class="{'selected': vm.defenceWitnessInterpreter === 'Yes'}">
-                    <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes"
+                    <input type="radio" id="witness-interpreter-yes" name="witness-interpreter" value="Yes" aria-controls="witness-interpreter"
                            data-ng-attr-aria-invalid="{{vm.form['witness-interpreter'].invalid ? 'true' : undefined}}"
                            data-ng-attr-aria-describedby="{{vm.form['witness-interpreter'].invalid ? 'error-message-witness-interpreter' : undefined}}"
                            data-ng-attr-aria-expanded="{{vm.defenceWitnessInterpreter === 'Yes' ? 'true' : 'false'}}"
