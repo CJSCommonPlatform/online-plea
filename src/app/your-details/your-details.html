@@ -85,7 +85,7 @@
           </label>
 
           <label class="block-label" for="correct-details-no" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true"
+            <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true" aria-controls="correct-details"
                    data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.detailsCorrect === 'No' ? 'true' : 'false'}}"
                    data-ng-model="vm.detailsCorrect"> No
@@ -248,7 +248,7 @@
           </legend>
   
           <label class="block-label" for="national-insurance-yes" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
-            <input type="radio" id="national-insurance-yes" name="national-insurance" value="Yes" required aria-required="true"
+            <input type="radio" id="national-insurance-yes" name="national-insurance" value="Yes" required aria-required="true" aria-controls="national-insurance"
                    data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['national-insurance'].invalid ? 'error-message-national-insurance' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.nationalInsurance === 'Yes' ? 'true' : 'false'}}"
