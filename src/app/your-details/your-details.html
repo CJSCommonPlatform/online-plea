@@ -131,7 +131,7 @@
 
         <input class="form-control form-control-1-3" type="tel" id="contact-number" name="contact-number" required aria-required="true"
                data-ng-attr-aria-invalid="{{vm.form['contact-number'].invalid ? 'true' : undefined}}"
-               data-ng-attr-aria-described-by="{{vm.form['contact-number'].invalid ? 'error-message-contact-number' : 'contact-number-hint'}}"
+               data-ng-attr-aria-describedby="{{vm.form['contact-number'].invalid ? 'error-message-contact-number' : 'contact-number-hint'}}"
                data-ng-pattern="vm.ukTelephoneNumberRegex"
                data-ng-model="vm.contactNumber">
 
@@ -148,7 +148,7 @@
 
         <input class="form-control form-control-1-3" type="text" id="email-address" name="email-address"
                data-ng-attr-aria-invalid="{{vm.form['email-address'].invalid ? 'true' : undefined}}"
-               data-ng-attr-aria-described-by="{{vm.form['email-address'].invalid ? 'error-message-email-address' : 'email-address-hint'}}"
+               data-ng-attr-aria-describedby="{{vm.form['email-address'].invalid ? 'error-message-email-address' : 'email-address-hint'}}"
                data-ng-pattern="vm.emailAddressRegex"
                data-ng-model="vm.emailAddress">
         
@@ -203,7 +203,7 @@
               <label for="dob-day">Day</label>
               <input class="form-control" type="number" id="dob-day" max="31" min="1" pattern="[0-9]{1,2}" name="dob-day" required aria-required="true"
                      data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
-                     data-ng-attr-aria-described-by="{{vm.form['dob-day'].invalid ? 'error-message-dob' : 'dob-hint'}}"
+                     data-ng-attr-aria-describedby="{{vm.form['dob-day'].invalid ? 'error-message-dob' : 'dob-hint'}}"
                      data-ui-validate="{
                         allRequired : 'vm.allRequired(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         invalidDayOfMonth : 'vm.invalidDayOfMonth(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
@@ -278,7 +278,7 @@
 
             <input class="form-control" type="text" id="national-insurance-number" name="national-insurance-number"
                    data-ng-attr-aria-invalid="{{vm.form['national-insurance-number'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-described-by="{{vm.form['national-insurance-number'].invalid ? 'error-message-national-insurance-number' : 'national-insurance-number-hint'}}"
+                   data-ng-attr-aria-describedby="{{vm.form['national-insurance-number'].invalid ? 'error-message-national-insurance-number' : 'national-insurance-number-hint'}}"
                    data-ng-attr-aria-required="vm.nationalInsurance === 'Yes'"
                    data-ng-required="vm.nationalInsurance === 'Yes'"
                    data-ui-validate="{pattern: 'vm.validateNationalInsuranceNumber($value)'}"
