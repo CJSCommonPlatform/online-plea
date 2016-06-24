@@ -103,7 +103,7 @@
           </legend>
 
           <label class="block-label" for="paid-weekly" data-ng-class="{'selected': vm.benefitFrequency === 'Weekly'}">
-            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true"
+            <input type="radio" id="paid-weekly" name="paid" value="Weekly" required aria-required="true" aria-controls="weekly"
                    data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['paid'].invalid ? 'error-message-paid' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Weekly' ? 'true' : 'false'}}"
@@ -137,7 +137,7 @@
           </div>
 
           <label class="block-label" for="paid-fortnightly" data-ng-class="{'selected': vm.benefitFrequency === 'Fortnightly'}">
-            <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required aria-required="true"
+            <input type="radio" id="paid-fortnightly" name="paid" value="Fortnightly" required aria-required="true" aria-controls="fortnightly"
                    data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Fortnightly' ? 'true' : 'false'}}"
                    data-ng-model="vm.benefitFrequency"> Fortnightly
@@ -170,7 +170,7 @@
           </div>
           
           <label class="block-label" for="paid-monthly" data-ng-class="{'selected': vm.benefitFrequency === 'Monthly'}">
-            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true"
+            <input type="radio" id="paid-monthly" name="paid" value="Monthly" required aria-required="true" aria-controls="monthly"
                    data-ng-attr-aria-invalid="{{vm.form['paid'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.benefitFrequency === 'Monthly' ? 'true' : 'false'}}"
                    data-ng-model="vm.benefitFrequency"> Monthly
@@ -218,7 +218,7 @@
           </legend>
 
           <label class="block-label" for="financial-problems-yes" data-ng-class="{'selected': vm.financialProblems === 'Yes'}">
-            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" required aria-required="true"
+            <input type="radio" id="financial-problems-yes" name="financial-problems" value="Yes" aria-describedby="financial-problems-hint" required aria-required="true" aria-controls="financial-problems"
                    data-ng-attr-aria-invalid="{{vm.form['financial-problems'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['financial-problems'].invalid ? 'error-message-financial-problems' : 'financial-problems-hint'}}"
                    data-ng-attr-aria-expanded="{{vm.financialProblems === 'Yes' ? 'true' : 'false'}}"

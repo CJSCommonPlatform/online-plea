@@ -87,7 +87,7 @@
           </label>
 
           <label class="block-label" for="other" data-ng-class="{'selected': vm.employment === vm.employmentStatus.OTHER}">
-            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required aria-required="true"
+            <input type="radio" id="other" name="employment" value="{{vm.employmentStatus.OTHER}}" required aria-required="true" aria-controls="provide-more-details"
                    data-ng-attr-aria-invalid="{{vm.form['employment'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-expanded="{{vm.employment === vm.employmentStatus.OTHER ? 'true' : 'false'}}"
                    data-ng-model="vm.employment"> Other

@@ -212,7 +212,7 @@
             </legend>
 
             <label class="block-label" id="error-other-significant-expenses" for="other-significant-expenses-yes" data-ng-class="{'selected': vm.otherSignificantExpenses === 'Yes'}">
-              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required aria-required="true"
+              <input type="radio" id="other-significant-expenses-yes" name="other-significant-expenses" value="Yes" required aria-required="true" aria-controls="other-significant-expenses"
                      data-ng-attr-aria-invalid="{{vm.form['other-significant-expenses'].invalid ? 'true' : undefined}}"
                      data-ng-attr-aria-describedby="{{vm.form['other-significant-expenses'].invalid ? 'error-message-other-significant-expenses' : undefined}}"
                      data-ng-attr-aria-expanded="{{vm.otherSignificantExpenses === 'Yes' ? 'true' : 'false'}}"
