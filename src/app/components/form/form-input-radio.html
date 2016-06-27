@@ -1,3 +1,9 @@
 <label class="block-label" for="{{vm.name + '-' + vm.value.toLowerCase()}}" data-ng-class="{'selected focused': vm.property === vm.value}">
-
+  <input 
+    type="radio" 
+    id="{{vm.name + '-' + vm.value.toLowerCase()}}" 
+    name="{{vm.name}}" value="{{vm.value}}" 
+    required 
+    data-ng-click="vm.onClick(vm.value)"
+    aria-attrs> {{vm.value}}
 </label>
