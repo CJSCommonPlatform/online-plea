@@ -1,5 +1,6 @@
 describe('Should take you to the previous page', function (){
 
+  var $window, $compile, $rootScope;
   var scope, elem, backLink;
 
   beforeEach(module('pleaApp'));
