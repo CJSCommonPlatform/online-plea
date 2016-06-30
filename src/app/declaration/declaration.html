@@ -1,12 +1,13 @@
 <back-link></back-link>
 
+
 <div class="grid-row">
 
   <div class="column-two-thirds">
 
     <h1 class="heading-xlarge">Declaration</h1>
 
-    <form class="form" method="post" name="form" autocomplete="off" novalidate data-form-selection>
+    <!--form class="form" method="post" name="form" autocomplete="off" novalidate data-form-selection>
 
       <div class="form-group">
         <label class="block-label" for="legally-confirm-your-answers">
@@ -30,6 +31,42 @@
 
       <div class="form-group">
           <button class="button" type="submit" aria-disabled="{{!declaration.legallyConfirmYourAnswers}}" data-ng-disabled="!declaration.legallyConfirmYourAnswers" data-ng-click="declaration.buttonContinue($event)">I agree &ndash; submit my plea</button>
+      </div>
+
+    </form-->
+
+    <form class="form" method="post" name="form" autocomplete="off" novalidate data-form-selection>
+
+      <p>I confirm that:</p>
+
+      <ul class="list list-bullet">
+        <li>I&rsquo;ve read and understood the charges against me</li>
+        <li>I&rsquo;m the person named in the Single Justice Procedure Notice</li>
+        <li>the facts I&rsquo;ve given are correct as far as I know</li>
+      </ul>
+
+      <div class="form-group">
+
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Warning</span>
+          </i>
+          <strong class="bold-small">
+            You may be prosecuted if you deliberately give wrong or incomplete information.
+          </strong>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label class="block-label" for="legally-confirm-your-answers">
+          <input type="checkbox" id="legally-confirm-your-answers" name="legally-confirm-your-answers" required aria-required="true" data-ng-model="declaration.legallyConfirmYourAnswers">
+          I confirm
+        </label>
+      </div>
+
+      <div class="form-group">
+          <button class="button" type="submit" aria-disabled="{{!declaration.legallyConfirmYourAnswers}}" data-ng-disabled="!declaration.legallyConfirmYourAnswers" data-ng-click="declaration.buttonContinue($event)">Submit my plea</button>
       </div>
 
     </form>
