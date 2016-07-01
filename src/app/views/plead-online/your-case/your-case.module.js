@@ -3,5 +3,6 @@
   'use strict';
 
   angular
-   .module('pleaApp');
+    .module('pleaApp');
+
 }());
