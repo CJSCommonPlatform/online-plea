@@ -6,17 +6,8 @@ root = true
 
 [*]
 indent_style = space
-
-[*.js]
 indent_size = 2
 
-[*.html]
-indent_size = 2
-
-[*.raml]
-indent_size = 2
-
-# We recommend you to keep these unchanged
 end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
