@@ -5,30 +5,21 @@
   angular
     .module('pleaApp')
     .component('submitButton', {
-    	bindings: {
-    		buttonText: '@'
-    	},
+      bindings: {
+        buttonText: '@'
+      },
       controller: SubmitButtonController,
       controllerAs: 'vm',
-      template: '{{vm.buttonText}}'
-      // template: '<div class="form-group">'+
-      //   					'<button class="button" type="submit"' +
-      //     								'data-ng-click="vm.submit()"' +
-						// 		          'data-focus-event="click"' +
-						// 		          'data-focus-target="error-summary"' +
-						// 		          'data-focus>'vm.buttonText +
-      //   					'</button>'+
-      // 					'</div>'
+      templateUrl: 'app/components/form/submit-button/submit-button.tpl.html'
     });
 
   function SubmitButtonController() {
     
     var vm    = this;
-    console.log(vm);
     vm.submit = submit;
 
     function submit() {
-    	alert('here');
+      alert('here');
     }
   }
 
