@@ -6,20 +6,30 @@
     .module('pleaApp')
     .component('submitButton', {
       bindings: {
-        buttonText: '@'
+        buttonText: '@',
+        form: '=',
+        state: '@'
       },
       controller: SubmitButtonController,
       controllerAs: 'vm',
       templateUrl: 'app/components/form/submit-button/submit-button.tpl.html'
     });
 
-  function SubmitButtonController() {
+  SubmitButtonController.$inject = ['$state', 'formValidation'];
+
+  function SubmitButtonController($state, formValidation) {
     
     var vm    = this;
     vm.submit = submit;
 
     function submit() {
-      alert('here');
+
+      formValidation.validate(vm.form);
+      
+      if(!vm.form.invalid) {
+        //storageService.updateSessionStorage(vm);
+        return vm.hasOwnProperty('state') ? $state.go(vm.state) : 'false';
+      }
     }
   }
 
