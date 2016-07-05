@@ -7,11 +7,8 @@ $path: "/images/";
 
 
 // Import GOV.UK elements
-
 @import "../govuk/sass/govuk-elements";
 
 
-// Import Plead online elements
-
-@import "plead-online/manifest";
-
+// Import online plea elements
+@import "online-plea/manifest";
