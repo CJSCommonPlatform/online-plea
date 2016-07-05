@@ -26,7 +26,6 @@
     }
 
     function updateSessionStorage(vm) {
-      alert('here');
       set('caseUniqueReferenceNumber', vm.caseUniqueReferenceNumber);
       set('casePostcode', vm.casePostcode.toUpperCase());
     }
