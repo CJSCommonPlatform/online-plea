@@ -3,11 +3,11 @@
 
   angular
     .module('pleaApp')
-    .factory('yourDetails', yourDetails);
+    .factory('yourDetailsStorage', yourDetailsStorage);
 
-  yourDetails.$inject = ['yourDetailsRetrieve', 'sessionStorage'];
+  yourDetailsStorage.$inject = ['yourDetailsRetrieve', 'sessionStorage'];
 
-  function yourDetails(yourDetailsRetrieve, sessionStorage) {
+  function yourDetailsStorage(yourDetailsRetrieve, sessionStorage) {
     var BASE_NAME = 'pleaApp.yourDetails.';
 
     var service = {
