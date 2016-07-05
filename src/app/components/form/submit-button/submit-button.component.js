@@ -7,6 +7,7 @@
     .component('submitButton', {
       bindings: {
         buttonText: '@',
+        formStorageService: '@',
         form: '=',
         state: '@'
       },
@@ -15,19 +16,20 @@
       templateUrl: 'app/components/form/submit-button/submit-button.tpl.html'
     });
 
-  SubmitButtonController.$inject = ['$state', 'formValidation'];
+  SubmitButtonController.$inject = ['$state', '$injector', 'formValidation'];
 
-  function SubmitButtonController($state, formValidation) {
+  function SubmitButtonController($state, $injector, formValidation) {
     
-    var vm    = this;
-    vm.submit = submit;
+    var vm      = this;
+    var service = $injector.get(vm.formStorageService);
+    vm.submit   = submit;
 
     function submit() {
 
       formValidation.validate(vm.form);
       
       if(!vm.form.invalid) {
-        //storageService.updateSessionStorage(vm);
+        service.updateSessionStorage(vm.form);
         return vm.hasOwnProperty('state') ? $state.go(vm.state) : 'false';
       }
     }
