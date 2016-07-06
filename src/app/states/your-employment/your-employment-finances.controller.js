@@ -24,12 +24,12 @@
       
       if (!vm.form.invalid) {
         yourEmploymentFinances.updateSessionStorage(vm);
-        state.go(getNextState());
+        console.log(state.go(getNextState(vm)));
       }      
     }
 
-    function getNextState() {
-      return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
+    function getNextState(vm) {
+      return (angular.isDefined($stateParams.nextState) && vm.financialProblems) == "Yes" ? $stateParams.nextState : state.getNext(vm);
     }
 
   }

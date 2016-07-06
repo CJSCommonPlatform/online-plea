@@ -144,7 +144,7 @@
   </section>
   
   
-  <section class="synopsis-item" aria-labelledby="special-financial-circumstances" data-ng-show="confirmPlea.pleaApp.yourExpenses">
+  <section class="synopsis-item" aria-labelledby="special-financial-circumstances">
     
     
     <h2 class="bold-medium" id="special-financial-circumstances">Special financial circumstances</h2>
@@ -158,14 +158,14 @@
       </header>
 
       <dl>
-        <dt>Financial problems</dt><dd>Yes</dd>
-        <dt>How would paying a fine cause you financial problems</dt><dd>I live beyond my means, and spend way too much money!</dd>
+        <dt>Financial problems</dt><dd>{{confirmPlea.pleaApp.yourEmployment.financialProblems}}</dd>
+        <dt data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No'">How would paying a fine cause you financial problems</dt><dd data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No'">I live beyond my means, and spend way too much money!</dd>
       </dl>
 
     </section>
 
 
-    <section class="synopsis-subitem">
+    <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourExpenses">
         
       <header class="synopsis-heading">
         <h2 class="bold-small">Household expenses</h2>
@@ -180,7 +180,7 @@
     </section>
     
     
-    <section class="synopsis-subitem">
+    <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourExpenses">
         
       <header class="synopsis-heading">
         <h2 class="bold-small">Other expenses</h2>
@@ -195,7 +195,7 @@
     </section>
     
     
-    <section class="synopsis-subitem">
+    <section class="synopsis-subitem" data-ng-show="confirmPlea.pleaApp.yourExpenses">
         
       <header class="synopsis-heading">
         <h2 class="bold-small">Total expenses</h2>
