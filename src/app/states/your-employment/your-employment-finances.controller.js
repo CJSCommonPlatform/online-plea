@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('YourEmploymentFinancesController', YourEmploymentFinancesController);
 
-  YourEmploymentFinancesController.$inject = ['yesNoAnswer', 'yourEmploymentFinances', 'state', '$stateParams', 'formValidation', 'decimalLimit'];
+  YourEmploymentFinancesController.$inject = ['yesNoAnswer', 'yourEmploymentFinances', 'state', '$stateParams', 'formValidation', 'decimalLimit', 'sessionStorage'];
 
-  function YourEmploymentFinancesController(yesNoAnswer, yourEmploymentFinances, state, $stateParams, formValidation, decimalLimit) {
+  function YourEmploymentFinancesController(yesNoAnswer, yourEmploymentFinances, state, $stateParams, formValidation, decimalLimit, sessionStorage) {
     var vm = this;
 
     vm.yesNoAnswer = yesNoAnswer;
@@ -24,12 +24,19 @@
       
       if (!vm.form.invalid) {
         yourEmploymentFinances.updateSessionStorage(vm);
-        console.log(state.go(getNextState(vm)));
+        state.go(getNextState());
       }      
     }
 
-    function getNextState(vm) {
-      return (angular.isDefined($stateParams.nextState) && vm.financialProblems) == "Yes" ? $stateParams.nextState : state.getNext(vm);
+    function getNextState() {
+
+      var get = sessionStorage.getGetter('pleaApp.yourExpenses.');
+      if(!get('household') || !get('other')) {
+        return state.getNext(vm);
+      } else {
+        return angular.isDefined($stateParams.nextState) ? $stateParams.nextState : state.getNext(vm);
+      }
+      
     }
 
   }
