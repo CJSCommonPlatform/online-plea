@@ -30,6 +30,7 @@
 
       if (employment !== vm.employment) {
         set('', undefined);
+        sessionStorage.reset('pleaApp.yourExpenses.');
       }
 
       set('employmentStatus', vm.employment);
