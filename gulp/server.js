@@ -7,6 +7,8 @@ var conf = require('./conf');
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
 
+var express = require('express');
+
 var util = require('util');
 
 var proxyMiddleware = require('http-proxy-middleware');
@@ -60,4 +62,11 @@ gulp.task('serve:e2e', ['inject'], function () {
 
 gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
+});
+
+gulp.task('serve:static', ['build'], function () {
+  var app = express();
+  app.use(express.static(conf.paths.dist));
+
+  app.listen(process.env.PORT || 3000);
 });
