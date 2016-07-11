@@ -47,7 +47,7 @@ var buildStyles = function() {
   ])
     .pipe($.inject(injectFiles, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))
-    .pipe($.rubySass(sassOptions)).on('error', conf.errorHandler('RubySass'))
+    .pipe($.sass(sassOptions)).on('error', conf.errorHandler('Sass'))
     .pipe(cssFilter)
     .pipe($.sourcemaps.init({ loadMaps: true }))
     .pipe($.autoprefixer()).on('error', conf.errorHandler('Autoprefixer'))
