@@ -64,7 +64,7 @@ gulp.task('serve:e2e-dist', ['build'], function () {
   browserSyncInit(conf.paths.dist, []);
 });
 
-gulp.task('serve:static', ['build'], function () {
+gulp.task('serve:static', [], function () {
   var app = express();
   app.use(express.static(conf.paths.dist));
 
