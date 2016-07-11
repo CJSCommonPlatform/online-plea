@@ -1,4 +1,4 @@
-fdescribe('Filter: replaceSpaces', function (){
+describe('Filter: replaceSpaces', function (){
 
   var filter;
 
