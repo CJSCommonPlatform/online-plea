@@ -8,6 +8,8 @@ describe('Filter: replaceSpaces', function (){
     filter = $injector.get('$filter');
   }));
 
+
+  //Inject $filter and then call it with $filter('filterName')(input, options);
   it('should replace spaces into hypens', function() {
     expect(filter('replaceSpaces')('your employment')).toBe('your-employment');
     expect(filter('replaceSpaces')('employed receiving benefits')).toBe('employed-receiving-benefits');
