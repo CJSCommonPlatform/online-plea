@@ -13,29 +13,22 @@
     return function(pleaApp) {
       var result = {};
 
-      extractCaseId(pleaApp, result);
-      extractDefendandId(pleaApp, result);
-      result.personalDetails = getPersonalDetails(pleaApp.yourDetails);
+      result.caseId = pleaApp.yourCase.caseId;
+      result.defendantId = pleaApp.yourDetails.defendantId;
+      result.personalDetails = extractPersonalDetails(pleaApp.yourDetails);
 
-      var plea = getPlea(pleaApp.yourPlea);
+      var plea = extractPlea(pleaApp.yourPlea);
       result.pleas = [plea];
 
       if (plea.plea === 'GUILTY') {
-        result.financialMeans = getFinancialMeans(pleaApp);
+        result.financialMeans = extractFinancialMeans(pleaApp);
       }
 
       return result;
     };
 
-    function extractDefendandId(pleaApp, result) {
-      result.defendantId = pleaApp.yourDetails.defendantId;
-    }
 
-    function extractCaseId(pleaApp, result) {
-      result.caseId = pleaApp.yourCase.caseId;
-    }
-
-    function getPersonalDetails(yourDetails) {
+    function extractPersonalDetails(yourDetails) {
       var result = {};
 
       var detailsCorrected = result.detailsCorrected = {
@@ -70,7 +63,7 @@
     }
 
 
-    function getPlea(yourPlea) {
+    function extractPlea(yourPlea) {
       var result = {};
 
       result.offenceId = '' // TODO
@@ -125,7 +118,7 @@
     }
 
 
-    function getFinancialMeans(pleaApp) {
+    function extractFinancialMeans(pleaApp) {
       var result = {};
 
       // TODO: Implement
