@@ -7,9 +7,9 @@
       $sessionStorage.$reset();
       console.log('session storage was reset');
 
-      $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
+      $rootScope.$on('$locationChangeSuccess', function(event, to, toParams, from, fromParams) {
         $window.scrollTo(0, 0);
-        to.previous = from;
+        //to.previous = from;
         console.log(JSON.stringify($sessionStorage, null, 4));
       });
 
