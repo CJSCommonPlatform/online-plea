@@ -1,17 +1,17 @@
 (function() {
 
-  'use strict';  
+  'use strict';
 
   angular.module('pleaApp')
     .controller('YourDetailsController', YourDetailsController);
 
-  YourDetailsController.$inject = ['yourDetails', 'state', '$stateParams', 'formValidation', 'nationalInsuranceNumberRegex', 'emailAddressRegex', 'ukTelephoneNumberRegex'];
+  YourDetailsController.$inject = ['yourDetails', 'yourDetailsRetrieve', 'lodash', 'state', '$stateParams', 'formValidation', 'nationalInsuranceNumberRegex', 'emailAddressRegex', 'ukTelephoneNumberRegex'];
 
-  function YourDetailsController(yourDetails, state, $stateParams, formValidation, nationalInsuranceNumberRegex, emailAddressRegex, ukTelephoneNumberRegex) {
+  function YourDetailsController(yourDetails, yourDetailsRetrieve, _, state, $stateParams, formValidation, nationalInsuranceNumberRegex, emailAddressRegex, ukTelephoneNumberRegex) {
     var vm = this;
 
     vm.validateNationalInsuranceNumber = function (value) {
-      return vm.nationalInsurance !== 'Yes' || (new RegExp(nationalInsuranceNumberRegex)).test(value);
+      return vm.formData.nationalInsuranceNumber.yes !== true || (new RegExp(nationalInsuranceNumberRegex)).test(value);
     };
 
     vm.allRequired = function(year, month, day) {
@@ -78,15 +78,55 @@
     vm.getNextState = getNextState;
     vm.scrollToAnchor = state.scrollToAnchor;
 
-    yourDetails.updateVm(vm);
+    vm.formData = transformDataIn(yourDetails.get());
+    vm.defendantDetails = yourDetailsRetrieve.retrieve();
 
     function buttonContinueClicked(event) {
       event.preventDefault();
       formValidation.validate(vm.form);
-      yourDetails.updateSessionStorage(vm);
       if (!vm.form.invalid) {
+        yourDetails.set(transformDataOut(vm.formData));
         state.go(getNextState());
       }
+    }
+
+    var dateOfBirthResultFormat = 'YYYY-MM-DD';
+
+    // this will become unnecessary when a component for a date field is introduced
+    function transformDataIn(data) {
+      var result = _.omit(data, ['dateOfBirth']);
+
+      if (data.dateOfBirth) {
+        var dateOfBirth = moment(data.dateOfBirth, dateOfBirthResultFormat);
+
+        result.dateOfBirth = {
+          day: dateOfBirth.date(),
+          month: dateOfBirth.month() + 1,
+          year: dateOfBirth.year()
+        };
+      }
+
+      return result;
+    }
+
+    function transformDataOut(data) {
+      var result = _.pick(data, ['contactNumber, email']);
+
+      result.detailsCorrect = _.pick(data.detailsCorrect, data.detailsCorrect.yes
+        ? ['yes']
+        : ['yes', 'correctDetails']);
+
+      result.dateOfBirth = moment({
+        day: data.dateOfBirth.day,
+        month: data.dateOfBirth.month - 1,
+        year: data.dateOfBirth.year
+      }).format(dateOfBirthResultFormat);
+
+      result.nationalInsuranceNumber = _.pick(data.nationalInsuranceNumber, data.nationalInsuranceNumber.yes
+        ? ['yes', 'NI']
+        : ['yes']);
+
+      return result;
     }
 
     function getNextState() {

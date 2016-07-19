@@ -7,11 +7,12 @@
 
   sessionStorage.$inject = ['$sessionStorage', 'lodash'];
 
-  function sessionStorage($sessionStorage, lodash) {
+  function sessionStorage($sessionStorage, _) {
     var service = {
       reset: reset,
       getGetter: getGetter,
-      getSetter: getSetter
+      getSetter: getSetter,
+      createSubstorage: createSubstorage
     };
 
     return service;
@@ -23,14 +24,30 @@
 
     function getGetter(baseName) {
       return function(propertyName) {
-        return lodash.get($sessionStorage, baseName + propertyName);
+        return _.get($sessionStorage, baseName + propertyName);
       }
     }
 
     function getSetter(baseName) {
       return function(propertyName, propertyValue) {
-        lodash.set($sessionStorage, baseName + propertyName, propertyValue);
+        _.set($sessionStorage, baseName + propertyName, propertyValue);
       }
+    }
+
+    function createSubstorage (baseName, defaultValue) {
+      function get () {
+        var data = _.get($sessionStorage, baseName) || defaultValue;
+        return _.cloneDeep(data);
+      }
+
+      function set (data) {
+        _.set($sessionStorage, baseName, _.cloneDeep(data));
+      }
+
+      return {
+        get: get,
+        set: set
+      };
     }
   }
 })();

@@ -23,24 +23,24 @@
     </dl>
     
   </section>
-  
-  
-  <section class="synopsis-item" aria-labelledby="your-details" data-ng-show="confirmPlea.pleaApp.yourDetails">
-    
+
+
+  <section class="synopsis-item" aria-labelledby="your-details" data-ng-show="confirmPlea.pleaApp.personalDetails">
+
     <header class="synopsis-heading">
       <h2 class="bold-small" id="your-details">Your details</h2>
       <a class="synopsis-action" href="" data-ui-sref="your-details({nextState: 'confirm-your-answers'})">Amend<span class="visuallyhidden"> Your details</span></a>
     </header>
     
     <dl>
-      <dt>First name</dt><dd>{{confirmPlea.pleaApp.yourDetails.firstName | chkEmpty}}</dd>
-      <dt>Last name</dt><dd>{{confirmPlea.pleaApp.yourDetails.lastName | chkEmpty}}</dd>
-      <dt>Address</dt><dd>{{confirmPlea.pleaApp.yourDetails.address.street | chkEmpty}}<br>{{confirmPlea.pleaApp.yourDetails.address.city}}<br>{{confirmPlea.pleaApp.yourDetails.address.postcode}}</dd>
-      <dt data-ng-show="confirmPlea.pleaApp.yourDetails.yourUpdateDetails">Your updated details</dt><dd data-ng-show="confirmPlea.pleaApp.yourDetails.yourUpdateDetails">{{confirmPlea.pleaApp.yourDetails.yourUpdateDetails | chkEmpty}}</dd>
-      <dt>Contact number</dt><dd>{{confirmPlea.pleaApp.yourDetails.contactNumber | chkEmpty}}</dd>
-      <dt>Email address</dt><dd>{{confirmPlea.pleaApp.yourDetails.emailAddress | chkEmpty}}</dd>
-      <dt>Date of birth</dt><dd>{{confirmPlea.dateOfBirth | date: 'd MMMM yyyy' | chkEmpty}}</dd>
-      <dt>National Insurance number</dt><dd>{{confirmPlea.pleaApp.yourDetails.nationalInsuranceNumber | chkEmpty}}</dd>
+      <dt>First name</dt><dd>{{confirmPlea.defendantDetails.firstName | chkEmpty}}</dd>
+      <dt>Last name</dt><dd>{{confirmPlea.defendantDetails.lastName | chkEmpty}}</dd>
+      <dt>Address</dt><dd>{{confirmPlea.defendantDetails.address.street | chkEmpty}}<br>{{confirmPlea.defendantDetails.address.city}}<br>{{confirmPlea.defendantDetails.address.postcode}}</dd>
+      <dt data-ng-hide="confirmPlea.pleaApp.personalDetails.detailsCorrect.yes">Your updated details</dt><dd data-ng-hide="confirmPlea.pleaApp.personalDetails.detailsCorrect.yes">{{confirmPlea.pleaApp.personalDetails.detailsCorrect.correctDetails | chkEmpty}}</dd>
+      <dt>Contact number</dt><dd>{{confirmPlea.pleaApp.personalDetails.contactNumber | chkEmpty}}</dd>
+      <dt>Email address</dt><dd>{{confirmPlea.pleaApp.personalDetails.emailAddress | chkEmpty}}</dd>
+      <dt>Date of birth</dt><dd>{{confirmPlea.pleaApp.personalDetails.dateOfBirth | date: 'd MMMM yyyy' | chkEmpty}}</dd>
+      <dt>National Insurance number</dt><dd>{{confirmPlea.pleaApp.personalDetails.nationalInsuranceNumber.NI | chkEmpty}}</dd>
     </dl>
     
   </section>

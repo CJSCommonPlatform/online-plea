@@ -59,10 +59,10 @@
       <div class="panel panel-border-wide">
 
         <p>
-          <span class="bold-small">{{vm.title}} {{vm.firstName}} {{vm.lastName}}</span><br>
-          {{vm.addressStreet}}<br>
-          {{vm.addressCity}}<br>
-          {{vm.addressPostcode}}
+          <span class="bold-small">{{vm.defendantDetails.title}} {{vm.defendantDetails.firstName}} {{vm.defendantDetails.lastName}}</span><br>
+          {{vm.defendantDetails.address.street}}<br>
+          {{vm.defendantDetails.address.city}}<br>
+          {{vm.defendantDetails.address.postcode}}
         </p>
 
       </div>
@@ -77,25 +77,25 @@
             <span class="error-message" id="error-message-correct-details" data-ng-show="vm.form['correct-details'].invalid">Choose an answer</span>
           </legend>
 
-          <label class="block-label" for="correct-details-yes" data-ng-class="{'selected': vm.detailsCorrect === 'Yes'}">
-            <input type="radio" id="correct-details-yes" name="correct-details" value="Yes" required aria-required="true"
+          <label class="block-label" for="correct-details-yes" data-ng-class="{ 'selected': vm.formData.detailsCorrect.yes === true }">
+            <input type="radio" id="correct-details-yes" name="correct-details" ng-value="true" required aria-required="true"
                    data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['correct-details'].invalid ? 'error-message-correct-details' : undefined}}"
-                   data-ng-model="vm.detailsCorrect"> Yes
+                   data-ng-model="vm.formData.detailsCorrect.yes"> Yes
           </label>
 
-          <label class="block-label" for="correct-details-no" data-ng-class="{'selected': vm.detailsCorrect === 'No'}">
-            <input type="radio" id="correct-details-no" name="correct-details" value="No" required aria-required="true" aria-controls="correct-details"
+          <label class="block-label" for="correct-details-no" data-ng-class="{ 'selected': vm.formData.detailsCorrect.yes === false }">
+            <input type="radio" id="correct-details-no" name="correct-details" ng-value="false" required aria-required="true" aria-controls="correct-details"
                    data-ng-attr-aria-invalid="{{vm.form['correct-details'].invalid ? 'true' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.detailsCorrect === 'No' ? 'true' : 'false'}}"
-                   data-ng-model="vm.detailsCorrect"> No
+                   data-ng-attr-aria-expanded="{{(vm.formData.detailsCorrect.yes === false) ? 'true' : 'false'}}"
+                   data-ng-model="vm.formData.detailsCorrect.yes"> No
           </label>
 
         </fieldset>
-        
+
         <div class="panel panel-border-narrow" id="correct-details"
-             data-ng-class="{'js-hidden': vm.detailsCorrect !== 'No'}"
-             data-ng-attr-aria-hidden="{{vm.detailsCorrect !== 'No' ? 'true' : 'false'}}">
+             data-ng-class="{ 'js-hidden': vm.formData.detailsCorrect.yes !== false }"
+             data-ng-attr-aria-hidden="{{vm.formData.detailsCorrect.yes !== false ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['your-update-details'].invalid}">
 
@@ -107,9 +107,9 @@
             <textarea class="form-control form-control-textarea" id="your-update-details" name="your-update-details" cols="30" rows="3"
                       data-ng-attr-aria-invalid="{{vm.form['your-update-details'].invalid ? 'true' : undefined}}"
                       data-ng-attr-aria-describedby="{{vm.form['your-update-details'].invalid ? 'error-message-your-update-details' : undefined}}"
-                      data-ng-attr-aria-required="vm.detailsCorrect==='No'"
-                      data-ng-required="vm.detailsCorrect==='No'"
-                      data-ng-model="vm.yourUpdateDetails"></textarea>
+                      data-ng-attr-aria-required="vm.formData.detailsCorrect.yes === false"
+                      data-ng-required="vm.formData.detailsCorrect.yes === false"
+                      data-ng-model="vm.formData.detailsCorrect.correctDetails"></textarea>
 
           </div>
 
@@ -133,7 +133,7 @@
                data-ng-attr-aria-invalid="{{vm.form['contact-number'].invalid ? 'true' : undefined}}"
                data-ng-attr-aria-describedby="{{vm.form['contact-number'].invalid ? 'error-message-contact-number' : 'contact-number-hint'}}"
                data-ng-pattern="vm.ukTelephoneNumberRegex"
-               data-ng-model="vm.contactNumber">
+               data-ng-model="vm.formData.contactNumber">
 
       </div>
       
@@ -150,8 +150,8 @@
                data-ng-attr-aria-invalid="{{vm.form['email-address'].invalid ? 'true' : undefined}}"
                data-ng-attr-aria-describedby="{{vm.form['email-address'].invalid ? 'error-message-email-address' : 'email-address-hint'}}"
                data-ng-pattern="vm.emailAddressRegex"
-               data-ng-model="vm.emailAddress">
-        
+               data-ng-model="vm.formData.email">
+
       </div>
 
 
@@ -212,7 +212,7 @@
                         inFuture : 'vm.inFuture(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'])',
                         atLeast18 : 'vm.atLeast(vm.form[\'dob-year\'], vm.form[\'dob-month\'], vm.form[\'dob-day\'], 18)'
                      }"
-                     data-ng-model="vm.dateOfBirthDay">
+                     data-ng-model="vm.formData.dateOfBirth.day">
             </div>
 
             <div class="form-group form-group-month">
@@ -220,7 +220,7 @@
               <input class="form-control" type="number" id="dob-month" max="12" min="1" pattern="[0-9]{1,2}" name="dob-month" required aria-required="true"
                      data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
                      data-ui-validate="'vm.validateDay(vm.form[\'dob-day\'])'"
-                     data-ng-model="vm.dateOfBirthMonth">
+                     data-ng-model="vm.formData.dateOfBirth.month">
             </div>
 
             <div class="form-group form-group-year">
@@ -228,9 +228,9 @@
               <input class="form-control" type="number" id="dob-year" max="2050" min="1900" pattern="[0-9]{4}" name="dob-year" required aria-required="true"
                      data-ng-attr-aria-invalid="{{vm.form['dob-day'].invalid ? 'true' : undefined}}"
                      data-ui-validate="'vm.validateDay(vm.form[\'dob-day\'])'"
-                     data-ng-model="vm.dateOfBirthYear">
+                     data-ng-model="vm.formData.dateOfBirth.year">
             </div>
-            
+
           </div>
 
         </fieldset>
@@ -246,26 +246,26 @@
             <span class="form-label-bold">Do you have a National Insurance number?</span>
             <span class="error-message" id="error-message-national-insurance" data-ng-show="vm.form['national-insurance'].invalid">Choose an answer</span>
           </legend>
-  
-          <label class="block-label" for="national-insurance-yes" data-ng-class="{'selected': vm.nationalInsurance === 'Yes'}">
-            <input type="radio" id="national-insurance-yes" name="national-insurance" value="Yes" required aria-required="true" aria-controls="national-insurance"
+
+          <label class="block-label" for="national-insurance-yes" data-ng-class="{ 'selected': vm.formData.nationalInsuranceNumber.yes === true }">
+            <input type="radio" id="national-insurance-yes" name="national-insurance" ng-value="true" required aria-required="true" aria-controls="national-insurance"
                    data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['national-insurance'].invalid ? 'error-message-national-insurance' : undefined}}"
-                   data-ng-attr-aria-expanded="{{vm.nationalInsurance === 'Yes' ? 'true' : 'false'}}"
-                   data-ng-model="vm.nationalInsurance"> Yes
+                   data-ng-attr-aria-expanded="{{vm.formData.nationalInsuranceNumber.yes === true ? 'true' : 'false'}}"
+                   data-ng-model="vm.formData.nationalInsuranceNumber.yes"> Yes
           </label>
-  
-          <label class="block-label" for="national-insurance-no" data-ng-class="{'selected': vm.nationalInsurance === 'No'}">
-            <input type="radio" id="national-insurance-no" name="national-insurance" value="No" required aria-required="true"
+
+          <label class="block-label" for="national-insurance-no" data-ng-class="{ 'selected': vm.formData.nationalInsuranceNumber.yes === false }">
+            <input type="radio" id="national-insurance-no" name="national-insurance" ng-value="false" required aria-required="true"
                    data-ng-attr-aria-invalid="{{vm.form['national-insurance'].invalid ? 'true' : undefined}}"
-                   data-ng-model="vm.nationalInsurance"> No
+                   data-ng-model="vm.formData.nationalInsuranceNumber.yes"> No
           </label>
   
         </fieldset>
         
         <div class="panel panel-border-narrow" id="national-insurance"
-             data-ng-class="{'js-hidden': vm.nationalInsurance !== 'Yes'}"
-             data-ng-attr-aria-hidden="{{vm.nationalInsurance !== 'Yes' ? 'true' : 'false'}}">
+             data-ng-class="{'js-hidden': vm.formData.nationalInsuranceNumber.yes !== true}"
+             data-ng-attr-aria-hidden="{{vm.formData.nationalInsuranceNumber.yes !== true ? 'true' : 'false'}}">
 
           <div class="form-group" data-ng-class="{'error': vm.form['national-insurance-number'].invalid}" data-ng-messages="vm.form['national-insurance-number'].error">
 
@@ -279,10 +279,10 @@
             <input class="form-control" type="text" id="national-insurance-number" name="national-insurance-number"
                    data-ng-attr-aria-invalid="{{vm.form['national-insurance-number'].invalid ? 'true' : undefined}}"
                    data-ng-attr-aria-describedby="{{vm.form['national-insurance-number'].invalid ? 'error-message-national-insurance-number' : 'national-insurance-number-hint'}}"
-                   data-ng-attr-aria-required="vm.nationalInsurance === 'Yes'"
-                   data-ng-required="vm.nationalInsurance === 'Yes'"
+                   data-ng-attr-aria-required="vm.formData.nationalInsuranceNumber.yes === true"
+                   data-ng-required="vm.formData.nationalInsuranceNumber.yes === true"
                    data-ui-validate="{pattern: 'vm.validateNationalInsuranceNumber($value)'}"
-                   data-ng-model="vm.nationalInsuranceNumber">
+                   data-ng-model="vm.formData.nationalInsuranceNumber.NI">
 
           </div>
 

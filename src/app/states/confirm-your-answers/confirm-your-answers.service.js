@@ -5,9 +5,9 @@
     .module('pleaApp')
     .factory('confirmYourAnswers', confirmYourAnswers);
 
-  confirmYourAnswers.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash'];
+  confirmYourAnswers.$inject = ['totalWeeklyIncome', 'totalHouseholdExpenses', 'totalOtherExpenses', 'totalExpenses', 'sessionStorage', 'lodash', 'yourDetailsRetrieve'];
 
-  function confirmYourAnswers(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash) {
+  function confirmYourAnswers(totalWeeklyIncome, totalHouseholdExpenses, totalOtherExpenses, totalExpenses, sessionStorage, lodash, yourDetailsRetrieve) {
     var BASE_NAME = '';
 
     var service = {
@@ -21,13 +21,7 @@
 
       vm.pleaApp = get('pleaApp');
 
-      get = sessionStorage.getGetter('pleaApp.yourDetails.');
-
-      var day = get('dateOfBirthDay');
-      var month = get('dateOfBirthMonth');
-      var year = get('dateOfBirthYear');
-
-      vm.dateOfBirth = new Date(year, month - 1, day);
+      lodash.set(vm, 'defendantDetails', yourDetailsRetrieve.retrieve());
 
       lodash.set(vm, 'yourEmployment.totalWeeklyIncome', totalWeeklyIncome.calculate(vm));
       lodash.set(vm, 'yourExpenses.household.totalHouseholdExpenses', totalHouseholdExpenses.calculate(vm));
