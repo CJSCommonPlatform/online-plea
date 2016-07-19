@@ -8,7 +8,7 @@
   yourCaseStorage.$inject = ['sessionStorage'];
 
   function yourCaseStorage(sessionStorage) {
-    var BASE_NAME = 'pleaApp.yourCase.';
+    var BASE_NAME = 'pleaApp.yourDetails.';
 
     var get = sessionStorage.getGetter(BASE_NAME);
     var set = sessionStorage.getSetter(BASE_NAME);
@@ -25,9 +25,12 @@
       vm.casePostcode = get('casePostcode');
     }
 
-    function updateSessionStorage(vm) {
-      set('caseUniqueReferenceNumber', vm.caseUniqueReferenceNumber);
-      set('casePostcode', vm.casePostcode.toUpperCase());
+    function updateSessionStorage(data) {
+      set('firstName', data.defendant.firstName);
+      set('lastName', data.defendant.lastName);
+      set('address.street', data.defendant.address.addressLine1);
+      set('address.city', data.defendant.address.addressLine2);
+      set('address.postcode', data.defendant.address.postCode.toUpperCase());
     }
 
   }
