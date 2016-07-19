@@ -27,6 +27,7 @@
       searchCases : searchCases,
       getIdpc: getIdpc,
       getNominalView: getNominalView,
+      makePlea: makePlea,
       updatePlea: updatePlea,
       updateIndicatedPlea: updateIndicatedPlea,
       updateBailStatus: updateBailStatus,
