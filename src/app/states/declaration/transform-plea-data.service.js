@@ -8,10 +8,13 @@
 
   transformPleaData.$inject = ['lodash'];
 
+
   function transformPleaData(_) {
     return function(pleaApp) {
       var result = {};
 
+      extractCaseId(pleaApp, result);
+      extractDefendandId(pleaApp, result);
       result.personalDetails = getPersonalDetails(pleaApp.yourDetails);
 
       var plea = getPlea(pleaApp.yourPlea);
@@ -24,6 +27,13 @@
       return result;
     };
 
+    function extractDefendandId(pleaApp, result) {
+      result.defendantId = pleaApp.yourDetails.defendantId;
+    }
+
+    function extractCaseId(pleaApp, result) {
+      result.caseId = pleaApp.yourCase.caseId;
+    }
 
     function getPersonalDetails(yourDetails) {
       var result = {};
@@ -56,7 +66,7 @@
         nationalInsuranceNumber.NI = yourDetails.nationalInsuranceNumber;
       }
 
-      return personalDetails;
+      return result;
     }
 
 
