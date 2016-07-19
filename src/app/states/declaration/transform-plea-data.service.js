@@ -125,15 +125,12 @@
 
       switch (result.status) {
       case 'Employed':
-        result.payment = {
-          frequency: pleaApp.yourEmployment.paymentAmount,
-          amount: pleaApp.yourEmployment.paymentFrequency
-        };
-
-        result.financialProblems = extractFinancialProblems(pleaApp);
+        result.payment = extractPayment();
+        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
         break;
       case 'Employed and also receiving benefits':
-        // TODO: Implement
+        result.payment = extractPayment();
+        result.benefits = extractBenefits(pleaApp);
         break;
       case 'Self employed':
         // TODO: Implement
@@ -149,17 +146,36 @@
         break;
       }
 
+      function extractPayment() {
+        return {
+          frequency: pleaApp.yourEmployment.paymentFrequency,
+          amount: pleaApp.yourEmployment.paymentAmount
+        };
+      }
+
       return result;
     }
 
 
-    function extractFinancialProblems(pleaApp) {
+    function extractBenefits(pleaApp) {
+      return {
+        benefit: pleaApp.yourBenefits.benefit,
+        payment: {
+          frequency: pleaApp.yourBenefits.benefitFrequency,
+          amount: pleaApp.yourBenefits.benefitAmount
+        },
+        financialProblems: extractFinancialProblems(pleaApp, 'yourBenefits')
+      };
+    }
+
+
+    function extractFinancialProblems(pleaApp, financialProblemsKey) {
       var result = {};
 
-      result.yes = pleaApp.yourEmployment.financialProblems === 'Yes';
+      result.yes = pleaApp[financialProblemsKey].financialProblems === 'Yes';
 
       if (result.yes) {
-        result.justification = pleaApp.yourEmployment.financialProblemsJustification;
+        result.justification = pleaApp[financialProblemsKey].financialProblemsJustification;
         result.expenses = extractExpenses(pleaApp.yourExpenses);
       }
 
