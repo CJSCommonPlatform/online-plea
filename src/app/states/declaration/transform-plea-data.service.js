@@ -133,16 +133,22 @@
         result.benefits = extractBenefits(pleaApp);
         break;
       case 'Self employed':
-        // TODO: Implement
+        result.payment = extractPayment();
+        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
         break;
       case 'Self employed and also receiving benefit':
-        // TODO: Implement
+        result.payment = extractPayment();
+        result.benefits = extractBenefits(pleaApp);
         break;
       case 'Receiving out of work benefits':
-        // TODO: Implement
+        result.benefits = extractBenefits(pleaApp);
         break;
       case 'Other':
-        // TODO: Implement
+        result.provideDetails = pleaApp.yourEmployment.provideDetails;
+        result.sourceIncome = pleaApp.yourEmployment.sourceIncome;
+        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
+        result.payment = extractPayment();
+        result.pensionCredit = extractPensionCredit();
         break;
       }
 
@@ -151,6 +157,26 @@
           frequency: pleaApp.yourEmployment.paymentFrequency,
           amount: pleaApp.yourEmployment.paymentAmount
         };
+      }
+
+      function extractPensionCreditPayment() {
+        var result = {
+          amount: pleaApp.yourPensionCredit.pensionCreditAmount,
+          frequency: pleaApp.yourPensionCredit.pensionCreditFrequency
+        };
+
+        return result;
+      }
+      function extractPensionCredit() {
+        var result = {};
+
+        result.yes = pleaApp.yourEmployment.pensionCredit === 'Yes';
+
+        if (result.yes) {
+          result.payment = extractPensionCreditPayment();
+        }
+
+        return result;
       }
 
       return result;
@@ -182,12 +208,11 @@
       return result;
     }
 
-
     function extractExpenses(yourExpenses) {
       var result = {};
 
       result.household = _.pick(yourExpenses.household, [
-        'accomodation',
+        'accommodation',
         'utilityBills',
         'insurance',
         'councilTax'
