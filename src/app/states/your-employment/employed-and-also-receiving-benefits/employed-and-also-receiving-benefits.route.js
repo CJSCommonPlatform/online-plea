@@ -6,19 +6,19 @@
     .config(function($stateProvider) {
 
       $stateProvider
-        .state('your-employment.employed-receiving-benefits', {
+        .state('your-employment.employed-and-also-receiving-benefits', {
           abstract: true,
-          url: '/employed-receiving-benefits',
+          url: '/employed-and-also-receiving-benefits',
           // Note: abstract still needs a ui-view for its children to populate.
           // You can simply add it inline here.
           template: '<ui-view/>'
         })
 
-        .state('your-employment.employed-receiving-benefits.finances', {
+        .state('your-employment.employed-and-also-receiving-benefits.finances', {
           url: '/finances',
           views: {
             '@': {
-              templateUrl : 'app/states/your-employment/employed-receiving-benefits/finances/employed-receiving-benefits.html',
+              templateUrl : 'app/your-employment/employed-and-also-receiving-benefits/finances/employed-and-also-receiving-benefits.html',
               controller  : 'YourEmploymentFinancesController',
               controllerAs: 'vm'
             }
