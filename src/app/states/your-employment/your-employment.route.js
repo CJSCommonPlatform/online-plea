@@ -24,7 +24,7 @@
               },
               {
                 constantValue: 'EMPLOYED_BENEFITS',
-                stateName: 'your-employment.employed-receiving-benefits.finances'
+                stateName: 'your-employment.employed-and-also-receiving-benefits.finances'
               },
               {
                 constantValue: 'SELF_EMPLOYED',
@@ -32,7 +32,7 @@
               },
               {
                 constantValue: 'SELF_EMPLOYED_BENEFITS',
-                stateName: 'your-employment.self-employed-receiving-benefits.finances'
+                stateName: 'your-employment.self-employed-and-also-receiving-benefits.finances'
               },
               {
                 constantValue: 'OUT_OF_WORK_BENEFITS',
