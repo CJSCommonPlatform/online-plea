@@ -75,7 +75,7 @@
       });
     });
 
-    describe('buttonContinue function; state=your-employment.other.finances', function() {
+    xdescribe('buttonContinue function; state=your-employment.other.finances', function() {
       beforeEach(function() {
         //given
         $state.go('your-employment.other.finances');
