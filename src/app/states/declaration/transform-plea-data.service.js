@@ -119,12 +119,12 @@
 
 
     function extractFinancialMeans(pleaApp) {
-      var result = {};
+      var result = {
+        status: pleaApp.yourEmployment.employmentStatus
+      };
 
-      switch (pleaApp.yourEmployment.employmentStatus) {
+      switch (result.status) {
       case 'Employed':
-        result.status = 'Employed';
-
         result.payment = {
           frequency: pleaApp.yourEmployment.paymentAmount,
           amount: pleaApp.yourEmployment.paymentFrequency
