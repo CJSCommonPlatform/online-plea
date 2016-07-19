@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  describe('ExpensesController', function() {
+  xdescribe('ExpensesController', function() {
     var scope;
     var $controller;
     var $state;
