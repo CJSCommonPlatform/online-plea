@@ -66,13 +66,104 @@
       });
     });
 
+    describe('should contain information about plea', function() {
+      it('when plea is guilty, should plea information', function() {
+        pleaData.yourPlea.plea = 'Guilty';
+        pleaData.yourPlea.court = 'Yes';
+        pleaData.yourPlea.offenceId = 'OFFENCE_ID';
+        pleaData.yourPlea.mitigation = 'Testing mitigation';
+
+        var result = transformPleaData(pleaData);
+        expect(result.pleas[0].plea).toEqual('GUILTY');
+        expect(result.pleas[0].court).toEqual(true);
+//        expect(result.pleas[0].offenceId).toEqual('OFFENCE_ID');
+        expect(result.pleas[0].mitigation).toEqual('Testing mitigation');
+      });
+
+      describe('when not guilty', function() {
+        it('additinal information should be provided', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.offenceId = 'OFFENCE_ID';
+          pleaData.yourPlea.notGuiltyBecause = 'Reason';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].plea).toEqual('NOT_GUILTY');
+//        expect(result.pleas[0].offenceId).toEqual('OFFENCE_ID');
+          expect(result.pleas[0].notGuiltyBecause).toEqual('Reason');
+        });
+
+        it('and the interpreter is not required', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.interpreter = 'No';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].interpreter.yes).toEqual(false);
+          expect(result.pleas[0].interpreter.language).not.toBeDefined();
+        });
+
+        it('and the interpreter is required', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.interpreter = 'Yes';
+          pleaData.yourPlea.interpreterLanguage = 'Polish';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].interpreter.yes).toEqual(true);
+          expect(result.pleas[0].interpreter.language).toEqual('Polish');
+        });
+
+        it('and there is no disagreement with a prosecution witness', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.prosecutorWitnessDisagree = 'No';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].prosecutorWitness.disagree).toEqual(false);
+          expect(result.pleas[0].prosecutorWitness.details).not.toBeDefined();
+        });
+
+        it('and there is  disagreement with a prosecution witness', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.prosecutorWitnessDisagree = 'Yes';
+          pleaData.yourPlea.prosecutorWitnessDetails = 'Details';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].prosecutorWitness.disagree).toEqual(true);
+          expect(result.pleas[0].prosecutorWitness.details).toEqual('Details');
+        });
+        it('and dependant does not want to call a witness', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.defenceWitnessCall = 'No';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].prosecutorWitness.disagree).toEqual(false);
+          expect(result.pleas[0].prosecutorWitness.details).not.toBeDefined();
+        });
+
+        it('and dependant does want to call a witness', function() {
+          pleaData.yourPlea.plea = 'Not guilty';
+          pleaData.yourPlea.defenceWitnessCall = 'Yes';
+          pleaData.yourPlea.defenceWitnessContactDetails = 'Contact to defense witness';
+
+          var result = transformPleaData(pleaData);
+          expect(result.pleas[0].defenceWitness.call).toEqual(true);
+          expect(result.pleas[0].defenceWitness.contactDetails).toEqual('Contact to defense witness');
+        });
+      });
+    });
+
+    describe('should contain information about financialMeans', function() {
+      describe('when defendant is employed', function() {
+        
+      });
+    });
+
     it('should have basic personal details information', function() {
         var result = transformPleaData(pleaData);
         expect(result.personalDetails.email).toEqual(pleaData.yourDetails.emailAddress);
         expect(result.personalDetails.contactNumber).toEqual(pleaData.yourDetails.contactNumber);
         expect(result.personalDetails.dateOfBirth).toEqual("1980-01-01");
       });
-
-
   });
+
+
+
 })();
