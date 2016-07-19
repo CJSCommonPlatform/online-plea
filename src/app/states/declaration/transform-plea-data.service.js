@@ -121,7 +121,83 @@
     function extractFinancialMeans(pleaApp) {
       var result = {};
 
-      // TODO: Implement
+      switch (pleaApp.yourEmployment.employmentStatus) {
+      case 'Employed':
+        result.status = 'Employed';
+
+        result.payment = {
+          frequency: pleaApp.yourEmployment.paymentAmount,
+          amount: pleaApp.yourEmployment.paymentFrequency
+        };
+
+        result.financialProblems = extractFinancialProblems(pleaApp);
+        break;
+      case 'Employed and also receiving benefits':
+        // TODO: Implement
+        break;
+      case 'Self employed':
+        // TODO: Implement
+        break;
+      case 'Self employed and also receiving benefit':
+        // TODO: Implement
+        break;
+      case 'Receiving out of work benefits':
+        // TODO: Implement
+        break;
+      case 'Other':
+        // TODO: Implement
+        break;
+      }
+
+      return result;
+    }
+
+
+    function extractFinancialProblems(pleaApp) {
+      var result = {};
+
+      result.yes = pleaApp.yourEmployment.financialProblems === 'Yes';
+
+      if (result.yes) {
+        result.justification = pleaApp.yourEmployment.financialProblemsJustification;
+        result.expenses = extractExpenses(pleaApp.yourExpenses);
+      }
+
+      return result;
+    }
+
+
+    function extractExpenses(yourExpenses) {
+      var result = {};
+
+      result.household = _.pick(yourExpenses.household, [
+        'accomodation',
+        'utilityBills',
+        'insurance',
+        'councilTax'
+      ]);
+
+      result.household.otherContributors = yourExpenses.household.contribute === 'Yes';
+
+      result.other = _.pick(yourExpenses.other, [
+        'travelExpenses',
+        'telephone',
+        'loanRepayments',
+        'countyCourtOrders',
+        'fines',
+        'childMaintenance'
+      ]);
+
+      result.other.televisionSubscriptions = yourExpenses.other.televisionSubscription;
+
+      var otherSignificantExpenses = result.other.otherSignificantExpenses = {
+        yes: yourExpenses.other.otherSignificantExpenses === 'Yes'
+      };
+
+      if (otherSignificantExpenses.yes) {
+        otherSignificantExpenses.details = yourExpenses.other.otherSignificantExpensesDetails;
+        otherSignificantExpenses.amount = yourExpenses.other.otherSignificantExpensesTotal;
+      }
 
       return result;
     }
