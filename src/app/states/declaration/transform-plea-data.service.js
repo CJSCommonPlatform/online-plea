@@ -102,7 +102,7 @@
         };
 
         if (defenceWitness.call) {
-          defenceWitness.contactDetails = defenceWitnessContactDetails;
+          defenceWitness.contactDetails = yourPlea.defenceWitnessContactDetails;
 
           var defenceWitnessInterpreter = defenceWitness.interpreter = {
             yes: yourPlea.defenceWitnessInterpreter === 'Yes'
