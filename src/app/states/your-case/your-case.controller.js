@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
 
-  YourCaseController.$inject = ['yourCaseStorage', 'state', '$stateParams', 'formValidation'];
+  YourCaseController.$inject = ['$stateParams', '$log', 'structureService', 'yourCaseStorage', 'state', 'formValidation'];
 
-  function YourCaseController(yourCaseStorage, state, $stateParams, formValidation) {
+  function YourCaseController($stateParams, $log, structureService, yourCaseStorage, state, formValidation) {
 
     var vm = this;
 
@@ -21,12 +21,24 @@
     //public
 
     function continueButtonClicked(event) {
+      
       event.preventDefault();
       formValidation.validate(vm.form);
+      
       if (!vm.form.invalid) {
-        yourCaseStorage.updateSessionStorage(vm);
-        state.go(getNextState(vm));
+        structureService.getCaseByUrnAndPostcode(vm)
+        .then(getCaseByUrnAndPostcodeSucceed)
+        .catch(getCaseByUrnAndPostcodeFailed)
       }
+    }
+
+    function getCaseByUrnAndPostcodeSucceed(response) {
+      yourCaseStorage.updateSessionStorage(response.data);
+      state.go(getNextState(vm));
+    }
+
+    function getCaseByUrnAndPostcodeFailed(error) {
+      $log.error('XHR Failed for ' + error.method + ' ' + error.statusText);
     }
 
     function getNextState(vm) {
