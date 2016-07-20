@@ -41,6 +41,7 @@
 
       sessionStorage.getSetter('pleaApp.yourCase.')('defendantId', data.defendant.id);
       sessionStorage.getSetter('pleaApp.yourCase.')('offence.id', data.defendant.offences[0].id);
+      sessionStorage.getSetter('pleaApp.yourPlea.')('offence.wording', data.defendant.offences[0].wording);
     }
 
   }

@@ -5,11 +5,12 @@
   angular.module('pleaApp')
     .controller('YourPleaController', YourPleaController);
 
-  YourPleaController.$inject = ['pleas', 'yesNoAnswer', 'yourPlea', 'state', '$stateParams', 'formValidation'];
+  YourPleaController.$inject = ['pleas', 'yesNoAnswer', 'yourPlea', 'state', '$stateParams', 'formValidation', 'sessionStorage'];
 
-  function YourPleaController(pleas, yesNoAnswer, yourPlea, state, $stateParams, formValidation) {
+  function YourPleaController(pleas, yesNoAnswer, yourPlea, state, $stateParams, formValidation, sessionStorage) {
     var vm = this;
 
+    vm.pleaApp = sessionStorage.getGetter('pleaApp')('');
     vm.pleas = pleas;
     vm.yesNoAnswer = yesNoAnswer;
     vm.buttonContinue = buttonContinueClicked;
