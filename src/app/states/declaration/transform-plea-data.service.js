@@ -13,8 +13,6 @@
     return function(pleaApp) {
       var result = {};
 
-      result.caseId = pleaApp.yourCase.caseId;
-      result.defendantId = pleaApp.yourDetails.defendantId;
       result.personalDetails = extractPersonalDetails(pleaApp.yourDetails);
 
       var plea = extractPlea(pleaApp.yourPlea);
@@ -125,17 +123,11 @@
 
       switch (result.status) {
       case 'Employed':
-        result.payment = extractPayment();
-        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
-        break;
-      case 'Employed and also receiving benefits':
-        result.payment = extractPayment();
-        result.benefits = extractBenefits(pleaApp);
-        break;
       case 'Self employed':
         result.payment = extractPayment();
         result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
         break;
+      case 'Employed and also receiving benefits':
       case 'Self employed and also receiving benefit':
         result.payment = extractPayment();
         result.benefits = extractBenefits(pleaApp);
@@ -146,9 +138,20 @@
       case 'Other':
         result.provideDetails = pleaApp.yourEmployment.provideDetails;
         result.sourceIncome = pleaApp.yourEmployment.sourceIncome;
-        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
         result.payment = extractPayment();
-        result.pensionCredit = extractPensionCredit();
+        result.financialProblems = extractFinancialProblems(pleaApp, 'yourEmployment');
+
+        var pensionCredit = result.pensionCredit = {
+          yes: pleaApp.yourEmployment.pensionCredit === 'Yes'
+        }
+
+        if (pensionCredit.yes) {
+          pensionCredit.payment = {
+            frequency: pleaApp.yourPensionCredit.pensionCreditFrequency,
+            amount: pleaApp.yourPensionCredit.pensionCreditAmount
+          };
+        }
+
         break;
       }
 
@@ -157,26 +160,6 @@
           frequency: pleaApp.yourEmployment.paymentFrequency,
           amount: pleaApp.yourEmployment.paymentAmount
         };
-      }
-
-      function extractPensionCreditPayment() {
-        var result = {
-          amount: pleaApp.yourPensionCredit.pensionCreditAmount,
-          frequency: pleaApp.yourPensionCredit.pensionCreditFrequency
-        };
-
-        return result;
-      }
-      function extractPensionCredit() {
-        var result = {};
-
-        result.yes = pleaApp.yourEmployment.pensionCredit === 'Yes';
-
-        if (result.yes) {
-          result.payment = extractPensionCreditPayment();
-        }
-
-        return result;
       }
 
       return result;
@@ -207,6 +190,7 @@
 
       return result;
     }
+
 
     function extractExpenses(yourExpenses) {
       var result = {};

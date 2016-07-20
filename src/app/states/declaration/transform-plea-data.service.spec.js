@@ -24,16 +24,6 @@
 
     }));
 
-    it('should contain caseId', function() {
-      var result = transformPleaData(pleaData);
-      expect(result.caseId).toEqual(pleaData.yourCase.caseId);
-    });
-
-    it('should contain defendantId', function() {
-      var result = transformPleaData(pleaData);
-      expect(result.defendantId).toEqual(pleaData.yourDetails.defendantId);
-    });
-
     describe('should contain information if details correct', function() {
       it('when correct, should not contain any additional information', function() {
         var result = transformPleaData(pleaData);
