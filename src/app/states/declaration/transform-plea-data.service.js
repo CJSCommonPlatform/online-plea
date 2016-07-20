@@ -15,7 +15,7 @@
 
       result.personalDetails = extractPersonalDetails(pleaApp.yourDetails);
 
-      var plea = extractPlea(pleaApp.yourPlea);
+      var plea = extractPlea(pleaApp.yourPlea, pleaApp.yourCase.offence.id);
       result.pleas = [plea];
 
       if (plea.plea === 'GUILTY') {
@@ -61,10 +61,10 @@
     }
 
 
-    function extractPlea(yourPlea) {
+    function extractPlea(yourPlea, offenceId) {
       var result = {};
 
-      result.offenceId = '' // TODO
+      result.offenceId = offenceId; // TODO
 
       if (yourPlea.plea === 'Guilty') {
         result.plea = 'GUILTY';

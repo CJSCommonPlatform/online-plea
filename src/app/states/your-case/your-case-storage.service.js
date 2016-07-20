@@ -28,6 +28,8 @@
     function updateSessionStorage(data) {
       var dob = moment(data.defendant.dateOfBirth);
 
+      sessionStorage.getSetter('pleaApp.yourCase.')('caseId', data.caseId);
+
       set('firstName', data.defendant.firstName);
       set('lastName', data.defendant.lastName);
       set('dateOfBirthDay', dob.date());
@@ -36,6 +38,9 @@
       set('address.street', data.defendant.address.addressLine1);
       set('address.city', data.defendant.address.addressLine2);
       set('address.postcode', data.defendant.address.postCode.toUpperCase());
+
+      sessionStorage.getSetter('pleaApp.yourCase.')('defendantId', data.defendant.id);
+      sessionStorage.getSetter('pleaApp.yourCase.')('offence.id', data.defendant.offences[0].id);
     }
 
   }

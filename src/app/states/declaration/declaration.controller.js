@@ -18,7 +18,7 @@
       var pleaData = sessionStorage.getGetter('')('pleaApp');
       var transformedPleaData = transformPleaData(pleaData);
 
-      structureService.makePlea(pleaData.yourCase.caseId, pleaData.yourDetails.defendantId, transformedPleaData)
+      structureService.makePlea(pleaData.yourCase.caseId, pleaData.yourCase.defendantId, transformedPleaData)
         .then(function () {
           state.goNext(vm);
         });
