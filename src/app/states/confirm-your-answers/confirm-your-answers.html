@@ -159,7 +159,7 @@
 
       <dl>
         <dt>Financial problems</dt><dd>{{confirmPlea.pleaApp.yourEmployment.financialProblems || confirmPlea.pleaApp.yourBenefits.financialProblems}}</dd>
-        <dt data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No'">How would paying a fine cause you financial problems</dt><dd data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No'">I live beyond my means, and spend way too much money!</dd>
+        <dt data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No' || confirmPlea.pleaApp.yourBenefits.financialProblems !== 'No'">How would paying a fine cause you financial problems</dt><dd data-ng-show="confirmPlea.pleaApp.yourEmployment.financialProblems !== 'No' || confirmPlea.pleaApp.yourBenefits.financialProblems !== 'No'">{{confirmPlea.pleaApp.yourBenefits.financialProblemsJustification || confirmPlea.pleaApp.yourEmployment.financialProblemsJustification}} </dd>
       </dl>
 
     </section>
