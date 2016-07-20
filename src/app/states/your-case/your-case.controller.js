@@ -5,9 +5,9 @@
   angular.module('pleaApp')
     .controller('YourCaseController', YourCaseController);
 
-  YourCaseController.$inject = ['$stateParams', '$log', 'structureService', 'yourCaseStorage', 'state', 'formValidation'];
+  YourCaseController.$inject = ['$stateParams', '$log', 'structureService', 'yourCaseStorage', 'state', 'formValidation', 'ukPostcodeRegex'];
 
-  function YourCaseController($stateParams, $log, structureService, yourCaseStorage, state, formValidation) {
+  function YourCaseController($stateParams, $log, structureService, yourCaseStorage, state, formValidation, ukPostcodeRegex) {
 
     var vm = this;
 
@@ -15,6 +15,7 @@
     vm.nextState = $stateParams.nextState;
     vm.getNextState = getNextState;
     vm.scrollToAnchor = state.scrollToAnchor;
+    vm.ukPostcodeRegex = ukPostcodeRegex;
 
     yourCaseStorage.updateVm(vm);
 
