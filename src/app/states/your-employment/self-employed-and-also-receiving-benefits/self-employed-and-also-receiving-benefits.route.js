@@ -20,7 +20,7 @@
           url: '/finances',
           views: {
             '@': {
-              templateUrl : 'app/your-employment/self-employed-and-also-receiving-benefits/finances/self-employed-and-also-receiving-benefits.html',
+              templateUrl : 'app/states/your-employment/self-employed-and-also-receiving-benefits/finances/self-employed-and-also-receiving-benefits.html',
               controller  : 'YourEmploymentFinancesController',
               controllerAs: 'vm'
             }

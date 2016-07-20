@@ -18,7 +18,7 @@
           url: '/finances',
           views: {
             '@': {
-              templateUrl : 'app/your-employment/employed-and-also-receiving-benefits/finances/employed-and-also-receiving-benefits.html',
+              templateUrl : 'app/states/your-employment/employed-and-also-receiving-benefits/finances/employed-and-also-receiving-benefits.html',
               controller  : 'YourEmploymentFinancesController',
               controllerAs: 'vm'
             }
