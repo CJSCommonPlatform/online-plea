@@ -145,8 +145,8 @@
                 <span class="error-message" id="error-message-court" data-ng-show="vm.form['court'].invalid">Choose an answer</span>
               </legend>
 
-              <label class="block-label" for="court-yes" data-ng-class="{'selected': vm.court === 'Yes'}">
-                <input type="radio" id="court-yes" name="court" value="Yes"
+              <label class="block-label" for="court-no" data-ng-class="{'selected': vm.court === 'No'}">
+                <input type="radio" id="court-no" name="court" value="No"
                        data-ng-attr-aria-invalid="{{vm.form['court'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-describedby="{{vm.form['court'].invalid ? 'error-message-court' : undefined}}"
                        data-ng-attr-aria-required="vm.plea === 'Guilty'"
@@ -154,8 +154,8 @@
                        data-ng-model="vm.court"> Plead guilty online (no need to attend court)
               </label>
 
-              <label class="block-label" for="court-no" data-ng-class="{'selected': vm.court === 'No'}">
-                <input type="radio" id="court-no" name="court" value="No"
+              <label class="block-label" for="court-yes" data-ng-class="{'selected': vm.court === 'Yes'}">
+                <input type="radio" id="court-yes" name="court" value="Yes"
                        data-ng-attr-aria-invalid="{{vm.form['court'].invalid ? 'true' : undefined}}"
                        data-ng-attr-aria-required="vm.plea === 'Guilty'"
                        data-ng-required="vm.plea === 'Guilty'"
