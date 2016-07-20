@@ -35,7 +35,7 @@
     function getCaseByUrnAndPostcode(obj) {
       return executeQuery(
         '/cases-for-citizen?urn=' + obj.caseUniqueReferenceNumber + '&postcode=' + obj.casePostcode,
-        'application/vnd.structure.query.case-by-urn+json',
+        'application/vnd.structure.query.case-by-urn-postcode+json',
         'getCaseByUrnAndPostcode'
       );
     }
