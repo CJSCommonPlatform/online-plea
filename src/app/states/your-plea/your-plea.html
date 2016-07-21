@@ -61,17 +61,14 @@
     </error-summary>
 
 
-    <div class="panel panel-border-wide">
-
-      <p>This is your opportunity to present your case to the court.</p>
-
-      <ul class="list list-bullet">
-        <li>the charge details and witness statements are in the documents sent to you</li>
-        <li>each offence may carry a fine</li>
-        <li>if you plead guilty you may get a 33&percnt; discount on any fine</li>
-      </ul>
-
-    </div>
+    <p>This is your opportunity to present your case to the court. Please note:</p>
+    
+    
+    <ul class="list list-bullet">
+      <li>the charge details and witness statements are in the documents you were sent</li>
+      <li>you could get a fine for each offence</li>
+      <li>if you plead guilty you may get a 33&percnt; discount on any fine</li>
+    </ul>
 
 
     <h2 class="heading-large">Your charge <span class="heading-secondary">Public service vehicle &ndash; passenger failing to produce a ticket</span></h2>
@@ -132,7 +129,7 @@
              data-ng-class="{'js-hidden': vm.plea !== 'Guilty'}"
              data-ng-attr-aria-hidden="{{vm.plea !== 'Guilty' ? 'true' : 'false'}}">
 
-          <p>Pleading guilty to this charge means you don&rsquo;t need to come to court to respond to this charge &ndash; we&rsquo;ll send you details of the court&rsquo;s decision and what to do next.</p>
+          <p>Pleading guilty to this charge means you don&rsquo;t need to come to court to respond to this charge. If you choose this option, we&rsquo;ll send you details of the court&rsquo;s decision and what to do next.</p>
 
           <div class="form-group" data-ng-class="{'error': vm.form['court'].invalid}">
 
@@ -188,7 +185,7 @@
           <div class="form-group" data-ng-class="{'error': vm.form['not-guilty-because'].invalid}">
             
             <label for="not-guilty-because" id="error-not-guilty-because">
-              <span class="form-label-bold">Why do you believe you&rsquo;re not guilty?</span>
+              <span class="form-label-bold">Why do you think you&rsquo;re not guilty?</span>
               <span class="error-message" id="error-message-not-guilty-because" data-ng-show="vm.form['not-guilty-because'].invalid">Provide information</span>
             </label>
             

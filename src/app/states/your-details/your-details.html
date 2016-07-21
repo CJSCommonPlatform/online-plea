@@ -123,8 +123,8 @@
 
       <div class="form-group" data-ng-class="{'error': vm.form['contact-number'].invalid}">
         <label for="contact-number" id="error-contact-number" data-ng-messages="vm.form['contact-number'].error">
-          <span class="form-label-bold">Contact number</span>
-          <span class="form-hint" id="contact-number-hint">Landline or mobile number</span>
+          <span class="form-label-bold">Phone number</span>
+          <span class="form-hint" id="contact-number-hint">This can be a landline or mobile number</span>
           <span class="error-message" id="error-message-contact-number" data-ng-message="required">Provide this information</span>
           <span class="error-message" id="error-message-contact-number" data-ng-message="pattern">Number not valid &ndash; enter number</span>
         </label>
@@ -142,7 +142,7 @@
 
         <label for="email-address" id="error-email-address">
           <span class="form-label-bold">Email address (optional)</span>
-          <span class="form-hint" id="email-address-hint">If you provide this, we&rsquo;ll automatically email you a copy of your plea</span>
+          <span class="form-hint" id="email-address-hint">If you give this, we&rsquo;ll email you a copy of your plea</span>
           <span class="error-message" id="error-message-email-address" data-ng-show="vm.form['email-address'].invalid">Email not valid &ndash; enter address</span>
         </label>
 
@@ -271,7 +271,7 @@
 
             <label for="national-insurance-number" id="error-national-insurance-number">
               <span class="form-label">National Insurance number</span>
-              <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return. <br> For example, VO 12 34 56 D.</span>
+              <span class="form-hint" id="national-insurance-number-hint">Find this on your payslip, P60 or tax return. For example, VO 12 34 56 D</span>
               <span class="error-message" id="error-message-national-insurance-number" data-ng-message="required">Provide this information</span>
               <span class="error-message" id="error-message-national-insurance-number" data-ng-message="pattern">Number not valid &ndash; enter correct format. <br> For example, VO 12 34 56 D.</span>
             </label>
