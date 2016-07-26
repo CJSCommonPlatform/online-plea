@@ -26,11 +26,11 @@
 
     /**
      * @ngdoc method
-     * @name getCaseByUrnAndPostcode
      * @description Get case by a combination of the URN and postcode
      * @param {obj} case URN & Postcode
      * @returns {object} promise
      */
+     // TODO: change it to accept separate arguments for case URN and postcode
     function getCaseByUrnAndPostcode(obj) {
       return executeQuery(
         '/cases-for-citizen?urn=' + obj.caseUniqueReferenceNumber + '&postcode=' + obj.casePostcode,
@@ -41,7 +41,6 @@
 
     /**
      * @ngdoc method
-     * @name makePlea
      * @description Plead for offences of a defendant in a case
      * @param {string} caseId unique identifier of the case
      * @param {string} defendantId unique identifier of the defendant
