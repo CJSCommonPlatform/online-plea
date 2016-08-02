@@ -3,6 +3,7 @@
 
   angular
     .module('pleaApp', [
+      'cpp-ui-spa-master.structure',
       'ngStorage',
       'ngCookies',
       'ngSanitize',

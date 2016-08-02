@@ -52,7 +52,7 @@
       vm.buttonContinue(event);
       scope.$apply();
       //then
-      expect($state.current.name).toEqual('your-employment.employed-receiving-benefits.finances');
+      expect($state.current.name).toEqual('your-employment.employed-and-also-receiving-benefits.finances');
     });
 
     it('should move to employment.self-employed.finances when SELF_EMPLOYED', function() {
@@ -74,7 +74,7 @@
       vm.buttonContinue(event);
       scope.$apply();
       //then
-      expect($state.current.name).toEqual('your-employment.self-employed-receiving-benefits.finances');
+      expect($state.current.name).toEqual('your-employment.self-employed-and-also-receiving-benefits.finances');
     });
 
     it('should move to employment.self-employed-receiving-benefits.finances when OUT_OF_WORK_BENEFITS', function() {

@@ -9,8 +9,13 @@
       transformPleaData = _transformPleaData_;
 
       pleaData = {};
-      pleaData.yourCase = {caseId: 'TEST CASE'};
+      pleaData.yourCase = {
+        caseId: 'TEST CASE',
+        offence: {id: 'test'}
+      };
       pleaData.yourDetails = {};
+
+
       pleaData.yourDetails.detailsCorrect = 'Yes';
       pleaData.yourDetails.contactNumber = '0712345678';
       pleaData.yourDetails.emailAddress = 'test@example.com';
