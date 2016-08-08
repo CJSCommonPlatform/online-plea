@@ -15,6 +15,7 @@
     .module('cpp-ui-spa-master.structure')
     .factory('structureService', structureService);
 
+  /* @ngInject */
   function structureService(apiCallsService) {
 
     var service = {

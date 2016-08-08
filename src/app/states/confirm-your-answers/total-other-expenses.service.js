@@ -5,6 +5,7 @@
     .module('pleaApp')
     .factory('totalOtherExpenses', totalOtherExpenses);
 
+  /* @ngInject */
   function totalOtherExpenses(lodash) {
     var service = {
       calculate: calculate
@@ -52,5 +53,5 @@
       return totalOtherExpenses;
     }
   }
-  
+
 })();

@@ -10,8 +10,9 @@
       template: '<a class="link-back" href="" data-ng-click="vm.goBack()" title="Go back to previous page">Back</a>',
     });
 
+  /* @ngInject */
   function BackLink($window) {
-    
+
     var vm    = this;
     vm.goBack = goBack;
 

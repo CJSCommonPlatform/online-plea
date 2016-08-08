@@ -3,6 +3,7 @@
 /* eslint-disable */
   angular
     .module('pleaApp')
+    /* @ngInject */
     .run(function($rootScope, $sessionStorage, $window) {
       $sessionStorage.$reset();
       console.log('session storage was reset');

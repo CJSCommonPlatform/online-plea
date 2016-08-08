@@ -6,6 +6,7 @@
     .module('cpp-ui-spa-master.structure')
     .factory('apiCallsService', apiCallsService);
 
+  /* @ngInject */
   function apiCallsService($q, $http, globalConfig) {
 
     var service = {

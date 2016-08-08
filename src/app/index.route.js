@@ -5,7 +5,7 @@
     .module('pleaApp')
     .config(routerConfig);
 
-  /** @ngInject */
+  /* @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');

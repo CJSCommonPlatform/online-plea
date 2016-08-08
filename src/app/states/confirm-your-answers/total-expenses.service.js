@@ -5,6 +5,7 @@
     .module('pleaApp')
     .factory('totalExpenses', totalExpenses);
 
+  /* @ngInject */
   function totalExpenses(lodash) {
     var service = {
       calculate: calculate

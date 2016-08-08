@@ -5,6 +5,7 @@
     .module('pleaApp')
     .factory('totalWeeklyIncome', totalWeeklyIncome);
 
+  /* @ngInject */
   function totalWeeklyIncome(lodash) {
     var service = {
       calculate: calculate

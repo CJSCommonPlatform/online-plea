@@ -3,7 +3,7 @@
   'use strict';
 
   angular.module('pleaApp')
-
+    /* @ngInject */
     .config(function($stateProvider) {
       $stateProvider
         .state('your-plea-has-been-submitted', {

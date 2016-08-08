@@ -3,6 +3,7 @@
 
     angular
       .module('pleaApp')
+      /* @ngInject */
       .directive('focus', function($timeout, $window) {
         return {
           restrict: 'A',
