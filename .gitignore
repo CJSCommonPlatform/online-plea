@@ -4,4 +4,4 @@
 /.sass-cache/
 /.tmp/
 /dist/
-/src/app/config/global-config.module.js
+/src/app/config/app.config.json
