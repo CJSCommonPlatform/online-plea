@@ -11,7 +11,6 @@
       'restangular',
       'ui.router',
       'ui.validate',
-      'toastr',
       'ngLodash'
     ]);
 })();
