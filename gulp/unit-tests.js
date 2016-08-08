@@ -44,7 +44,7 @@ function runTests (singleRun, done) {
   server.start();
 }
 
-gulp.task('test', ['scripts', 'markups'], function(done) {
+gulp.task('test', ['scripts'], function(done) {
   runTests(true, done);
 });
 
